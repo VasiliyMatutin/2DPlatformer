@@ -1,34 +1,62 @@
 #include "Controller.h"
 #include "WinSingleton.h"
 
-void Controller::NotifyViewer()
+Controller::Controller()
 {
-	viewer->update();
+	window = WinSingleton::getInstance();
+	viewer.setModelPtr(&model);
 }
 
 void Controller::NotifyModel(Events _event)
 {
-	model->handleEvent(_event);
+	model.handleEvent(_event);
 }
 
-Controller::Controller(Viewer * _viewer, Model * _model)
-{
-	viewer = _viewer;
-	model = _model;
-	window = WinSingleton::getInstance();
-}
 
 void Controller::observe()
 {
 	NotifyModel(LoadLevel);
+	viewer.handleViewerEvent(LevelCreated);
 	while (window->isOpen())
 	{
 		sf::Event event;
-		while (window->pollEvent(event))
+		if (window->pollEvent(event))
 		{
-			if (event.type == sf::Event::Closed)
+			switch (event.type)
+			{
+			case sf::Event::Closed:
 				window->close();
+				break;
+			case sf::Event::KeyPressed:
+				switch (event.key.code)
+				{
+				case sf::Keyboard::Left:
+					model.handleEvent(HeroMoveLeft);
+					break;
+				case sf::Keyboard::Right:
+					model.handleEvent(HeroMoveRight);
+					break;
+				case sf::Keyboard::Up:
+					break;
+				case sf::Keyboard::Escape:
+					window->close();
+					break;
+				}
+				break;
+			case sf::Event::KeyReleased:
+				switch (event.key.code)
+				{
+				case sf::Keyboard::Left:
+					model.handleEvent(StopHero);
+					break;
+				case sf::Keyboard::Right:
+					model.handleEvent(StopHero);
+					break;
+				}
+				break;
+			}
 		}
-		NotifyViewer();
+		model.handleEvent(Move);
+		viewer.handleViewerEvent(Update);
 	}
 }

@@ -1,15 +1,15 @@
 #pragma once
 #include "Events.h"
+#include "Model.h"
 #include "Viewer.h"
 
 class Controller
 {
 	sf::RenderWindow* window;
-	Viewer* viewer;
-	Model* model;
-	void NotifyViewer();
+	Model model;
+	Viewer viewer;
 	void NotifyModel(Events);
 public:
-	Controller(Viewer*, Model*);
+	Controller();
 	void observe();
 };

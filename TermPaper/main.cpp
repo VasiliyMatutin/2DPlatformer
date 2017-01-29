@@ -2,9 +2,7 @@
 
 int main()
 {
-	Model model;
-	Viewer viewer(&model);
-	Controller controller(&viewer, &model);
+	Controller controller;
 	controller.observe();
 	return 0;
 }
