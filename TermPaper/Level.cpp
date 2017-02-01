@@ -156,7 +156,7 @@ bool Level::loadLevel(std::string filename)
 				fixture_def.friction = 0.3f;
 				body->CreateFixture(&fixture_def);
 				changeable_objects.push_back(tmp_obj);
-				player = new DynamicObj(8, 0.1 / 7, body, &changeable_objects[changeable_objects.size() - 1]);
+				player = new DynamicObj(8, level_width*tile_width, level_height*tile_height, 0.1 / 7, body, &changeable_objects[changeable_objects.size() - 1]);
 			}
 			else
 				body->CreateFixture(&shape, 1.0f);
@@ -189,7 +189,7 @@ DynamicObj * Level::returnActivePlayer()
 
 void Level::update()
 {
-	level_world->Step(1.0f / 60.0f, 1, 1);
 	player->update();
+	level_world->Step(1.0f / 60.0f, 1, 1);
 }
 

@@ -17,9 +17,9 @@ void Controller::observe()
 {
 	NotifyModel(LoadLevel);
 	viewer.handleViewerEvent(LevelCreated);
+	sf::Event event;
 	while (window->isOpen())
 	{
-		sf::Event event;
 		if (window->pollEvent(event))
 		{
 			switch (event.type)
@@ -37,6 +37,7 @@ void Controller::observe()
 					model.handleEvent(HeroMoveRight);
 					break;
 				case sf::Keyboard::Up:
+					model.handleEvent(Jumping);
 					break;
 				case sf::Keyboard::Escape:
 					window->close();

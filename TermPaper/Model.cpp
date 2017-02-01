@@ -15,9 +15,11 @@ void Model::handleEvent(Events _event)
 	case HeroMoveRight:
 		current_level.returnActivePlayer()->moveRight();
 		break;
+	case Jumping:
+		current_level.returnActivePlayer()->jump();
 	case StopHero:
 		current_level.returnActivePlayer()->stop();
-		break;		
+		break;	
 	case Move:
 		current_level.update();
 	}
