@@ -1,5 +1,21 @@
 #include "DynamicObj.h"
-#include <iostream>
+
+void DynamicObj::contactChecker()
+{
+	on_ground = 0;
+	for (b2ContactEdge* edge = body->GetContactList(); edge; edge = edge->next)
+	{
+		int numPoints = edge->contact->GetManifold()->pointCount;
+		b2WorldManifold worldManifold;
+		edge->contact->GetWorldManifold(&worldManifold);
+		if (!on_ground && worldManifold.normal.y < 0)
+		{
+			on_ground = 1;
+			continue;
+		}
+		if ((worldManifold.normal.x > 0 && x_speed < 0) || (worldManifold.normal.x < 0 && x_speed > 0)) stop();
+	}
+}
 
 DynamicObj::DynamicObj(int _max_frame, int _level_width, int _level_height, double _current_frequency, b2Body* _body, Object* _object) :
 	max_frame(_max_frame),
@@ -10,7 +26,8 @@ DynamicObj::DynamicObj(int _max_frame, int _level_width, int _level_height, doub
 	object (_object),
 	is_move(0),
 	img_row(3),
-	x_speed(0)
+	x_speed(0),
+	on_ground(0)
 {
 }
 
@@ -30,7 +47,7 @@ void DynamicObj::moveRight()
 
 void DynamicObj::jump()
 {
-	body->ApplyLinearImpulse(b2Vec2(0, -10*body->GetMass()), b2Vec2(body->GetPosition().x, body->GetPosition().y), 1);
+	if (on_ground) body->ApplyLinearImpulse(b2Vec2(0, -10 * body->GetMass()), b2Vec2(body->GetPosition().x, body->GetPosition().y), 1);
 }
 
 void DynamicObj::stop()
@@ -42,6 +59,7 @@ void DynamicObj::stop()
 
 void DynamicObj::update()
 {
+	contactChecker();
 	if (object->x + object->width / 2 >= level_width - 1 && x_speed > 0 || object->x - object->width / 2 <= 1 && x_speed < 0) stop();
 	b2Vec2 tmp = body->GetLinearVelocity();
 	body->SetLinearVelocity(b2Vec2(x_speed, tmp.y));

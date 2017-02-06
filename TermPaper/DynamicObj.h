@@ -7,8 +7,9 @@ class DynamicObj
 	b2Body* body;
 	Object* object;
 	int img_row, max_frame, level_width, level_height, x_speed;
-	bool is_move;
+	bool is_move, on_ground;
 	double current_frame, current_frequency;
+	void contactChecker();
 public:
 	DynamicObj(int, int, int, double, b2Body*, Object*);
 	void moveLeft();
