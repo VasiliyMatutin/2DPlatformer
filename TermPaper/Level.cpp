@@ -8,12 +8,15 @@ Level::Level()
 {
 	b2Vec2 gravity(0.0f, 1.0f);
 	level_world = new b2World(gravity);
+	my_contact_listener_ptr = new MyContactListener;
+	level_world->SetContactListener(my_contact_listener_ptr);
 }
 
 Level::~Level()
 {
 	delete level_world;
 	delete player;
+	delete my_contact_listener_ptr;
 }
 
 bool Level::loadLevel(std::string filename)
@@ -122,7 +125,7 @@ bool Level::loadLevel(std::string filename)
 			tmp_obj.height = atoi(object->Attribute("height"));
 			tmp_obj.x = atoi(object->Attribute("x")) + tmp_obj.width / 2;
 			tmp_obj.y = atoi(object->Attribute("y")) + tmp_obj.height / 2;
-			body_def.position.Set(tmp_obj.x, tmp_obj.y); //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			body_def.position.Set(tmp_obj.x, tmp_obj.y);
 			shape.SetAsBox(tmp_obj.width/2, tmp_obj.height/2);
 			//}
 			/*else
@@ -156,7 +159,7 @@ bool Level::loadLevel(std::string filename)
 				fixture_def.friction = 0.3f;
 				body->CreateFixture(&fixture_def);
 				changeable_objects.push_back(tmp_obj);
-				player = new DynamicObj(8, level_width*tile_width, level_height*tile_height, 0.1 / 7, body, &changeable_objects[changeable_objects.size() - 1]);
+				player = new DynamicObj(8, level_width*tile_width, level_height*tile_height, 0.1 / 10, body, &changeable_objects[changeable_objects.size() - 1]);
 			}
 			else
 				body->CreateFixture(&shape, 1.0f);
@@ -189,7 +192,7 @@ DynamicObj * Level::returnActivePlayer()
 
 void Level::update()
 {
-	player->update();
 	level_world->Step(1.0f / 60.0f, 1, 1);
+	player->update();
 }
 

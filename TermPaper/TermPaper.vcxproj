@@ -69,6 +69,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ContactListener.cpp" />
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="DynamicObj.cpp" />
     <ClCompile Include="Level.cpp" />
@@ -79,6 +80,7 @@
     <ClCompile Include="WinSingleton.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ContactListener.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="DynamicObj.h" />
     <ClInclude Include="Events.h" />

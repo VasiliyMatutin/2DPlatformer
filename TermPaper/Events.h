@@ -4,7 +4,9 @@ enum Events
 { 
 	LoadLevel, 
 	HeroMoveLeft,
+	StopHeroMoveLeft,
 	HeroMoveRight,
+	StopHeroMoveRight,
 	Jumping,
 	StopHero,
 	Move

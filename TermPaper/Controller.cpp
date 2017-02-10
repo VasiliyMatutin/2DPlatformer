@@ -1,5 +1,6 @@
 #include "Controller.h"
 #include "WinSingleton.h"
+#include <iostream>
 
 Controller::Controller()
 {
@@ -18,8 +19,11 @@ void Controller::observe()
 	NotifyModel(LoadLevel);
 	viewer.handleViewerEvent(LevelCreated);
 	sf::Event event;
+	window->setKeyRepeatEnabled(false); // To disable repeated KeyPressed events
 	while (window->isOpen())
 	{
+		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) model.handleEvent(HeroMoveLeft);
+		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) model.handleEvent(HeroMoveRight);
 		if (window->pollEvent(event))
 		{
 			switch (event.type)
@@ -48,9 +52,12 @@ void Controller::observe()
 				switch (event.key.code)
 				{
 				case sf::Keyboard::Left:
-					model.handleEvent(StopHero);
+					model.handleEvent(StopHeroMoveLeft);
 					break;
 				case sf::Keyboard::Right:
+					model.handleEvent(StopHeroMoveRight);
+					break;
+				case sf::Keyboard::Up:
 					model.handleEvent(StopHero);
 					break;
 				}

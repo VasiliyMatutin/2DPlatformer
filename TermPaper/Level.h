@@ -3,6 +3,7 @@
 #include <vector>
 #include "LevelBox.h"
 #include "DynamicObj.h"
+#include "ContactListener.h"
 
 class Level
 {
@@ -11,6 +12,7 @@ class Level
 	std::vector<Object> changeable_objects;
 	DynamicObj* player;
 	b2World* level_world;
+	MyContactListener* my_contact_listener_ptr;
 	std::vector <std::string> images;
 public:
 	Level();
