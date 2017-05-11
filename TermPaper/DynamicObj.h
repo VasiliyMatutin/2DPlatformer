@@ -4,18 +4,20 @@
 
 class DynamicObj
 {
+protected:
 	b2Body* body;
 	Object* object;
-	int img_row, max_frame, level_width, level_height, delta_x_speed, fixed_speed;
-	bool on_ground, is_animated;
-	double current_frame, current_frequency, x_speed;
+	int level_width, level_height, delta_x_speed, fixed_speed;
+	double x_speed;
+	DynamicObj::DynamicObj(int _level_width, int _level_height, b2Body* _body, Object* _object) :
+		level_width(_level_width),
+		level_height(_level_height),
+		body(_body),
+		object(_object),
+		x_speed(0),
+		delta_x_speed(0),
+		fixed_speed(10){}
 public:
-	DynamicObj(int, int, int, double, b2Body*, Object*);
-	void moveLeft();
-	void stopLeft();
-	void moveRight();
-	void stopRight();
-	void contactEvent(b2Contact*, bool);
-	void jump();
-	void update();
+	virtual void contactEvent(b2Contact*, bool)=0;
+	virtual void update()=0;
 };

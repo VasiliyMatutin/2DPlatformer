@@ -71,10 +71,10 @@
   <ItemGroup>
     <ClCompile Include="ContactListener.cpp" />
     <ClCompile Include="Controller.cpp" />
-    <ClCompile Include="DynamicObj.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="Viewer.cpp" />
     <ClCompile Include="WinSingleton.cpp" />
@@ -87,6 +87,7 @@
     <ClInclude Include="Level.h" />
     <ClInclude Include="LevelBox.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="Viewer.h" />
     <ClInclude Include="WinSingleton.h" />

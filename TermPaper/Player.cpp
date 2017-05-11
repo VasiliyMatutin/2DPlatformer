@@ -1,44 +1,41 @@
-#include "DynamicObj.h"
-#include <iostream>
+#include "Player.h"
 
-DynamicObj::DynamicObj(int _max_frame, int _level_width, int _level_height, double _current_frequency, b2Body* _body, Object* _object) :
+Player::Player(int _max_frame, int _level_width, int _level_height, double _current_frequency, b2Body* _body, Object* _object) : DynamicObj(_level_width, _level_height, _body, _object),
 	max_frame(_max_frame),
-	level_width(_level_width),
-	level_height(_level_height),
 	current_frequency(_current_frequency),
-	body (_body),
-	object (_object),
 	img_row(3),
 	on_ground(0),
-	is_animated(1),
-	x_speed(0),
-	delta_x_speed(0),
-	fixed_speed(10)
+	is_animated(1)
 {
 	body->SetUserData(this);
 }
 
-void DynamicObj::moveLeft()
+void Player::jump()
+{
+	if (on_ground) body->ApplyLinearImpulse(b2Vec2(0, -10 * body->GetMass()), b2Vec2(body->GetPosition().x, body->GetPosition().y), 1);
+}
+
+void Player::moveLeft()
 {
 	delta_x_speed -= fixed_speed;
 }
 
-void DynamicObj::stopLeft()
+void Player::moveRight()
 {
 	delta_x_speed += fixed_speed;
 }
 
-void DynamicObj::moveRight()
-{
-	delta_x_speed += fixed_speed;
-}
-
-void DynamicObj::stopRight()
+void Player::stopRight()
 {
 	delta_x_speed -= fixed_speed;
 }
 
-void DynamicObj::contactEvent(b2Contact * contact, bool is_begin)
+void Player::stopLeft()
+{
+	delta_x_speed += fixed_speed;
+}
+
+void Player::contactEvent(b2Contact * contact, bool is_begin)
 {
 	b2Manifold* contact_information = contact->GetManifold();
 	switch (is_begin)
@@ -81,12 +78,7 @@ void DynamicObj::contactEvent(b2Contact * contact, bool is_begin)
 	}
 }
 
-void DynamicObj::jump()
-{
-	if (on_ground) body->ApplyLinearImpulse(b2Vec2(0, -10 * body->GetMass()), b2Vec2(body->GetPosition().x, body->GetPosition().y), 1);
-}
-
-void DynamicObj::update()
+void Player::update()
 {
 	b2Vec2 tmp = body->GetLinearVelocity();
 	if (on_ground) x_speed = delta_x_speed;
@@ -111,4 +103,3 @@ void DynamicObj::update()
 		if (x_speed < 0) img_row = 1;
 	}
 }
-

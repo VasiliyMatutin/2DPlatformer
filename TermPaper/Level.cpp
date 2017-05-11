@@ -102,9 +102,7 @@ bool Level::loadLevel(std::string filename)
 	tinyxml2::XMLElement *objectgroup = map->FirstChildElement("objectgroup");
 	while (objectgroup)
 	{
-		images.push_back("1.png");//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		Object tmp_obj;
-		tmp_obj.number_in_image_list = images.size() - 1;
 		tmp_obj.top = 0;
 		tmp_obj.left = 0;
 
@@ -118,51 +116,41 @@ bool Level::loadLevel(std::string filename)
 			body_def.fixedRotation = true;
 			if (is_static) body_def.type = b2_staticBody;
 			else body_def.type = b2_dynamicBody;
-			//tinyxml2::XMLElement *polygon = object->FirstChildElement("polygon");
-			//if (!polygon)
-			//{
 			tmp_obj.width = atoi(object->Attribute("width"));
 			tmp_obj.height = atoi(object->Attribute("height"));
 			tmp_obj.x = atoi(object->Attribute("x")) + tmp_obj.width / 2;
 			tmp_obj.y = atoi(object->Attribute("y")) + tmp_obj.height / 2;
 			body_def.position.Set(tmp_obj.x, tmp_obj.y);
 			shape.SetAsBox(tmp_obj.width/2, tmp_obj.height/2);
-			//}
-			/*else
-			{
-				body_def.position.Set(x, y);
-				const char* str = polygon->Attribute("points");
-				std::stringstream tempss;
-				tempss << str;
-				int xi,yi;
-				std::vector<std::pair<int, int>> tmp_vertex;
-				while (tempss >> xi)
-				{
-					tempss.ignore();
-					tempss >> yi;
-					tmp_vertex.push_back(std::make_pair(x+xi, y+yi));
-				}
-				b2Vec2 tmp_vec(x,y), a(x,y);
-				for (int i = 0; i < tmp_vertex.size(); i++)
-				{
-					a.Set(tmp_vertex[i].first, tmp_vertex[i].second);
-					tmp_vec += a;
-				}
-				shape.Set(&tmp_vec, tmp_vec.Length());
-			}*/
 			b2Body* body = level_world->CreateBody(&body_def);
 			if (!is_static)
 			{
+				tinyxml2::XMLElement *property = object->FirstChildElement("properties")->FirstChildElement("property");
+				while (property)
+				{
+					if (std::string(property->Attribute("name")) == std::string("image"))
+					{
+						images.push_back(property->Attribute("value"));
+						tmp_obj.number_in_image_list = images.size() - 1;
+					}
+					//else if (std::string(property->Attribute("name")) == std::string("image"))
+					property = property->NextSiblingElement("property");
+				}
 				b2FixtureDef fixture_def;
 				fixture_def.shape = &shape;
 				fixture_def.density = 1.0f;
 				fixture_def.friction = 0.3f;
 				body->CreateFixture(&fixture_def);
 				changeable_objects.push_back(tmp_obj);
-				player = new DynamicObj(8, level_width*tile_width, level_height*tile_height, 0.1 / 10, body, &changeable_objects[changeable_objects.size() - 1]);
+				if (std::string(object->Attribute("type")) == std::string("player"))
+				{
+					player = new Player(8, level_width*tile_width, level_height*tile_height, 0.1 / 10, body, &changeable_objects.back());
+				}
 			}
 			else
+			{
 				body->CreateFixture(&shape, 1.0f);
+			}
 			object = object->NextSiblingElement("object");
 		}
 		objectgroup = objectgroup->NextSiblingElement("objectgroup");
@@ -170,12 +158,12 @@ bool Level::loadLevel(std::string filename)
 	return 1;
 }
 
-std::vector<Object>& Level::getUnchangeableObjectList()
+std::list<Object>& Level::getUnchangeableObjectList()
 {
 	return unchangeable_objects;
 }
 
-std::vector<Object>& Level::getChangeableObjectList()
+std::list<Object>& Level::getChangeableObjectList()
 {
 	return changeable_objects;
 }
@@ -185,7 +173,7 @@ std::vector<std::string>& Level::getImagesList()
 	return images;
 }
 
-DynamicObj * Level::returnActivePlayer()
+Player * Level::returnActivePlayer()
 {
 	return player;
 }
