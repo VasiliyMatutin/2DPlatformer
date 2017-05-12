@@ -1,6 +1,6 @@
 #pragma once
 #include "Box2D\Box2D.h"
-#include "DynamicObj.h"
+#include "NonStaticObj.h"
 
 class MyContactListener : public b2ContactListener
 {

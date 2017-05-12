@@ -1,6 +1,6 @@
 #pragma once
 
-enum Events 
+enum class Events 
 { 
 	LoadLevel, 
 	HeroMoveLeft,
@@ -12,7 +12,7 @@ enum Events
 	Move
 };
 
-enum ViewEvents
+enum class ViewEvents
 {
 	Update,
 	LevelCreated

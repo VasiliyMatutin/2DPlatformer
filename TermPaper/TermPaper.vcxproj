@@ -74,6 +74,7 @@
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="Viewer.cpp" />
@@ -82,11 +83,12 @@
   <ItemGroup>
     <ClInclude Include="ContactListener.h" />
     <ClInclude Include="Controller.h" />
-    <ClInclude Include="DynamicObj.h" />
+    <ClInclude Include="NonStaticObj.h" />
     <ClInclude Include="Events.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="LevelBox.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="Platform.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="Viewer.h" />

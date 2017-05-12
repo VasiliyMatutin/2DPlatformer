@@ -1,14 +1,14 @@
 #pragma once
-#include "DynamicObj.h"
+#include "NonStaticObj.h"
 
-class Player : public DynamicObj
+class Player : public NonStaticObj
 {
 private:
-	int img_row, max_frame;
-	bool on_ground, is_animated;
-	double current_frame, current_frequency;
+	int img_row, max_frame, delta_x_speed, on_ground;
+	bool is_animated;
+	double current_frame, current_frequency, x_speed;
 public:
-	Player(int _max_frame, int _level_width, int _level_height, double _current_frequency, b2Body * _body, Object * _object);
+	Player(int _max_frame, int _level_width, int _level_height, double _current_frequency, b2Body * _body, Object * _object, int _fixed_speed);
 	void jump();
 	void moveLeft();
 	void moveRight();

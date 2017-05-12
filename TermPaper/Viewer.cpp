@@ -15,10 +15,10 @@ void Viewer::handleViewerEvent(ViewEvents ev)
 {
 	switch (ev)
 	{
-	case Update:
+	case ViewEvents::Update:
 		update();
 		break;
-	case LevelCreated:
+	case ViewEvents::LevelCreated:
 		prepareNewLevel();
 		break;
 	}

@@ -19,8 +19,8 @@ void Controller::observe()
 {
 	std::chrono::time_point<std::chrono::system_clock> start = std::chrono::system_clock::now();
 	std::chrono::duration<double> frequency(0.001);
-	NotifyModel(LoadLevel);
-	viewer.handleViewerEvent(LevelCreated);
+	NotifyModel(Events::LoadLevel);
+	viewer.handleViewerEvent(ViewEvents::LevelCreated);
 	sf::Event event;
 	window->setKeyRepeatEnabled(false); // To disable repeated KeyPressed events
 	while (window->isOpen())
@@ -39,13 +39,13 @@ void Controller::observe()
 					switch (event.key.code)
 					{
 					case sf::Keyboard::Left:
-						model.handleEvent(HeroMoveLeft);
+						model.handleEvent(Events::HeroMoveLeft);
 						break;
 					case sf::Keyboard::Right:
-						model.handleEvent(HeroMoveRight);
+						model.handleEvent(Events::HeroMoveRight);
 						break;
 					case sf::Keyboard::Up:
-						model.handleEvent(Jumping);
+						model.handleEvent(Events::Jumping);
 						break;
 					case sf::Keyboard::Escape:
 						window->close();
@@ -56,20 +56,20 @@ void Controller::observe()
 					switch (event.key.code)
 					{
 					case sf::Keyboard::Left:
-						model.handleEvent(StopHeroMoveLeft);
+						model.handleEvent(Events::StopHeroMoveLeft);
 						break;
 					case sf::Keyboard::Right:
-						model.handleEvent(StopHeroMoveRight);
+						model.handleEvent(Events::StopHeroMoveRight);
 						break;
 					case sf::Keyboard::Up:
-						model.handleEvent(StopHero);
+						model.handleEvent(Events::StopHero);
 						break;
 					}
 					break;
 				}
 			}
-			model.handleEvent(Move);
-			viewer.handleViewerEvent(Update);
+			model.handleEvent(Events::Move);
+			viewer.handleViewerEvent(ViewEvents::Update);
 		}
 	}
 }

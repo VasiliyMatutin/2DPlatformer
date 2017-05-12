@@ -6,25 +6,25 @@ void Model::handleEvent(Events _event)
 {
 	switch (_event)
 	{
-	case LoadLevel:
+	case Events::LoadLevel:
 		current_level.loadLevel("Test.tmx");
 		break;
-	case HeroMoveLeft:
+	case Events::HeroMoveLeft:
 		current_level.returnActivePlayer()->moveLeft();
 		break;
-	case HeroMoveRight:
+	case Events::HeroMoveRight:
 		current_level.returnActivePlayer()->moveRight();
 		break;
-	case Jumping:
+	case Events::Jumping:
 		current_level.returnActivePlayer()->jump();
 		break;
-	case StopHeroMoveLeft:
+	case Events::StopHeroMoveLeft:
 		current_level.returnActivePlayer()->stopLeft();
 		break;
-	case StopHeroMoveRight:
+	case Events::StopHeroMoveRight:
 		current_level.returnActivePlayer()->stopRight();
 		break;
-	case Move:
+	case Events::Move:
 		current_level.update();
 	}
 }

@@ -1,81 +1,100 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Controller">
+      <UniqueIdentifier>{cf0809ce-9fca-43d8-92df-47a26352a7bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{2e10d5b1-0dbf-49a5-b3aa-22fcf4557578}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Viewer">
+      <UniqueIdentifier>{2267193d-6dbd-49bb-83e5-d1c7a7fcd1e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main">
+      <UniqueIdentifier>{fa6d34c9-b7db-4e24-b0d3-b4de5f0c2728}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model\NonStaticObj">
+      <UniqueIdentifier>{b9a86d96-17e9-4306-8009-0121f711f59a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model\NonStaticObj\Kinematic obj">
+      <UniqueIdentifier>{11affe0f-786b-4cb4-9f16-40a4d84f2941}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model\NonStaticObj\Dynamic obj">
+      <UniqueIdentifier>{aab9bf17-29e8-44b4-9058-8d13df1c0bfa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="tinyxml2.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="Level.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Viewer.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Controller.cpp">
+      <Filter>Controller</Filter>
     </ClCompile>
     <ClCompile Include="Model.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Model</Filter>
     </ClCompile>
-    <ClCompile Include="Controller.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Level.cpp">
+      <Filter>Model</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WinSingleton.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Viewer.cpp">
+      <Filter>Viewer</Filter>
     </ClCompile>
     <ClCompile Include="ContactListener.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="WinSingleton.cpp">
+      <Filter>Viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>main</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Model\NonStaticObj\Dynamic obj</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform.cpp">
+      <Filter>Model\NonStaticObj\Kinematic obj</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tinyxml2.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
-    <ClInclude Include="Level.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LevelBox.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WinSingleton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Viewer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Controller.h">
-      <Filter>Header Files</Filter>
+      <Filter>Controller</Filter>
     </ClInclude>
     <ClInclude Include="Model.h">
-      <Filter>Header Files</Filter>
+      <Filter>Model</Filter>
     </ClInclude>
-    <ClInclude Include="Events.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DynamicObj.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Level.h">
+      <Filter>Model</Filter>
     </ClInclude>
     <ClInclude Include="ContactListener.h">
-      <Filter>Header Files</Filter>
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelBox.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Viewer.h">
+      <Filter>Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="WinSingleton.h">
+      <Filter>Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="Events.h">
+      <Filter>main</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>Header Files</Filter>
+      <Filter>Model\NonStaticObj\Dynamic obj</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform.h">
+      <Filter>Model\NonStaticObj\Kinematic obj</Filter>
+    </ClInclude>
+    <ClInclude Include="NonStaticObj.h">
+      <Filter>Model\NonStaticObj</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
