@@ -88,6 +88,12 @@ void Player::contactEvent(b2Contact * contact, bool is_begin)
 	}
 }
 
+void Player::returnCoordinates(double* x, double* y)
+{
+	*x = object->x;
+	*y = object->y;
+}
+
 void Player::update()
 {
 	b2Vec2 tmp = body->GetLinearVelocity();

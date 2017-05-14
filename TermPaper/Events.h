@@ -16,6 +16,8 @@ enum class Events
 enum class ViewEvents
 {
 	Update,
-	LevelCreated
+	LevelCreated,
+	BringZoomCloser,
+	DistanseZoom,
 };
 

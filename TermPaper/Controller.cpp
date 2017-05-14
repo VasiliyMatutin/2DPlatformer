@@ -62,6 +62,16 @@ void Controller::observe()
 					break;
 				}
 				break;
+			case sf::Event::MouseWheelScrolled:
+				if (event.mouseWheelScroll.delta < 0)
+				{
+					viewer.handleViewerEvent(ViewEvents::DistanseZoom);
+				}
+				else if (event.mouseWheelScroll.delta > 0)
+				{
+					viewer.handleViewerEvent(ViewEvents::BringZoomCloser);
+				}
+				break;
 			}
 		}
 		model.handleEvent(Events::Move);

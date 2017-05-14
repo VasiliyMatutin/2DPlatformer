@@ -1,9 +1,16 @@
 #include "Viewer.h"
 #include "WinSingleton.h"
+#include <iostream>
 
 Viewer::Viewer()
 {
 	window = WinSingleton::getInstance();
+	sf::Vector2u win_size = window->getSize();
+	view.reset(sf::FloatRect(0, 0, win_size.x, win_size.y));
+	max_size.x = win_size.x;
+	max_size.y = win_size.y;
+	min_size.x = win_size.x / 2;
+	min_size.y = win_size.y / 2;
 }
 
 void Viewer::setModelPtr(Model * _model)
@@ -20,6 +27,12 @@ void Viewer::handleViewerEvent(ViewEvents ev)
 		break;
 	case ViewEvents::LevelCreated:
 		prepareNewLevel();
+		break;
+	case ViewEvents::DistanseZoom:
+		changeZoom(false);
+		break;
+	case ViewEvents::BringZoomCloser:
+		changeZoom(true);
 		break;
 	}
 }
@@ -82,4 +95,49 @@ void Viewer::update()
 		}
 	}
 	window->display();
+	centerViewOnHero();
+	window->setView(view);
+}
+
+void Viewer::centerViewOnHero()
+{
+	double hero_x=0, hero_y=0;
+	sf::Vector2f size = view.getSize();
+	model->returnCurrentLevel()->returnActivePlayer()->returnCoordinates(&hero_x, &hero_y);
+	if (hero_x < size.x / 2)
+	{
+		hero_x = size.x / 2;
+	}
+	if (hero_x > max_size.x - size.x / 2)
+	{
+		hero_x = max_size.x - size.x / 2;
+	}
+	if (hero_y < size.y / 2)
+	{
+		hero_y = size.y / 2;
+	}
+	if (hero_y > max_size.y - size.y / 2)
+	{
+		hero_y = max_size.y - size.y / 2;
+	}
+	view.setCenter(hero_x, hero_y);
+}
+
+void Viewer::changeZoom(bool make_closer)
+{
+	sf::Vector2f size = view.getSize();
+	if (make_closer)
+	{
+		if (size.y >= min_size.y && size.x >= min_size.x)
+		{
+			view.zoom(0.99f);
+		}
+	}
+	else
+	{
+		if (size.y <= max_size.y - 10 && size.x <= max_size.x - 10)
+		{
+			view.zoom(1.0100f);
+		}
+	}
 }

@@ -15,5 +15,6 @@ public:
 	void stopRight();
 	void stopLeft();
 	void contactEvent(b2Contact * contact, bool is_begin);
+	void returnCoordinates(double* x, double* y);
 	void update();
 };
