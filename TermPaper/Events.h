@@ -9,6 +9,7 @@ enum class Events
 	StopHeroMoveRight,
 	Jumping,
 	StopHero,
+	SwitchLever,
 	Move
 };
 

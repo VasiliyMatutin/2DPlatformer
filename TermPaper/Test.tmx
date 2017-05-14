@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32" nextobjectid="42">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32" nextobjectid="52">
  <tileset firstgid="1" name="tiles_spritesheet" tilewidth="32" tileheight="32" tilecount="161" columns="7">
   <image source="tiles_spritesheet.png" width="224" height="736"/>
  </tileset>
@@ -70,7 +70,7 @@
   <object id="21" x="641" y="480" width="29" height="62"/>
  </objectgroup>
  <objectgroup name="Dynamic">
-  <object id="18" name="player" type="player" x="159" y="301" width="32" height="48">
+  <object id="18" name="player" type="player" x="159" y="315" width="32" height="48">
    <properties>
     <property name="image" value="player.png"/>
    </properties>
@@ -80,9 +80,10 @@
   <object id="25" name="platform1" type="platform" x="415" y="448" width="62" height="9">
    <properties>
     <property name="image" value="platform.png"/>
-    <property name="speed" value="2"/>
+    <property name="is_auto" value="0"/>
+    <property name="speed" value="1"/>
+    <property name="steps" value="0"/>
     <property name="trajectory" value="trajectory1"/>
-    <property name="type" value="auto"/>
    </properties>
   </object>
   <object id="33" name="trajectory1" x="385" y="352.25">
@@ -94,16 +95,66 @@
   <object id="40" name="platform2" type="platform" x="579" y="383" width="62" height="9">
    <properties>
     <property name="image" value="platform.png"/>
-    <property name="speed" value="5"/>
+    <property name="is_auto" value="0"/>
+    <property name="speed" value="2"/>
+    <property name="steps" value="0"/>
     <property name="trajectory" value="trajectory2"/>
-    <property name="type" value="auto"/>
    </properties>
   </object>
   <object id="41" name="trajectory2" x="608" y="385">
    <properties>
     <property name="is_rounded" value="1"/>
    </properties>
-   <polyline points="0,0 0,-65 95,-66 95,-162 -54,-193 -53,-225 -193,-225 -192,-291 -192,-66 -2,-65"/>
+   <polyline points="0,0 0,-65 95,-66 95,-162 -54,-193 -53,-225 -186,-226 -192,-291 -192,-66 -2,-65"/>
+  </object>
+  <object id="49" name="trajectory3" x="63" y="223">
+   <properties>
+    <property name="is_rounded" value="0"/>
+   </properties>
+   <polyline points="0,0 0,-161 191,-160 191,-129 34,-129 33,-1"/>
+  </object>
+  <object id="50" name="platform3" type="platform" x="34" y="221" width="62" height="9">
+   <properties>
+    <property name="image" value="platform.png"/>
+    <property name="is_auto" value="0"/>
+    <property name="speed" value="3"/>
+    <property name="steps" value="0"/>
+    <property name="trajectory" value="trajectory3"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Sensors">
+  <object id="42" type="lever" x="575.073" y="531.168" width="64" height="16">
+   <properties>
+    <property name="image" value="button.png"/>
+    <property name="observables" value="platform3 platform1"/>
+    <property name="repeat_allowed" value="1"/>
+   </properties>
+  </object>
+  <object id="44" type="sensor" x="464" y="134" width="29" height="43">
+   <properties>
+    <property name="is_keeping" value="0"/>
+    <property name="is_visible" value="0"/>
+    <property name="observables" value="platform1"/>
+    <property name="repeat_allowed" value="0"/>
+   </properties>
+  </object>
+  <object id="46" type="sensor" x="415" y="532" width="64" height="16">
+   <properties>
+    <property name="image" value="button.png"/>
+    <property name="is_keeping" value="1"/>
+    <property name="is_visible" value="1"/>
+    <property name="observables" value="platform2"/>
+    <property name="repeat_allowed" value="0"/>
+   </properties>
+  </object>
+  <object id="51" type="timer" x="121.073" y="345.168" width="16" height="12">
+   <properties>
+    <property name="is_rounded" value="0"/>
+    <property name="observables" value="platform3 platform1"/>
+    <property name="repeat_allowed" value="1"/>
+    <property name="stages" value="2"/>
+   </properties>
   </object>
  </objectgroup>
 </map>

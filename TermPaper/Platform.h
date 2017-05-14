@@ -4,13 +4,16 @@
 
 class Platform : public NonStaticObj
 {
-private:
-	std::vector<std::pair<int, int>> coord_set;
-	int point_iter, incr;
-	bool is_rouded;
-	void toNextPoint(b2Vec2 tmp);
+protected:
+	std::vector<std::pair<double, double>> coord_set;
+	int point_iter, incr, node_number, counter, counter_incr;
+	bool is_rouded, is_active;
+	b2Vec2 tmp;
+	void reverseMoving();
+	void toNextPoint();
 public:
-	Platform(int _level_width, int _level_height, b2Body* _body, Object* _object, std::vector<std::pair<int,int>> traj_coord, int _fixed_speed, bool _is_rounded);
+	Platform(int _level_width, int _level_height, b2Body* _body, Object* _object, std::vector<std::pair<double,double>> traj_coord, int _fixed_speed, bool _is_rounded, int _node_number);
 	void contactEvent(b2Contact * contact, bool is_begin);
 	void update();
+	virtual ~Platform();
 };

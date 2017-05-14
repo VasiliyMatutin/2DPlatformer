@@ -16,7 +16,7 @@ is_animated(1)
 
 void Player::jump()
 {
-	if (on_ground) body->ApplyLinearImpulse(b2Vec2(0, -10 * body->GetMass()), b2Vec2(body->GetPosition().x, body->GetPosition().y), 1);
+	if (on_ground) body->ApplyLinearImpulse(b2Vec2(0, -5 * body->GetMass()), b2Vec2(body->GetPosition().x, body->GetPosition().y), 1);
 }
 
 void Player::moveLeft()
@@ -44,13 +44,14 @@ void Player::contactEvent(b2Contact * contact, bool is_begin)
 	b2Manifold* contact_information = contact->GetManifold();
 	b2WorldManifold worldManifold;
 	contact->GetWorldManifold(&worldManifold);
-	switch (is_begin)
+	if (is_begin == 0)
 	{
-	case 0:
 		if (contact_information->localNormal.y != 0)
 		{
-			on_ground--;
+			if (contact->GetFixtureA()->GetBody()->GetUserData() == nullptr)
 			{
+				on_ground = 0;
+			}
 				b2Vec2 tmp = body->GetLinearVelocity();
 				if (tmp.x != 0)
 				{
@@ -58,7 +59,6 @@ void Player::contactEvent(b2Contact * contact, bool is_begin)
 					body->ApplyLinearImpulse(b2Vec2(x_speed / 4 * body->GetMass(), 0), b2Vec2(body->GetPosition().x, body->GetPosition().y), 1);
 				}
 				return;
-			};
 		}
 
 		if (contact_information->localNormal.x != 0)
@@ -66,11 +66,12 @@ void Player::contactEvent(b2Contact * contact, bool is_begin)
 			is_animated = 1;
 			return;
 		}
-
-	case 1:
-		if (contact_information->localNormal.y != 0)
+	}
+	else
+	{
+		if (contact_information->localNormal.y != 0 && worldManifold.points[0].y - object->y / PIXEL_PER_METER > 0)
 		{
-			on_ground++;
+			on_ground=1;
 			body->ApplyLinearImpulse(b2Vec2(0, 0), b2Vec2(body->GetPosition().x, body->GetPosition().y), 1);
 			return;
 		}
@@ -98,8 +99,8 @@ void Player::update()
 	if (object->x + object->width / 2 >= level_width - 1 && x_speed > 0 || object->x - object->width / 2 <= 1 && x_speed < 0) x_speed = 0; //check of collisions with level boundaries
 	body->SetLinearVelocity(b2Vec2(x_speed, tmp.y));
 	tmp = body->GetPosition();
-	object->x = tmp.x;
-	object->y = tmp.y;
+	object->x = tmp.x * PIXEL_PER_METER;
+	object->y = tmp.y * PIXEL_PER_METER;
 	if (on_ground && x_speed != 0 && is_animated)
 	{
 		current_frame += current_frequency;

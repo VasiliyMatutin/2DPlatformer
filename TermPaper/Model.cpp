@@ -24,8 +24,12 @@ void Model::handleEvent(Events _event)
 	case Events::StopHeroMoveRight:
 		current_level.returnActivePlayer()->stopRight();
 		break;
+	case Events::SwitchLever:
+		current_level.tryToSwitchLever();
+		break;
 	case Events::Move:
 		current_level.update();
+		break;
 	}
 }
 

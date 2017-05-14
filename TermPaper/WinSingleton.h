@@ -14,7 +14,7 @@ public:
 		if (!win)
 		{
 			win = new sf::RenderWindow(sf::VideoMode(800, 600), "GameTest");
-			//win->setFramerateLimit(60);
+			win->setFramerateLimit(60);
 		}
 		return win;
 	}

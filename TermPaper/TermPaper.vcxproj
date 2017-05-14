@@ -72,17 +72,27 @@
     <ClCompile Include="ContactListener.cpp" />
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="Level.cpp" />
+    <ClCompile Include="Lever.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ManualPlatform.cpp" />
+    <ClCompile Include="ManualSwitchObj.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="VisibleSensor.cpp" />
+    <ClCompile Include="Sensor.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="Viewer.cpp" />
     <ClCompile Include="WinSingleton.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ContactObject.h" />
     <ClInclude Include="ContactListener.h" />
     <ClInclude Include="Controller.h" />
+    <ClInclude Include="Lever.h" />
+    <ClInclude Include="ManualPlatform.h" />
+    <ClInclude Include="ManualSwitchObj.h" />
     <ClInclude Include="NonStaticObj.h" />
     <ClInclude Include="Events.h" />
     <ClInclude Include="Level.h" />
@@ -90,6 +100,9 @@
     <ClInclude Include="Model.h" />
     <ClInclude Include="Platform.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Timer.h" />
+    <ClInclude Include="VisibleSensor.h" />
+    <ClInclude Include="Sensor.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="Viewer.h" />
     <ClInclude Include="WinSingleton.h" />

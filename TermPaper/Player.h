@@ -4,8 +4,8 @@
 class Player : public NonStaticObj
 {
 private:
-	int img_row, max_frame, delta_x_speed, on_ground;
-	bool is_animated;
+	int img_row, max_frame, delta_x_speed;
+	bool is_animated, on_ground;
 	double current_frame, current_frequency, x_speed;
 public:
 	Player(int _max_frame, int _level_width, int _level_height, double _current_frequency, b2Body * _body, Object * _object, int _fixed_speed);

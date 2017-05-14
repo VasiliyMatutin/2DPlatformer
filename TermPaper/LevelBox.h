@@ -9,6 +9,8 @@ struct TilesetImg
 struct Object
 {
 	bool is_valid = 1;
-	int number_in_image_list, top, height, left, width;
-	double x, y;
+	int number_in_image_list, top, left;
+	double x, y, height, width;
 };
+
+static const int PIXEL_PER_METER = 32;

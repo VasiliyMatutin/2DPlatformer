@@ -1,8 +1,8 @@
 #pragma once
-#include "Box2D\Box2D.h"
+#include "ContactObject.h"
 #include "LevelBox.h"
 
-class NonStaticObj
+class NonStaticObj : public ContactObject
 {
 protected:
 	b2Body* body;
@@ -15,6 +15,10 @@ protected:
 		object(_object),
 		fixed_speed(_fixed_speed){}
 public:
-	virtual void contactEvent(b2Contact*, bool)=0;
+	void contactEvent(b2Contact*, bool)=0;
 	virtual void update()=0;
+	virtual ~NonStaticObj()
+	{
+
+	}
 };

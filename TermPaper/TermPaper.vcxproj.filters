@@ -26,6 +26,9 @@
     <Filter Include="Model\NonStaticObj\Dynamic obj">
       <UniqueIdentifier>{aab9bf17-29e8-44b4-9058-8d13df1c0bfa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Model\Sensor">
+      <UniqueIdentifier>{95ff873f-1d73-4bd9-a083-8096eda90869}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="tinyxml2.cpp">
@@ -57,6 +60,24 @@
     </ClCompile>
     <ClCompile Include="Platform.cpp">
       <Filter>Model\NonStaticObj\Kinematic obj</Filter>
+    </ClCompile>
+    <ClCompile Include="ManualPlatform.cpp">
+      <Filter>Model\NonStaticObj\Kinematic obj</Filter>
+    </ClCompile>
+    <ClCompile Include="ManualSwitchObj.cpp">
+      <Filter>Model\NonStaticObj\Kinematic obj</Filter>
+    </ClCompile>
+    <ClCompile Include="Sensor.cpp">
+      <Filter>Model\Sensor</Filter>
+    </ClCompile>
+    <ClCompile Include="VisibleSensor.cpp">
+      <Filter>Model\Sensor</Filter>
+    </ClCompile>
+    <ClCompile Include="Lever.cpp">
+      <Filter>Model\Sensor</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Model\Sensor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +116,27 @@
     </ClInclude>
     <ClInclude Include="NonStaticObj.h">
       <Filter>Model\NonStaticObj</Filter>
+    </ClInclude>
+    <ClInclude Include="ManualSwitchObj.h">
+      <Filter>Model\NonStaticObj\Kinematic obj</Filter>
+    </ClInclude>
+    <ClInclude Include="ManualPlatform.h">
+      <Filter>Model\NonStaticObj\Kinematic obj</Filter>
+    </ClInclude>
+    <ClInclude Include="Sensor.h">
+      <Filter>Model\Sensor</Filter>
+    </ClInclude>
+    <ClInclude Include="VisibleSensor.h">
+      <Filter>Model\Sensor</Filter>
+    </ClInclude>
+    <ClInclude Include="Lever.h">
+      <Filter>Model\Sensor</Filter>
+    </ClInclude>
+    <ClInclude Include="ContactObject.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Model\Sensor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
