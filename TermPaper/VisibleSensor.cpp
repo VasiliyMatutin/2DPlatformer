@@ -25,7 +25,7 @@ void VisibleSensor::contactEvent(b2Contact * contact, bool is_begin)
 	}
 }
 
-VisibleSensor::VisibleSensor(std::list<ManualSwitchObj*> _observables, bool _repeat_allowed, bool is_keeping, b2Body * _body, Object * _object) : Sensor(_observables, _repeat_allowed, is_keeping, _body),
+VisibleSensor::VisibleSensor(std::list<ManualSwitchObj*> _observables, bool _repeat_allowed, bool is_keeping, b2Body * _body, Object * _object, std::vector<Action> _stages) : Sensor(_observables, _repeat_allowed, is_keeping, _body, _stages),
 	object(_object)
 {
 	_body->SetUserData(this);

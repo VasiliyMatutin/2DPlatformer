@@ -1,5 +1,3 @@
-#define _USE_MATH_DEFINES
-#include <cmath>
 #include "Viewer.h"
 #include "WinSingleton.h"
 
@@ -92,7 +90,7 @@ void Viewer::update()
 			flexible_sprite[i].setOrigin(sf::Vector2f(it.width / 2, it.height / 2));
 			flexible_sprite[i].setTextureRect(rect);
 			flexible_sprite[i].setPosition(it.x, it.y);
-			flexible_sprite[i].setRotation(180 / M_PI * it.rotation);
+			flexible_sprite[i].setRotation(RADTOGRAD * it.rotation);
 			window->draw(flexible_sprite[i]);
 			i++;
 		}
@@ -111,7 +109,7 @@ void Viewer::centerViewOnHero()
 	{
 		hero_x = size.x / 2;
 	}
-	if (hero_x > max_size.x - size.x / 2)
+	else if (hero_x > max_size.x - size.x / 2)
 	{
 		hero_x = max_size.x - size.x / 2;
 	}
@@ -119,7 +117,7 @@ void Viewer::centerViewOnHero()
 	{
 		hero_y = size.y / 2;
 	}
-	if (hero_y > max_size.y - size.y / 2)
+	else if (hero_y > max_size.y - size.y / 2)
 	{
 		hero_y = max_size.y - size.y / 2;
 	}

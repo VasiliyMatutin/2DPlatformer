@@ -1,6 +1,6 @@
 #include "ManualSwitchObj.h"
 
-void ManualSwitchObj::makeAction()
+void ManualSwitchObj::makeAction(Action)
 {
 	is_active = !is_active;
 }

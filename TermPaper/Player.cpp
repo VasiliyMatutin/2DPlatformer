@@ -1,18 +1,19 @@
 #include "Player.h"
 
-Player::Player(int _max_frame, int _level_width, int _level_height, double _current_frequency, b2Body* _body, Object* _object, int _fixed_speed) : NonStaticObj(_level_width, _level_height, _body, _object, _fixed_speed),
-max_frame(_max_frame),
-current_frequency(_current_frequency),
-x_speed(0),
-delta_x_speed(0),
-img_row(3),
-on_ground(0),
-is_animated(1)
+Player::Player(int _max_frame, int _level_width, int _level_height, double _current_frequency, b2Body* _body, Object* _object, int _fixed_speed) : NonStaticObj(_level_width, _level_height, _body, _object),
+	max_frame(_max_frame),
+	fixed_speed(_fixed_speed),
+	current_frequency(_current_frequency),
+	x_speed(0),
+	delta_x_speed(0),
+	img_row(3),
+	on_ground(0),
+	is_animated(1)
 {
-	body->GetFixtureList()->SetDensity(10.0f);
+	body->GetFixtureList()->SetDensity(1.0f);
 	body->GetFixtureList()->SetFriction(0.3f);
 	body->ResetMassData();
-	body->SetFixedRotation(1);
+	body->SetFixedRotation(true);
 	body->SetUserData(this);
 }
 

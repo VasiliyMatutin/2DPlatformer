@@ -14,7 +14,7 @@ void ManualPlatform::update()
 	}
 }
 
-void ManualPlatform::makeAction()
+void ManualPlatform::makeAction(Action)
 {
 	if (ManualSwitchObj::is_active == false)
 	{

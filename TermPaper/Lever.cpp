@@ -18,14 +18,20 @@ void Lever::contactEvent(b2Contact * contact, bool is_begin)
 	}
 }
 
-Lever::Lever(std::list<ManualSwitchObj*> _observables, bool _repeat_allowed, b2Body * _body, Object * _object, Player** _current_player):
+Lever::Lever(std::list<ManualSwitchObj*> _observables, bool _repeat_allowed, b2Body * _body, Object * _object, Player** _current_player, std::vector<Action> _stages):
 	object(_object),
 	current_player(_current_player),
 	observables(_observables),
 	repeat_allowed(_repeat_allowed),
-	body(_body)
+	body(_body),
+	stages(_stages),
+	stage_iter(0)
 {
 	body->SetUserData(this);
+	if (stages.empty())
+	{
+		stages.push_back(Action::Default);
+	}
 }
 
 void Lever::activate()
@@ -46,9 +52,13 @@ void Lever::activate()
 			}
 			for (auto it : observables)
 			{
-				it->makeAction();
+				it->makeAction(stages[stage_iter]);
 			}
-			return;
+			if (stage_iter == stages.size() - 1)
+			{
+				stage_iter = -1;
+			}
+			stage_iter++;
 		}
 	}
 }

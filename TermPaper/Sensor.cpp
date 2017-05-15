@@ -4,7 +4,7 @@ void Sensor::contactEvent(b2Contact * contact, bool is_begin)
 {
 	if (contact->GetFixtureA()->GetBody()->GetUserData() != nullptr)
 	{
-		if (is_begin == 1)
+		if (is_begin == true)
 		{
 			is_pressed++;
 			if (is_pressed == 1)
@@ -21,23 +21,27 @@ void Sensor::contactEvent(b2Contact * contact, bool is_begin)
 				}
 				for (auto it : observables)
 				{
-					it->makeAction();
+					it->makeAction(stages[stage_iter]);
 				}
 				return;
 			}
 		}
-
-		if (is_begin == false)
+		else
 		{
 			is_pressed--;
 			if (is_keeping == true)
 			{
 				for (auto it : observables)
 				{
-					it->makeAction();
+					it->makeAction(stages[stage_iter]);
 				}
 			}
 		}
+		if (stage_iter == stages.size() - 1)
+		{
+			stage_iter = -1;
+		}
+		stage_iter++;
 	}
 	else
 	{
@@ -45,11 +49,18 @@ void Sensor::contactEvent(b2Contact * contact, bool is_begin)
 	}
 }
 
-Sensor::Sensor(std::list<ManualSwitchObj*> _observables, bool _repeat_allowed, bool is_keeping, b2Body * _body):
+Sensor::Sensor(std::list<ManualSwitchObj*> _observables, bool _repeat_allowed, bool _is_keeping, b2Body * _body, std::vector<Action> _stages):
 	observables(_observables),
 	repeat_allowed(_repeat_allowed),
-	is_keeping(is_keeping),
-	is_pressed(0)
+	is_keeping(_is_keeping),
+	is_pressed(0),
+	stages(_stages),
+	stage_iter(0)
 {
 	_body->SetUserData(this);
+	if (stages.empty())
+	{
+		stages.push_back(Action::Default);
+	}
 }
+

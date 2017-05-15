@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#
 
 struct TilesetImg
 {
@@ -14,3 +15,6 @@ struct Object
 };
 
 static const int PIXEL_PER_METER = 32;
+static const double GRADTORAD = 3.14159265358979323846 / 180;
+static const double RADTOGRAD = 1 / GRADTORAD;
+

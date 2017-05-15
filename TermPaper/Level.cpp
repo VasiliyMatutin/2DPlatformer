@@ -1,6 +1,3 @@
-#define _USE_MATH_DEFINES
-#include <cmath>
-
 #include "Level.h"
 #include <iostream>
 #include <sstream>
@@ -21,22 +18,6 @@ Level::~Level()
 	delete level_world;
 	delete player;
 	delete my_contact_listener_ptr;
-	for (auto it : platform_list)
-	{
-		delete it;
-	}
-	for (auto it : sensor_list)
-	{
-		delete it;
-	}
-	for (auto it : lever_list)
-	{
-		delete it;
-	}
-	for (auto it : timer_list)
-	{
-		delete it;
-	}
 }
 
 std::list<Object>& Level::getUnchangeableObjectList()
@@ -61,7 +42,7 @@ Player * Level::returnActivePlayer()
 
 void Level::tryToSwitchLever()
 {
-	for (auto it : lever_list)
+	for (auto it : storage.lever_list)
 	{
 		it->activate();
 	}
@@ -70,11 +51,15 @@ void Level::tryToSwitchLever()
 void Level::update()
 {
 	level_world->Step(1.0f / 60.0f, 5, 5);
-	for (auto it : non_static_objects)
+	for (auto it : storage.non_static_objects)
 	{
 		it->update();
 	}
-	for (auto it : timer_list)
+	for (auto it : storage.timer_list)
+	{
+		it->update();
+	}
+	for (auto it : storage.bridge_list)
 	{
 		it->update();
 	}
@@ -240,14 +225,14 @@ void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 		tmp_obj.y = atof(object->Attribute("y")) + tmp_obj.height / 2;
 		body_def.position.Set(tmp_obj.x / PIXEL_PER_METER, tmp_obj.y / PIXEL_PER_METER);
 		shape.SetAsBox(tmp_obj.width / 2 / PIXEL_PER_METER, tmp_obj.height / 2 / PIXEL_PER_METER);
-		double rotation = 0;
 		if (b_type == BodyType::DYNAMIC)
 		{
+			double rotation = 0;
 			if (object->Attribute("rotation") != nullptr)
 			{
 				rotation = atof(object->Attribute("rotation"));
-				body_def.angle = rotation * M_PI / 180;
 			}
+			body_def.angle = rotation * GRADTORAD;
 			body_def.fixedRotation = false;
 		}
 		else
@@ -257,8 +242,7 @@ void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 		b2Body* body = level_world->CreateBody(&body_def);
 		if (b_type != BodyType::STATIC && b_type != BodyType::SENSOR)
 		{
-			tinyxml2::XMLElement *properties = object->FirstChildElement("properties");
-			images.push_back(findAmongSiblings(properties->FirstChildElement("property"), std::string("image"))->Attribute("value"));
+			images.push_back(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("image"))->Attribute("value"));
 			tmp_obj.number_in_image_list = images.size() - 1;
 
 			b2FixtureDef fixture_def;
@@ -269,40 +253,31 @@ void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 			if (std::string(object->Attribute("type")) == std::string("player"))
 			{
 				player = new Player(8, level_width*tile_width, level_height*tile_height, 0.2, body, &changeable_objects.back(), 4);
-				non_static_objects.push_back(player);
+				storage.non_static_objects.push_back(player);
 			}
-			else if (std::string(object->Attribute("type")) == std::string("platform")) // create platform using xml file
+			else if (std::string(object->Attribute("type")) == std::string("platform"))
 			{
-				bool is_rounded = 0;
-				std::vector<std::pair<double, double>> traj_coord = buildTrajectory(objectgroup, findAmongSiblings(properties->FirstChildElement("property"), std::string("trajectory"))->Attribute("value"), &is_rounded);
-				int speed = atoi(findAmongSiblings(properties->FirstChildElement("property"), std::string("speed"))->Attribute("value"));
-				int steps = atoi(findAmongSiblings(properties->FirstChildElement("property"), std::string("steps"))->Attribute("value"));
-				if (atoi(findAmongSiblings(properties->FirstChildElement("property"), std::string("is_auto"))->Attribute("value")))
-				{
-					Platform* platform;
-					platform = new Platform(level_width*tile_width, level_height*tile_height, body, &changeable_objects.back(), traj_coord, speed, is_rounded, steps);
-					platform_list.push_back(platform);
-					non_static_objects.push_back(platform_list.back());
-				}
-				else
-				{
-					ManualPlatform* platform = new ManualPlatform(level_width*tile_width, level_height*tile_height, body, &changeable_objects.back(), traj_coord, speed, is_rounded, steps);
-					platform_list.push_back(platform);
-					non_static_objects.push_back(platform_list.back());
-					future_observables.insert(std::pair<std::string, ManualSwitchObj*>(std::string(object->Attribute("name")), platform));
-				}
+				parsePlatform(object,objectgroup,body);
 			}
 			else if (std::string(object->Attribute("type")) == std::string("revolute_bridge"))
 			{
-				
+				shape.SetAsBox(0.01, 0.01);
+				parseBridge(object, body, &body_def, &tmp_obj);
 			}
 		}
 		else
 		{
 			if (b_type == BodyType::SENSOR)
 			{
+				tinyxml2::XMLElement *stages = findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("stages"));
+				std::vector<Action> s_stages;
+				if (stages != nullptr)
+				{
+					s_stages = sensorStagesParser(stringDelimiter(stages->Attribute("value")));
+				}
 				if (std::string(object->Attribute("type")) != std::string("timer"))
 				{
+					//create sensor or lever
 					body_def.type = b2_dynamicBody;
 					b2Body* body2 = level_world->CreateBody(&body_def);
 					b2WeldJointDef wjd;
@@ -313,11 +288,12 @@ void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 					fixture_def.isSensor = true;
 					body2->CreateFixture(&fixture_def);
 					changeable_objects.push_front(tmp_obj);
-					parseSensor(object, body2);
+					parseSensor(object, body2, s_stages);
 				}
 				else
 				{
-					parseTimer(object);
+					//create timer
+					parseTimer(object, s_stages);
 					level_world->DestroyBody(body);
 				}
 			}
@@ -330,7 +306,34 @@ void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 	}
 }
 
-void Level::parseSensor(tinyxml2::XMLElement * object, b2Body * body)
+//load platform definition
+void Level::parsePlatform(tinyxml2::XMLElement * object, tinyxml2::XMLElement * objectgroup, b2Body * body)
+{
+	tinyxml2::XMLElement *properties = object->FirstChildElement("properties");
+	bool is_rounded = 0;
+	std::vector<std::pair<double, double>> traj_coord = buildTrajectory(objectgroup, findAmongSiblings(properties->FirstChildElement("property"), std::string("trajectory"))->Attribute("value"), &is_rounded);
+	int speed = atoi(findAmongSiblings(properties->FirstChildElement("property"), std::string("speed"))->Attribute("value"));
+	int steps = atoi(findAmongSiblings(properties->FirstChildElement("property"), std::string("steps"))->Attribute("value"));
+	if (atoi(findAmongSiblings(properties->FirstChildElement("property"), std::string("is_auto"))->Attribute("value")))
+	{
+		//create auto platform
+		Platform* platform;
+		platform = new Platform(level_width*tile_width, level_height*tile_height, body, &changeable_objects.back(), traj_coord, speed, is_rounded, steps);
+		storage.platform_list.push_back(platform);
+		storage.non_static_objects.push_back(storage.platform_list.back());
+	}
+	else
+	{
+		//create platfrom controlling by sensor
+		ManualPlatform* platform = new ManualPlatform(level_width*tile_width, level_height*tile_height, body, &changeable_objects.back(), traj_coord, speed, is_rounded, steps);
+		storage.platform_list.push_back(platform);
+		storage.non_static_objects.push_back(storage.platform_list.back());
+		storage.future_observables.insert(std::pair<std::string, ManualSwitchObj*>(std::string(object->Attribute("name")), platform));
+	}
+}
+
+//load sensor or lever defenition from xml-file
+void Level::parseSensor(tinyxml2::XMLElement * object, b2Body * body, std::vector<Action> stages)
 {
 	tinyxml2::XMLElement *property = object->FirstChildElement("properties")->FirstChildElement("property");
 	bool repeated_allowed = findAmongSiblings(property, std::string("repeat_allowed"))->BoolAttribute("value");
@@ -338,42 +341,46 @@ void Level::parseSensor(tinyxml2::XMLElement * object, b2Body * body)
 	std::list<ManualSwitchObj*> observables;
 	if (observables_property)
 	{
-		std::string observables_str = observables_property->Attribute("value");
-		std::istringstream iss(observables_str);
-		std::vector<std::string> results((std::istream_iterator<std::string>(iss)), {});
+		//add observable element
+		std::vector<std::string> results = stringDelimiter(observables_property->Attribute("value"));
 		for (auto it : results)
 		{
-			observables.push_back(future_observables.find(it)->second);
+			observables.push_back(storage.future_observables.find(it)->second);
 		}
 	}
 	if (object->Attribute("type") == std::string("sensor"))
 	{
+		//create sensor
 		bool is_keeping = findAmongSiblings(property, std::string("is_keeping"))->BoolAttribute("value");
 		bool is_visible = findAmongSiblings(property, std::string("is_visible"))->BoolAttribute("value");
 		Sensor* sensor;
 		if (is_visible)
 		{
+			//visible sensor
 			images.push_back(findAmongSiblings(property, std::string("image"))->Attribute("value"));
 			changeable_objects.front().number_in_image_list = images.size() - 1;
-			sensor = new VisibleSensor(observables, repeated_allowed, is_keeping, body, &changeable_objects.front());
+			sensor = new VisibleSensor(observables, repeated_allowed, is_keeping, body, &changeable_objects.front(), stages);
 		}
 		else
 		{
-			sensor = new Sensor(observables, repeated_allowed, is_keeping, body);
+			//invisible sensor
+			sensor = new Sensor(observables, repeated_allowed, is_keeping, body, stages);
 			changeable_objects.pop_front();
 		}
-		sensor_list.push_back(sensor);
+		storage.sensor_list.push_back(sensor);
 	}
 	else
 	{
+		//create lever - sensor switching by player
 		images.push_back(findAmongSiblings(property, std::string("image"))->Attribute("value"));
 		changeable_objects.front().number_in_image_list = images.size() - 1;
-		Lever* lever = new Lever(observables, repeated_allowed, body, &changeable_objects.front(), &player);
-		lever_list.push_back(lever);
+		Lever* lever = new Lever(observables, repeated_allowed, body, &changeable_objects.front(), &player, stages);
+		storage.lever_list.push_back(lever);
 	}
 }
 
-void Level::parseTimer(tinyxml2::XMLElement * object)
+//load timer
+void Level::parseTimer(tinyxml2::XMLElement * object, std::vector<Action> stages)
 {
 	tinyxml2::XMLElement *property = object->FirstChildElement("properties")->FirstChildElement("property");
 	bool is_rounded = findAmongSiblings(property, std::string("is_rounded"))->BoolAttribute("value");
@@ -381,26 +388,123 @@ void Level::parseTimer(tinyxml2::XMLElement * object)
 	std::list<ManualSwitchObj*> observables;
 	if (observables_property)
 	{
-		std::string observables_str = observables_property->Attribute("value");
-		std::istringstream iss(observables_str);
-		std::vector<std::string> results((std::istream_iterator<std::string>(iss)), {});
+		std::vector<std::string> results = stringDelimiter(observables_property->Attribute("value"));
 		for (auto it : results)
 		{
-			observables.push_back(future_observables.find(it)->second);
+			observables.push_back(storage.future_observables.find(it)->second);
 		}
 	}
+	//load timer stages in seconds
 	std::vector<double> stages_duration;
-	std::string stages_duration_str = findAmongSiblings(property, std::string("stages"))->Attribute("value");
-	std::istringstream iss(stages_duration_str);
-	std::vector<std::string> results((std::istream_iterator<std::string>(iss)), {});
+	std::vector<std::string> results = stringDelimiter(findAmongSiblings(property, std::string("time_stages"))->Attribute("value"));
 	for (auto it : results)
 	{
 		stages_duration.push_back(stod(it));
 	}
-	Timer* timer = new Timer(observables,stages_duration,is_rounded);
-	timer_list.push_back(timer);
+	Timer* timer = new Timer(observables,stages_duration,is_rounded, stages);
+	storage.timer_list.push_back(timer);
 }
 
+//load bridge
+void Level::parseBridge(tinyxml2::XMLElement * object, b2Body * body, b2BodyDef* body_def, Object* tmp_obj)
+{
+	tinyxml2::XMLElement *property = object->FirstChildElement("properties")->FirstChildElement("property");
+	std::string ancor = findAmongSiblings(property, "ancor")->Attribute("value");
+	double tmpx = 0, tmpy = 0;
+	std::string::size_type pos = ancor.find(','); // devide x & y coordinates
+	bool x_left = stoi(ancor.substr(0, pos)); // in poliline point
+	bool y_top = stoi(ancor.substr(pos + 1));
+	if (x_left)
+	{
+		tmpx = 1;
+	}
+	else
+	{
+		tmpx = -1;
+	}
+	if (y_top)
+	{
+		tmpy = 1;
+	}
+	else
+	{
+		tmpy = -1;
+	}
+	tmpx = tmpx*tmp_obj->width / 2;
+	tmpy = tmpy*tmp_obj->height / 2;
+
+	body_def->position.Set((tmp_obj->x + tmpx) / PIXEL_PER_METER, (tmp_obj->y + tmpy) / PIXEL_PER_METER);
+	body_def->type = b2_staticBody;
+	b2Body* body2 = level_world->CreateBody(body_def);
+	b2RevoluteJointDef rev_def;
+	rev_def.bodyA = body;
+	rev_def.bodyB = body2;
+
+	rev_def.localAnchorA.Set(tmpx / PIXEL_PER_METER, tmpy / PIXEL_PER_METER);
+	// establish a limit minimum corner
+	rev_def.lowerAngle = std::stod(findAmongSiblings(property, "min_angle")->Attribute("value"))*GRADTORAD;
+	rev_def.upperAngle = std::stod(findAmongSiblings(property, "max_angle")->Attribute("value"))*GRADTORAD;
+	// include application of limits of corners
+	rev_def.enableLimit = true;
+	// expose the moment of force (motor power)
+	rev_def.maxMotorTorque = body->GetGravityScale()*body->GetMass()*1000;
+	// angular speed
+	rev_def.motorSpeed = std::stod(findAmongSiblings(property, "speed")->Attribute("value"));
+	b2RevoluteJoint* bridge_joint = (b2RevoluteJoint*)level_world->CreateJoint(&rev_def);
+	double motor_speed = rev_def.motorSpeed;
+	if (abs(rev_def.lowerAngle) > abs(rev_def.upperAngle))
+	{
+		motor_speed = -motor_speed;
+	}
+	//create bridge
+	RevoluteBridge* rb = new RevoluteBridge(body, &changeable_objects.back(), bridge_joint, motor_speed);
+	storage.bridge_list.push_back(rb);
+	storage.future_observables.insert(std::pair<std::string, ManualSwitchObj*>(std::string(object->Attribute("name")), rb));
+	//make initial action
+	std::string init_state = findAmongSiblings(property, "init_state")->Attribute("value");
+	if (init_state == std::string("up"))
+	{
+		rb->makeAction(Action::Up);
+	}
+	else if (init_state == std::string("down"))
+	{
+		rb->makeAction(Action::Down);
+	}
+	else
+	{
+		rb->makeAction(Action::Off);
+	}
+}
+
+std::vector<Action> Level::sensorStagesParser(std::vector<std::string> stages)
+{
+	std::vector<Action> result;
+	for (auto it : stages)
+	{
+		if (it == std::string("up"))
+		{
+			result.push_back(Action::Up);
+		}
+		else if (it == std::string("down"))
+		{
+			result.push_back(Action::Down);
+		}
+		else if (it == std::string("off"))
+		{
+			result.push_back(Action::Off);
+		}
+	}
+	return result;
+}
+
+std::vector<std::string> Level::stringDelimiter(std::string init_str)
+{
+	std::istringstream iss(init_str);
+	std::vector<std::string> results((std::istream_iterator<std::string>(iss)), {});
+	return results;
+}
+
+//find an element in XML-file among similar
 tinyxml2::XMLElement* Level::findAmongSiblings(tinyxml2::XMLElement* element, std::string name)
 {
 	while (element)
@@ -411,6 +515,7 @@ tinyxml2::XMLElement* Level::findAmongSiblings(tinyxml2::XMLElement* element, st
 	return nullptr;
 }
 
+//load trajectory for platform
 std::vector<std::pair<double, double>> Level::buildTrajectory(tinyxml2::XMLElement * objectgroup, std::string trajectory_name, bool* is_rounded)
 {
 	tinyxml2::XMLElement *trajectory = findAmongSiblings(objectgroup->FirstChildElement("object"), trajectory_name); // build trajectory for platform 
