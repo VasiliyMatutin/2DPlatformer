@@ -9,8 +9,10 @@ img_row(3),
 on_ground(0),
 is_animated(1)
 {
-	body->GetFixtureList()->SetDensity(1.0f);
-	body->GetFixtureList()->SetFriction(0.0f);
+	body->GetFixtureList()->SetDensity(10.0f);
+	body->GetFixtureList()->SetFriction(0.3f);
+	body->ResetMassData();
+	body->SetFixedRotation(1);
 	body->SetUserData(this);
 }
 
@@ -107,6 +109,7 @@ void Player::update()
 	tmp = body->GetPosition();
 	object->x = tmp.x * PIXEL_PER_METER;
 	object->y = tmp.y * PIXEL_PER_METER;
+	object->rotation = body->GetAngle();
 	if (on_ground && x_speed != 0 && is_animated)
 	{
 		current_frame += current_frequency;

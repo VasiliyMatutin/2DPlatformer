@@ -1,10 +1,12 @@
+#define _USE_MATH_DEFINES
+#include <cmath>
+
 #include "Level.h"
 #include <iostream>
 #include <sstream>
 #include <vector>
 #include <iterator>
 #include "ManualPlatform.h"
-
 
 Level::Level()
 {
@@ -67,7 +69,7 @@ void Level::tryToSwitchLever()
 
 void Level::update()
 {
-	level_world->Step(1.0f / 60.0f, 1, 1);
+	level_world->Step(1.0f / 60.0f, 5, 5);
 	for (auto it : non_static_objects)
 	{
 		it->update();
@@ -218,7 +220,6 @@ void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 		}
 		b2BodyDef body_def;
 		b2PolygonShape shape;
-		body_def.fixedRotation = true;
 		switch (b_type)
 		{
 		case BodyType::STATIC:
@@ -232,12 +233,27 @@ void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 			body_def.type = b2_dynamicBody;
 			break;
 		}
+		tmp_obj.rotation = 0;
 		tmp_obj.width = atof(object->Attribute("width"));
 		tmp_obj.height = atof(object->Attribute("height"));
 		tmp_obj.x = atof(object->Attribute("x")) + tmp_obj.width / 2;
 		tmp_obj.y = atof(object->Attribute("y")) + tmp_obj.height / 2;
 		body_def.position.Set(tmp_obj.x / PIXEL_PER_METER, tmp_obj.y / PIXEL_PER_METER);
 		shape.SetAsBox(tmp_obj.width / 2 / PIXEL_PER_METER, tmp_obj.height / 2 / PIXEL_PER_METER);
+		double rotation = 0;
+		if (b_type == BodyType::DYNAMIC)
+		{
+			if (object->Attribute("rotation") != nullptr)
+			{
+				rotation = atof(object->Attribute("rotation"));
+				body_def.angle = rotation * M_PI / 180;
+			}
+			body_def.fixedRotation = false;
+		}
+		else
+		{
+			body_def.fixedRotation = true;
+		}
 		b2Body* body = level_world->CreateBody(&body_def);
 		if (b_type != BodyType::STATIC && b_type != BodyType::SENSOR)
 		{
@@ -276,6 +292,10 @@ void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 					future_observables.insert(std::pair<std::string, ManualSwitchObj*>(std::string(object->Attribute("name")), platform));
 				}
 			}
+			else if (std::string(object->Attribute("type")) == std::string("revolute_bridge"))
+			{
+				
+			}
 		}
 		else
 		{
@@ -313,7 +333,7 @@ void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 void Level::parseSensor(tinyxml2::XMLElement * object, b2Body * body)
 {
 	tinyxml2::XMLElement *property = object->FirstChildElement("properties")->FirstChildElement("property");
-	bool repeated_allowed = atoi(findAmongSiblings(property, std::string("repeat_allowed"))->Attribute("value"));
+	bool repeated_allowed = findAmongSiblings(property, std::string("repeat_allowed"))->BoolAttribute("value");
 	tinyxml2::XMLElement *observables_property = findAmongSiblings(property, std::string("observables"));
 	std::list<ManualSwitchObj*> observables;
 	if (observables_property)
@@ -328,8 +348,8 @@ void Level::parseSensor(tinyxml2::XMLElement * object, b2Body * body)
 	}
 	if (object->Attribute("type") == std::string("sensor"))
 	{
-		bool is_keeping = atoi(findAmongSiblings(property, std::string("is_keeping"))->Attribute("value"));
-		bool is_visible = atoi(findAmongSiblings(property, std::string("is_visible"))->Attribute("value"));
+		bool is_keeping = findAmongSiblings(property, std::string("is_keeping"))->BoolAttribute("value");
+		bool is_visible = findAmongSiblings(property, std::string("is_visible"))->BoolAttribute("value");
 		Sensor* sensor;
 		if (is_visible)
 		{
@@ -356,7 +376,7 @@ void Level::parseSensor(tinyxml2::XMLElement * object, b2Body * body)
 void Level::parseTimer(tinyxml2::XMLElement * object)
 {
 	tinyxml2::XMLElement *property = object->FirstChildElement("properties")->FirstChildElement("property");
-	bool is_rounded = atoi(findAmongSiblings(property, std::string("is_rounded"))->Attribute("value"));
+	bool is_rounded = findAmongSiblings(property, std::string("is_rounded"))->BoolAttribute("value");
 	tinyxml2::XMLElement *observables_property = findAmongSiblings(property, std::string("observables"));
 	std::list<ManualSwitchObj*> observables;
 	if (observables_property)

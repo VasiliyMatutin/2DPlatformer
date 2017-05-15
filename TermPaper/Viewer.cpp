@@ -1,6 +1,7 @@
+#define _USE_MATH_DEFINES
+#include <cmath>
 #include "Viewer.h"
 #include "WinSingleton.h"
-#include <iostream>
 
 Viewer::Viewer()
 {
@@ -88,8 +89,10 @@ void Viewer::update()
 			rect.height = it.height;
 			rect.left = it.left;
 			rect.width = it.width;
+			flexible_sprite[i].setOrigin(sf::Vector2f(it.width / 2, it.height / 2));
 			flexible_sprite[i].setTextureRect(rect);
-			flexible_sprite[i].setPosition(it.x - it.width/2, it.y - it.height/2);
+			flexible_sprite[i].setPosition(it.x, it.y);
+			flexible_sprite[i].setRotation(180 / M_PI * it.rotation);
 			window->draw(flexible_sprite[i]);
 			i++;
 		}
