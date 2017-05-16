@@ -16,7 +16,6 @@ Level::Level()
 Level::~Level()
 {
 	delete level_world;
-	delete player;
 	delete my_contact_listener_ptr;
 }
 
@@ -56,10 +55,6 @@ void Level::update()
 		it->update();
 	}
 	for (auto it : storage.timer_list)
-	{
-		it->update();
-	}
-	for (auto it : storage.bridge_list)
 	{
 		it->update();
 	}
@@ -259,7 +254,7 @@ void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 			{
 				parsePlatform(object,objectgroup,body);
 			}
-			else if (std::string(object->Attribute("type")) == std::string("revolute_bridge"))
+			else if (std::string(object->Attribute("type")) == std::string("revolute_bridge") || std::string(object->Attribute("type")) == std::string("partition"))
 			{
 				shape.SetAsBox(0.01, 0.01);
 				parseBridge(object, body, &body_def, &tmp_obj);
@@ -319,15 +314,13 @@ void Level::parsePlatform(tinyxml2::XMLElement * object, tinyxml2::XMLElement * 
 		//create auto platform
 		Platform* platform;
 		platform = new Platform(level_width*tile_width, level_height*tile_height, body, &changeable_objects.back(), traj_coord, speed, is_rounded, steps);
-		storage.platform_list.push_back(platform);
-		storage.non_static_objects.push_back(storage.platform_list.back());
+		storage.non_static_objects.push_back(platform);
 	}
 	else
 	{
 		//create platfrom controlling by sensor
 		ManualPlatform* platform = new ManualPlatform(level_width*tile_width, level_height*tile_height, body, &changeable_objects.back(), traj_coord, speed, is_rounded, steps);
-		storage.platform_list.push_back(platform);
-		storage.non_static_objects.push_back(storage.platform_list.back());
+		storage.non_static_objects.push_back(platform);
 		storage.future_observables.insert(std::pair<std::string, ManualSwitchObj*>(std::string(object->Attribute("name")), platform));
 	}
 }
@@ -367,7 +360,6 @@ void Level::parseSensor(tinyxml2::XMLElement * object, b2Body * body, std::vecto
 			sensor = new Sensor(observables, repeated_allowed, is_keeping, body, stages);
 			changeable_objects.pop_front();
 		}
-		storage.sensor_list.push_back(sensor);
 	}
 	else
 	{
@@ -405,34 +397,14 @@ void Level::parseTimer(tinyxml2::XMLElement * object, std::vector<Action> stages
 	storage.timer_list.push_back(timer);
 }
 
-//load bridge
+//load bridge or partition
 void Level::parseBridge(tinyxml2::XMLElement * object, b2Body * body, b2BodyDef* body_def, Object* tmp_obj)
 {
 	tinyxml2::XMLElement *property = object->FirstChildElement("properties")->FirstChildElement("property");
 	std::string ancor = findAmongSiblings(property, "ancor")->Attribute("value");
-	double tmpx = 0, tmpy = 0;
-	std::string::size_type pos = ancor.find(','); // devide x & y coordinates
-	bool x_left = stoi(ancor.substr(0, pos)); // in poliline point
-	bool y_top = stoi(ancor.substr(pos + 1));
-	if (x_left)
-	{
-		tmpx = 1;
-	}
-	else
-	{
-		tmpx = -1;
-	}
-	if (y_top)
-	{
-		tmpy = 1;
-	}
-	else
-	{
-		tmpy = -1;
-	}
-	tmpx = tmpx*tmp_obj->width / 2;
-	tmpy = tmpy*tmp_obj->height / 2;
-
+	std::string::size_type pos = ancor.find(' '); // devide x & y coordinates
+	double tmpx = stod(ancor.substr(0, pos))*tmp_obj->width / 2;
+	double tmpy = stod(ancor.substr(pos + 1))*tmp_obj->height / 2;;
 	body_def->position.Set((tmp_obj->x + tmpx) / PIXEL_PER_METER, (tmp_obj->y + tmpy) / PIXEL_PER_METER);
 	body_def->type = b2_staticBody;
 	b2Body* body2 = level_world->CreateBody(body_def);
@@ -442,37 +414,53 @@ void Level::parseBridge(tinyxml2::XMLElement * object, b2Body * body, b2BodyDef*
 
 	rev_def.localAnchorA.Set(tmpx / PIXEL_PER_METER, tmpy / PIXEL_PER_METER);
 	// establish a limit minimum corner
-	rev_def.lowerAngle = std::stod(findAmongSiblings(property, "min_angle")->Attribute("value"))*GRADTORAD;
-	rev_def.upperAngle = std::stod(findAmongSiblings(property, "max_angle")->Attribute("value"))*GRADTORAD;
-	// include application of limits of corners
+	rev_def.lowerAngle = std::stod(findAmongSiblings(property, "min_angle")->Attribute("value"));
+	rev_def.upperAngle = std::stod(findAmongSiblings(property, "max_angle")->Attribute("value"));
 	rev_def.enableLimit = true;
-	// expose the moment of force (motor power)
-	rev_def.maxMotorTorque = body->GetGravityScale()*body->GetMass()*1000;
-	// angular speed
-	rev_def.motorSpeed = std::stod(findAmongSiblings(property, "speed")->Attribute("value"));
+	if (rev_def.lowerAngle == 0 && rev_def.upperAngle == 360)
+	{
+		rev_def.enableLimit = false;
+	}
+	rev_def.lowerAngle *= GRADTORAD;
+	rev_def.upperAngle *= GRADTORAD;
+	// include application of limits of corners
 	b2RevoluteJoint* bridge_joint = (b2RevoluteJoint*)level_world->CreateJoint(&rev_def);
-	double motor_speed = rev_def.motorSpeed;
-	if (abs(rev_def.lowerAngle) > abs(rev_def.upperAngle))
+	if (std::string(object->Attribute("type")) == std::string("revolute_bridge"))
 	{
-		motor_speed = -motor_speed;
-	}
-	//create bridge
-	RevoluteBridge* rb = new RevoluteBridge(body, &changeable_objects.back(), bridge_joint, motor_speed);
-	storage.bridge_list.push_back(rb);
-	storage.future_observables.insert(std::pair<std::string, ManualSwitchObj*>(std::string(object->Attribute("name")), rb));
-	//make initial action
-	std::string init_state = findAmongSiblings(property, "init_state")->Attribute("value");
-	if (init_state == std::string("up"))
-	{
-		rb->makeAction(Action::Up);
-	}
-	else if (init_state == std::string("down"))
-	{
-		rb->makeAction(Action::Down);
+		// expose the moment of force (motor power)
+		bridge_joint->SetMaxMotorTorque(body->GetGravityScale()*body->GetMass() * 1000);
+		// angular speed
+		double motor_speed = std::stod(findAmongSiblings(property, "speed")->Attribute("value"));
+		if (abs(rev_def.lowerAngle) > abs(rev_def.upperAngle))
+		{
+			motor_speed = -motor_speed;
+		}
+		//create bridge
+		RevoluteBridge* rb = new RevoluteBridge(body, &changeable_objects.back(), bridge_joint, motor_speed);
+		storage.non_static_objects.push_back(rb);
+		storage.future_observables.insert(std::pair<std::string, ManualSwitchObj*>(std::string(object->Attribute("name")), rb));
+		//make initial action
+		std::string init_state = findAmongSiblings(property, "init_state")->Attribute("value");
+		if (init_state == std::string("up"))
+		{
+			rb->makeAction(Action::Up);
+		}
+		else if (init_state == std::string("down"))
+		{
+			rb->makeAction(Action::Down);
+		}
+		else
+		{
+			rb->makeAction(Action::Off);
+		}
 	}
 	else
 	{
-		rb->makeAction(Action::Off);
+		body->GetFixtureList()->SetDensity(10.0f);
+		body->ResetMassData();
+		body->SetFixedRotation(false);
+		NonStaticObj* partiton = new NonStaticObj(body, &changeable_objects.back());
+		storage.non_static_objects.push_back(partiton);
 	}
 }
 

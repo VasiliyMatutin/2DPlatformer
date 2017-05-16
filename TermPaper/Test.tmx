@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32" nextobjectid="65">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32" nextobjectid="66">
  <tileset firstgid="1" name="tiles_spritesheet" tilewidth="32" tileheight="32" tilecount="161" columns="7">
   <image source="tiles_spritesheet.png" width="224" height="736"/>
  </tileset>
@@ -75,9 +75,9 @@
     <property name="image" value="player.png"/>
    </properties>
   </object>
-  <object id="62" name="bridge1" type="revolute_bridge" x="193.687" y="385.292" width="156" height="7">
+  <object id="62" name="bridge1" type="revolute_bridge" x="192.187" y="383.292" width="158" height="7">
    <properties>
-    <property name="ancor" value="0,0"/>
+    <property name="ancor" value="-1 -1"/>
     <property name="image" value="platform.png"/>
     <property name="init_state" value="up"/>
     <property name="max_angle" value="90"/>
@@ -85,14 +85,22 @@
     <property name="speed" value="1"/>
    </properties>
   </object>
-  <object id="64" name="bridge2" type="revolute_bridge" x="352.445" y="385.717" width="158" height="7">
+  <object id="64" name="bridge2" type="revolute_bridge" x="353.445" y="383.217" width="157.5" height="7">
    <properties>
-    <property name="ancor" value="1,0"/>
+    <property name="ancor" value="1 -1"/>
     <property name="image" value="platform.png"/>
     <property name="init_state" value="up"/>
     <property name="max_angle" value="0"/>
     <property name="min_angle" value="-90"/>
     <property name="speed" value="1"/>
+   </properties>
+  </object>
+  <object id="65" name="partition1" type="partition" x="481.187" y="484.792" width="8" height="58">
+   <properties>
+    <property name="ancor" value="0 -1"/>
+    <property name="image" value="platform.png"/>
+    <property name="max_angle" value="90"/>
+    <property name="min_angle" value="0"/>
    </properties>
   </object>
  </objectgroup>

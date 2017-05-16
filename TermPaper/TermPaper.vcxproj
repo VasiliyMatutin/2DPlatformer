@@ -77,6 +77,7 @@
     <ClCompile Include="ManualPlatform.cpp" />
     <ClCompile Include="ManualSwitchObj.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="NonStaticObj.cpp" />
     <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RevoluteBridge.cpp" />

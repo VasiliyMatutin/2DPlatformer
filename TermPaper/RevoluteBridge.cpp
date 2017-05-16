@@ -1,8 +1,6 @@
 #include "RevoluteBridge.h"
 
-RevoluteBridge::RevoluteBridge(b2Body * _body, Object * _object, b2RevoluteJoint* _bridge_joint, double _motor_speed):
-	body(_body),
-	object(_object),
+RevoluteBridge::RevoluteBridge(b2Body * _body, Object * _object, b2RevoluteJoint* _bridge_joint, double _motor_speed): NonStaticObj(_body,_object),
 	bridge_joint(_bridge_joint),
 	motor_speed(_motor_speed)
 {
@@ -10,14 +8,6 @@ RevoluteBridge::RevoluteBridge(b2Body * _body, Object * _object, b2RevoluteJoint
 	body->GetFixtureList()->SetFriction(0.3f);
 	body->ResetMassData();
 	body->SetFixedRotation(false);
-}
-
-void RevoluteBridge::update()
-{
-	b2Vec2 tmp = body->GetPosition();
-	object->x = tmp.x * PIXEL_PER_METER;
-	object->y = tmp.y * PIXEL_PER_METER;
-	object->rotation = body->GetAngle();
 }
 
 void RevoluteBridge::makeAction(Action action)

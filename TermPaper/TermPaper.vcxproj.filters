@@ -82,6 +82,9 @@
     <ClCompile Include="RevoluteBridge.cpp">
       <Filter>Model\NonStaticObj\Dynamic obj</Filter>
     </ClCompile>
+    <ClCompile Include="NonStaticObj.cpp">
+      <Filter>Model\NonStaticObj</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tinyxml2.h">

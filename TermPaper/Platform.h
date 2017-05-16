@@ -6,7 +6,7 @@ class Platform : public NonStaticObj
 {
 protected:
 	std::vector<std::pair<double, double>> coord_set;
-	int point_iter, incr, node_number, counter, counter_incr, fixed_speed;
+	int point_iter, incr, node_number, counter, counter_incr, fixed_speed, level_width, level_height;;
 	bool is_rouded, is_active;
 	b2Vec2 tmp;
 	void reverseMoving();

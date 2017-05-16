@@ -1,9 +1,11 @@
 #include "Player.h"
 
-Player::Player(int _max_frame, int _level_width, int _level_height, double _current_frequency, b2Body* _body, Object* _object, int _fixed_speed) : NonStaticObj(_level_width, _level_height, _body, _object),
+Player::Player(int _max_frame, int _level_width, int _level_height, double _current_frequency, b2Body* _body, Object* _object, int _fixed_speed) : NonStaticObj(_body, _object),
 	max_frame(_max_frame),
 	fixed_speed(_fixed_speed),
 	current_frequency(_current_frequency),
+	level_width(_level_width),
+	level_height(_level_height),
 	x_speed(0),
 	delta_x_speed(0),
 	img_row(3),
