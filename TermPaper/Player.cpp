@@ -12,6 +12,9 @@ Player::Player(int _max_frame, int _level_width, int _level_height, double _curr
 	on_ground(0),
 	is_animated(1)
 {
+	b2Filter filter = body->GetFixtureList()->GetFilterData();
+	filter.categoryBits = PLAYER;
+	body->GetFixtureList()->SetFilterData(filter);
 	body->GetFixtureList()->SetDensity(1.0f);
 	body->GetFixtureList()->SetFriction(0.3f);
 	body->ResetMassData();
@@ -109,10 +112,7 @@ void Player::update()
 	else x_speed = tmp.x;
 	if (object->x + object->width / 2 >= level_width - 1 && x_speed > 0 || object->x - object->width / 2 <= 1 && x_speed < 0) x_speed = 0; //check of collisions with level boundaries
 	body->SetLinearVelocity(b2Vec2(x_speed, tmp.y));
-	tmp = body->GetPosition();
-	object->x = tmp.x * PIXEL_PER_METER;
-	object->y = tmp.y * PIXEL_PER_METER;
-	object->rotation = body->GetAngle();
+	NonStaticObj::update();
 	if (on_ground && x_speed != 0 && is_animated)
 	{
 		current_frame += current_frequency;

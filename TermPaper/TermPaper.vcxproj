@@ -48,11 +48,11 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Василий\Documents\Visual Studio 2015\Projects\TermPaper\TermPaper\Box2D;SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>TinyXML;Box2D;SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;opengl32.lib;freetype.lib;jpeg.lib;winmm.lib;gdi32.lib;Box2D.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\Василий\Documents\Visual Studio 2015\Projects\TermPaper\TermPaper\Box2D\Build\vs2015\bin\x32\Debug;SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;opengl32.lib;freetype.lib;jpeg.lib;winmm.lib;gdi32.lib;Box2D.lib;tinyxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>TinyXML\lib;Box2D\Build\vs2015\bin\x32\Debug;SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -70,6 +70,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ContactListener.cpp" />
+    <ClCompile Include="ContactObject.cpp" />
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Lever.cpp" />
@@ -78,13 +79,13 @@
     <ClCompile Include="ManualSwitchObj.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="NonStaticObj.cpp" />
+    <ClCompile Include="Partition.cpp" />
     <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RevoluteBridge.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="VisibleSensor.cpp" />
     <ClCompile Include="Sensor.cpp" />
-    <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="Viewer.cpp" />
     <ClCompile Include="WinSingleton.cpp" />
   </ItemGroup>
@@ -101,13 +102,13 @@
     <ClInclude Include="Level.h" />
     <ClInclude Include="LevelBox.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="Partition.h" />
     <ClInclude Include="Platform.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="RevoluteBridge.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="VisibleSensor.h" />
     <ClInclude Include="Sensor.h" />
-    <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="Viewer.h" />
     <ClInclude Include="WinSingleton.h" />
   </ItemGroup>

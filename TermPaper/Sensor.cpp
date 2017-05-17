@@ -2,6 +2,7 @@
 
 void Sensor::contactEvent(b2Contact * contact, bool is_begin)
 {
+	non_run = 0;
 	if (contact->GetFixtureA()->GetBody()->GetUserData() != nullptr)
 	{
 		if (is_begin == true)
@@ -29,7 +30,7 @@ void Sensor::contactEvent(b2Contact * contact, bool is_begin)
 		else
 		{
 			is_pressed--;
-			if (is_keeping == true)
+			if (is_keeping == true && is_pressed == 0)
 			{
 				for (auto it : observables)
 				{
@@ -45,7 +46,7 @@ void Sensor::contactEvent(b2Contact * contact, bool is_begin)
 	}
 	else
 	{
-		throw - 1;
+		non_run = 1;
 	}
 }
 

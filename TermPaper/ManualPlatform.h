@@ -2,7 +2,7 @@
 #include "Platform.h"
 #include "ManualSwitchObj.h"
 
-class ManualPlatform : public ManualSwitchObj, public Platform
+class ManualPlatform : public Platform, public ManualSwitchObj
 {
 private:
 	int node_number, counter, backup_counter=0;

@@ -1,154 +1,159 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Controller">
-      <UniqueIdentifier>{cf0809ce-9fca-43d8-92df-47a26352a7bb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Model">
-      <UniqueIdentifier>{2e10d5b1-0dbf-49a5-b3aa-22fcf4557578}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Viewer">
-      <UniqueIdentifier>{2267193d-6dbd-49bb-83e5-d1c7a7fcd1e0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="main">
       <UniqueIdentifier>{fa6d34c9-b7db-4e24-b0d3-b4de5f0c2728}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Model\NonStaticObj">
+    <Filter Include="main\Controller">
+      <UniqueIdentifier>{cf0809ce-9fca-43d8-92df-47a26352a7bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\Model">
+      <UniqueIdentifier>{2e10d5b1-0dbf-49a5-b3aa-22fcf4557578}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\Model\Level">
+      <UniqueIdentifier>{56b57254-381a-40ae-9ca8-f5cd2445ef13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\Model\Level\NonStaticObj">
       <UniqueIdentifier>{b9a86d96-17e9-4306-8009-0121f711f59a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Model\NonStaticObj\Kinematic obj">
+    <Filter Include="main\Model\Level\NonStaticObj\Kinematic obj">
       <UniqueIdentifier>{11affe0f-786b-4cb4-9f16-40a4d84f2941}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Model\NonStaticObj\Dynamic obj">
+    <Filter Include="main\Model\Level\NonStaticObj\Dynamic obj">
       <UniqueIdentifier>{aab9bf17-29e8-44b4-9058-8d13df1c0bfa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Model\Sensor">
+    <Filter Include="main\Model\Level\Sensor">
       <UniqueIdentifier>{95ff873f-1d73-4bd9-a083-8096eda90869}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\Model\Level\Collision handler">
+      <UniqueIdentifier>{08fcc4c3-2826-4f8a-9201-e102a7a49e25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\Viewer">
+      <UniqueIdentifier>{2267193d-6dbd-49bb-83e5-d1c7a7fcd1e0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="tinyxml2.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
     <ClCompile Include="Controller.cpp">
-      <Filter>Controller</Filter>
+      <Filter>main\Controller</Filter>
     </ClCompile>
     <ClCompile Include="Model.cpp">
-      <Filter>Model</Filter>
-    </ClCompile>
-    <ClCompile Include="Level.cpp">
-      <Filter>Model</Filter>
+      <Filter>main\Model</Filter>
     </ClCompile>
     <ClCompile Include="Viewer.cpp">
-      <Filter>Viewer</Filter>
-    </ClCompile>
-    <ClCompile Include="ContactListener.cpp">
-      <Filter>Model</Filter>
+      <Filter>main\Viewer</Filter>
     </ClCompile>
     <ClCompile Include="WinSingleton.cpp">
-      <Filter>Viewer</Filter>
+      <Filter>main\Viewer</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>main</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>Model\NonStaticObj\Dynamic obj</Filter>
+      <Filter>main\Model\Level\NonStaticObj\Dynamic obj</Filter>
     </ClCompile>
     <ClCompile Include="Platform.cpp">
-      <Filter>Model\NonStaticObj\Kinematic obj</Filter>
+      <Filter>main\Model\Level\NonStaticObj\Kinematic obj</Filter>
     </ClCompile>
     <ClCompile Include="ManualPlatform.cpp">
-      <Filter>Model\NonStaticObj\Kinematic obj</Filter>
-    </ClCompile>
-    <ClCompile Include="ManualSwitchObj.cpp">
-      <Filter>Model\NonStaticObj\Kinematic obj</Filter>
+      <Filter>main\Model\Level\NonStaticObj\Kinematic obj</Filter>
     </ClCompile>
     <ClCompile Include="Sensor.cpp">
-      <Filter>Model\Sensor</Filter>
+      <Filter>main\Model\Level\Sensor</Filter>
     </ClCompile>
     <ClCompile Include="VisibleSensor.cpp">
-      <Filter>Model\Sensor</Filter>
+      <Filter>main\Model\Level\Sensor</Filter>
     </ClCompile>
     <ClCompile Include="Lever.cpp">
-      <Filter>Model\Sensor</Filter>
+      <Filter>main\Model\Level\Sensor</Filter>
     </ClCompile>
     <ClCompile Include="Timer.cpp">
-      <Filter>Model\Sensor</Filter>
+      <Filter>main\Model\Level\Sensor</Filter>
     </ClCompile>
     <ClCompile Include="RevoluteBridge.cpp">
-      <Filter>Model\NonStaticObj\Dynamic obj</Filter>
+      <Filter>main\Model\Level\NonStaticObj\Dynamic obj</Filter>
     </ClCompile>
     <ClCompile Include="NonStaticObj.cpp">
-      <Filter>Model\NonStaticObj</Filter>
+      <Filter>main\Model\Level\NonStaticObj</Filter>
+    </ClCompile>
+    <ClCompile Include="ManualSwitchObj.cpp">
+      <Filter>main\Model\Level\Sensor</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>main\Model\Level</Filter>
+    </ClCompile>
+    <ClCompile Include="ContactListener.cpp">
+      <Filter>main\Model\Level\Collision handler</Filter>
+    </ClCompile>
+    <ClCompile Include="ContactObject.cpp">
+      <Filter>main\Model\Level\Collision handler</Filter>
+    </ClCompile>
+    <ClCompile Include="Partition.cpp">
+      <Filter>main\Model\Level\NonStaticObj\Dynamic obj</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tinyxml2.h">
-      <Filter>Resource Files</Filter>
-    </ClInclude>
     <ClInclude Include="Controller.h">
-      <Filter>Controller</Filter>
+      <Filter>main\Controller</Filter>
     </ClInclude>
     <ClInclude Include="Model.h">
-      <Filter>Model</Filter>
-    </ClInclude>
-    <ClInclude Include="Level.h">
-      <Filter>Model</Filter>
-    </ClInclude>
-    <ClInclude Include="ContactListener.h">
-      <Filter>Model</Filter>
-    </ClInclude>
-    <ClInclude Include="LevelBox.h">
-      <Filter>Model</Filter>
+      <Filter>main\Model</Filter>
     </ClInclude>
     <ClInclude Include="Viewer.h">
-      <Filter>Viewer</Filter>
+      <Filter>main\Viewer</Filter>
     </ClInclude>
     <ClInclude Include="WinSingleton.h">
-      <Filter>Viewer</Filter>
+      <Filter>main\Viewer</Filter>
     </ClInclude>
     <ClInclude Include="Events.h">
       <Filter>main</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>Model\NonStaticObj\Dynamic obj</Filter>
+      <Filter>main\Model\Level\NonStaticObj\Dynamic obj</Filter>
     </ClInclude>
     <ClInclude Include="Platform.h">
-      <Filter>Model\NonStaticObj\Kinematic obj</Filter>
+      <Filter>main\Model\Level\NonStaticObj\Kinematic obj</Filter>
     </ClInclude>
     <ClInclude Include="NonStaticObj.h">
-      <Filter>Model\NonStaticObj</Filter>
-    </ClInclude>
-    <ClInclude Include="ManualSwitchObj.h">
-      <Filter>Model\NonStaticObj\Kinematic obj</Filter>
+      <Filter>main\Model\Level\NonStaticObj</Filter>
     </ClInclude>
     <ClInclude Include="ManualPlatform.h">
-      <Filter>Model\NonStaticObj\Kinematic obj</Filter>
+      <Filter>main\Model\Level\NonStaticObj\Kinematic obj</Filter>
     </ClInclude>
     <ClInclude Include="Sensor.h">
-      <Filter>Model\Sensor</Filter>
+      <Filter>main\Model\Level\Sensor</Filter>
     </ClInclude>
     <ClInclude Include="VisibleSensor.h">
-      <Filter>Model\Sensor</Filter>
+      <Filter>main\Model\Level\Sensor</Filter>
     </ClInclude>
     <ClInclude Include="Lever.h">
-      <Filter>Model\Sensor</Filter>
-    </ClInclude>
-    <ClInclude Include="ContactObject.h">
-      <Filter>Model</Filter>
+      <Filter>main\Model\Level\Sensor</Filter>
     </ClInclude>
     <ClInclude Include="Timer.h">
-      <Filter>Model\Sensor</Filter>
+      <Filter>main\Model\Level\Sensor</Filter>
     </ClInclude>
     <ClInclude Include="RevoluteBridge.h">
-      <Filter>Model\NonStaticObj\Dynamic obj</Filter>
+      <Filter>main\Model\Level\NonStaticObj\Dynamic obj</Filter>
+    </ClInclude>
+    <ClInclude Include="ManualSwitchObj.h">
+      <Filter>main\Model\Level\Sensor</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>main\Model\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelBox.h">
+      <Filter>main\Model\Level</Filter>
     </ClInclude>
     <ClInclude Include="LevelStorage.h">
-      <Filter>Model</Filter>
+      <Filter>main\Model\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="ContactListener.h">
+      <Filter>main\Model\Level\Collision handler</Filter>
+    </ClInclude>
+    <ClInclude Include="ContactObject.h">
+      <Filter>main\Model\Level\Collision handler</Filter>
+    </ClInclude>
+    <ClInclude Include="Partition.h">
+      <Filter>main\Model\Level\NonStaticObj\Dynamic obj</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

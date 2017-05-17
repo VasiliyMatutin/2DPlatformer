@@ -15,3 +15,8 @@ void NonStaticObj::update()
 	object->y = tmp.y * PIXEL_PER_METER;
 	object->rotation = body->GetAngle();
 }
+
+bool NonStaticObj::destroy(b2World * lvl_world)
+{
+	return false;
+}

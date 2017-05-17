@@ -2,11 +2,8 @@
 
 void VisibleSensor::contactEvent(b2Contact * contact, bool is_begin)
 {
-	try
-	{
-		Sensor::contactEvent(contact, is_begin);
-	}
-	catch (int ex)
+	Sensor::contactEvent(contact, is_begin);
+	if (non_run)
 	{
 		return;
 	}

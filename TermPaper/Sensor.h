@@ -10,7 +10,7 @@ class Sensor : public ContactObject
 protected:
 	std::list<ManualSwitchObj*> observables;
 	std::vector<Action> stages;
-	bool repeat_allowed, is_keeping;
+	bool repeat_allowed, is_keeping, non_run;
 	int is_pressed,stage_iter;
 	virtual void contactEvent(b2Contact*, bool);
 public:

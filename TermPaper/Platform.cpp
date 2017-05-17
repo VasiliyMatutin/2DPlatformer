@@ -20,20 +20,6 @@ Platform::Platform(int _level_width, int _level_height, b2Body * _body, Object *
 	object->y = tmp.y * PIXEL_PER_METER;
 }
 
-void Platform::contactEvent(b2Contact * contact, bool is_begin)
-{
-	b2Manifold* contact_information = contact->GetManifold();
-	b2WorldManifold worldManifold;
-	contact->GetWorldManifold(&worldManifold);
-	if (is_begin && contact_information->localNormal.y != 0 && worldManifold.points[0].y - object->y / PIXEL_PER_METER > 0 && body->GetLinearVelocity().y>0)
-	{
-		tmp = body->GetPosition();
-		reverseMoving();
-		counter_incr = -1;
-		return;
-	}
-}
-
 void Platform::update()
 {
 	if (node_number == 0 || counter <= node_number)

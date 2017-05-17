@@ -13,7 +13,6 @@ protected:
 	void toNextPoint();
 public:
 	Platform(int _level_width, int _level_height, b2Body* _body, Object* _object, std::vector<std::pair<double,double>> traj_coord, int _fixed_speed, bool _is_rounded, int _node_number);
-	void contactEvent(b2Contact * contact, bool is_begin);
 	void update();
 	virtual ~Platform();
 };

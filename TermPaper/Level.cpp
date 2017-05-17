@@ -11,6 +11,7 @@ Level::Level()
 	level_world = new b2World(gravity);
 	my_contact_listener_ptr = new MyContactListener;
 	level_world->SetContactListener(my_contact_listener_ptr);
+	storage.to_destroy_list = my_contact_listener_ptr->getToDestroyListPtr();
 }
 
 Level::~Level()
@@ -50,6 +51,16 @@ void Level::tryToSwitchLever()
 void Level::update()
 {
 	level_world->Step(1.0f / 60.0f, 5, 5);
+	int n = 0;
+	for (auto it : *storage.to_destroy_list)
+	{
+		it->destroy(level_world);
+		n++;
+	}
+	for (int i = 0; i < n; i++)
+	{
+		storage.to_destroy_list->pop_front();
+	}
 	for (auto it : storage.non_static_objects)
 	{
 		it->update();
@@ -281,6 +292,7 @@ void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 					b2FixtureDef fixture_def;
 					fixture_def.shape = &shape;
 					fixture_def.isSensor = true;
+					fixture_def.filter.maskBits = PLAYER;
 					body2->CreateFixture(&fixture_def);
 					changeable_objects.push_front(tmp_obj);
 					parseSensor(object, body2, s_stages);
@@ -456,10 +468,7 @@ void Level::parseBridge(tinyxml2::XMLElement * object, b2Body * body, b2BodyDef*
 	}
 	else
 	{
-		body->GetFixtureList()->SetDensity(10.0f);
-		body->ResetMassData();
-		body->SetFixedRotation(false);
-		NonStaticObj* partiton = new NonStaticObj(body, &changeable_objects.back());
+		Partition* partiton = new Partition(body, &changeable_objects.back(), bridge_joint);
 		storage.non_static_objects.push_back(partiton);
 	}
 }
@@ -525,7 +534,7 @@ std::vector<std::pair<double, double>> Level::buildTrajectory(tinyxml2::XMLEleme
 		std::pair<double, double> point(tmp_x / PIXEL_PER_METER, tmp_y / PIXEL_PER_METER);
 		coord_set.push_back(point);
 	}
-	*is_rounded = atoi(findAmongSiblings(trajectory->FirstChildElement("properties")->FirstChildElement("property"), std::string("is_rounded"))->Attribute("value"));
+	*is_rounded = findAmongSiblings(trajectory->FirstChildElement("properties")->FirstChildElement("property"), std::string("is_rounded"))->BoolAttribute("value");
 	return coord_set;
 }
 

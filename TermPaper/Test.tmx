@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32" nextobjectid="66">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32" nextobjectid="69">
  <tileset firstgid="1" name="tiles_spritesheet" tilewidth="32" tileheight="32" tilecount="161" columns="7">
   <image source="tiles_spritesheet.png" width="224" height="736"/>
  </tileset>
@@ -70,12 +70,12 @@
   <object id="21" x="641" y="480" width="29" height="62"/>
  </objectgroup>
  <objectgroup name="Dynamic">
-  <object id="60" name="player" type="player" x="126.695" y="333.567" width="32" height="48">
+  <object id="60" name="player" type="player" x="146.695" y="307.567" width="32" height="48">
    <properties>
     <property name="image" value="player.png"/>
    </properties>
   </object>
-  <object id="62" name="bridge1" type="revolute_bridge" x="192.187" y="383.292" width="158" height="7">
+  <object id="62" name="bridge1" type="revolute_bridge" x="192.687" y="383.292" width="158" height="7">
    <properties>
     <property name="ancor" value="-1 -1"/>
     <property name="image" value="platform.png"/>
@@ -95,7 +95,7 @@
     <property name="speed" value="1"/>
    </properties>
   </object>
-  <object id="65" name="partition1" type="partition" x="481.187" y="484.792" width="8" height="58">
+  <object id="65" name="partition1" type="partition" x="482.687" y="483.792" width="8" height="58">
    <properties>
     <property name="ancor" value="0 -1"/>
     <property name="image" value="platform.png"/>
@@ -114,7 +114,7 @@
     <property name="trajectory" value="trajectory1"/>
    </properties>
   </object>
-  <object id="33" name="trajectory1" x="385" y="352.25">
+  <object id="33" name="trajectory1" x="388" y="353.25">
    <properties>
     <property name="is_rounded" value="0"/>
    </properties>
@@ -133,7 +133,7 @@
    <properties>
     <property name="is_rounded" value="1"/>
    </properties>
-   <polyline points="0,0 0,-65 95,-66 95,-162 -54,-193 -53,-225 -186,-226 -192,-291 -192,-66 -2,-65"/>
+   <polyline points="0,0 0,-65 95,-65 95,-162 -54,-193 -53,-225 -192,-225 -192,-291 93,-290 94,-164"/>
   </object>
   <object id="49" name="trajectory3" x="63" y="223">
    <properties>
