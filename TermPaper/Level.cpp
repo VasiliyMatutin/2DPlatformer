@@ -69,6 +69,10 @@ void Level::update()
 	{
 		it->update();
 	}
+	for (auto it : storage.danger_list)
+	{
+		it->update();
+	}
 }
 
 bool Level::loadLevel(std::string filename)
@@ -179,7 +183,7 @@ void Level::loadObjects(tinyxml2::XMLElement *map)
 		{
 			b_type = BodyType::DYNAMIC;
 		}
-		else if (std::string(objectgroup->Attribute("name")) == std::string("Sensors"))
+		else if (std::string(objectgroup->Attribute("name")) == std::string("Sensors") || std::string(objectgroup->Attribute("name")) == std::string("Dangers"))
 		{
 			//process sensors at the end
 			objectgroup = objectgroup->NextSiblingElement("objectgroup");
@@ -191,6 +195,9 @@ void Level::loadObjects(tinyxml2::XMLElement *map)
 	//process sensors
 	objectgroup = findAmongSiblings(map->FirstChildElement("objectgroup"), std::string("Sensors"));
 	b_type = BodyType::SENSOR;
+	loadObject(objectgroup, b_type);
+	objectgroup = findAmongSiblings(map->FirstChildElement("objectgroup"), std::string("Dangers"));
+	b_type = BodyType::DANGER;
 	loadObject(objectgroup, b_type);
 }
 
@@ -217,6 +224,7 @@ void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 		case BodyType::SENSOR:
 			body_def.type = b2_staticBody;
 			break;
+		case BodyType::DANGER:
 		case BodyType::KINEMATIC:
 			body_def.type = b2_kinematicBody;
 			break;
@@ -225,45 +233,95 @@ void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 			break;
 		}
 		tmp_obj.rotation = 0;
-		tmp_obj.width = atof(object->Attribute("width"));
-		tmp_obj.height = atof(object->Attribute("height"));
+		tmp_obj.width = 0;
+		tmp_obj.height = 0;
+		if (object->Attribute("width") != nullptr && object->Attribute("height"))
+		{
+			tmp_obj.width = atof(object->Attribute("width"));
+			tmp_obj.height = atof(object->Attribute("height"));
+		}
 		tmp_obj.x = atof(object->Attribute("x")) + tmp_obj.width / 2;
 		tmp_obj.y = atof(object->Attribute("y")) + tmp_obj.height / 2;
 		body_def.position.Set(tmp_obj.x / PIXEL_PER_METER, tmp_obj.y / PIXEL_PER_METER);
 		shape.SetAsBox(tmp_obj.width / 2 / PIXEL_PER_METER, tmp_obj.height / 2 / PIXEL_PER_METER);
-		if (b_type == BodyType::DYNAMIC)
+		body_def.fixedRotation = true;
+		b2Body* body = level_world->CreateBody(&body_def);
+
+		b2FixtureDef fixture_def;
+		fixture_def.filter.categoryBits = OTHERS;
+		fixture_def.filter.maskBits = MASK_OTHERS;
+
+		switch (b_type)
+		{
+		case BodyType::STATIC:
+		{
+			fixture_def.shape = &shape;
+			body->CreateFixture(&fixture_def);
+			if (object->Attribute("type")) //////////////////////////////////////////crutch
+			{
+				storage.ground_type.push_back(StaticType::DANGER);
+				body->SetUserData(&storage.ground_type.back());
+			}
+		}
+		break;
+		case BodyType::SENSOR:
+		{
+			tinyxml2::XMLElement *stages = findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("stages"));
+			std::vector<Action> s_stages;
+			if (stages != nullptr)
+			{
+				s_stages = sensorStagesParser(stringDelimiter(stages->Attribute("value")));
+			}
+			if (std::string(object->Attribute("type")) != std::string("timer"))
+			{
+				//create sensor or lever
+				body_def.type = b2_dynamicBody;
+				b2Body* body2 = level_world->CreateBody(&body_def);
+				b2WeldJointDef wjd;
+				wjd.Initialize(body, body2, b2Vec2(0, 0));
+				level_world->CreateJoint(&wjd);
+				fixture_def.shape = &shape;
+				fixture_def.isSensor = true;
+				body2->CreateFixture(&fixture_def);
+				changeable_objects.push_front(tmp_obj);
+				parseSensor(object, body2, s_stages);
+			}
+			else
+			{
+				//create timer
+				parseTimer(object, s_stages);
+				level_world->DestroyBody(body);
+			}
+		}
+		break;
+		case BodyType::DYNAMIC:
 		{
 			double rotation = 0;
 			if (object->Attribute("rotation") != nullptr)
 			{
 				rotation = atof(object->Attribute("rotation"));
 			}
-			body_def.angle = rotation * GRADTORAD;
-			body_def.fixedRotation = false;
+			body->SetTransform(body->GetPosition(), rotation * GRADTORAD);
+			body->SetFixedRotation(false);
 		}
-		else
-		{
-			body_def.fixedRotation = true;
-		}
-		b2Body* body = level_world->CreateBody(&body_def);
-		if (b_type != BodyType::STATIC && b_type != BodyType::SENSOR)
+		case BodyType::KINEMATIC:
 		{
 			images.push_back(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("image"))->Attribute("value"));
 			tmp_obj.number_in_image_list = images.size() - 1;
 
-			b2FixtureDef fixture_def;
 			fixture_def.shape = &shape;
 			body->CreateFixture(&fixture_def);
 			changeable_objects.push_back(tmp_obj);
 
 			if (std::string(object->Attribute("type")) == std::string("player"))
 			{
-				player = new Player(8, level_width*tile_width, level_height*tile_height, 0.2, body, &changeable_objects.back(), 4);
+				int health = std::stoi(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("health"))->Attribute("value"));
+				player = new Player(8, level_width*tile_width, level_height*tile_height, 0.2, body, &changeable_objects.back(), 4, health);
 				storage.non_static_objects.push_back(player);
 			}
 			else if (std::string(object->Attribute("type")) == std::string("platform"))
 			{
-				parsePlatform(object,objectgroup,body);
+				parsePlatform(object, objectgroup, body);
 			}
 			else if (std::string(object->Attribute("type")) == std::string("revolute_bridge") || std::string(object->Attribute("type")) == std::string("partition"))
 			{
@@ -271,43 +329,14 @@ void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 				parseBridge(object, body, &body_def, &tmp_obj);
 			}
 		}
-		else
+		break;
+		case BodyType::DANGER:
 		{
-			if (b_type == BodyType::SENSOR)
-			{
-				tinyxml2::XMLElement *stages = findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("stages"));
-				std::vector<Action> s_stages;
-				if (stages != nullptr)
-				{
-					s_stages = sensorStagesParser(stringDelimiter(stages->Attribute("value")));
-				}
-				if (std::string(object->Attribute("type")) != std::string("timer"))
-				{
-					//create sensor or lever
-					body_def.type = b2_dynamicBody;
-					b2Body* body2 = level_world->CreateBody(&body_def);
-					b2WeldJointDef wjd;
-					wjd.Initialize(body, body2, b2Vec2(0, 0));
-					level_world->CreateJoint(&wjd);
-					b2FixtureDef fixture_def;
-					fixture_def.shape = &shape;
-					fixture_def.isSensor = true;
-					fixture_def.filter.maskBits = PLAYER;
-					body2->CreateFixture(&fixture_def);
-					changeable_objects.push_front(tmp_obj);
-					parseSensor(object, body2, s_stages);
-				}
-				else
-				{
-					//create timer
-					parseTimer(object, s_stages);
-					level_world->DestroyBody(body);
-				}
-			}
-			else
-			{
-				body->CreateFixture(&shape, 1.0f);
-			}
+			fixture_def.shape = &shape;
+			body->CreateFixture(&fixture_def);
+			parseDangerObject(object, body, &tmp_obj, objectgroup);
+		}
+		break;
 		}
 		object = object->NextSiblingElement("object");
 	}
@@ -405,7 +434,7 @@ void Level::parseTimer(tinyxml2::XMLElement * object, std::vector<Action> stages
 	{
 		stages_duration.push_back(stod(it));
 	}
-	Timer* timer = new Timer(observables,stages_duration,is_rounded, stages);
+	Timer* timer = new Timer(observables, stages_duration, is_rounded, stages);
 	storage.timer_list.push_back(timer);
 }
 
@@ -416,7 +445,7 @@ void Level::parseBridge(tinyxml2::XMLElement * object, b2Body * body, b2BodyDef*
 	std::string ancor = findAmongSiblings(property, "ancor")->Attribute("value");
 	std::string::size_type pos = ancor.find(' '); // devide x & y coordinates
 	double tmpx = stod(ancor.substr(0, pos))*tmp_obj->width / 2;
-	double tmpy = stod(ancor.substr(pos + 1))*tmp_obj->height / 2;;
+	double tmpy = stod(ancor.substr(pos + 1))*tmp_obj->height / 2;
 	body_def->position.Set((tmp_obj->x + tmpx) / PIXEL_PER_METER, (tmp_obj->y + tmpy) / PIXEL_PER_METER);
 	body_def->type = b2_staticBody;
 	b2Body* body2 = level_world->CreateBody(body_def);
@@ -471,6 +500,89 @@ void Level::parseBridge(tinyxml2::XMLElement * object, b2Body * body, b2BodyDef*
 		Partition* partiton = new Partition(body, &changeable_objects.back(), bridge_joint);
 		storage.non_static_objects.push_back(partiton);
 	}
+}
+
+void Level::parseDangerObject(tinyxml2::XMLElement * object, b2Body * body, Object* tmp_obj, tinyxml2::XMLElement * objectgroup)
+{
+	tinyxml2::XMLElement *property = object->FirstChildElement("properties")->FirstChildElement("property");
+	int damage = std::stoi(findAmongSiblings(property, "damage")->Attribute("value"));
+
+	images.push_back(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("image"))->Attribute("value"));
+
+	if (findAmongSiblings(property, "is_movable")->BoolAttribute("value"))
+	{
+		level_world->DestroyBody(body);
+		ManualPlatform* man_platf = static_cast<ManualPlatform*>(storage.future_observables.find(findAmongSiblings(property, "stick_platform")->Attribute("value"))->second);
+		body = man_platf->getBody();
+		tmp_obj = man_platf->getObject();
+		tmp_obj->number_in_image_list = images.size() - 1;
+	}
+	else
+	{
+		tmp_obj->number_in_image_list = images.size() - 1;
+		changeable_objects.push_back(*tmp_obj);
+	}
+
+	std::list<b2Body*> boundaries;
+
+	b2BodyDef body_def;
+	body_def.type = b2_dynamicBody;
+	b2WeldJointDef wjd;
+	wjd.bodyA = body;
+	b2FixtureDef fixture_def;
+	fixture_def.filter.categoryBits = DANGERS;
+	fixture_def.filter.maskBits = MASK_DANGERS;
+	b2PolygonShape shape;
+
+	double tmpx = tmp_obj->width / 2 / PIXEL_PER_METER;
+	double tmpy = tmp_obj->height / 2 / PIXEL_PER_METER;
+
+	if (findAmongSiblings(property, "left_side")->BoolAttribute("value"))
+	{
+		wjd.localAnchorA.Set(-tmpx, 0);
+		shape.SetAsBox(0, tmpy - 0.02);
+		fixture_def.shape = &shape;
+		b2Body* body2 = level_world->CreateBody(&body_def);
+		body2->CreateFixture(&fixture_def);
+		wjd.bodyB = body2;
+		level_world->CreateJoint(&wjd);
+		boundaries.push_back(body2);
+	}
+	if (findAmongSiblings(property, "up_side")->BoolAttribute("value"))
+	{
+		wjd.localAnchorA.Set(0, -tmpy);
+		shape.SetAsBox(tmpx - 0.02, 0);
+		fixture_def.shape = &shape;
+		b2Body* body2 = level_world->CreateBody(&body_def);
+		body2->CreateFixture(&fixture_def);
+		wjd.bodyB = body2;
+		level_world->CreateJoint(&wjd);
+		boundaries.push_back(body2);
+	}
+	if (findAmongSiblings(property, "right_side")->BoolAttribute("value"))
+	{
+		wjd.localAnchorA.Set(tmpx, 0);
+		shape.SetAsBox(0, tmpy - 0.02);
+		fixture_def.shape = &shape;
+		b2Body* body2 = level_world->CreateBody(&body_def);
+		body2->CreateFixture(&fixture_def);
+		wjd.bodyB = body2;
+		level_world->CreateJoint(&wjd);
+		boundaries.push_back(body2);
+	}
+	if (findAmongSiblings(property, "down_side")->BoolAttribute("value"))
+	{
+		wjd.localAnchorA.Set(0, tmpy);
+		shape.SetAsBox(tmpx - 0.02, 0);
+		fixture_def.shape = &shape;
+		b2Body* body2 = level_world->CreateBody(&body_def);
+		body2->CreateFixture(&fixture_def);
+		wjd.bodyB = body2;
+		level_world->CreateJoint(&wjd);
+		boundaries.push_back(body2);
+	}
+	DangerObject* d_obj = new DangerObject(boundaries, damage);
+	storage.danger_list.push_back(d_obj);
 }
 
 std::vector<Action> Level::sensorStagesParser(std::vector<std::string> stages)

@@ -84,11 +84,11 @@
     <ClCompile Include="ContactListener.cpp">
       <Filter>main\Model\Level\Collision handler</Filter>
     </ClCompile>
-    <ClCompile Include="ContactObject.cpp">
-      <Filter>main\Model\Level\Collision handler</Filter>
-    </ClCompile>
     <ClCompile Include="Partition.cpp">
       <Filter>main\Model\Level\NonStaticObj\Dynamic obj</Filter>
+    </ClCompile>
+    <ClCompile Include="DangerObject.cpp">
+      <Filter>main\Model\Level\NonStaticObj\Kinematic obj</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +154,9 @@
     </ClInclude>
     <ClInclude Include="Partition.h">
       <Filter>main\Model\Level\NonStaticObj\Dynamic obj</Filter>
+    </ClInclude>
+    <ClInclude Include="DangerObject.h">
+      <Filter>main\Model\Level\NonStaticObj\Kinematic obj</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

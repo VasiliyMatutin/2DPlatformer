@@ -70,8 +70,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ContactListener.cpp" />
-    <ClCompile Include="ContactObject.cpp" />
     <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="DangerObject.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Lever.cpp" />
     <ClCompile Include="main.cpp" />
@@ -93,6 +93,7 @@
     <ClInclude Include="ContactObject.h" />
     <ClInclude Include="ContactListener.h" />
     <ClInclude Include="Controller.h" />
+    <ClInclude Include="DangerObject.h" />
     <ClInclude Include="LevelStorage.h" />
     <ClInclude Include="Lever.h" />
     <ClInclude Include="ManualPlatform.h" />

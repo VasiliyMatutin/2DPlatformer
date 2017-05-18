@@ -36,6 +36,16 @@ void ManualPlatform::makeAction(Action)
 	ManualSwitchObj::is_active = !ManualSwitchObj::is_active;
 }
 
+b2Body * ManualPlatform::getBody()
+{
+	return body;
+}
+
+Object * ManualPlatform::getObject()
+{
+	return object;
+}
+
 ManualPlatform::~ManualPlatform()
 {
 }

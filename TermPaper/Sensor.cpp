@@ -3,7 +3,7 @@
 void Sensor::contactEvent(b2Contact * contact, bool is_begin)
 {
 	non_run = 0;
-	if (contact->GetFixtureA()->GetBody()->GetUserData() != nullptr)
+	if (contact->GetFixtureA()->GetBody()->GetType() != b2BodyType::b2_staticBody)
 	{
 		if (is_begin == true)
 		{

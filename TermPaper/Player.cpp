@@ -1,11 +1,13 @@
 #include "Player.h"
+#include <iostream>
 
-Player::Player(int _max_frame, int _level_width, int _level_height, double _current_frequency, b2Body* _body, Object* _object, int _fixed_speed) : NonStaticObj(_body, _object),
+Player::Player(int _max_frame, int _level_width, int _level_height, double _current_frequency, b2Body* _body, Object* _object, int _fixed_speed, int _health) : NonStaticObj(_body, _object),
 	max_frame(_max_frame),
 	fixed_speed(_fixed_speed),
 	current_frequency(_current_frequency),
 	level_width(_level_width),
 	level_height(_level_height),
+	health(_health),
 	x_speed(0),
 	delta_x_speed(0),
 	img_row(3),
@@ -14,6 +16,7 @@ Player::Player(int _max_frame, int _level_width, int _level_height, double _curr
 {
 	b2Filter filter = body->GetFixtureList()->GetFilterData();
 	filter.categoryBits = PLAYER;
+	filter.maskBits = MASK_PLAYER;
 	body->GetFixtureList()->SetFilterData(filter);
 	body->GetFixtureList()->SetDensity(1.0f);
 	body->GetFixtureList()->SetFriction(0.3f);
@@ -45,6 +48,11 @@ void Player::stopRight()
 void Player::stopLeft()
 {
 	delta_x_speed += fixed_speed;
+}
+
+void Player::decreaseHealth(int _healt_loss)
+{
+	std::cout << "Kill me" << std::endl;
 }
 
 void Player::contactEvent(b2Contact * contact, bool is_begin)

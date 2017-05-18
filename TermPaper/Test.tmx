@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32" nextobjectid="69">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32" nextobjectid="83">
  <tileset firstgid="1" name="tiles_spritesheet" tilewidth="32" tileheight="32" tilecount="161" columns="7">
   <image source="tiles_spritesheet.png" width="224" height="736"/>
  </tileset>
@@ -40,9 +40,9 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-141,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,0,0,0,0,35,35,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,84,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,84,84,0,0,
+141,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,159,0,0,0,0,84,84,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,35,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -53,25 +53,26 @@
 </data>
  </layer>
  <objectgroup name="Static">
-  <object id="1" x="0" y="383" width="191" height="224"/>
-  <object id="2" x="192" y="415" width="31" height="192"/>
-  <object id="3" x="224" y="447" width="32" height="161"/>
-  <object id="4" x="256" y="480" width="31" height="128"/>
-  <object id="5" x="287" y="512" width="33" height="95"/>
-  <object id="7" x="320" y="544" width="350" height="63"/>
+  <object id="1" x="0" y="383" width="191" height="193"/>
+  <object id="2" x="192" y="415" width="31" height="161"/>
+  <object id="3" x="224" y="447" width="32" height="128.5"/>
+  <object id="4" x="256" y="480" width="31" height="96"/>
+  <object id="5" x="287" y="512" width="33" height="64"/>
+  <object id="7" x="320" y="544" width="351.5" height="31.5"/>
   <object id="10" x="481" y="448" width="30" height="32"/>
   <object id="11" x="512" y="383" width="64" height="98"/>
   <object id="12" x="576" y="417" width="94" height="64"/>
   <object id="13" x="736" y="416" width="67" height="30"/>
-  <object id="14" x="672" y="353" width="62" height="30"/>
   <object id="15" x="544" y="256" width="63" height="31"/>
   <object id="16" x="449" y="191" width="62" height="32"/>
   <object id="17" x="159" y="160" width="224" height="31"/>
-  <object id="21" x="641" y="480" width="29" height="62"/>
+  <object id="21" x="641" y="480" width="30" height="64.5"/>
+  <object id="69" type="danger" x="672.5" y="490.5" width="126.667" height="86.5"/>
  </objectgroup>
  <objectgroup name="Dynamic">
-  <object id="60" name="player" type="player" x="146.695" y="307.567" width="32" height="48">
+  <object id="60" name="player" type="player" x="92.028" y="330.9" width="32" height="48">
    <properties>
+    <property name="health" value="50"/>
     <property name="image" value="player.png"/>
    </properties>
   </object>
@@ -80,7 +81,7 @@
     <property name="ancor" value="-1 -1"/>
     <property name="image" value="platform.png"/>
     <property name="init_state" value="up"/>
-    <property name="max_angle" value="90"/>
+    <property name="max_angle" value="75"/>
     <property name="min_angle" value="0"/>
     <property name="speed" value="1"/>
    </properties>
@@ -91,7 +92,7 @@
     <property name="image" value="platform.png"/>
     <property name="init_state" value="up"/>
     <property name="max_angle" value="0"/>
-    <property name="min_angle" value="-90"/>
+    <property name="min_angle" value="-75"/>
     <property name="speed" value="1"/>
    </properties>
   </object>
@@ -113,12 +114,6 @@
     <property name="steps" value="0"/>
     <property name="trajectory" value="trajectory1"/>
    </properties>
-  </object>
-  <object id="33" name="trajectory1" x="388" y="353.25">
-   <properties>
-    <property name="is_rounded" value="0"/>
-   </properties>
-   <polyline points="62,98.75 62,188.75"/>
   </object>
   <object id="40" name="platform2" type="platform" x="579" y="383" width="62" height="9">
    <properties>
@@ -150,6 +145,27 @@
     <property name="trajectory" value="trajectory3"/>
    </properties>
   </object>
+  <object id="77" name="trajectory1" x="447" y="453">
+   <properties>
+    <property name="is_rounded" value="0"/>
+   </properties>
+   <polyline points="0,0 0,88"/>
+  </object>
+  <object id="79" name="platform4" type="platform" x="576" y="548" width="62" height="9">
+   <properties>
+    <property name="image" value="platform.png"/>
+    <property name="is_auto" value="0"/>
+    <property name="speed" value="1"/>
+    <property name="steps" value="1"/>
+    <property name="trajectory" value="trajectory4"/>
+   </properties>
+  </object>
+  <object id="81" name="trajectory4" x="607" y="552">
+   <properties>
+    <property name="is_rounded" value="0"/>
+   </properties>
+   <polyline points="0,0 0,-16"/>
+  </object>
  </objectgroup>
  <objectgroup name="Sensors">
   <object id="42" type="lever" x="-0.260333" y="371.835" width="64" height="16">
@@ -177,12 +193,34 @@
     <property name="repeat_allowed" value="0"/>
    </properties>
   </object>
-  <object id="51" type="timer" x="7.073" y="9.168" width="16" height="12">
+  <object id="51" type="timer" x="0" y="0">
    <properties>
     <property name="is_rounded" value="0"/>
     <property name="observables" value="platform3 platform1"/>
     <property name="repeat_allowed" value="1"/>
     <property name="time_stages" value="2"/>
+   </properties>
+  </object>
+  <object id="82" type="sensor" x="527" y="496" width="29" height="43">
+   <properties>
+    <property name="is_keeping" value="0"/>
+    <property name="is_visible" value="0"/>
+    <property name="observables" value="platform4"/>
+    <property name="repeat_allowed" value="0"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Dangers">
+  <object id="73" name="spike1" type="danger" x="0" y="0">
+   <properties>
+    <property name="damage" value="10"/>
+    <property name="down_side" value="0"/>
+    <property name="image" value="spike.png"/>
+    <property name="is_movable" value="1"/>
+    <property name="left_side" value="0"/>
+    <property name="right_side" value="0"/>
+    <property name="stick_platform" value="platform4"/>
+    <property name="up_side" value="1"/>
    </properties>
   </object>
  </objectgroup>

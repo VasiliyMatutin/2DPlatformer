@@ -5,26 +5,46 @@ void MyContactListener::BeginContact(b2Contact * contact)
 	void* bodyUserData = contact->GetFixtureA()->GetBody()->GetUserData();
 	if (bodyUserData != nullptr && !contact->GetFixtureB()->GetBody()->GetFixtureList()->IsSensor())
 	{
-		static_cast<ContactObject*>(bodyUserData)->contactEvent(contact, 1);
+		if (contact->GetFixtureA()->GetBody()->GetType() == b2BodyType::b2_staticBody)
+		{
+			for (int i = 0; i < 2; i++)
+			{
+				to_destroy_list.push_back(static_cast<NonStaticObj*>(contact->GetFixtureB()->GetBody()->GetUserData()));
+			}
+		}
+		else
+		{
+			static_cast<ContactObject*>(bodyUserData)->contactEvent(contact, 1);
+		}
 	}
 
 	bodyUserData = contact->GetFixtureB()->GetBody()->GetUserData();
 	if (bodyUserData != nullptr && !contact->GetFixtureA()->GetBody()->GetFixtureList()->IsSensor())
 	{
-		static_cast<ContactObject*>(bodyUserData)->contactEvent(contact, 1);
+		if (contact->GetFixtureB()->GetBody()->GetType() == b2BodyType::b2_staticBody)
+		{
+			for (int i = 0; i < 2; i++)
+			{
+				to_destroy_list.push_back(static_cast<NonStaticObj*>(contact->GetFixtureA()->GetBody()->GetUserData()));
+			}
+		}
+		else
+		{
+			static_cast<ContactObject*>(bodyUserData)->contactEvent(contact, 1);
+		}
 	}
 }
 
 void MyContactListener::EndContact(b2Contact * contact)
 {
 	void* bodyUserData = contact->GetFixtureA()->GetBody()->GetUserData();
-	if (bodyUserData != nullptr && !contact->GetFixtureB()->GetBody()->GetFixtureList()->IsSensor())
+	if (bodyUserData != nullptr && !contact->GetFixtureB()->GetBody()->GetFixtureList()->IsSensor() && contact->GetFixtureA()->GetBody()->GetType() != b2BodyType::b2_staticBody)
 	{
 		static_cast<ContactObject*>(bodyUserData)->contactEvent(contact, 0);
 	}
 
 	bodyUserData = contact->GetFixtureB()->GetBody()->GetUserData();
-	if (bodyUserData != nullptr && !contact->GetFixtureA()->GetBody()->GetFixtureList()->IsSensor())
+	if (bodyUserData != nullptr && !contact->GetFixtureA()->GetBody()->GetFixtureList()->IsSensor() && contact->GetFixtureB()->GetBody()->GetType() != b2BodyType::b2_staticBody)
 	{
 		static_cast<ContactObject*>(bodyUserData)->contactEvent(contact, 0);
 	}
