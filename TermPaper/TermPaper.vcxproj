@@ -82,6 +82,7 @@
     <ClCompile Include="Partition.cpp" />
     <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerSensor.cpp" />
     <ClCompile Include="RevoluteBridge.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="VisibleSensor.cpp" />
@@ -106,6 +107,7 @@
     <ClInclude Include="Partition.h" />
     <ClInclude Include="Platform.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerSensor.h" />
     <ClInclude Include="RevoluteBridge.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="VisibleSensor.h" />

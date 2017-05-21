@@ -2,8 +2,7 @@
 
 Partition::Partition(b2Body * _body, Object * _object, b2RevoluteJoint * _joint): NonStaticObj(_body, _object),
 joint(_joint),
-is_joint_exist(1),
-is_valid(1)
+is_joint_exist(1)
 {
 	body->GetFixtureList()->SetDensity(10.0f);
 	body->GetFixtureList()->SetFriction(0.3f);
@@ -35,9 +34,5 @@ bool Partition::destroy(b2World * lvl_world)
 
 void Partition::update()
 {
-	if (!is_valid)
-	{
-		return;
-	}
 	NonStaticObj::update();
 }

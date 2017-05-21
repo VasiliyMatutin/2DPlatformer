@@ -5,10 +5,15 @@ RevoluteBridge::RevoluteBridge(b2Body * _body, Object * _object, b2RevoluteJoint
 	motor_speed(_motor_speed)
 {
 	body->SetUserData(this);
+	body->GetFixtureList()->SetFriction(0.4f);
 }
 
 void RevoluteBridge::makeAction(Action action)
 {
+	if (!is_valid)
+	{
+		return;
+	}
 	switch (action)
 	{
 	case Action::Up:

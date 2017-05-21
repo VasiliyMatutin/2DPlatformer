@@ -21,12 +21,17 @@ void DangerObject::contactEvent(b2Contact * contact, bool is_begin)
 	}
 }
 
-DangerObject::DangerObject(std::list<b2Body*> _boundaries, int _damage):
+DangerObject::DangerObject(std::list<b2Body*> _boundaries, int _damage, b2Body* body):
 	is_contact(0),
 	damage(_damage)
 {
+	b2Filter filter;
+	filter.categoryBits = DANGERS;
+	filter.maskBits = MASK_DANGERS;
+	body->GetFixtureList()->SetFilterData(filter);
 	for (auto it : _boundaries)
 	{
+		it->GetFixtureList()->SetFilterData(filter);
 		it->SetUserData(this);
 	}
 }

@@ -35,6 +35,7 @@ class Level
 	void parseTimer(tinyxml2::XMLElement *object, std::vector<Action> stages);
 	void parseBridge(tinyxml2::XMLElement *object, b2Body* body, b2BodyDef* body_def, Object* tmp_obj);
 	void parseDangerObject(tinyxml2::XMLElement *object, b2Body* body, Object* tmp_obj, tinyxml2::XMLElement * objectgroup);
+	b2Body* createBorderSensor(b2Body* body, Object* tmp_obj, Sides);
 	std::vector<Action> sensorStagesParser(std::vector<std::string> stages);
 	tinyxml2::XMLElement * findAmongSiblings(tinyxml2::XMLElement * element, std::string name);
 	std::vector<std::string> stringDelimiter(std::string init_str);

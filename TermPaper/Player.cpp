@@ -9,7 +9,7 @@ Player::Player(int _max_frame, int _level_width, int _level_height, double _curr
 	level_height(_level_height),
 	health(_health),
 	x_speed(0),
-	delta_x_speed(0),
+	desired_vel(0),
 	img_row(3),
 	on_ground(0),
 	is_animated(1)
@@ -27,27 +27,27 @@ Player::Player(int _max_frame, int _level_width, int _level_height, double _curr
 
 void Player::jump()
 {
-	if (on_ground) body->ApplyLinearImpulse(b2Vec2(0, -5 * body->GetMass()), b2Vec2(body->GetPosition().x, body->GetPosition().y), 1);
+	if (on_ground) body->ApplyLinearImpulse(b2Vec2(0, -5.5 * body->GetMass()), b2Vec2(body->GetPosition().x, body->GetPosition().y), 1);
 }
 
 void Player::moveLeft()
 {
-	delta_x_speed -= fixed_speed;
+	desired_vel -= fixed_speed;
 }
 
 void Player::moveRight()
 {
-	delta_x_speed += fixed_speed;
+	desired_vel += fixed_speed;
 }
 
 void Player::stopRight()
 {
-	delta_x_speed -= fixed_speed;
+	desired_vel -= fixed_speed;
 }
 
 void Player::stopLeft()
 {
-	delta_x_speed += fixed_speed;
+	desired_vel += fixed_speed;
 }
 
 void Player::decreaseHealth(int _healt_loss)
@@ -55,52 +55,46 @@ void Player::decreaseHealth(int _healt_loss)
 	std::cout << "Kill me" << std::endl;
 }
 
-void Player::contactEvent(b2Contact * contact, bool is_begin)
+void Player::beginContact(Sides side)
 {
-	b2Manifold* contact_information = contact->GetManifold();
-	b2WorldManifold worldManifold;
-	contact->GetWorldManifold(&worldManifold);
-	if (is_begin == 0)
+	switch (side)
 	{
-		if (contact_information->localNormal.y != 0)
+	case Sides::LEFT:
+	case Sides::RIGHT:
+		is_animated = 0;
+		if (body->GetLinearVelocity().y < 0)
 		{
-			if (contact->GetFixtureA()->GetBody()->GetUserData() == nullptr)
-			{
-				on_ground = 0;
-			}
-				b2Vec2 tmp = body->GetLinearVelocity();
-				if (tmp.x != 0)
-				{
-					body->SetLinearVelocity(b2Vec2(0, tmp.y));
-					body->ApplyLinearImpulse(b2Vec2(x_speed / 4 * body->GetMass(), 0), b2Vec2(body->GetPosition().x, body->GetPosition().y), 1);
-				}
-				return;
+			body->SetLinearVelocity(b2Vec2(0, 0));
 		}
-
-		if (contact_information->localNormal.x != 0)
-		{
-			is_animated = 1;
-			return;
-		}
+		return;
+	case Sides::DOWN:
+		on_ground = 1;
+		body->ApplyLinearImpulseToCenter(b2Vec2(0, 0), 1);
+		return;
 	}
-	else
-	{
-		if (contact_information->localNormal.y != 0 && worldManifold.points[0].y - object->y / PIXEL_PER_METER > 0)
-		{
-			on_ground=1;
-			body->ApplyLinearImpulse(b2Vec2(0, 0), b2Vec2(body->GetPosition().x, body->GetPosition().y), 1);
-			return;
-		}
+}
 
-		if (contact_information->localNormal.x > 0 || contact_information->localNormal.x < 0)
+void Player::endContact(Sides side)
+{
+	switch (side)
+	{
+	case Sides::LEFT:
+	case Sides::RIGHT:
+	{
+		is_animated = 1;
+		return;
+	}
+	case Sides::DOWN:
+	{
+		on_ground = 0;
+		b2Vec2 tmp = body->GetLinearVelocity();
+		if (tmp.x != 0)
 		{
-			is_animated = 0;
-			if (body->GetLinearVelocity().y < 0)
-			{
-				body->SetLinearVelocity(b2Vec2(0, 0));
-			}
-			return;
+			body->SetLinearVelocity(b2Vec2(0, tmp.y));
+			body->ApplyLinearImpulseToCenter(b2Vec2(x_speed / 4 * body->GetMass(), 0), 1);
 		}
+		return;
+	}
 	}
 }
 
@@ -112,22 +106,34 @@ void Player::returnCoordinates(double* x, double* y)
 
 void Player::update()
 {
-	b2Vec2 tmp = body->GetLinearVelocity();
+	b2Vec2 vel = body->GetLinearVelocity();
 	if (on_ground)
 	{
-		x_speed = delta_x_speed;
+		x_speed = desired_vel;
 	}
-	else x_speed = tmp.x;
-	if (object->x + object->width / 2 >= level_width - 1 && x_speed > 0 || object->x - object->width / 2 <= 1 && x_speed < 0) x_speed = 0; //check of collisions with level boundaries
-	body->SetLinearVelocity(b2Vec2(x_speed, tmp.y));
+	else
+	{
+		x_speed = vel.x;
+	}
+	if (object->x + object->width / 2 >= level_width - 1 && x_speed > 0 || object->x - object->width / 2 <= 1 && x_speed < 0) //check of collisions with level boundaries
+	{
+		x_speed = 0;
+	}
+	float velChange = x_speed - vel.x;
+	float impulse = body->GetMass() * velChange;
+	body->ApplyLinearImpulseToCenter(b2Vec2(impulse, 0), 1);
+
 	NonStaticObj::update();
 	if (on_ground && x_speed != 0 && is_animated)
 	{
 		current_frame += current_frequency;
-		if (current_frame > max_frame) current_frame -= max_frame - 1;
+		if (current_frame > max_frame)
+		{
+			current_frame -= max_frame - 1;
+		}
 	}
 	else
-		current_frame = 0.9;
+		current_frame = 0.1;
 	object->left = object->width*(int)current_frame;
 	object->top = object->height*img_row;
 	if (is_animated && on_ground)

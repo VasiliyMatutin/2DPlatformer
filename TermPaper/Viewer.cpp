@@ -92,8 +92,8 @@ void Viewer::update()
 			flexible_sprite[i].setPosition(it.x, it.y);
 			flexible_sprite[i].setRotation(RADTOGRAD * it.rotation);
 			window->draw(flexible_sprite[i]);
-			i++;
 		}
+		i++;
 	}
 	window->display();
 	centerViewOnHero();

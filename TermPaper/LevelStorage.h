@@ -6,6 +6,7 @@
 #include "Timer.h"
 #include "DangerObject.h"
 #include "RevoluteBridge.h"
+#include "PlayerSensor.h"
 
 class Storage
 {
@@ -13,6 +14,7 @@ public:
 	std::list<Lever*> lever_list;
 	std::list<Timer*> timer_list;
 	std::list<NonStaticObj*> non_static_objects;
+	std::list<PlayerSensor*> players_sensors_list;
 	std::list<NonStaticObj*>* to_destroy_list;
 	std::list<DangerObject*> danger_list;
 	std::list<StaticType> ground_type;
@@ -31,6 +33,10 @@ public:
 			delete it;
 		}
 		for (auto it : timer_list)
+		{
+			delete it;
+		}
+		for (auto it : players_sensors_list)
 		{
 			delete it;
 		}

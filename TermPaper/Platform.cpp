@@ -13,7 +13,6 @@ Platform::Platform(int _level_width, int _level_height, b2Body * _body, Object *
 	is_active(1)
 {
 	body->SetTransform(b2Vec2(coord_set[0].first, coord_set[0].second), 0);
-	body->GetFixtureList()->SetFriction(0.0f);
 	tmp = body->GetPosition();
 	object->x = tmp.x * PIXEL_PER_METER;
 	object->y = tmp.y * PIXEL_PER_METER;

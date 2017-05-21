@@ -31,6 +31,9 @@
     <Filter Include="main\Viewer">
       <UniqueIdentifier>{2267193d-6dbd-49bb-83e5-d1c7a7fcd1e0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="main\Model\Level\NonStaticObj\Dynamic obj\Player">
+      <UniqueIdentifier>{f8e0325b-6ce0-41ca-9b62-6fd0f7532382}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Controller.cpp">
@@ -47,9 +50,6 @@
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>main</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>main\Model\Level\NonStaticObj\Dynamic obj</Filter>
     </ClCompile>
     <ClCompile Include="Platform.cpp">
       <Filter>main\Model\Level\NonStaticObj\Kinematic obj</Filter>
@@ -90,6 +90,12 @@
     <ClCompile Include="DangerObject.cpp">
       <Filter>main\Model\Level\NonStaticObj\Kinematic obj</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>main\Model\Level\NonStaticObj\Dynamic obj\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerSensor.cpp">
+      <Filter>main\Model\Level\NonStaticObj\Dynamic obj\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controller.h">
@@ -106,9 +112,6 @@
     </ClInclude>
     <ClInclude Include="Events.h">
       <Filter>main</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>main\Model\Level\NonStaticObj\Dynamic obj</Filter>
     </ClInclude>
     <ClInclude Include="Platform.h">
       <Filter>main\Model\Level\NonStaticObj\Kinematic obj</Filter>
@@ -157,6 +160,12 @@
     </ClInclude>
     <ClInclude Include="DangerObject.h">
       <Filter>main\Model\Level\NonStaticObj\Kinematic obj</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>main\Model\Level\NonStaticObj\Dynamic obj\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerSensor.h">
+      <Filter>main\Model\Level\NonStaticObj\Dynamic obj\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -50,7 +50,7 @@ void Level::tryToSwitchLever()
 
 void Level::update()
 {
-	level_world->Step(1.0f / 60.0f, 5, 5);
+	level_world->Step(1.0f / 60.0f, 3, 3);
 	int n = 0;
 	for (auto it : *storage.to_destroy_list)
 	{
@@ -214,7 +214,7 @@ void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 		if (b_type == BodyType::KINEMATIC && !object->Attribute("type")) //////////////////////////////////////////crutch
 		{
 			object = object->NextSiblingElement("object");
-			continue;
+continue;
 		}
 		b2BodyDef body_def;
 		b2PolygonShape shape;
@@ -256,6 +256,7 @@ void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 		case BodyType::STATIC:
 		{
 			fixture_def.shape = &shape;
+			fixture_def.friction = 0.3f;
 			body->CreateFixture(&fixture_def);
 			if (object->Attribute("type")) //////////////////////////////////////////crutch
 			{
@@ -310,14 +311,32 @@ void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 			tmp_obj.number_in_image_list = images.size() - 1;
 
 			fixture_def.shape = &shape;
+			fixture_def.friction = 0.3f;
 			body->CreateFixture(&fixture_def);
 			changeable_objects.push_back(tmp_obj);
+
+			if (object->Attribute("type") == nullptr)
+			{
+				body->GetFixtureList()->SetDensity(std::stod(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("density"))->Attribute("value")));
+				body->GetFixtureList()->SetFriction(10.0f);
+				body->ResetMassData();
+				NonStaticObj* nso = new NonStaticObj(body, &changeable_objects.back());
+				body->SetUserData(nso);
+				storage.non_static_objects.push_back(nso);
+				break;
+			}
 
 			if (std::string(object->Attribute("type")) == std::string("player"))
 			{
 				int health = std::stoi(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("health"))->Attribute("value"));
 				player = new Player(8, level_width*tile_width, level_height*tile_height, 0.2, body, &changeable_objects.back(), 4, health);
 				storage.non_static_objects.push_back(player);
+				PlayerSensor* ps = new PlayerSensor(player, createBorderSensor(body, &changeable_objects.back(), Sides::LEFT), Sides::LEFT);
+				storage.players_sensors_list.push_back(ps);
+				ps = new PlayerSensor(player, createBorderSensor(body, &changeable_objects.back(), Sides::RIGHT), Sides::RIGHT);
+				storage.players_sensors_list.push_back(ps);
+				ps = new PlayerSensor(player, createBorderSensor(body, &changeable_objects.back(), Sides::DOWN), Sides::DOWN);
+				storage.players_sensors_list.push_back(ps);
 			}
 			else if (std::string(object->Attribute("type")) == std::string("platform"))
 			{
@@ -325,7 +344,6 @@ void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 			}
 			else if (std::string(object->Attribute("type")) == std::string("revolute_bridge") || std::string(object->Attribute("type")) == std::string("partition"))
 			{
-				shape.SetAsBox(0.01, 0.01);
 				parseBridge(object, body, &body_def, &tmp_obj);
 			}
 		}
@@ -525,64 +543,74 @@ void Level::parseDangerObject(tinyxml2::XMLElement * object, b2Body * body, Obje
 
 	std::list<b2Body*> boundaries;
 
+	if (findAmongSiblings(property, "left_side")->BoolAttribute("value"))
+	{
+		boundaries.push_back(createBorderSensor(body, &changeable_objects.back(), Sides::LEFT));
+	}
+	if (findAmongSiblings(property, "up_side")->BoolAttribute("value"))
+	{
+		boundaries.push_back(createBorderSensor(body, &changeable_objects.back(), Sides::UP));
+	}
+	if (findAmongSiblings(property, "right_side")->BoolAttribute("value"))
+	{
+		boundaries.push_back(createBorderSensor(body, &changeable_objects.back(), Sides::RIGHT));
+	}
+	if (findAmongSiblings(property, "down_side")->BoolAttribute("value"))
+	{
+		boundaries.push_back(createBorderSensor(body, &changeable_objects.back(), Sides::DOWN));
+	}
+	DangerObject* d_obj = new DangerObject(boundaries, damage, body);
+	storage.danger_list.push_back(d_obj);
+}
+
+b2Body* Level::createBorderSensor(b2Body * body, Object * tmp_obj, Sides side)
+{
 	b2BodyDef body_def;
 	body_def.type = b2_dynamicBody;
+	body_def.position = b2Vec2(0, 0);
 	b2WeldJointDef wjd;
 	wjd.bodyA = body;
 	b2FixtureDef fixture_def;
-	fixture_def.filter.categoryBits = DANGERS;
-	fixture_def.filter.maskBits = MASK_DANGERS;
+	fixture_def.density = 0.01f;
+	fixture_def.isSensor = true;
 	b2PolygonShape shape;
 
 	double tmpx = tmp_obj->width / 2 / PIXEL_PER_METER;
 	double tmpy = tmp_obj->height / 2 / PIXEL_PER_METER;
 
-	if (findAmongSiblings(property, "left_side")->BoolAttribute("value"))
+	switch (side)
 	{
-		wjd.localAnchorA.Set(-tmpx, 0);
-		shape.SetAsBox(0, tmpy - 0.02);
-		fixture_def.shape = &shape;
-		b2Body* body2 = level_world->CreateBody(&body_def);
-		body2->CreateFixture(&fixture_def);
-		wjd.bodyB = body2;
-		level_world->CreateJoint(&wjd);
-		boundaries.push_back(body2);
+		case Sides::DOWN:
+		{
+			wjd.localAnchorA.Set(0, tmpy);
+			shape.SetAsBox(tmpx - 0.1, 0.01);
+			break;
+		}
+		case Sides::UP:
+		{
+			wjd.localAnchorA.Set(0, -tmpy);
+			shape.SetAsBox(tmpx - 0.1, 0.01);
+			break;
+		}
+		case Sides::LEFT:
+		{
+			wjd.localAnchorA.Set(-tmpx, 0);
+			shape.SetAsBox(0.01, tmpy - 0.1);
+			break;
+		}
+		case Sides::RIGHT:
+		{
+			wjd.localAnchorA.Set(tmpx, 0);
+			shape.SetAsBox(0.01, tmpy - 0.1);
+			break;
+		}
 	}
-	if (findAmongSiblings(property, "up_side")->BoolAttribute("value"))
-	{
-		wjd.localAnchorA.Set(0, -tmpy);
-		shape.SetAsBox(tmpx - 0.02, 0);
-		fixture_def.shape = &shape;
-		b2Body* body2 = level_world->CreateBody(&body_def);
-		body2->CreateFixture(&fixture_def);
-		wjd.bodyB = body2;
-		level_world->CreateJoint(&wjd);
-		boundaries.push_back(body2);
-	}
-	if (findAmongSiblings(property, "right_side")->BoolAttribute("value"))
-	{
-		wjd.localAnchorA.Set(tmpx, 0);
-		shape.SetAsBox(0, tmpy - 0.02);
-		fixture_def.shape = &shape;
-		b2Body* body2 = level_world->CreateBody(&body_def);
-		body2->CreateFixture(&fixture_def);
-		wjd.bodyB = body2;
-		level_world->CreateJoint(&wjd);
-		boundaries.push_back(body2);
-	}
-	if (findAmongSiblings(property, "down_side")->BoolAttribute("value"))
-	{
-		wjd.localAnchorA.Set(0, tmpy);
-		shape.SetAsBox(tmpx - 0.02, 0);
-		fixture_def.shape = &shape;
-		b2Body* body2 = level_world->CreateBody(&body_def);
-		body2->CreateFixture(&fixture_def);
-		wjd.bodyB = body2;
-		level_world->CreateJoint(&wjd);
-		boundaries.push_back(body2);
-	}
-	DangerObject* d_obj = new DangerObject(boundaries, damage);
-	storage.danger_list.push_back(d_obj);
+	fixture_def.shape = &shape;
+	b2Body* body2 = level_world->CreateBody(&body_def);
+	body2->CreateFixture(&fixture_def);
+	wjd.bodyB = body2;
+	level_world->CreateJoint(&wjd);
+	return body2;
 }
 
 std::vector<Action> Level::sensorStagesParser(std::vector<std::string> stages)
