@@ -1,8 +1,7 @@
 #include "PlayerSensor.h"
 #include <iostream>
 
-PlayerSensor::PlayerSensor(Player * observable_player, b2Body* body, Sides _side) :
-	side(_side),
+PlayerSensor::PlayerSensor(Player * observable_player, b2Body* body) :
 	player(observable_player),
 	contact_count(0)
 {
@@ -15,22 +14,21 @@ PlayerSensor::PlayerSensor(Player * observable_player, b2Body* body, Sides _side
 
 void PlayerSensor::contactEvent(b2Contact * contact, bool is_begin)
 {
-	if (is_begin)
-	{
-		if (contact_count == 0)
+		if (is_begin)
 		{
-			player->beginContact(side);
+			if (contact_count == 0)
+			{
+				player->beginContactWithGround();
+			}
+			contact_count++;
 		}
-		std::cout << "++" << std::endl;
-		contact_count++;
-	}
-	else
-	{
-		std::cout << "--" << std::endl;
-		contact_count--;
-		if (contact_count == 0)
+		else
 		{
-			player->endContact(side);
+			contact_count--;
+			if (contact_count == 0)
+			{
+				player->endContactWithGround();
+			}
 		}
-	}
+
 }

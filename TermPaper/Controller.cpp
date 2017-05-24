@@ -43,6 +43,12 @@ void Controller::observe()
 				case sf::Keyboard::I:
 					model.handleEvent(Events::SwitchLever);
 					break;
+				case sf::Keyboard::P:
+					model.handleEvent(Events::PickUp);
+					break;
+				case sf::Keyboard::C:
+					model.handleEvent(Events::ChangeHero);
+					break;
 				case sf::Keyboard::Escape:
 					window->close();
 					break;
@@ -72,6 +78,13 @@ void Controller::observe()
 					viewer.handleViewerEvent(ViewEvents::BringZoomCloser);
 				}
 				break;
+			case sf::Event::MouseButtonPressed:
+				if (event.mouseButton.button == sf::Mouse::Left)
+				{
+					MouseClickCoordinates::x = event.mouseButton.x;
+					MouseClickCoordinates::y = event.mouseButton.y;
+					model.handleEvent(Events::MouseClicked);
+				}
 			}
 		}
 		model.handleEvent(Events::Move);

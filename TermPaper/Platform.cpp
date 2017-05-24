@@ -1,6 +1,6 @@
 #include "Platform.h"
 
-Platform::Platform(int _level_width, int _level_height, b2Body * _body, Object * _object, std::vector<std::pair<double, double>> traj_coord, int _fixed_speed, bool _is_rounded, int _node_number) : NonStaticObj(_body, _object),
+Platform::Platform(int _level_width, int _level_height, b2Body * _body, Object * _object, std::vector<std::pair<double, double>> traj_coord, int _fixed_speed, bool _is_rounded, int _node_number) : NonStaticObj(_body, _object, ObjectType::PLATFORM),
 	coord_set(traj_coord),
 	fixed_speed(_fixed_speed),
 	point_iter(0),

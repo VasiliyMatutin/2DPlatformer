@@ -1,16 +1,17 @@
 #include "RevoluteBridge.h"
 #include "iostream"
 
-RevoluteBridge::RevoluteBridge(b2Body * _body, Object * _object, b2RevoluteJoint* _bridge_joint, double _motor_speed): Partition(_body,_object, _bridge_joint),
-	motor_speed(_motor_speed)
+RevoluteBridge::RevoluteBridge(b2Body * _body, Object * _object, b2RevoluteJoint* _bridge_joint, double _motor_speed): NonStaticObj(_body,_object, ObjectType::BRIDGE_PARTITION),
+	motor_speed(_motor_speed),
+	joint(_bridge_joint),
+	is_joint_exist(1)
 {
 	body->SetUserData(this);
-	body->GetFixtureList()->SetFriction(0.4f);
 }
 
 void RevoluteBridge::makeAction(Action action)
 {
-	if (!is_valid)
+	if (!is_valid || !is_joint_exist)
 	{
 		return;
 	}
@@ -33,28 +34,13 @@ void RevoluteBridge::makeAction(Action action)
 	}
 }
 
-bool RevoluteBridge::destroy(b2World * lvl_world)
+bool RevoluteBridge::destroy()
 {
-	if (is_joint_exist)
-	{
-		lvl_world->DestroyJoint(joint);
-		is_joint_exist = false;
-		return false;
-	}
-	else
-	{
-		if (is_valid)
-		{
-			object->is_valid = 0;
-			lvl_world->DestroyBody(body);
-			is_valid = false;
-		}
-		return true;
-	}
-	return false;
+	is_joint_exist = false;
+	return NonStaticObj::destroy();
 }
 
 void RevoluteBridge::update()
 {
-	Partition::update();
+	NonStaticObj::update();
 }

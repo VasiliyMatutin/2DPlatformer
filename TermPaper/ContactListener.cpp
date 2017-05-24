@@ -1,5 +1,4 @@
 #include "ContactListener.h"
-#include <iostream>
 
 void MyContactListener::BeginContact(b2Contact * contact)
 {
@@ -53,7 +52,6 @@ void MyContactListener::EndContact(b2Contact * contact)
 
 void MyContactListener::PostSolve(b2Contact * contact, const b2ContactImpulse * impulse)
 {
-	
 		if (contact->GetFixtureA()->GetBody()->GetType() == b2BodyType::b2_dynamicBody && impulse->normalImpulses[0] > contact->GetFixtureA()->GetBody()->GetMass()*9)
 		{
 			to_destroy_list.push_back(static_cast<NonStaticObj*>(contact->GetFixtureA()->GetBody()->GetUserData()));

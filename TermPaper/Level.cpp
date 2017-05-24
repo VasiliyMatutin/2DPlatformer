@@ -5,7 +5,9 @@
 #include <iterator>
 #include "ManualPlatform.h"
 
-Level::Level()
+Level::Level():
+	strong_player(nullptr),
+	dexterous_player(nullptr)
 {
 	b2Vec2 gravity(0.0f, 9.8f);
 	level_world = new b2World(gravity);
@@ -40,11 +42,41 @@ Player * Level::returnActivePlayer()
 	return player;
 }
 
+void Level::changeCurrentHero()
+{
+	if (strong_player_now && dexterous_player)
+	{
+		player = dexterous_player;
+		strong_player_now = false;
+	}
+	else if (!strong_player_now && strong_player)
+	{
+		player = strong_player;
+		strong_player_now = true;
+	}
+}
+
 void Level::tryToSwitchLever()
 {
 	for (auto it : storage.lever_list)
 	{
 		it->activate();
+	}
+}
+
+void Level::pickUpBox()
+{
+	if (strong_player_now)
+	{
+		strong_player->tryToPickupBox();
+	}
+}
+
+void Level::throwBox(double x, double y)
+{
+	if (strong_player_now)
+	{
+		strong_player->throwBox(x,y);
 	}
 }
 
@@ -54,7 +86,7 @@ void Level::update()
 	int n = 0;
 	for (auto it : *storage.to_destroy_list)
 	{
-		it->destroy(level_world);
+		it->destroy();
 		n++;
 	}
 	for (int i = 0; i < n; i++)
@@ -311,7 +343,7 @@ continue;
 			tmp_obj.number_in_image_list = images.size() - 1;
 
 			fixture_def.shape = &shape;
-			fixture_def.friction = 0.3f;
+			//fixture_def.friction = 0.3f;
 			body->CreateFixture(&fixture_def);
 			changeable_objects.push_back(tmp_obj);
 
@@ -320,7 +352,7 @@ continue;
 				body->GetFixtureList()->SetDensity(std::stod(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("density"))->Attribute("value")));
 				body->GetFixtureList()->SetFriction(10.0f);
 				body->ResetMassData();
-				NonStaticObj* nso = new NonStaticObj(body, &changeable_objects.back());
+				NonStaticObj* nso = new NonStaticObj(body, &changeable_objects.back(), ObjectType::BOX);
 				body->SetUserData(nso);
 				storage.non_static_objects.push_back(nso);
 				break;
@@ -329,13 +361,20 @@ continue;
 			if (std::string(object->Attribute("type")) == std::string("player"))
 			{
 				int health = std::stoi(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("health"))->Attribute("value"));
-				player = new Player(8, level_width*tile_width, level_height*tile_height, 0.2, body, &changeable_objects.back(), 4, health);
+				if (std::string(object->Attribute("name")) == std::string("strong_player"))
+				{
+					strong_player = new StrongPlayer(level_width*tile_width, level_height*tile_height, body, &changeable_objects.back(), health);
+					player = strong_player;
+					strong_player_now = true;
+				}
+				else
+				{
+					dexterous_player = new DexterousPlayer(level_width*tile_width, level_height*tile_height, body, &changeable_objects.back(), health);
+					player = dexterous_player;
+					strong_player_now = false;
+				}
 				storage.non_static_objects.push_back(player);
-				PlayerSensor* ps = new PlayerSensor(player, createBorderSensor(body, &changeable_objects.back(), Sides::LEFT), Sides::LEFT);
-				storage.players_sensors_list.push_back(ps);
-				ps = new PlayerSensor(player, createBorderSensor(body, &changeable_objects.back(), Sides::RIGHT), Sides::RIGHT);
-				storage.players_sensors_list.push_back(ps);
-				ps = new PlayerSensor(player, createBorderSensor(body, &changeable_objects.back(), Sides::DOWN), Sides::DOWN);
+				PlayerSensor* ps = new PlayerSensor(player, createBorderSensor(body, &changeable_objects.back(), Sides::DOWN));
 				storage.players_sensors_list.push_back(ps);
 			}
 			else if (std::string(object->Attribute("type")) == std::string("platform"))
@@ -459,6 +498,10 @@ void Level::parseTimer(tinyxml2::XMLElement * object, std::vector<Action> stages
 //load bridge or partition
 void Level::parseBridge(tinyxml2::XMLElement * object, b2Body * body, b2BodyDef* body_def, Object* tmp_obj)
 {
+	body->GetFixtureList()->SetDensity(20.0f);
+	body->ResetMassData();
+	body->SetFixedRotation(false);
+
 	tinyxml2::XMLElement *property = object->FirstChildElement("properties")->FirstChildElement("property");
 	std::string ancor = findAmongSiblings(property, "ancor")->Attribute("value");
 	std::string::size_type pos = ancor.find(' '); // devide x & y coordinates
@@ -484,6 +527,7 @@ void Level::parseBridge(tinyxml2::XMLElement * object, b2Body * body, b2BodyDef*
 	rev_def.upperAngle *= GRADTORAD;
 	// include application of limits of corners
 	b2RevoluteJoint* bridge_joint = (b2RevoluteJoint*)level_world->CreateJoint(&rev_def);
+
 	if (std::string(object->Attribute("type")) == std::string("revolute_bridge"))
 	{
 		// expose the moment of force (motor power)
@@ -515,8 +559,9 @@ void Level::parseBridge(tinyxml2::XMLElement * object, b2Body * body, b2BodyDef*
 	}
 	else
 	{
-		Partition* partiton = new Partition(body, &changeable_objects.back(), bridge_joint);
+		NonStaticObj* partiton = new NonStaticObj(body, &changeable_objects.back(), ObjectType::BRIDGE_PARTITION);
 		storage.non_static_objects.push_back(partiton);
+		body->SetUserData(partiton);
 	}
 }
 
@@ -583,25 +628,25 @@ b2Body* Level::createBorderSensor(b2Body * body, Object * tmp_obj, Sides side)
 		case Sides::DOWN:
 		{
 			wjd.localAnchorA.Set(0, tmpy);
-			shape.SetAsBox(tmpx - 0.1, 0.01);
+			shape.SetAsBox(tmpx - 0.01, 0.01);
 			break;
 		}
 		case Sides::UP:
 		{
 			wjd.localAnchorA.Set(0, -tmpy);
-			shape.SetAsBox(tmpx - 0.1, 0.01);
+			shape.SetAsBox(tmpx - 0.01, 0.01);
 			break;
 		}
 		case Sides::LEFT:
 		{
 			wjd.localAnchorA.Set(-tmpx, 0);
-			shape.SetAsBox(0.01, tmpy - 0.1);
+			shape.SetAsBox(0.01, tmpy - 0.01);
 			break;
 		}
 		case Sides::RIGHT:
 		{
 			wjd.localAnchorA.Set(tmpx, 0);
-			shape.SetAsBox(0.01, tmpy - 0.1);
+			shape.SetAsBox(0.01, tmpy - 0.01);
 			break;
 		}
 	}

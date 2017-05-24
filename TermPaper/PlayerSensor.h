@@ -7,8 +7,7 @@ class PlayerSensor : public ContactObject
 private:
 	int contact_count;
 	Player* player;
-	Sides side;
 public:
-	PlayerSensor(Player* observable_player, b2Body* body, Sides _side);
+	PlayerSensor(Player* observable_player, b2Body* body);
 	void contactEvent(b2Contact * contact, bool is_begin);
 };

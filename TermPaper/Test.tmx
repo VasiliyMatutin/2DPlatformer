@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32" nextobjectid="94">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32" nextobjectid="104">
  <tileset firstgid="1" name="tiles_spritesheet" tilewidth="32" tileheight="32" tilecount="161" columns="7">
   <image source="tiles_spritesheet.png" width="224" height="736"/>
  </tileset>
@@ -53,7 +53,7 @@
 </data>
  </layer>
  <objectgroup name="Static">
-  <object id="1" x="0" y="383" width="191" height="193"/>
+  <object id="1" x="1.09091" y="383.273" width="191" height="193"/>
   <object id="2" x="192" y="415" width="31" height="161"/>
   <object id="3" x="224" y="447" width="32" height="128.5"/>
   <object id="4" x="256" y="480" width="31" height="96"/>
@@ -70,18 +70,18 @@
   <object id="69" type="danger" x="672.5" y="490.5" width="126.667" height="86.5"/>
  </objectgroup>
  <objectgroup name="Dynamic">
-  <object id="60" name="player" type="player" x="364.028" y="482.9" width="32" height="48">
+  <object id="60" name="strong_player" type="player" x="88.028" y="320.233" width="32" height="48">
    <properties>
     <property name="health" value="50"/>
     <property name="image" value="player.png"/>
    </properties>
   </object>
-  <object id="62" name="bridge1" type="revolute_bridge" x="192.687" y="383.292" width="158" height="7">
+  <object id="62" name="bridge1" type="revolute_bridge" x="193.207" y="383.268" width="157.703" height="7">
    <properties>
-    <property name="ancor" value="-1 -1"/>
+    <property name="ancor" value="-1 -0.5"/>
     <property name="image" value="platform.png"/>
     <property name="init_state" value="up"/>
-    <property name="max_angle" value="70"/>
+    <property name="max_angle" value="75"/>
     <property name="min_angle" value="0"/>
     <property name="speed" value="1"/>
    </properties>
@@ -104,19 +104,19 @@
     <property name="min_angle" value="0"/>
    </properties>
   </object>
-  <object id="83" x="646" y="383" width="32" height="32">
+  <object id="83" x="728" y="12" width="32" height="32">
    <properties>
     <property name="density" type="float" value="10"/>
     <property name="image" value="crate.png"/>
    </properties>
   </object>
-  <object id="85" x="644" y="347" width="32" height="32">
+  <object id="85" x="305" y="126" width="32" height="32">
    <properties>
     <property name="density" type="float" value="50"/>
     <property name="image" value="metal_crate.png"/>
    </properties>
   </object>
-  <object id="86" x="220" y="341" width="32" height="32">
+  <object id="86" x="135.667" y="341.667" width="32" height="32">
    <properties>
     <property name="density" type="float" value="10"/>
     <property name="image" value="crate.png"/>
@@ -128,22 +128,28 @@
     <property name="image" value="crate.png"/>
    </properties>
   </object>
-  <object id="88" x="276" y="39" width="32" height="32">
+  <object id="88" x="427.333" y="392" width="32" height="32">
    <properties>
     <property name="density" type="float" value="10"/>
     <property name="image" value="crate.png"/>
    </properties>
   </object>
-  <object id="89" x="21" y="285" width="32" height="32">
+  <object id="89" x="359.667" y="494" width="32" height="32">
    <properties>
-    <property name="density" type="float" value="50"/>
+    <property name="density" type="float" value="30"/>
     <property name="image" value="metal_crate.png"/>
    </properties>
   </object>
-  <object id="90" x="526" y="341" width="32" height="32">
+  <object id="90" x="13" y="261" width="32" height="32">
    <properties>
-    <property name="density" type="float" value="10"/>
+    <property name="density" type="float" value="15"/>
     <property name="image" value="crate.png"/>
+   </properties>
+  </object>
+  <object id="103" name="dexterous_player" type="player" x="324.695" y="493.566" width="32" height="32">
+   <properties>
+    <property name="health" value="20"/>
+    <property name="image" value="dex_player.png"/>
    </properties>
   </object>
  </objectgroup>
@@ -243,7 +249,7 @@
     <property name="time_stages" value="2"/>
    </properties>
   </object>
-  <object id="82" type="sensor" x="527" y="496" width="29" height="43">
+  <object id="82" type="sensor" x="593" y="492" width="29" height="43">
    <properties>
     <property name="is_keeping" value="0"/>
     <property name="is_visible" value="0"/>

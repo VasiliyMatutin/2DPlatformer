@@ -10,6 +10,9 @@ enum class Events
 	Jumping,
 	StopHero,
 	SwitchLever,
+	PickUp,
+	ChangeHero,
+	MouseClicked,
 	Move
 };
 
@@ -21,3 +24,8 @@ enum class ViewEvents
 	DistanseZoom,
 };
 
+struct MouseClickCoordinates
+{
+	static double x;
+	static double y;
+};

@@ -1,13 +1,11 @@
 #include "Player.h"
 #include <iostream>
 
-Player::Player(int _max_frame, int _level_width, int _level_height, double _current_frequency, b2Body* _body, Object* _object, int _fixed_speed, int _health) : NonStaticObj(_body, _object),
-	max_frame(_max_frame),
-	fixed_speed(_fixed_speed),
-	current_frequency(_current_frequency),
+Player::Player(int _level_width, int _level_height, b2Body* _body, Object* _object, int _health) : NonStaticObj(_body, _object, ObjectType::PLAYER),
 	level_width(_level_width),
 	level_height(_level_height),
 	health(_health),
+	current_frequency(0.2),
 	x_speed(0),
 	desired_vel(0),
 	img_row(3),
@@ -18,16 +16,14 @@ Player::Player(int _max_frame, int _level_width, int _level_height, double _curr
 	filter.categoryBits = PLAYER;
 	filter.maskBits = MASK_PLAYER;
 	body->GetFixtureList()->SetFilterData(filter);
-	body->GetFixtureList()->SetDensity(1.0f);
 	body->GetFixtureList()->SetFriction(0.3f);
-	body->ResetMassData();
 	body->SetFixedRotation(true);
 	body->SetUserData(this);
 }
 
 void Player::jump()
 {
-	if (on_ground) body->ApplyLinearImpulse(b2Vec2(0, -5.5 * body->GetMass()), b2Vec2(body->GetPosition().x, body->GetPosition().y), 1);
+	if (on_ground) body->ApplyLinearImpulse(b2Vec2(0, -jump_strenght * body->GetMass()), b2Vec2(body->GetPosition().x, body->GetPosition().y), 1);
 }
 
 void Player::moveLeft()
@@ -52,49 +48,23 @@ void Player::stopLeft()
 
 void Player::decreaseHealth(int _healt_loss)
 {
-	std::cout << "Kill me" << std::endl;
+	//std::cout << "Kill me" << std::endl;
 }
 
-void Player::beginContact(Sides side)
+void Player::beginContactWithGround()
 {
-	switch (side)
-	{
-	case Sides::LEFT:
-	case Sides::RIGHT:
-		is_animated = 0;
-		if (body->GetLinearVelocity().y < 0)
-		{
-			body->SetLinearVelocity(b2Vec2(0, 0));
-		}
-		return;
-	case Sides::DOWN:
-		on_ground = 1;
-		body->ApplyLinearImpulseToCenter(b2Vec2(0, 0), 1);
-		return;
-	}
+	on_ground = 1;
+	body->ApplyLinearImpulseToCenter(b2Vec2(0, 0), 1);
 }
 
-void Player::endContact(Sides side)
+void Player::endContactWithGround()
 {
-	switch (side)
+	on_ground = 0;
+	b2Vec2 tmp = body->GetLinearVelocity();
+	if (tmp.x != 0)
 	{
-	case Sides::LEFT:
-	case Sides::RIGHT:
-	{
-		is_animated = 1;
-		return;
-	}
-	case Sides::DOWN:
-	{
-		on_ground = 0;
-		b2Vec2 tmp = body->GetLinearVelocity();
-		if (tmp.x != 0)
-		{
-			body->SetLinearVelocity(b2Vec2(0, tmp.y));
-			body->ApplyLinearImpulseToCenter(b2Vec2(x_speed / 4 * body->GetMass(), 0), 1);
-		}
-		return;
-	}
+		body->SetLinearVelocity(b2Vec2(0, tmp.y));
+		body->ApplyLinearImpulseToCenter(b2Vec2(x_speed / 4 * body->GetMass(), 0), 1);
 	}
 }
 
@@ -109,12 +79,18 @@ void Player::update()
 	b2Vec2 vel = body->GetLinearVelocity();
 	if (on_ground)
 	{
+		is_animated = 1;
 		x_speed = desired_vel;
+		if (abs(vel.x) < 0.01)
+		{
+			is_animated = 0;
+		}
 	}
 	else
 	{
 		x_speed = vel.x;
 	}
+
 	if (object->x + object->width / 2 >= level_width - 1 && x_speed > 0 || object->x - object->width / 2 <= 1 && x_speed < 0) //check of collisions with level boundaries
 	{
 		x_speed = 0;
@@ -126,19 +102,18 @@ void Player::update()
 	NonStaticObj::update();
 	if (on_ground && x_speed != 0 && is_animated)
 	{
-		current_frame += current_frequency;
+		current_frame += abs(x_speed) / 20;
 		if (current_frame > max_frame)
 		{
 			current_frame -= max_frame - 1;
 		}
+		if (x_speed > 0) img_row = right_row;
+		if (x_speed < 0) img_row = left_row;
 	}
 	else
-		current_frame = 0.1;
+	{
+		current_frame = 0.9;
+	}
 	object->left = object->width*(int)current_frame;
 	object->top = object->height*img_row;
-	if (is_animated && on_ground)
-	{
-		if (x_speed > 0) img_row = 3;
-		if (x_speed < 0) img_row = 1;
-	}
 }

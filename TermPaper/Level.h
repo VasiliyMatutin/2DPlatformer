@@ -4,7 +4,8 @@
 #include <list>
 #include "LevelStorage.h"
 #include "LevelBox.h"
-#include "Player.h"
+#include "StrongPlayer.h"
+#include "DexterousPlayer.h"
 #include "ContactListener.h"
 #include "TinyXML\tinyxml2.h"
 
@@ -20,10 +21,13 @@ enum class BodyType
 class Level
 {
 	int level_width, level_height, tile_width, tile_height;
+	bool strong_player_now;
 	std::list<Object> unchangeable_objects;
 	std::list<Object> changeable_objects;
 	Storage storage;
 	Player* player;
+	StrongPlayer* strong_player;
+	DexterousPlayer* dexterous_player;
 	b2World* level_world;
 	MyContactListener* my_contact_listener_ptr;
 	std::vector <std::string> images;
@@ -48,6 +52,9 @@ public:
 	std::list<Object>& getChangeableObjectList();
 	std::vector<std::string>& getImagesList();
 	Player* returnActivePlayer();
+	void changeCurrentHero();
 	void tryToSwitchLever();
+	void pickUpBox();
+	void throwBox(double x, double y);
 	void update();
 };

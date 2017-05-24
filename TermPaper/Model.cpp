@@ -27,6 +27,15 @@ void Model::handleEvent(Events _event)
 	case Events::SwitchLever:
 		current_level.tryToSwitchLever();
 		break;
+	case Events::PickUp:
+		current_level.pickUpBox();
+		break;
+	case Events::ChangeHero:
+		current_level.changeCurrentHero();
+		break;
+	case Events::MouseClicked:
+		current_level.throwBox(MouseClickCoordinates::x, MouseClickCoordinates::y);
+		break;
 	case Events::Move:
 		current_level.update();
 		break;

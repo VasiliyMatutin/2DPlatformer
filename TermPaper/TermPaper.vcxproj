@@ -72,6 +72,8 @@
     <ClCompile Include="ContactListener.cpp" />
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="DangerObject.cpp" />
+    <ClCompile Include="DexterousPlayer.cpp" />
+    <ClCompile Include="Events.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Lever.cpp" />
     <ClCompile Include="main.cpp" />
@@ -79,11 +81,11 @@
     <ClCompile Include="ManualSwitchObj.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="NonStaticObj.cpp" />
-    <ClCompile Include="Partition.cpp" />
     <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerSensor.cpp" />
     <ClCompile Include="RevoluteBridge.cpp" />
+    <ClCompile Include="StrongPlayer.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="VisibleSensor.cpp" />
     <ClCompile Include="Sensor.cpp" />
@@ -95,6 +97,7 @@
     <ClInclude Include="ContactListener.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="DangerObject.h" />
+    <ClInclude Include="DexterousPlayer.h" />
     <ClInclude Include="LevelStorage.h" />
     <ClInclude Include="Lever.h" />
     <ClInclude Include="ManualPlatform.h" />
@@ -104,11 +107,11 @@
     <ClInclude Include="Level.h" />
     <ClInclude Include="LevelBox.h" />
     <ClInclude Include="Model.h" />
-    <ClInclude Include="Partition.h" />
     <ClInclude Include="Platform.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerSensor.h" />
     <ClInclude Include="RevoluteBridge.h" />
+    <ClInclude Include="StrongPlayer.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="VisibleSensor.h" />
     <ClInclude Include="Sensor.h" />
