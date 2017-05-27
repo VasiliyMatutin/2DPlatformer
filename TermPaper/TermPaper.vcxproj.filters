@@ -102,6 +102,9 @@
     <ClCompile Include="Events.cpp">
       <Filter>main</Filter>
     </ClCompile>
+    <ClCompile Include="Bonus.cpp">
+      <Filter>main\Model\Level\Sensor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controller.h">
@@ -174,6 +177,9 @@
       <Filter>main\Model\Level\NonStaticObj\Dynamic obj\Player</Filter>
     </ClInclude>
     <ClInclude Include="DangerObject.h">
+      <Filter>main\Model\Level\Sensor</Filter>
+    </ClInclude>
+    <ClInclude Include="Bonus.h">
       <Filter>main\Model\Level\Sensor</Filter>
     </ClInclude>
   </ItemGroup>

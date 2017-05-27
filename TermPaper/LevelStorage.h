@@ -7,6 +7,7 @@
 #include "DangerObject.h"
 #include "RevoluteBridge.h"
 #include "PlayerSensor.h"
+#include "Bonus.h"
 
 class Storage
 {
@@ -18,6 +19,8 @@ public:
 	std::list<NonStaticObj*>* to_destroy_list;
 	std::list<DangerObject*> danger_list;
 	std::list<StaticType> ground_type;
+	std::list<Bonus*> bonus_list;
+	std::vector <std::string> images;
 	std::map<std::string, ManualSwitchObj*> future_observables;
 	~Storage()
 	{
@@ -41,6 +44,10 @@ public:
 			delete it;
 		}
 		for (auto it : danger_list)
+		{
+			delete it;
+		}
+		for (auto it : bonus_list)
 		{
 			delete it;
 		}

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32" nextobjectid="104">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32" nextobjectid="109">
  <tileset firstgid="1" name="tiles_spritesheet" tilewidth="32" tileheight="32" tilecount="161" columns="7">
   <image source="tiles_spritesheet.png" width="224" height="736"/>
  </tileset>
@@ -70,7 +70,7 @@
   <object id="69" type="danger" x="672.5" y="490.5" width="126.667" height="86.5"/>
  </objectgroup>
  <objectgroup name="Dynamic">
-  <object id="60" name="strong_player" type="player" x="88.028" y="320.233" width="32" height="48">
+  <object id="60" name="strong_player" type="player" x="650.028" y="363.233" width="32" height="48">
    <properties>
     <property name="health" value="50"/>
     <property name="image" value="player.png"/>
@@ -116,7 +116,7 @@
     <property name="image" value="metal_crate.png"/>
    </properties>
   </object>
-  <object id="86" x="135.667" y="341.667" width="32" height="32">
+  <object id="86" x="525.667" y="341.667" width="32" height="32">
    <properties>
     <property name="density" type="float" value="10"/>
     <property name="image" value="crate.png"/>
@@ -136,17 +136,17 @@
   </object>
   <object id="89" x="359.667" y="494" width="32" height="32">
    <properties>
-    <property name="density" type="float" value="30"/>
+    <property name="density" type="float" value="20"/>
     <property name="image" value="metal_crate.png"/>
    </properties>
   </object>
-  <object id="90" x="13" y="261" width="32" height="32">
+  <object id="90" x="560" y="219" width="32" height="32">
    <properties>
     <property name="density" type="float" value="15"/>
     <property name="image" value="crate.png"/>
    </properties>
   </object>
-  <object id="103" name="dexterous_player" type="player" x="324.695" y="493.566" width="32" height="32">
+  <object id="103" name="dexterous_player" type="player" x="156.695" y="345.566" width="32" height="32">
    <properties>
     <property name="health" value="20"/>
     <property name="image" value="dex_player.png"/>
@@ -213,6 +213,46 @@
     <property name="is_rounded" value="0"/>
    </properties>
    <polyline points="0,0 0,-16"/>
+  </object>
+  <object id="104" type="bonus" x="27" y="330" width="32" height="32">
+   <properties>
+    <property name="image" value="bonus_jump.png"/>
+    <property name="modificator" value="2"/>
+    <property name="time" value="5"/>
+    <property name="type" value="jump"/>
+   </properties>
+  </object>
+  <object id="105" type="bonus" x="0" y="330" width="32" height="32">
+   <properties>
+    <property name="image" value="bonus_speed.png"/>
+    <property name="modificator" value="2"/>
+    <property name="time" value="5"/>
+    <property name="type" value="speed"/>
+   </properties>
+  </object>
+  <object id="106" type="bonus" x="53" y="330" width="32" height="32">
+   <properties>
+    <property name="image" value="bonus_jump.png"/>
+    <property name="modificator" value="2"/>
+    <property name="time" value="5"/>
+    <property name="type" value="jump"/>
+   </properties>
+  </object>
+  <object id="107" type="bonus" x="102" y="330" width="32" height="32">
+   <properties>
+    <property name="image" value="bonus_health.png"/>
+    <property name="modificator" value="2"/>
+    <property name="time" value="5"/>
+    <property name="type" value="health"/>
+   </properties>
+  </object>
+  <object id="108" type="bonus" x="79" y="330" width="32" height="32">
+   <properties>
+    <property name="image" value="bonus_jump.png"/>
+    <property name="modificator" value="2"/>
+    <property name="time" value="5"/>
+    <property name="type" value="jump"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup name="Sensors">

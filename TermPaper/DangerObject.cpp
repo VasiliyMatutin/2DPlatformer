@@ -42,7 +42,7 @@ void DangerObject::update()
 	{
 		for (auto it : list_of_contact)
 		{
-			it->decreaseHealth(damage);
+			it->activate_bonus(-damage, BonusType::HEALTH);
 		}
 	}
 }

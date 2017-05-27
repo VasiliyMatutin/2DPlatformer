@@ -1,9 +1,5 @@
 #pragma once
-#include <string>
-#include <vector>
-#include <list>
 #include "LevelStorage.h"
-#include "LevelBox.h"
 #include "StrongPlayer.h"
 #include "DexterousPlayer.h"
 #include "ContactListener.h"
@@ -18,6 +14,14 @@ enum class BodyType
 	DANGER
 };
 
+enum class Sides
+{
+	UP,
+	DOWN,
+	RIGHT,
+	LEFT
+};
+
 class Level
 {
 	int level_width, level_height, tile_width, tile_height;
@@ -28,9 +32,11 @@ class Level
 	Player* player;
 	StrongPlayer* strong_player;
 	DexterousPlayer* dexterous_player;
+	Object* bonus_UI[3];
+	Bonus* activate_this_bonus;
+	Bonus* active_bonus[3];
 	b2World* level_world;
 	MyContactListener* my_contact_listener_ptr;
-	std::vector <std::string> images;
 	void loadMap(tinyxml2::XMLElement *map);
 	void loadObjects(tinyxml2::XMLElement *map);
 	void loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type);
@@ -44,6 +50,8 @@ class Level
 	tinyxml2::XMLElement * findAmongSiblings(tinyxml2::XMLElement * element, std::string name);
 	std::vector<std::string> stringDelimiter(std::string init_str);
 	std::vector<std::pair<double, double>> buildTrajectory(tinyxml2::XMLElement * objectgroup, std::string trajectory_name, bool* is_rounded);
+	void createBonusUI();
+	void updateUI();
 public:
 	Level();
 	~Level();

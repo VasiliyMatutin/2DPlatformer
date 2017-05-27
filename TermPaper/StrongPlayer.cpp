@@ -7,7 +7,7 @@ StrongPlayer::StrongPlayer(int _level_width, int _level_height, b2Body * _body, 
 	fixed_speed = 2;
 	right_row = 3;
 	left_row = 1;
-	jump_strenght = 3;
+	jump_strenght  = 3;
 	body->GetFixtureList()->SetDensity(2.5f);
 	body->ResetMassData();
 }

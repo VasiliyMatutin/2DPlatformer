@@ -34,7 +34,7 @@ std::list<Object>& Level::getChangeableObjectList()
 
 std::vector<std::string>& Level::getImagesList()
 {
-	return images;
+	return storage.images;
 }
 
 Player * Level::returnActivePlayer()
@@ -105,6 +105,7 @@ void Level::update()
 	{
 		it->update();
 	}
+	updateUI();
 }
 
 bool Level::loadLevel(std::string filename)
@@ -128,6 +129,8 @@ bool Level::loadLevel(std::string filename)
 
 	//Add objects group
 	loadObjects(map);
+
+	createBonusUI();
 	return 1;
 }
 
@@ -149,7 +152,7 @@ void Level::loadMap(tinyxml2::XMLElement *map)
 		tg.last_gid = tg.first_gid + atof(tileset->Attribute("tilecount")) - 1;
 		tinyxml2::XMLElement *image;
 		image = tileset->FirstChildElement("image");
-		images.push_back(std::string(image->Attribute("source")));
+		storage.images.push_back(std::string(image->Attribute("source")));
 		image_list.push_back(tg);
 		tileset = tileset->NextSiblingElement("tileset");
 	}
@@ -290,10 +293,13 @@ continue;
 			fixture_def.shape = &shape;
 			fixture_def.friction = 0.3f;
 			body->CreateFixture(&fixture_def);
-			if (object->Attribute("type")) //////////////////////////////////////////crutch
+			if (object->Attribute("type"))
 			{
-				storage.ground_type.push_back(StaticType::DANGER);
-				body->SetUserData(&storage.ground_type.back());
+				if (object->Attribute("type") == std::string("danger"))
+				{
+					storage.ground_type.push_back(StaticType::DANGER);
+					body->SetUserData(&storage.ground_type.back());
+				}
 			}
 		}
 		break;
@@ -339,8 +345,8 @@ continue;
 		}
 		case BodyType::KINEMATIC:
 		{
-			images.push_back(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("image"))->Attribute("value"));
-			tmp_obj.number_in_image_list = images.size() - 1;
+			storage.images.push_back(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("image"))->Attribute("value"));
+			tmp_obj.number_in_image_list = storage.images.size() - 1;
 
 			fixture_def.shape = &shape;
 			//fixture_def.friction = 0.3f;
@@ -380,6 +386,26 @@ continue;
 			else if (std::string(object->Attribute("type")) == std::string("platform"))
 			{
 				parsePlatform(object, objectgroup, body);
+			}
+			else if (object->Attribute("type") == std::string("bonus"))
+			{
+				BonusType bt;
+				std::string string_bt = findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("type"))->Attribute("value");
+				if (string_bt == "health")
+				{
+					bt = BonusType::HEALTH;
+				}
+				else if (string_bt == "speed")
+				{
+					bt = BonusType::RUN;
+				}
+				else if (string_bt == "jump")
+				{
+					bt = BonusType::JUMP;
+				}
+				double modificator = std::stod(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("modificator"))->Attribute("value"));
+				double time = std::stod(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("time"))->Attribute("value"));
+				Bonus* bn = new Bonus(modificator, time, bt, player, &activate_this_bonus, body, &changeable_objects.back());
 			}
 			else if (std::string(object->Attribute("type")) == std::string("revolute_bridge") || std::string(object->Attribute("type")) == std::string("partition"))
 			{
@@ -448,8 +474,8 @@ void Level::parseSensor(tinyxml2::XMLElement * object, b2Body * body, std::vecto
 		if (is_visible)
 		{
 			//visible sensor
-			images.push_back(findAmongSiblings(property, std::string("image"))->Attribute("value"));
-			changeable_objects.front().number_in_image_list = images.size() - 1;
+			storage.images.push_back(findAmongSiblings(property, std::string("image"))->Attribute("value"));
+			changeable_objects.front().number_in_image_list = storage.images.size() - 1;
 			sensor = new VisibleSensor(observables, repeated_allowed, is_keeping, body, &changeable_objects.front(), stages);
 		}
 		else
@@ -462,8 +488,8 @@ void Level::parseSensor(tinyxml2::XMLElement * object, b2Body * body, std::vecto
 	else
 	{
 		//create lever - sensor switching by player
-		images.push_back(findAmongSiblings(property, std::string("image"))->Attribute("value"));
-		changeable_objects.front().number_in_image_list = images.size() - 1;
+		storage.images.push_back(findAmongSiblings(property, std::string("image"))->Attribute("value"));
+		changeable_objects.front().number_in_image_list = storage.images.size() - 1;
 		Lever* lever = new Lever(observables, repeated_allowed, body, &changeable_objects.front(), &player, stages);
 		storage.lever_list.push_back(lever);
 	}
@@ -570,7 +596,7 @@ void Level::parseDangerObject(tinyxml2::XMLElement * object, b2Body * body, Obje
 	tinyxml2::XMLElement *property = object->FirstChildElement("properties")->FirstChildElement("property");
 	int damage = std::stoi(findAmongSiblings(property, "damage")->Attribute("value"));
 
-	images.push_back(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("image"))->Attribute("value"));
+	storage.images.push_back(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("image"))->Attribute("value"));
 
 	if (findAmongSiblings(property, "is_movable")->BoolAttribute("value"))
 	{
@@ -578,11 +604,11 @@ void Level::parseDangerObject(tinyxml2::XMLElement * object, b2Body * body, Obje
 		ManualPlatform* man_platf = static_cast<ManualPlatform*>(storage.future_observables.find(findAmongSiblings(property, "stick_platform")->Attribute("value"))->second);
 		body = man_platf->getBody();
 		tmp_obj = man_platf->getObject();
-		tmp_obj->number_in_image_list = images.size() - 1;
+		tmp_obj->number_in_image_list = storage.images.size() - 1;
 	}
 	else
 	{
-		tmp_obj->number_in_image_list = images.size() - 1;
+		tmp_obj->number_in_image_list = storage.images.size() - 1;
 		changeable_objects.push_back(*tmp_obj);
 	}
 
@@ -721,5 +747,59 @@ std::vector<std::pair<double, double>> Level::buildTrajectory(tinyxml2::XMLEleme
 	}
 	*is_rounded = findAmongSiblings(trajectory->FirstChildElement("properties")->FirstChildElement("property"), std::string("is_rounded"))->BoolAttribute("value");
 	return coord_set;
+}
+
+void Level::createBonusUI()
+{
+	for (int i = 0; i < 3; ++i)
+	{
+		Object tmp_obj;
+		tmp_obj.top = 0;
+		tmp_obj.left = 0;
+		tmp_obj.x = 32 * (i + 1);
+		tmp_obj.y = 32;
+		tmp_obj.rotation = 0;
+		tmp_obj.height = 32;
+		tmp_obj.width = 32;
+		tmp_obj.is_valid = false;
+		changeable_objects.push_back(tmp_obj);
+		bonus_UI[i] = &changeable_objects.back();
+	}
+}
+
+void Level::updateUI()
+{
+	for (int i = 0; i < 3; ++i)
+	{
+		if (active_bonus[i])
+		{
+			if (bonus_UI[i]->is_valid == 0)
+			{
+				active_bonus[i] = nullptr;
+			}
+			else
+			{
+				active_bonus[i]->update();
+			}
+		}
+	}
+	if (activate_this_bonus)
+	{
+		for (int i = 0; i < 3; ++i)
+		{
+			if (bonus_UI[i]->is_valid == 0)
+			{
+				activate_this_bonus->activate(&bonus_UI[i]);
+				active_bonus[i] = activate_this_bonus;
+				activate_this_bonus = nullptr;
+				return;
+			}
+		}
+		active_bonus[0]->deactivate();
+		activate_this_bonus->activate(&bonus_UI[0]);
+		active_bonus[0] = activate_this_bonus;
+		activate_this_bonus = nullptr;
+	}
+	return;
 }
 

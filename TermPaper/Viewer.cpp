@@ -65,7 +65,6 @@ void Viewer::prepareNewLevel()
 	for (auto it : objects)
 	{
 		sf::Sprite sprite;
-		sprite.setTexture(texture[it.number_in_image_list]);
 		sprite.setColor(sf::Color(255, 255, 255));
 		flexible_sprite.push_back(sprite);
 	}
@@ -87,6 +86,7 @@ void Viewer::update()
 			rect.height = it.height;
 			rect.left = it.left;
 			rect.width = it.width;
+			flexible_sprite[i].setTexture(texture[it.number_in_image_list]);
 			flexible_sprite[i].setOrigin(sf::Vector2f(it.width / 2, it.height / 2));
 			flexible_sprite[i].setTextureRect(rect);
 			flexible_sprite[i].setPosition(it.x, it.y);

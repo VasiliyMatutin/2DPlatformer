@@ -69,6 +69,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bonus.cpp" />
     <ClCompile Include="ContactListener.cpp" />
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="DangerObject.cpp" />
@@ -93,6 +94,7 @@
     <ClCompile Include="WinSingleton.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bonus.h" />
     <ClInclude Include="ContactObject.h" />
     <ClInclude Include="ContactListener.h" />
     <ClInclude Include="Controller.h" />
