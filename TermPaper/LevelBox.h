@@ -6,11 +6,18 @@ struct TilesetImg
 	int first_gid, last_gid, columns;
 };
 
-struct Object
+class Object
 {
-	bool is_valid = 1;
-	int number_in_image_list, top, left;
-	double x, y, height, width, rotation;
+public:
+	int number_in_image_list;
+	int top;
+	int left;
+	double x;
+	double y;
+	double height;
+	double width;
+	double rotation;
+	bool is_valid;
 };
 
 static const int PIXEL_PER_METER = 32;

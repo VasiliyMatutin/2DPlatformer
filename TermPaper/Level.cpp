@@ -32,6 +32,16 @@ std::list<Object>& Level::getChangeableObjectList()
 	return changeable_objects;
 }
 
+std::list<Object>& Level::getUIObjectList()
+{
+	return UI_objects;
+}
+
+PlayerUI * Level::getUI()
+{
+	return player->returnUI();
+}
+
 std::vector<std::string>& Level::getImagesList()
 {
 	return storage.images;
@@ -105,7 +115,6 @@ void Level::update()
 	{
 		it->update();
 	}
-	updateUI();
 }
 
 bool Level::loadLevel(std::string filename)
@@ -130,7 +139,8 @@ bool Level::loadLevel(std::string filename)
 	//Add objects group
 	loadObjects(map);
 
-	createBonusUI();
+	addUIToLevel();
+
 	return 1;
 }
 
@@ -349,7 +359,7 @@ continue;
 			tmp_obj.number_in_image_list = storage.images.size() - 1;
 
 			fixture_def.shape = &shape;
-			//fixture_def.friction = 0.3f;
+			fixture_def.friction = 0.3f;
 			body->CreateFixture(&fixture_def);
 			changeable_objects.push_back(tmp_obj);
 
@@ -405,7 +415,7 @@ continue;
 				}
 				double modificator = std::stod(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("modificator"))->Attribute("value"));
 				double time = std::stod(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("time"))->Attribute("value"));
-				Bonus* bn = new Bonus(modificator, time, bt, player, &activate_this_bonus, body, &changeable_objects.back());
+				Bonus* bn = new Bonus(modificator, time, bt, player, body, &changeable_objects.back());
 			}
 			else if (std::string(object->Attribute("type")) == std::string("revolute_bridge") || std::string(object->Attribute("type")) == std::string("partition"))
 			{
@@ -594,7 +604,7 @@ void Level::parseBridge(tinyxml2::XMLElement * object, b2Body * body, b2BodyDef*
 void Level::parseDangerObject(tinyxml2::XMLElement * object, b2Body * body, Object* tmp_obj, tinyxml2::XMLElement * objectgroup)
 {
 	tinyxml2::XMLElement *property = object->FirstChildElement("properties")->FirstChildElement("property");
-	int damage = std::stoi(findAmongSiblings(property, "damage")->Attribute("value"));
+	double damage = std::stod(findAmongSiblings(property, "damage")->Attribute("value"));
 
 	storage.images.push_back(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("image"))->Attribute("value"));
 
@@ -684,6 +694,19 @@ b2Body* Level::createBorderSensor(b2Body * body, Object * tmp_obj, Sides side)
 	return body2;
 }
 
+void Level::addUIToLevel()
+{
+	storage.images.push_back("Images/board.png");
+	Object board{storage.images.size() - 1, 0, 0, 0, 0, 110, 140, 0, true};
+	UI_objects.push_back(board);
+	storage.images.push_back("Images/bar.png");
+	Object bar{ storage.images.size() - 1, 0, 0, 5, 46, 24, 128, 0, true };
+	UI_objects.push_back(bar);
+	storage.images.push_back("Images/health_line.png");
+	strong_player->returnUI()->setHealthLineImg(storage.images.size() - 1);
+	dexterous_player->returnUI()->setHealthLineImg(storage.images.size() - 1);
+}
+
 std::vector<Action> Level::sensorStagesParser(std::vector<std::string> stages)
 {
 	std::vector<Action> result;
@@ -747,59 +770,5 @@ std::vector<std::pair<double, double>> Level::buildTrajectory(tinyxml2::XMLEleme
 	}
 	*is_rounded = findAmongSiblings(trajectory->FirstChildElement("properties")->FirstChildElement("property"), std::string("is_rounded"))->BoolAttribute("value");
 	return coord_set;
-}
-
-void Level::createBonusUI()
-{
-	for (int i = 0; i < 3; ++i)
-	{
-		Object tmp_obj;
-		tmp_obj.top = 0;
-		tmp_obj.left = 0;
-		tmp_obj.x = 32 * (i + 1);
-		tmp_obj.y = 32;
-		tmp_obj.rotation = 0;
-		tmp_obj.height = 32;
-		tmp_obj.width = 32;
-		tmp_obj.is_valid = false;
-		changeable_objects.push_back(tmp_obj);
-		bonus_UI[i] = &changeable_objects.back();
-	}
-}
-
-void Level::updateUI()
-{
-	for (int i = 0; i < 3; ++i)
-	{
-		if (active_bonus[i])
-		{
-			if (bonus_UI[i]->is_valid == 0)
-			{
-				active_bonus[i] = nullptr;
-			}
-			else
-			{
-				active_bonus[i]->update();
-			}
-		}
-	}
-	if (activate_this_bonus)
-	{
-		for (int i = 0; i < 3; ++i)
-		{
-			if (bonus_UI[i]->is_valid == 0)
-			{
-				activate_this_bonus->activate(&bonus_UI[i]);
-				active_bonus[i] = activate_this_bonus;
-				activate_this_bonus = nullptr;
-				return;
-			}
-		}
-		active_bonus[0]->deactivate();
-		activate_this_bonus->activate(&bonus_UI[0]);
-		active_bonus[0] = activate_this_bonus;
-		activate_this_bonus = nullptr;
-	}
-	return;
 }
 

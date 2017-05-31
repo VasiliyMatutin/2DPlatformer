@@ -6,6 +6,12 @@ Viewer::Viewer()
 	window = WinSingleton::getInstance();
 	sf::Vector2u win_size = window->getSize();
 	view.reset(sf::FloatRect(0, 0, win_size.x, win_size.y));
+	viewUI.reset(sf::FloatRect(0, 0, win_size.x, win_size.x));
+	view.setViewport(sf::FloatRect(0, 0, 1, 1));
+	viewUI.setViewport(sf::FloatRect(0, 0, 1, 1));
+	font.loadFromFile("Fonts/CyrilicOld.ttf");
+	text.setFillColor(sf::Color::Black);
+	text.setFont(font);
 	max_size.x = win_size.x;
 	max_size.y = win_size.y;
 	min_size.x = win_size.x / 2;
@@ -49,17 +55,12 @@ void Viewer::prepareNewLevel()
 	std::list<Object>& objects = model->returnCurrentLevel()->getUnchangeableObjectList();
 	for (auto it : objects)
 	{
-		sf::Sprite sprite;
-		sprite.setTexture(texture[it.number_in_image_list]);
-		sf::Rect<int> rect;
-		rect.top = it.top;
-		rect.height = it.height;
-		rect.left = it.left;
-		rect.width = it.width;
-		sprite.setTextureRect(rect);
-		sprite.setPosition(it.x, it.y);
-		sprite.setColor(sf::Color(255, 255, 255));
-		constant_sprite.push_back(sprite);
+		constant_sprite.push_back(setSprite(it));
+	}
+	objects = model->returnCurrentLevel()->getUIObjectList();
+	for (auto it : objects)
+	{
+		UI_sprite.push_back(setSprite(it));
 	}
 	objects = model->returnCurrentLevel()->getChangeableObjectList();
 	for (auto it : objects)
@@ -73,8 +74,11 @@ void Viewer::prepareNewLevel()
 void Viewer::update()
 {
 	window->clear();
-	for (int i = 0; i < constant_sprite.size(); i++)
-		window->draw(constant_sprite[i]);
+	//draw level map
+	centerViewOnHero();
+	window->setView(view);
+	for (auto it:constant_sprite)
+		window->draw(it);
 	std::list<Object>& objects = model->returnCurrentLevel()->getChangeableObjectList();
 	int i = 0;
 	for (auto it : objects)
@@ -95,9 +99,57 @@ void Viewer::update()
 		}
 		i++;
 	}
+	//draw UI
+	updateUI();
 	window->display();
-	centerViewOnHero();
-	window->setView(view);
+}
+
+void Viewer::updateUI()
+{
+	window->setView(viewUI);
+
+	for (auto it : UI_sprite)
+		window->draw(it);
+
+	for (int i = 0; i < 3; ++i)
+	{
+		Object* it = model->returnCurrentLevel()->getUI()->getActiveBonusesPtr(i);
+		if (it->is_valid)
+		{
+			window->draw(setSprite(*it));
+		}
+	}
+	Object* it = model->returnCurrentLevel()->getUI()->getHealthPtr();
+	if (it->is_valid)
+	{
+		window->draw(setSprite(*it));
+	}
+	text.setOrigin(0, 0);
+	text.setString(model->returnCurrentLevel()->getUI()->getPlayerName());
+	text.setCharacterSize(24);
+	text.setPosition(sf::Vector2f(32, 0));
+	window->draw(text);
+	text.setString(model->returnCurrentLevel()->getUI()->getPlayerType());
+	text.setCharacterSize(16);
+	text.setPosition(sf::Vector2f(70, 38));
+	sf::FloatRect textRect = text.getLocalBounds();
+	text.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
+	window->draw(text);
+}
+
+sf::Sprite Viewer::setSprite(Object it)
+{
+	sf::Sprite sprite;
+	sprite.setTexture(texture[it.number_in_image_list]);
+	sf::Rect<int> rect;
+	rect.top = it.top;
+	rect.height = it.height;
+	rect.left = it.left;
+	rect.width = it.width;
+	sprite.setTextureRect(rect);
+	sprite.setPosition(it.x, it.y);
+	sprite.setColor(sf::Color(255, 255, 255));
+	return sprite;
 }
 
 void Viewer::centerViewOnHero()

@@ -105,6 +105,9 @@
     <ClCompile Include="Bonus.cpp">
       <Filter>main\Model\Level\Sensor</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerUI.cpp">
+      <Filter>main\Model\Level</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controller.h">
@@ -181,6 +184,9 @@
     </ClInclude>
     <ClInclude Include="Bonus.h">
       <Filter>main\Model\Level\Sensor</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerUI.h">
+      <Filter>main\Model\Level</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -7,8 +7,6 @@ class Bonus : public ContactObject
 private:
 	b2Body* body;
 	Object* object;
-	Object** interface_object;
-	Bonus** active_bonus;
 	Player* current_player;
 	double time_interval, time, bonus_modificator;
 	BonusType bonus_type;
@@ -17,10 +15,10 @@ private:
 	std::chrono::time_point<std::chrono::system_clock> end;
 	std::chrono::duration<double> duration;
 public:
-	Bonus(double modificator, double time, BonusType bonus_type, Player* _current_player, Bonus** _active_bonus, b2Body* _body, Object* _object);
+	Bonus(double modificator, double time, BonusType bonus_type, Player* _current_player, b2Body* _body, Object* _object);
 	void contactEvent(b2Contact*, bool);
 	Object* getObject();
-	bool activate(Object** _object);
+	bool activate(Object* _object);
 	void deactivate();
 	void update();
 };

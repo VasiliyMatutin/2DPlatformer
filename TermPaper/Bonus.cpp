@@ -1,11 +1,10 @@
 #include "Bonus.h"
 
-Bonus::Bonus(double modificator, double time, BonusType _bonus_type, Player* _current_player, Bonus** _active_bonus, b2Body* _body, Object* _object):
+Bonus::Bonus(double modificator, double time, BonusType _bonus_type, Player* _current_player, b2Body* _body, Object* _object):
 	bonus_modificator(modificator),
 	time_interval(time),
 	bonus_type(_bonus_type),
 	current_player(_current_player),
-	active_bonus(_active_bonus),
 	body(_body),
 	object(_object)
 {
@@ -18,7 +17,7 @@ Bonus::Bonus(double modificator, double time, BonusType _bonus_type, Player* _cu
 
 void Bonus::contactEvent(b2Contact *, bool)
 {
-	*active_bonus = this;
+	*(current_player->getActivationBonus()) = this;
 }
 
 Object * Bonus::getObject()
@@ -26,7 +25,7 @@ Object * Bonus::getObject()
 	return object;
 }
 
-bool Bonus::activate(Object** _object)
+bool Bonus::activate(Object* _object)
 {
 	body->GetWorld()->DestroyBody(body);
 	object->is_valid = false;
@@ -34,9 +33,9 @@ bool Bonus::activate(Object** _object)
 	if (bonus_type != BonusType::HEALTH)
 	{
 		start = std::chrono::system_clock::now();
-		(*_object)->number_in_image_list = object->number_in_image_list;
-		interface_object = _object;
-		(*interface_object)->is_valid = true;
+		_object->number_in_image_list = object->number_in_image_list;
+		object = _object;
+		object->is_valid = true;
 		return true;
 	}
 	return false;
@@ -44,7 +43,7 @@ bool Bonus::activate(Object** _object)
 
 void Bonus::deactivate()
 {
-	(*interface_object)->is_valid = false;
+	object->is_valid = false;
 	current_player->deactivate_bonus(bonus_modificator, bonus_type);
 }
 

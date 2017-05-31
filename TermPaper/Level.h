@@ -28,13 +28,11 @@ class Level
 	bool strong_player_now;
 	std::list<Object> unchangeable_objects;
 	std::list<Object> changeable_objects;
+	std::list<Object> UI_objects;
 	Storage storage;
 	Player* player;
 	StrongPlayer* strong_player;
 	DexterousPlayer* dexterous_player;
-	Object* bonus_UI[3];
-	Bonus* activate_this_bonus;
-	Bonus* active_bonus[3];
 	b2World* level_world;
 	MyContactListener* my_contact_listener_ptr;
 	void loadMap(tinyxml2::XMLElement *map);
@@ -46,18 +44,19 @@ class Level
 	void parseBridge(tinyxml2::XMLElement *object, b2Body* body, b2BodyDef* body_def, Object* tmp_obj);
 	void parseDangerObject(tinyxml2::XMLElement *object, b2Body* body, Object* tmp_obj, tinyxml2::XMLElement * objectgroup);
 	b2Body* createBorderSensor(b2Body* body, Object* tmp_obj, Sides);
+	void addUIToLevel();
 	std::vector<Action> sensorStagesParser(std::vector<std::string> stages);
 	tinyxml2::XMLElement * findAmongSiblings(tinyxml2::XMLElement * element, std::string name);
 	std::vector<std::string> stringDelimiter(std::string init_str);
 	std::vector<std::pair<double, double>> buildTrajectory(tinyxml2::XMLElement * objectgroup, std::string trajectory_name, bool* is_rounded);
-	void createBonusUI();
-	void updateUI();
 public:
 	Level();
 	~Level();
 	bool loadLevel(std::string filename);
 	std::list<Object>& getUnchangeableObjectList();
 	std::list<Object>& getChangeableObjectList();
+	std::list<Object>& getUIObjectList();
+	PlayerUI* getUI();
 	std::vector<std::string>& getImagesList();
 	Player* returnActivePlayer();
 	void changeCurrentHero();

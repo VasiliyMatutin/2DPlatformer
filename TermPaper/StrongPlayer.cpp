@@ -10,6 +10,8 @@ StrongPlayer::StrongPlayer(int _level_width, int _level_height, b2Body * _body, 
 	jump_strenght  = 3;
 	body->GetFixtureList()->SetDensity(2.5f);
 	body->ResetMassData();
+	Player::playerUI.setPlayerName("Player2");
+	Player::playerUI.setPlayerType("\"The Rock\"");
 }
 
 void StrongPlayer::tryToPickupBox()

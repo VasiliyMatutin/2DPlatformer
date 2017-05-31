@@ -7,4 +7,6 @@ DexterousPlayer::DexterousPlayer(int _level_width, int _level_height, b2Body * _
 	right_row = 2;
 	left_row = 1;
 	jump_strenght = 5.5;
+	Player::playerUI.setPlayerName("Player1");
+	Player::playerUI.setPlayerType("\"Fast and Furious\"");
 }

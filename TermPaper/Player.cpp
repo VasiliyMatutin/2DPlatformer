@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Bonus.h"
 #include <iostream>
 
 Player::Player(int _level_width, int _level_height, b2Body* _body, Object* _object, int _health) : NonStaticObj(_body, _object, ObjectType::PLAYER),
@@ -22,7 +23,7 @@ Player::Player(int _level_width, int _level_height, b2Body* _body, Object* _obje
 	body->SetUserData(this);
 }
 
-void Player::activate_bonus(int modificator, BonusType bonus_type)
+void Player::activate_bonus(double modificator, BonusType bonus_type)
 {
 	switch (bonus_type)
 	{
@@ -46,13 +47,13 @@ void Player::activate_bonus(int modificator, BonusType bonus_type)
 		}
 		else if (health == 0)
 		{
-			destroy();
+			//destroy();
 		}
 	}
 	}
 }
 
-void Player::deactivate_bonus(int modificator, BonusType bonus_type)
+void Player::deactivate_bonus(double modificator, BonusType bonus_type)
 {
 	switch (bonus_type)
 	{
@@ -112,10 +113,20 @@ void Player::endContactWithGround()
 	}
 }
 
+Bonus ** Player::getActivationBonus()
+{
+	return &activate_this_bonus;
+}
+
 void Player::returnCoordinates(double* x, double* y)
 {
 	*x = object->x;
 	*y = object->y;
+}
+
+PlayerUI * Player::returnUI()
+{
+	return &playerUI;
 }
 
 void Player::update()
@@ -160,4 +171,46 @@ void Player::update()
 	}
 	object->left = object->width*(int)current_frame;
 	object->top = object->height*img_row;
+	updateUI();
+}
+
+void Player::updateUI()
+{
+	for (int i = 0; i < 3; ++i)
+	{
+		if (active_bonus[i])
+		{
+			if (playerUI.getActiveBonusesPtr(i)->is_valid == 0)
+			{
+				active_bonus[i] = nullptr;
+			}
+			else
+			{
+				active_bonus[i]->update();
+			}
+		}
+	}
+	if (activate_this_bonus)
+	{
+		for (int i = 0; i < 3; ++i)
+		{
+			if (playerUI.getActiveBonusesPtr(i)->is_valid == 0)
+			{
+				activate_this_bonus->activate(playerUI.getActiveBonusesPtr(i));
+				active_bonus[i] = activate_this_bonus;
+				activate_this_bonus = nullptr;
+				return;
+			}
+		}
+		active_bonus[0]->deactivate();
+		activate_this_bonus->activate(playerUI.getActiveBonusesPtr(0));
+		active_bonus[0] = activate_this_bonus;
+		activate_this_bonus = nullptr;
+	}
+	if (health < 0)
+	{
+		health = 0;
+	}
+	playerUI.getHealthPtr()->width = 99 * health / max_health;
+	return;
 }
