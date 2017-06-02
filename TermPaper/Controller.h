@@ -6,10 +6,9 @@
 class Controller
 {
 	sf::RenderWindow* window;
-	Model model;
-	Viewer viewer;
-	void NotifyModel(Events);
+	Model* model;
+	Viewer* viewer;
 public:
-	Controller();
+	Controller(Model* _model, Viewer* _viewer);
 	void observe();
 };

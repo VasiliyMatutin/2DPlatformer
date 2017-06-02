@@ -1,13 +1,16 @@
 #pragma once
 #include "Level.h"
 #include "Events.h"
+#include <stack>
 
 class Model
 {
+	ReturnEvents re;
 	int level_width, level_height;
-	Level current_level;
+	std::stack<Layer*> layers_list;
 public:
 	Model();
 	void handleEvent(Events);
-	Level* returnCurrentLevel();
+	void update();
+	Layer* returnUpperLayer();
 };

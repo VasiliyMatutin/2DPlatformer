@@ -1,48 +1,28 @@
 #include "Model.h"
 
-Model::Model(){}
+Model::Model()
+{
+	Level* test_level = new Level(std::string("test.tmx"));
+	layers_list.push(test_level);
+}
 
 void Model::handleEvent(Events _event)
 {
-	switch (_event)
+	layers_list.top()->smthHappend(_event);
+}
+
+void Model::update()
+{
+	re = ReturnEvents::DEFAULT;
+	layers_list.top()->update();
+	switch (re)
 	{
-	case Events::LoadLevel:
-		current_level.loadLevel("Test.tmx");
-		break;
-	case Events::HeroMoveLeft:
-		current_level.returnActivePlayer()->moveLeft();
-		break;
-	case Events::HeroMoveRight:
-		current_level.returnActivePlayer()->moveRight();
-		break;
-	case Events::Jumping:
-		current_level.returnActivePlayer()->jump();
-		break;
-	case Events::StopHeroMoveLeft:
-		current_level.returnActivePlayer()->stopLeft();
-		break;
-	case Events::StopHeroMoveRight:
-		current_level.returnActivePlayer()->stopRight();
-		break;
-	case Events::SwitchLever:
-		current_level.tryToSwitchLever();
-		break;
-	case Events::PickUp:
-		current_level.pickUpBox();
-		break;
-	case Events::ChangeHero:
-		current_level.changeCurrentHero();
-		break;
-	case Events::MouseClicked:
-		current_level.throwBox(MouseClickCoordinates::x, MouseClickCoordinates::y);
-		break;
-	case Events::Move:
-		current_level.update();
-		break;
+	case ReturnEvents::DEFAULT:
+		return;
 	}
 }
 
-Level * Model::returnCurrentLevel()
+Layer * Model::returnUpperLayer()
 {
-	return &current_level;
+	return layers_list.top();
 }

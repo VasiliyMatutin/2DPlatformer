@@ -146,7 +146,7 @@
     <property name="image" value="crate.png"/>
    </properties>
   </object>
-  <object id="103" name="dexterous_player" type="player" x="537.695" y="506.566" width="32" height="32">
+  <object id="103" name="dexterous_player" type="player" x="141.695" y="336.566" width="32" height="32">
    <properties>
     <property name="health" value="20"/>
     <property name="image" value="dex_player.png"/>

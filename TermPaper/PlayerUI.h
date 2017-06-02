@@ -4,15 +4,15 @@
 class PlayerUI
 {
 private:
-	std::string player_name;
-	std::string player_type;
+	TextObject player_name;
+	TextObject player_type;
 	Object active_bonuses[3];
-	Object health;
+	Object health{ 0, 0, 0, 28, 52, 10, 99, 0, true };
 	void createBonusUI();
 public:
 	PlayerUI();
-	std::string getPlayerName();
-	std::string getPlayerType();
+	TextObject* getPlayerName();
+	TextObject* getPlayerType();
 	void setHealthLineImg(int i);
 	void setPlayerName(std::string name);
 	void setPlayerType(std::string type);

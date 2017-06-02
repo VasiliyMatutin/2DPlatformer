@@ -69,12 +69,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AdvancedDisplay.cpp" />
     <ClCompile Include="Bonus.cpp" />
     <ClCompile Include="ContactListener.cpp" />
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="DangerObject.cpp" />
     <ClCompile Include="DexterousPlayer.cpp" />
     <ClCompile Include="Events.cpp" />
+    <ClCompile Include="Layer.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Lever.cpp" />
     <ClCompile Include="main.cpp" />
@@ -88,6 +90,7 @@
     <ClCompile Include="PlayerUI.cpp" />
     <ClCompile Include="RevoluteBridge.cpp" />
     <ClCompile Include="StrongPlayer.cpp" />
+    <ClCompile Include="Display.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="VisibleSensor.cpp" />
     <ClCompile Include="Sensor.cpp" />
@@ -95,12 +98,14 @@
     <ClCompile Include="WinSingleton.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AdvancedDisplay.h" />
     <ClInclude Include="Bonus.h" />
     <ClInclude Include="ContactObject.h" />
     <ClInclude Include="ContactListener.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="DangerObject.h" />
     <ClInclude Include="DexterousPlayer.h" />
+    <ClInclude Include="Layer.h" />
     <ClInclude Include="LevelStorage.h" />
     <ClInclude Include="Lever.h" />
     <ClInclude Include="ManualPlatform.h" />
@@ -116,6 +121,7 @@
     <ClInclude Include="PlayerUI.h" />
     <ClInclude Include="RevoluteBridge.h" />
     <ClInclude Include="StrongPlayer.h" />
+    <ClInclude Include="Display.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="VisibleSensor.h" />
     <ClInclude Include="Sensor.h" />

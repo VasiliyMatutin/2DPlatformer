@@ -2,24 +2,22 @@
 
 enum class Events 
 { 
-	LoadLevel, 
-	HeroMoveLeft,
-	StopHeroMoveLeft,
-	HeroMoveRight,
-	StopHeroMoveRight,
-	Jumping,
-	StopHero,
-	SwitchLever,
-	PickUp,
-	ChangeHero,
-	MouseClicked,
-	Move
+	LeftButton,
+	LeftButtonReleased,
+	RightButton,
+	RightButtonReleased,
+	UpButton,
+	UpButtonReleased,
+	IButton,
+	PButton,
+	CButton,
+	MouseClicked
 };
 
 enum class ViewEvents
 {
-	Update,
-	LevelCreated,
+	AddLayer,
+	DeleteLayer,
 	BringZoomCloser,
 	DistanseZoom,
 };

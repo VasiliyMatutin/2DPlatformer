@@ -1,4 +1,5 @@
 #pragma once
+#include "Layer.h"
 #include "LevelStorage.h"
 #include "StrongPlayer.h"
 #include "DexterousPlayer.h"
@@ -22,19 +23,18 @@ enum class Sides
 	LEFT
 };
 
-class Level
+class Level : public Layer
 {
 	int level_width, level_height, tile_width, tile_height;
 	bool strong_player_now;
-	std::list<Object> unchangeable_objects;
-	std::list<Object> changeable_objects;
-	std::list<Object> UI_objects;
+	ReturnEvents re;
 	Storage storage;
 	Player* player;
 	StrongPlayer* strong_player;
 	DexterousPlayer* dexterous_player;
 	b2World* level_world;
 	MyContactListener* my_contact_listener_ptr;
+	std::list<Object> static_UI_objects;
 	void loadMap(tinyxml2::XMLElement *map);
 	void loadObjects(tinyxml2::XMLElement *map);
 	void loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type);
@@ -49,19 +49,18 @@ class Level
 	tinyxml2::XMLElement * findAmongSiblings(tinyxml2::XMLElement * element, std::string name);
 	std::vector<std::string> stringDelimiter(std::string init_str);
 	std::vector<std::pair<double, double>> buildTrajectory(tinyxml2::XMLElement * objectgroup, std::string trajectory_name, bool* is_rounded);
-public:
-	Level();
-	~Level();
-	bool loadLevel(std::string filename);
-	std::list<Object>& getUnchangeableObjectList();
-	std::list<Object>& getChangeableObjectList();
-	std::list<Object>& getUIObjectList();
-	PlayerUI* getUI();
-	std::vector<std::string>& getImagesList();
-	Player* returnActivePlayer();
 	void changeCurrentHero();
 	void tryToSwitchLever();
 	void pickUpBox();
 	void throwBox(double x, double y);
+public:
+	Level(std::string filename);
+	~Level();
+	bool loadLevel(std::string filename);
+	std::vector<std::string>& getImagesList();
+	void smthHappend(Events what_happened);
+	bool isDoubleView();
+	void getLayerCenter(double* x, double* y);
+	ReturnEvents getRetEvent();
 	void update();
 };

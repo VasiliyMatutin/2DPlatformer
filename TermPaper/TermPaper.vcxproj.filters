@@ -34,6 +34,9 @@
     <Filter Include="main\Model\Level\NonStaticObj\Dynamic obj\Player">
       <UniqueIdentifier>{f8e0325b-6ce0-41ca-9b62-6fd0f7532382}</UniqueIdentifier>
     </Filter>
+    <Filter Include="main\Model\Layer">
+      <UniqueIdentifier>{64bc8d22-f99f-4ec8-878f-9beee4718f4f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Controller.cpp">
@@ -105,8 +108,17 @@
     <ClCompile Include="Bonus.cpp">
       <Filter>main\Model\Level\Sensor</Filter>
     </ClCompile>
+    <ClCompile Include="Layer.cpp">
+      <Filter>main\Model\Layer</Filter>
+    </ClCompile>
     <ClCompile Include="PlayerUI.cpp">
-      <Filter>main\Model\Level</Filter>
+      <Filter>main\Model\Level\NonStaticObj\Dynamic obj\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Display.cpp">
+      <Filter>main\Viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="AdvancedDisplay.cpp">
+      <Filter>main\Viewer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -185,8 +197,17 @@
     <ClInclude Include="Bonus.h">
       <Filter>main\Model\Level\Sensor</Filter>
     </ClInclude>
+    <ClInclude Include="Layer.h">
+      <Filter>main\Model\Layer</Filter>
+    </ClInclude>
     <ClInclude Include="PlayerUI.h">
-      <Filter>main\Model\Level</Filter>
+      <Filter>main\Model\Level\NonStaticObj\Dynamic obj\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Display.h">
+      <Filter>main\Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="AdvancedDisplay.h">
+      <Filter>main\Viewer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

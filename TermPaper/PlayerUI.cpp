@@ -14,9 +14,7 @@ void PlayerUI::createBonusUI()
 		tmp_obj.width = 32;
 		tmp_obj.is_valid = false;
 		active_bonuses[i] = tmp_obj;
-	}
-	Object bar_line{ 0, 0, 0, 28, 52, 10, 99, 0, true };
-	health = bar_line;
+	} 
 }
 
 PlayerUI::PlayerUI()
@@ -24,14 +22,14 @@ PlayerUI::PlayerUI()
 	createBonusUI();
 }
 
-std::string PlayerUI::getPlayerName()
+TextObject* PlayerUI::getPlayerName()
 {
-	return player_name;
+	return &player_name;
 }
 
-std::string PlayerUI::getPlayerType()
+TextObject* PlayerUI::getPlayerType()
 {
-	return player_type;
+	return &player_type;
 }
 
 void PlayerUI::setHealthLineImg(int i)
@@ -41,12 +39,18 @@ void PlayerUI::setHealthLineImg(int i)
 
 void PlayerUI::setPlayerName(std::string name)
 {
-	player_name = name;
+	player_name.text = name;
+	player_name.x = 70;
+	player_name.y = 20;
+	player_name.text_size = 24;
 }
 
 void PlayerUI::setPlayerType(std::string type)
 {
-	player_type = type;
+	player_type.text = type;
+	player_type.x = 70;
+	player_type.y = 38;
+	player_type.text_size = 16;
 }
 
 Object * PlayerUI::getActiveBonusesPtr(int number)

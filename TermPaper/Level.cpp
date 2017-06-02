@@ -5,7 +5,7 @@
 #include <iterator>
 #include "ManualPlatform.h"
 
-Level::Level():
+Level::Level(std::string filename):
 	strong_player(nullptr),
 	dexterous_player(nullptr)
 {
@@ -14,6 +14,7 @@ Level::Level():
 	my_contact_listener_ptr = new MyContactListener;
 	level_world->SetContactListener(my_contact_listener_ptr);
 	storage.to_destroy_list = my_contact_listener_ptr->getToDestroyListPtr();
+	loadLevel(filename);
 }
 
 Level::~Level()
@@ -22,34 +23,58 @@ Level::~Level()
 	delete my_contact_listener_ptr;
 }
 
-std::list<Object>& Level::getUnchangeableObjectList()
-{
-	return unchangeable_objects;
-}
-
-std::list<Object>& Level::getChangeableObjectList()
-{
-	return changeable_objects;
-}
-
-std::list<Object>& Level::getUIObjectList()
-{
-	return UI_objects;
-}
-
-PlayerUI * Level::getUI()
-{
-	return player->returnUI();
-}
-
 std::vector<std::string>& Level::getImagesList()
 {
 	return storage.images;
 }
 
-Player * Level::returnActivePlayer()
+void Level::smthHappend(Events what_happened)
 {
-	return player;
+	switch (what_happened)
+	{
+	case Events::LeftButton:
+		player->moveLeft();
+		break;
+	case Events::RightButton:
+		player->moveRight();
+		break;
+	case Events::UpButton:
+		player->jump();
+		break;
+	case Events::LeftButtonReleased:
+		player->stopLeft();
+		break;
+	case Events::RightButtonReleased:
+		player->stopRight();
+		break;
+	case Events::IButton:
+		tryToSwitchLever();
+		break;
+	case Events::PButton:
+		pickUpBox();
+		break;
+	case Events::CButton:
+		changeCurrentHero();
+		break;
+	case Events::MouseClicked:
+		throwBox(MouseClickCoordinates::x, MouseClickCoordinates::y);
+		break;
+	}
+}
+
+bool Level::isDoubleView()
+{
+	return true;
+}
+
+void Level::getLayerCenter(double * x, double * y)
+{
+	player->returnCoordinates(x, y);
+}
+
+ReturnEvents Level::getRetEvent()
+{
+	return re;
 }
 
 void Level::changeCurrentHero()
@@ -64,6 +89,18 @@ void Level::changeCurrentHero()
 		player = strong_player;
 		strong_player_now = true;
 	}
+	for (int i = 0; i < 4; ++i)
+	{
+		UI_objects.pop_back();
+	}
+	for (int i = 0; i < 3; ++i)
+	{
+		UI_objects.push_back(player->returnUI()->getActiveBonusesPtr(i));
+	}
+	UI_objects.push_back(player->returnUI()->getHealthPtr());
+	text_objects.clear();
+	text_objects.push_back(player->returnUI()->getPlayerName());
+	text_objects.push_back(player->returnUI()->getPlayerType());
 }
 
 void Level::tryToSwitchLever()
@@ -698,13 +735,22 @@ void Level::addUIToLevel()
 {
 	storage.images.push_back("Images/board.png");
 	Object board{storage.images.size() - 1, 0, 0, 0, 0, 110, 140, 0, true};
-	UI_objects.push_back(board);
+	static_UI_objects.push_back(board);
+	UI_objects.push_back(&static_UI_objects.back());
 	storage.images.push_back("Images/bar.png");
 	Object bar{ storage.images.size() - 1, 0, 0, 5, 46, 24, 128, 0, true };
-	UI_objects.push_back(bar);
+	static_UI_objects.push_back(bar);
+	UI_objects.push_back(&static_UI_objects.back());
 	storage.images.push_back("Images/health_line.png");
 	strong_player->returnUI()->setHealthLineImg(storage.images.size() - 1);
 	dexterous_player->returnUI()->setHealthLineImg(storage.images.size() - 1);
+	for (int i = 0; i < 3; ++i)
+	{
+		UI_objects.push_back(player->returnUI()->getActiveBonusesPtr(i));
+	}
+	UI_objects.push_back(player->returnUI()->getHealthPtr());
+	text_objects.push_back(player->returnUI()->getPlayerName());
+	text_objects.push_back(player->returnUI()->getPlayerType());
 }
 
 std::vector<Action> Level::sensorStagesParser(std::vector<std::string> stages)
