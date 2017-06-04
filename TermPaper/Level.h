@@ -27,7 +27,6 @@ class Level : public Layer
 {
 	int level_width, level_height, tile_width, tile_height;
 	bool strong_player_now;
-	ReturnEvents re;
 	Storage storage;
 	Player* player;
 	StrongPlayer* strong_player;
@@ -57,10 +56,9 @@ public:
 	Level(std::string filename);
 	~Level();
 	bool loadLevel(std::string filename);
-	std::vector<std::string>& getImagesList();
 	void smthHappend(Events what_happened);
 	bool isDoubleView();
+	void getLayerSize(double* width, double* height);
 	void getLayerCenter(double* x, double* y);
-	ReturnEvents getRetEvent();
 	void update();
 };

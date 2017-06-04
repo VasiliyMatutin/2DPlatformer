@@ -22,31 +22,43 @@ void Viewer::deleteDisplay()
 Viewer::Viewer(Model * _model) :
 	model(_model)
 {
+	window = WinSingleton::getInstance();
 }
 
 void Viewer::handleViewerEvent(ViewEvents ev)
 {
 	switch (ev)
 	{
-	case ViewEvents::AddLayer:
+	case ViewEvents::ADDLAYER:
 		prepareNewDisplay();
 		break;
-	case ViewEvents::DeleteLayer:
+	case ViewEvents::DELETEALLLAYERS:
+		display_list.clear();
+		break;
+	case ViewEvents::DELETELAYER:
 		deleteDisplay();
 		break;
-	case ViewEvents::DistanseZoom:
+	case ViewEvents::DISTANCEZOOM:
 		display_list.back()->handleViewerEvent(ev);
 		break;
-	case ViewEvents::BringZoomCloser:
+	case ViewEvents::BRINGZOOMCLOSER:
 		display_list.back()->handleViewerEvent(ev);
+		break;
+	case ViewEvents::WINRESIZE:
+		if (!display_list.empty())
+		{
+			display_list.back()->changeScale(window->getSize().x / X_WIN_SIZE, window->getSize().y / Y_WIN_SIZE);
+		}
 		break;
 	}
 }
 
 void Viewer::update()
 {
+	window->clear();
 	for (auto it : display_list)
 	{
 		it->update();
 	}
+	window->display();
 }

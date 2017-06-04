@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0.0" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32" nextobjectid="109">
+<map version="1.0.0" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32" nextobjectid="111">
  <tileset firstgid="1" name="tiles_spritesheet" tilewidth="32" tileheight="32" tilecount="161" columns="7">
   <image source="tiles_spritesheet.png" width="224" height="736"/>
  </tileset>
@@ -70,13 +70,13 @@
   <object id="69" type="danger" x="672.5" y="490.5" width="126.667" height="86.5"/>
  </objectgroup>
  <objectgroup name="Dynamic">
-  <object id="60" name="strong_player" type="player" x="655.028" y="358.233" width="32" height="48">
+  <object id="60" name="strong_player" type="player" x="509.028" y="332.233" width="32" height="48">
    <properties>
     <property name="health" value="50"/>
     <property name="image" value="player.png"/>
    </properties>
   </object>
-  <object id="62" name="bridge1" type="revolute_bridge" x="193.207" y="383.268" width="157.703" height="7">
+  <object id="62" name="bridge1" type="revolute_bridge" x="193.019" y="383.393" width="157.703" height="7">
    <properties>
     <property name="ancor" value="-1 -0.5"/>
     <property name="image" value="platform.png"/>
@@ -116,7 +116,7 @@
     <property name="image" value="metal_crate.png"/>
    </properties>
   </object>
-  <object id="86" x="524.667" y="341.667" width="32" height="32">
+  <object id="86" x="743.667" y="368.667" width="32" height="32">
    <properties>
     <property name="density" type="float" value="10"/>
     <property name="image" value="crate.png"/>
@@ -146,7 +146,7 @@
     <property name="image" value="crate.png"/>
    </properties>
   </object>
-  <object id="103" name="dexterous_player" type="player" x="141.695" y="336.566" width="32" height="32">
+  <object id="103" name="dexterous_player" type="player" x="80.695" y="335.566" width="32" height="32">
    <properties>
     <property name="health" value="20"/>
     <property name="image" value="dex_player.png"/>
@@ -214,7 +214,7 @@
    </properties>
    <polyline points="0,0 0,-16"/>
   </object>
-  <object id="104" type="bonus" x="36" y="333" width="32" height="32">
+  <object id="104" type="bonus" x="199" y="120" width="32" height="32">
    <properties>
     <property name="image" value="bonus_jump.png"/>
     <property name="modificator" value="2"/>
@@ -222,7 +222,7 @@
     <property name="type" value="jump"/>
    </properties>
   </object>
-  <object id="105" type="bonus" x="9" y="333" width="32" height="32">
+  <object id="105" type="bonus" x="41" y="333" width="32" height="32">
    <properties>
     <property name="image" value="bonus_speed.png"/>
     <property name="modificator" value="2"/>
@@ -230,7 +230,7 @@
     <property name="type" value="speed"/>
    </properties>
   </object>
-  <object id="106" type="bonus" x="62" y="333" width="32" height="32">
+  <object id="106" type="bonus" x="225" y="120" width="32" height="32">
    <properties>
     <property name="image" value="bonus_jump.png"/>
     <property name="modificator" value="2"/>
@@ -246,7 +246,7 @@
     <property name="type" value="health"/>
    </properties>
   </object>
-  <object id="108" type="bonus" x="88" y="333" width="32" height="32">
+  <object id="108" type="bonus" x="251" y="120" width="32" height="32">
    <properties>
     <property name="image" value="bonus_jump.png"/>
     <property name="modificator" value="2"/>
@@ -295,6 +295,18 @@
     <property name="is_visible" value="0"/>
     <property name="observables" value="platform4"/>
     <property name="repeat_allowed" value="0"/>
+   </properties>
+  </object>
+  <object id="109" name="player1_final" type="final" x="137" y="351" width="32" height="32">
+   <properties>
+    <property name="image" value="dexterous_final.png"/>
+    <property name="player" value="dexterous"/>
+   </properties>
+  </object>
+  <object id="110" name="player2_final" type="final" x="547" y="338" width="32" height="48">
+   <properties>
+    <property name="image" value="strong_final.png"/>
+    <property name="player" value="strong"/>
    </properties>
   </object>
  </objectgroup>

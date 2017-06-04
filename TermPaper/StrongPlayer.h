@@ -9,7 +9,7 @@ private:
 	double box_coef;
 	bool is_joint_set;
 public:
-	StrongPlayer(int _level_width, int _level_height, b2Body * _body, Object * _object, int _health);
+	StrongPlayer(int _level_width, int _level_height, b2Body * _body, Object * _object, int _health, ReturnEvents* _re);
 	void tryToPickupBox();
 	void throwBox(double x, double y);
 	void update();

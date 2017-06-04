@@ -4,14 +4,17 @@
 sf::Sprite Display::setSprite(Object it)
 {
 	sf::Sprite sprite;
-	sprite.setColor(sf::Color(255, 255, 255));
-	sf::Rect<int> rect;
-	rect.top = it.top;
-	rect.height = it.height;
-	rect.left = it.left;
-	rect.width = it.width;
+	sprite.setColor(sf::Color(255, 255, 255, it.transparensy));
+	if (it.height != 0)
+	{
+		sf::Rect<int> rect;
+		rect.top = it.top;
+		rect.height = it.height;
+		rect.left = it.left;
+		rect.width = it.width;
+		sprite.setTextureRect(rect);
+	}
 	sprite.setTexture(texture[it.number_in_image_list]);
-	sprite.setTextureRect(rect);
 	sprite.setPosition(it.x, it.y);
 	return sprite;
 }
@@ -41,9 +44,27 @@ void Display::loadDisplay()
 	}
 }
 
-void Display::updateWithoutDisplay()
+Display::Display(Layer * _layer):
+	layer(_layer)
 {
-	window->clear();
+	window = WinSingleton::getInstance();
+	sf::Vector2u win_size = window->getSize();
+	double l_heigth, l_width;
+	layer->getLayerSize(&l_width, &l_heigth);
+	view.reset(sf::FloatRect(0, 0, (win_size.x<l_width) ? win_size.x : l_width, (win_size.y<l_heigth) ? win_size.y : l_heigth));
+	loadDisplay();
+}
+
+void Display::changeScale(double x, double y)
+{
+}
+
+void Display::handleViewerEvent(ViewEvents)
+{
+}
+
+void Display::update()
+{
 	window->setView(view);
 	for (auto it : constant_sprite)
 	{
@@ -57,23 +78,4 @@ void Display::updateWithoutDisplay()
 			window->draw(setDynamicSprite(it));
 		}
 	}
-}
-
-Display::Display(Layer * _layer):
-	layer(_layer)
-{
-	window = WinSingleton::getInstance();
-	sf::Vector2u win_size = window->getSize();
-	view.reset(sf::FloatRect(0, 0, win_size.x, win_size.y));
-	loadDisplay();
-}
-
-void Display::handleViewerEvent(ViewEvents)
-{
-}
-
-void Display::update()
-{
-	updateWithoutDisplay();
-	window->display();
 }

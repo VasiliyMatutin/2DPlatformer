@@ -23,11 +23,6 @@ Level::~Level()
 	delete my_contact_listener_ptr;
 }
 
-std::vector<std::string>& Level::getImagesList()
-{
-	return storage.images;
-}
-
 void Level::smthHappend(Events what_happened)
 {
 	switch (what_happened)
@@ -59,6 +54,15 @@ void Level::smthHappend(Events what_happened)
 	case Events::MouseClicked:
 		throwBox(MouseClickCoordinates::x, MouseClickCoordinates::y);
 		break;
+	case Events::EscButton:
+		re = ReturnEvents::OPENLOCALMENU;
+		break;
+	case Events::EnterButton:
+		if (storage.final_list[0]->isReach() && storage.final_list[1]->isReach())
+		{
+			re = ReturnEvents::WIN;
+		}
+		break;
 	}
 }
 
@@ -67,14 +71,15 @@ bool Level::isDoubleView()
 	return true;
 }
 
+void Level::getLayerSize(double * width, double * height)
+{
+	*width = level_width*tile_width;
+	*height = level_height*tile_height;
+}
+
 void Level::getLayerCenter(double * x, double * y)
 {
 	player->returnCoordinates(x, y);
-}
-
-ReturnEvents Level::getRetEvent()
-{
-	return re;
 }
 
 void Level::changeCurrentHero()
@@ -199,7 +204,7 @@ void Level::loadMap(tinyxml2::XMLElement *map)
 		tg.last_gid = tg.first_gid + atof(tileset->Attribute("tilecount")) - 1;
 		tinyxml2::XMLElement *image;
 		image = tileset->FirstChildElement("image");
-		storage.images.push_back(std::string(image->Attribute("source")));
+		images.push_back(std::string(image->Attribute("source")));
 		image_list.push_back(tg);
 		tileset = tileset->NextSiblingElement("tileset");
 	}
@@ -213,7 +218,6 @@ void Level::loadMap(tinyxml2::XMLElement *map)
 		const char* str = data->GetText();
 		std::stringstream tempss;
 		tempss << str;
-		Object one_tile;
 		int i, j, x = 0, y = 0;
 		while (tempss >> i)
 		{
@@ -223,13 +227,7 @@ void Level::loadMap(tinyxml2::XMLElement *map)
 				if (i >= image_list[j].first_gid && i <= image_list[j].last_gid)
 				{
 					int current_gid = i - image_list[j].first_gid;
-					one_tile.number_in_image_list = j;
-					one_tile.top = current_gid / image_list[j].columns * tile_height;
-					one_tile.height = tile_height;
-					one_tile.left = current_gid % image_list[j].columns * tile_width;
-					one_tile.width = tile_width;
-					one_tile.x = x * tile_width;
-					one_tile.y = y * tile_height;
+					Object one_tile{ j, current_gid / image_list[j].columns * tile_height, current_gid % image_list[j].columns * tile_width, x * tile_width, y * tile_height, tile_height, tile_width, 0, true, 255 };
 					unchangeable_objects.push_back(one_tile);
 					break;
 				}
@@ -324,6 +322,7 @@ continue;
 		}
 		tmp_obj.x = atof(object->Attribute("x")) + tmp_obj.width / 2;
 		tmp_obj.y = atof(object->Attribute("y")) + tmp_obj.height / 2;
+		tmp_obj.transparensy = 255;
 		body_def.position.Set(tmp_obj.x / PIXEL_PER_METER, tmp_obj.y / PIXEL_PER_METER);
 		shape.SetAsBox(tmp_obj.width / 2 / PIXEL_PER_METER, tmp_obj.height / 2 / PIXEL_PER_METER);
 		body_def.fixedRotation = true;
@@ -392,8 +391,8 @@ continue;
 		}
 		case BodyType::KINEMATIC:
 		{
-			storage.images.push_back(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("image"))->Attribute("value"));
-			tmp_obj.number_in_image_list = storage.images.size() - 1;
+			images.push_back(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("image"))->Attribute("value"));
+			tmp_obj.number_in_image_list = images.size() - 1;
 
 			fixture_def.shape = &shape;
 			fixture_def.friction = 0.3f;
@@ -416,13 +415,13 @@ continue;
 				int health = std::stoi(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("health"))->Attribute("value"));
 				if (std::string(object->Attribute("name")) == std::string("strong_player"))
 				{
-					strong_player = new StrongPlayer(level_width*tile_width, level_height*tile_height, body, &changeable_objects.back(), health);
+					strong_player = new StrongPlayer(level_width*tile_width, level_height*tile_height, body, &changeable_objects.back(), health, &re);
 					player = strong_player;
 					strong_player_now = true;
 				}
 				else
 				{
-					dexterous_player = new DexterousPlayer(level_width*tile_width, level_height*tile_height, body, &changeable_objects.back(), health);
+					dexterous_player = new DexterousPlayer(level_width*tile_width, level_height*tile_height, body, &changeable_objects.back(), health, &re);
 					player = dexterous_player;
 					strong_player_now = false;
 				}
@@ -500,6 +499,22 @@ void Level::parsePlatform(tinyxml2::XMLElement * object, tinyxml2::XMLElement * 
 void Level::parseSensor(tinyxml2::XMLElement * object, b2Body * body, std::vector<Action> stages)
 {
 	tinyxml2::XMLElement *property = object->FirstChildElement("properties")->FirstChildElement("property");
+	if (object->Attribute("type") == std::string("final"))
+	{
+		images.push_back(findAmongSiblings(property, std::string("image"))->Attribute("value"));
+		changeable_objects.front().number_in_image_list = images.size() - 1;
+		if (findAmongSiblings(property, std::string("player"))->Attribute("value") == std::string("strong"))
+		{
+			Final* final = new Final(body, true);
+			storage.final_list[0] = final;
+		} 
+		else
+		{
+			Final* final = new Final(body, false);
+			storage.final_list[1] = final;
+		}
+		return;
+	}
 	bool repeated_allowed = findAmongSiblings(property, std::string("repeat_allowed"))->BoolAttribute("value");
 	tinyxml2::XMLElement *observables_property = findAmongSiblings(property, std::string("observables"));
 	std::list<ManualSwitchObj*> observables;
@@ -521,8 +536,8 @@ void Level::parseSensor(tinyxml2::XMLElement * object, b2Body * body, std::vecto
 		if (is_visible)
 		{
 			//visible sensor
-			storage.images.push_back(findAmongSiblings(property, std::string("image"))->Attribute("value"));
-			changeable_objects.front().number_in_image_list = storage.images.size() - 1;
+			images.push_back(findAmongSiblings(property, std::string("image"))->Attribute("value"));
+			changeable_objects.front().number_in_image_list = images.size() - 1;
 			sensor = new VisibleSensor(observables, repeated_allowed, is_keeping, body, &changeable_objects.front(), stages);
 		}
 		else
@@ -532,11 +547,11 @@ void Level::parseSensor(tinyxml2::XMLElement * object, b2Body * body, std::vecto
 			changeable_objects.pop_front();
 		}
 	}
-	else
+	else if (object->Attribute("type") == std::string("lever"))
 	{
 		//create lever - sensor switching by player
-		storage.images.push_back(findAmongSiblings(property, std::string("image"))->Attribute("value"));
-		changeable_objects.front().number_in_image_list = storage.images.size() - 1;
+		images.push_back(findAmongSiblings(property, std::string("image"))->Attribute("value"));
+		changeable_objects.front().number_in_image_list = images.size() - 1;
 		Lever* lever = new Lever(observables, repeated_allowed, body, &changeable_objects.front(), &player, stages);
 		storage.lever_list.push_back(lever);
 	}
@@ -643,7 +658,7 @@ void Level::parseDangerObject(tinyxml2::XMLElement * object, b2Body * body, Obje
 	tinyxml2::XMLElement *property = object->FirstChildElement("properties")->FirstChildElement("property");
 	double damage = std::stod(findAmongSiblings(property, "damage")->Attribute("value"));
 
-	storage.images.push_back(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("image"))->Attribute("value"));
+	images.push_back(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("image"))->Attribute("value"));
 
 	if (findAmongSiblings(property, "is_movable")->BoolAttribute("value"))
 	{
@@ -651,11 +666,11 @@ void Level::parseDangerObject(tinyxml2::XMLElement * object, b2Body * body, Obje
 		ManualPlatform* man_platf = static_cast<ManualPlatform*>(storage.future_observables.find(findAmongSiblings(property, "stick_platform")->Attribute("value"))->second);
 		body = man_platf->getBody();
 		tmp_obj = man_platf->getObject();
-		tmp_obj->number_in_image_list = storage.images.size() - 1;
+		tmp_obj->number_in_image_list = images.size() - 1;
 	}
 	else
 	{
-		tmp_obj->number_in_image_list = storage.images.size() - 1;
+		tmp_obj->number_in_image_list = images.size() - 1;
 		changeable_objects.push_back(*tmp_obj);
 	}
 
@@ -733,17 +748,17 @@ b2Body* Level::createBorderSensor(b2Body * body, Object * tmp_obj, Sides side)
 
 void Level::addUIToLevel()
 {
-	storage.images.push_back("Images/board.png");
-	Object board{storage.images.size() - 1, 0, 0, 0, 0, 110, 140, 0, true};
+	images.push_back("Images/Level/board.png");
+	Object board{images.size() - 1, 0, 0, 0, 0, 110, 140, 0, true, 255};
 	static_UI_objects.push_back(board);
 	UI_objects.push_back(&static_UI_objects.back());
-	storage.images.push_back("Images/bar.png");
-	Object bar{ storage.images.size() - 1, 0, 0, 5, 46, 24, 128, 0, true };
+	images.push_back("Images/Level/bar.png");
+	Object bar{ images.size() - 1, 0, 0, 5, 46, 24, 128, 0, true, 255};
 	static_UI_objects.push_back(bar);
 	UI_objects.push_back(&static_UI_objects.back());
-	storage.images.push_back("Images/health_line.png");
-	strong_player->returnUI()->setHealthLineImg(storage.images.size() - 1);
-	dexterous_player->returnUI()->setHealthLineImg(storage.images.size() - 1);
+	images.push_back("Images/Level/health_line.png");
+	strong_player->returnUI()->setHealthLineImg(images.size() - 1);
+	dexterous_player->returnUI()->setHealthLineImg(images.size() - 1);
 	for (int i = 0; i < 3; ++i)
 	{
 		UI_objects.push_back(player->returnUI()->getActiveBonusesPtr(i));

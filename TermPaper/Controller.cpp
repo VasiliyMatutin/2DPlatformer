@@ -11,7 +11,7 @@ Controller::Controller(Model* _model, Viewer* _viewer):
 
 void Controller::observe()
 {
-	viewer->handleViewerEvent(ViewEvents::AddLayer);
+	viewer->handleViewerEvent(ViewEvents::ADDLAYER);
 	sf::Event event;
 	window->setKeyRepeatEnabled(false); // To disable repeated KeyPressed events
 	while (window->isOpen())
@@ -45,7 +45,10 @@ void Controller::observe()
 					model->handleEvent(Events::CButton);
 					break;
 				case sf::Keyboard::Escape:
-					window->close();
+					model->handleEvent(Events::EscButton);
+					break;
+				case sf::Keyboard::Return:
+					model->handleEvent(Events::EnterButton);
 					break;
 				}
 				break;
@@ -66,21 +69,42 @@ void Controller::observe()
 			case sf::Event::MouseWheelScrolled:
 				if (event.mouseWheelScroll.delta < 0)
 				{
-					viewer->handleViewerEvent(ViewEvents::DistanseZoom);
+					viewer->handleViewerEvent(ViewEvents::DISTANCEZOOM);
 				}
 				else if (event.mouseWheelScroll.delta > 0)
 				{
-					viewer->handleViewerEvent(ViewEvents::BringZoomCloser);
+					viewer->handleViewerEvent(ViewEvents::BRINGZOOMCLOSER);
 				}
 				break;
 			case sf::Event::MouseButtonPressed:
 				if (event.mouseButton.button == sf::Mouse::Left)
 				{
-					MouseClickCoordinates::x = event.mouseButton.x;
-					MouseClickCoordinates::y = event.mouseButton.y;
+					MouseClickCoordinates::x = event.mouseButton.x / (double)window->getSize().x * X_WIN_SIZE;
+					MouseClickCoordinates::y = event.mouseButton.y / (double)window->getSize().y * Y_WIN_SIZE;
 					model->handleEvent(Events::MouseClicked);
 				}
+			case sf::Event::Resized:
+				viewer->handleViewerEvent(ViewEvents::WINRESIZE);
+				break;
 			}
+		}
+		switch (model->checkResponse())
+		{
+		case ReturnEvents::DEFAULT:
+			break;
+		case ReturnEvents::NEXTLEVEL:
+			viewer->handleViewerEvent(ViewEvents::ADDLAYER);
+			break;
+		case ReturnEvents::CLOSELOCALMENU:
+			viewer->handleViewerEvent(ViewEvents::DELETELAYER);
+			break;
+		case ReturnEvents::OPENMENU:
+			viewer->handleViewerEvent(ViewEvents::DELETEALLLAYERS);
+			viewer->handleViewerEvent(ViewEvents::ADDLAYER);
+			break;
+		case ReturnEvents::CLOSE:
+			window->close();
+			return;
 		}
 		model->update();
 		viewer->update();

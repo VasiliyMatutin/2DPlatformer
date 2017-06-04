@@ -1,5 +1,10 @@
 #include "Layer.h"
 
+Layer::Layer()
+{
+	re = ReturnEvents::DEFAULT;
+}
+
 std::list<Object> Layer::getUnchangeableObjects()
 {
 	return unchangeable_objects;
@@ -20,6 +25,12 @@ std::list<TextObject*> Layer::getTextObjects()
 	return text_objects;
 }
 
+void Layer::getLayerSize(double * width, double * height)
+{
+	*width = 800;
+	*height = 600;
+}
+
 void Layer::getLayerCenter(double * x, double * y)
 {
 	*x = 0;
@@ -33,4 +44,14 @@ bool Layer::isDoubleView()
 
 void Layer::update()
 {
+}
+
+std::vector<std::string>& Layer::getImagesList()
+{
+	return images;
+}
+
+ReturnEvents* Layer::getRetEvent()
+{
+	return &re;
 }

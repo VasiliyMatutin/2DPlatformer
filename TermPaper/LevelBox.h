@@ -18,6 +18,7 @@ public:
 	double width;
 	double rotation;
 	bool is_valid;
+	int transparensy;
 };
 
 class TextObject

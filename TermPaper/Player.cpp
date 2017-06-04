@@ -2,10 +2,11 @@
 #include "Bonus.h"
 #include <iostream>
 
-Player::Player(int _level_width, int _level_height, b2Body* _body, Object* _object, int _health) : NonStaticObj(_body, _object, ObjectType::PLAYER),
+Player::Player(int _level_width, int _level_height, b2Body* _body, Object* _object, int _health, ReturnEvents* _re) : NonStaticObj(_body, _object, ObjectType::PLAYER),
 	level_width(_level_width),
 	level_height(_level_height),
 	max_health(_health),
+	re(_re),
 	current_frequency(0.2),
 	x_speed(0),
 	desired_vel(0),
@@ -14,10 +15,6 @@ Player::Player(int _level_width, int _level_height, b2Body* _body, Object* _obje
 	is_animated(1)
 {
 	health = max_health;
-	b2Filter filter = body->GetFixtureList()->GetFilterData();
-	filter.categoryBits = PLAYER;
-	filter.maskBits = MASK_PLAYER;
-	body->GetFixtureList()->SetFilterData(filter);
 	body->GetFixtureList()->SetFriction(0.3f);
 	body->SetFixedRotation(true);
 	body->SetUserData(this);
@@ -45,9 +42,11 @@ void Player::activate_bonus(double modificator, BonusType bonus_type)
 		{
 			health = max_health;
 		}
-		else if (health == 0)
+		else if (health <= 0)
 		{
-			//destroy();
+			health = 0;
+			destroy();
+			break;
 		}
 	}
 	}
@@ -127,6 +126,20 @@ void Player::returnCoordinates(double* x, double* y)
 PlayerUI * Player::returnUI()
 {
 	return &playerUI;
+}
+
+bool Player::destroy()
+{
+	if (NonStaticObj::destroy())
+	{
+		object->is_valid = true;
+		*re = ReturnEvents::GAMEOVER;
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 void Player::update()

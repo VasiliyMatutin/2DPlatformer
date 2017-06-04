@@ -1,11 +1,13 @@
 #pragma once
+#include <vector>
 #include <list>
+#include <chrono>
 #include "Player.h"
 
 class DangerObject: public ContactObject
 {
-protected:
-	std::list<Player*> list_of_contact;
+private:
+	std::vector<Player*> list_of_contact;
 	int is_contact;
 	double damage, time_interval, time;
 	std::chrono::milliseconds dts;

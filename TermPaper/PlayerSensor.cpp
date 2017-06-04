@@ -6,7 +6,7 @@ PlayerSensor::PlayerSensor(Player * observable_player, b2Body* body) :
 	contact_count(0)
 {
 	b2Filter filter = body->GetFixtureList()->GetFilterData();
-	filter.categoryBits = PLAYER;
+	filter.categoryBits = MASK_PLAYERS;
 	filter.maskBits = MASK_PLAYER;
 	body->GetFixtureList()->SetFilterData(filter);
 	body->SetUserData(this);

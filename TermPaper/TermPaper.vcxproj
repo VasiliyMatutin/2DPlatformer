@@ -70,16 +70,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AdvancedDisplay.cpp" />
+    <ClCompile Include="AuxiliaryLayer.cpp" />
     <ClCompile Include="Bonus.cpp" />
     <ClCompile Include="ContactListener.cpp" />
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="DangerObject.cpp" />
     <ClCompile Include="DexterousPlayer.cpp" />
+    <ClCompile Include="EndOfTheGame.cpp" />
     <ClCompile Include="Events.cpp" />
+    <ClCompile Include="Final.cpp" />
+    <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="Layer.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Lever.cpp" />
+    <ClCompile Include="LocalMenu.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="ManualPlatform.cpp" />
     <ClCompile Include="ManualSwitchObj.cpp" />
     <ClCompile Include="Model.cpp" />
@@ -99,15 +105,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdvancedDisplay.h" />
+    <ClInclude Include="AuxiliaryLayer.h" />
     <ClInclude Include="Bonus.h" />
     <ClInclude Include="ContactObject.h" />
     <ClInclude Include="ContactListener.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="DangerObject.h" />
     <ClInclude Include="DexterousPlayer.h" />
+    <ClInclude Include="EndOfTheGame.h" />
+    <ClInclude Include="Final.h" />
+    <ClInclude Include="GameOver.h" />
     <ClInclude Include="Layer.h" />
     <ClInclude Include="LevelStorage.h" />
     <ClInclude Include="Lever.h" />
+    <ClInclude Include="LocalMenu.h" />
+    <ClInclude Include="MainMenu.h" />
     <ClInclude Include="ManualPlatform.h" />
     <ClInclude Include="ManualSwitchObj.h" />
     <ClInclude Include="NonStaticObj.h" />

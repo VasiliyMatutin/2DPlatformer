@@ -7,7 +7,7 @@ private:
 	TextObject player_name;
 	TextObject player_type;
 	Object active_bonuses[3];
-	Object health{ 0, 0, 0, 28, 52, 10, 99, 0, true };
+	Object health{ 0, 0, 0, 28, 52, 10, 99, 0, true, 255 };
 	void createBonusUI();
 public:
 	PlayerUI();

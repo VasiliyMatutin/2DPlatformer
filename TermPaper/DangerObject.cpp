@@ -13,11 +13,11 @@ void DangerObject::contactEvent(b2Contact * contact, bool is_begin)
 	}
 	else
 	{
-		for (auto it : list_of_contact)
+		for (int i = 0; i < list_of_contact.size(); ++i)
 		{
-			if (it == contact->GetFixtureA()->GetBody()->GetUserData())
+			if (list_of_contact[i] == contact->GetFixtureA()->GetBody()->GetUserData())
 			{
-				list_of_contact.remove(it);
+				list_of_contact.erase(list_of_contact.begin()+i);
 				is_contact--;
 				break;
 			}
@@ -51,9 +51,9 @@ void DangerObject::update()
 		time = dts.count();
 		if (time > time_interval)
 		{
-			for (auto it : list_of_contact)
+			for (int i=0; i < list_of_contact.size(); ++i)
 			{
-				it->activate_bonus(-damage, BonusType::HEALTH);
+				list_of_contact[i]->activate_bonus(-damage, BonusType::HEALTH);
 			}
 			start = std::chrono::system_clock::now();
 		}

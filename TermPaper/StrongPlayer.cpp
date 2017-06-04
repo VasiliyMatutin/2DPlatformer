@@ -1,6 +1,6 @@
 #include "StrongPlayer.h"
 
-StrongPlayer::StrongPlayer(int _level_width, int _level_height, b2Body * _body, Object * _object, int _health) : Player (_level_width,_level_height,_body,_object,_health),
+StrongPlayer::StrongPlayer(int _level_width, int _level_height, b2Body * _body, Object * _object, int _health, ReturnEvents* _re) : Player (_level_width,_level_height,_body,_object,_health, _re),
 	is_joint_set(0)
 {
 	max_frame = 8;
@@ -8,6 +8,10 @@ StrongPlayer::StrongPlayer(int _level_width, int _level_height, b2Body * _body, 
 	right_row = 3;
 	left_row = 1;
 	jump_strenght  = 3;
+	b2Filter filter = body->GetFixtureList()->GetFilterData();
+	filter.categoryBits = STRONG_PLAYER;
+	filter.maskBits = MASK_PLAYER;
+	body->GetFixtureList()->SetFilterData(filter);
 	body->GetFixtureList()->SetDensity(2.5f);
 	body->ResetMassData();
 	Player::playerUI.setPlayerName("Player2");

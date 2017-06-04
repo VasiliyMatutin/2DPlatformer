@@ -13,9 +13,9 @@ protected:
 	sf::Sprite setSprite(Object it);
 	sf::Sprite setDynamicSprite(Object it);
 	void loadDisplay();
-	void updateWithoutDisplay();
 public:
 	Display(Layer* _layer);
+	virtual void changeScale(double x, double y);
 	virtual void handleViewerEvent(ViewEvents);
 	virtual void update();
 };

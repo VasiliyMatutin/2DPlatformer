@@ -11,15 +11,32 @@ enum class Events
 	IButton,
 	PButton,
 	CButton,
+	EscButton,
+	EnterButton,
 	MouseClicked
 };
 
 enum class ViewEvents
 {
-	AddLayer,
-	DeleteLayer,
-	BringZoomCloser,
-	DistanseZoom,
+	ADDLAYER,
+	DELETELAYER,
+	DELETEALLLAYERS,
+	BRINGZOOMCLOSER,
+	DISTANCEZOOM,
+	WINRESIZE,
+};
+
+enum class ReturnEvents
+{
+	NEXTLEVEL,
+	CLOSE,
+	RESTART,
+	GAMEOVER,
+	WIN,
+	OPENMENU,
+	OPENLOCALMENU,
+	CLOSELOCALMENU,
+	DEFAULT
 };
 
 struct MouseClickCoordinates
@@ -27,3 +44,6 @@ struct MouseClickCoordinates
 	static double x;
 	static double y;
 };
+
+static double X_WIN_SIZE = 800;
+static double Y_WIN_SIZE = 600;

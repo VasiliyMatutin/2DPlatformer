@@ -6,6 +6,7 @@
 class Viewer
 {
 	Model* model;
+	sf::RenderWindow* window;
 	std::list <Display*> display_list;
 	void prepareNewDisplay();
 	void deleteDisplay();
