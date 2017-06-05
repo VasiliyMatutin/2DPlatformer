@@ -70,6 +70,7 @@ ReturnEvents Model::checkResponse()
 			layers_list.pop();
 		}
 		layers_list.push(&main_menu);
+		current_level = -1;
 		break;
 	}
 	case ReturnEvents::OPENLOCALMENU:

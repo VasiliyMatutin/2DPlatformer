@@ -95,6 +95,35 @@ void Player::stopLeft()
 	desired_vel += fixed_speed;
 }
 
+void Player::justStop()
+{
+	if (on_ground)
+	{
+		desired_vel = 0;
+	}
+}
+
+double Player::getVel()
+{
+	return desired_vel;
+}
+
+void Player::setVel(double des_vel)
+{
+	if (des_vel == 0)
+	{
+		return;
+	}
+	if (des_vel*-1 > 0)
+	{
+		moveLeft();
+	}
+	else
+	{
+		moveRight();
+	}
+}
+
 void Player::beginContactWithGround()
 {
 	on_ground = 1;

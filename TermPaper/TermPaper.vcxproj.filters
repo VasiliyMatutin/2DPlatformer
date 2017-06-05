@@ -249,4 +249,7 @@
       <Filter>main\Model\Layer\AuxiliaryLayers</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
 </Project>

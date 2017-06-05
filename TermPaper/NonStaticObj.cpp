@@ -43,7 +43,7 @@ bool NonStaticObj::destroy()
 	{
 		for (b2JointEdge* edge = body->GetJointList(); edge; edge = edge->next)
 		{
-			if (edge->joint->GetBodyB()->GetType() != b2BodyType::b2_dynamicBody || edge->joint->GetBodyB()->GetFixtureList()->IsSensor() == true)
+			if (edge->joint->GetBodyB()->GetType() == b2BodyType::b2_dynamicBody && edge->joint->GetBodyB()->GetFixtureList()->IsSensor() == true)
 			{
 				continue;
 			}

@@ -70,13 +70,13 @@
   <object id="69" type="danger" x="672.5" y="490.5" width="126.667" height="86.5"/>
  </objectgroup>
  <objectgroup name="Dynamic">
-  <object id="60" name="strong_player" type="player" x="509.028" y="332.233" width="32" height="48">
+  <object id="60" name="strong_player" type="player" x="88.028" y="325.233" width="32" height="48">
    <properties>
     <property name="health" value="50"/>
     <property name="image" value="player.png"/>
    </properties>
   </object>
-  <object id="62" name="bridge1" type="revolute_bridge" x="193.019" y="383.393" width="157.703" height="7">
+  <object id="62" name="bridge1" type="revolute_bridge" x="193.644" y="383.893" width="157.703" height="7">
    <properties>
     <property name="ancor" value="-1 -0.5"/>
     <property name="image" value="platform.png"/>
@@ -116,7 +116,7 @@
     <property name="image" value="metal_crate.png"/>
    </properties>
   </object>
-  <object id="86" x="743.667" y="368.667" width="32" height="32">
+  <object id="86" x="546.667" y="343.667" width="32" height="32">
    <properties>
     <property name="density" type="float" value="10"/>
     <property name="image" value="crate.png"/>
@@ -128,7 +128,7 @@
     <property name="image" value="crate.png"/>
    </properties>
   </object>
-  <object id="88" x="427.333" y="392" width="32" height="32">
+  <object id="88" x="136.333" y="338" width="32" height="32">
    <properties>
     <property name="density" type="float" value="10"/>
     <property name="image" value="crate.png"/>
@@ -146,7 +146,7 @@
     <property name="image" value="crate.png"/>
    </properties>
   </object>
-  <object id="103" name="dexterous_player" type="player" x="80.695" y="335.566" width="32" height="32">
+  <object id="103" name="dexterous_player" type="player" x="587.695" y="384.566" width="32" height="32">
    <properties>
     <property name="health" value="20"/>
     <property name="image" value="dex_player.png"/>
@@ -163,7 +163,7 @@
     <property name="trajectory" value="trajectory1"/>
    </properties>
   </object>
-  <object id="40" name="platform2" type="platform" x="579" y="383" width="62" height="9">
+  <object id="40" name="platform2" type="platform" x="619" y="380" width="62" height="9">
    <properties>
     <property name="image" value="platform.png"/>
     <property name="is_auto" value="0"/>
@@ -172,7 +172,7 @@
     <property name="trajectory" value="trajectory2"/>
    </properties>
   </object>
-  <object id="41" name="trajectory2" x="608" y="385">
+  <object id="41" name="trajectory2" x="651" y="384">
    <properties>
     <property name="is_rounded" value="1"/>
    </properties>
@@ -222,7 +222,7 @@
     <property name="type" value="jump"/>
    </properties>
   </object>
-  <object id="105" type="bonus" x="41" y="333" width="32" height="32">
+  <object id="105" type="bonus" x="27" y="334" width="32" height="32">
    <properties>
     <property name="image" value="bonus_speed.png"/>
     <property name="modificator" value="2"/>

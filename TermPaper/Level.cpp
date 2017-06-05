@@ -86,11 +86,15 @@ void Level::changeCurrentHero()
 {
 	if (strong_player_now && dexterous_player)
 	{
+		dexterous_player->setVel(strong_player->getVel());
+		strong_player->justStop();
 		player = dexterous_player;
 		strong_player_now = false;
 	}
 	else if (!strong_player_now && strong_player)
 	{
+		strong_player->setVel(dexterous_player->getVel());
+		dexterous_player->justStop();
 		player = strong_player;
 		strong_player_now = true;
 	}
@@ -402,7 +406,7 @@ continue;
 			if (object->Attribute("type") == nullptr)
 			{
 				body->GetFixtureList()->SetDensity(std::stod(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("density"))->Attribute("value")));
-				body->GetFixtureList()->SetFriction(10.0f);
+				body->GetFixtureList()->SetFriction(2.0f);
 				body->ResetMassData();
 				NonStaticObj* nso = new NonStaticObj(body, &changeable_objects.back(), ObjectType::BOX);
 				body->SetUserData(nso);
@@ -451,7 +455,7 @@ continue;
 				}
 				double modificator = std::stod(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("modificator"))->Attribute("value"));
 				double time = std::stod(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("time"))->Attribute("value"));
-				Bonus* bn = new Bonus(modificator, time, bt, player, body, &changeable_objects.back());
+				Bonus* bn = new Bonus(modificator, time, bt, &player, body, &changeable_objects.back());
 			}
 			else if (std::string(object->Attribute("type")) == std::string("revolute_bridge") || std::string(object->Attribute("type")) == std::string("partition"))
 			{

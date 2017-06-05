@@ -32,6 +32,9 @@ public:
 	void moveRight();
 	void stopRight();
 	void stopLeft();
+	void justStop();
+	double getVel();
+	void setVel(double des_vel);
 	void beginContactWithGround();
 	void endContactWithGround();
 	Bonus** getActivationBonus();

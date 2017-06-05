@@ -1,6 +1,6 @@
 #include "Bonus.h"
 
-Bonus::Bonus(double modificator, double time, BonusType _bonus_type, Player* _current_player, b2Body* _body, Object* _object):
+Bonus::Bonus(double modificator, double time, BonusType _bonus_type, Player** _current_player, b2Body* _body, Object* _object):
 	bonus_modificator(modificator),
 	time_interval(time),
 	bonus_type(_bonus_type),
@@ -17,7 +17,7 @@ Bonus::Bonus(double modificator, double time, BonusType _bonus_type, Player* _cu
 
 void Bonus::contactEvent(b2Contact *, bool)
 {
-	*(current_player->getActivationBonus()) = this;
+	*((*current_player)->getActivationBonus()) = this;
 }
 
 Object * Bonus::getObject()
@@ -29,9 +29,10 @@ bool Bonus::activate(Object* _object)
 {
 	body->GetWorld()->DestroyBody(body);
 	object->is_valid = false;
-	current_player->activate_bonus(bonus_modificator, bonus_type);
+	(*current_player)->activate_bonus(bonus_modificator, bonus_type);
 	if (bonus_type != BonusType::HEALTH)
 	{
+		iam_activate_this_player = *current_player;
 		start = std::chrono::system_clock::now();
 		_object->number_in_image_list = object->number_in_image_list;
 		object = _object;
@@ -44,7 +45,7 @@ bool Bonus::activate(Object* _object)
 void Bonus::deactivate()
 {
 	object->is_valid = false;
-	current_player->deactivate_bonus(bonus_modificator, bonus_type);
+	iam_activate_this_player->deactivate_bonus(bonus_modificator, bonus_type);
 }
 
 void Bonus::update()
