@@ -27,6 +27,7 @@ class Level : public Layer
 {
 	int level_width, level_height, tile_width, tile_height;
 	bool strong_player_now;
+	std::string prefix;
 	Storage storage;
 	Player* player;
 	StrongPlayer* strong_player;
@@ -34,6 +35,8 @@ class Level : public Layer
 	b2World* level_world;
 	MyContactListener* my_contact_listener_ptr;
 	std::list<Object> static_UI_objects;
+	std::chrono::time_point<std::chrono::system_clock> prev_step;
+	std::chrono::duration<double> level_time;
 	void loadMap(tinyxml2::XMLElement *map);
 	void loadObjects(tinyxml2::XMLElement *map);
 	void loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type);
@@ -46,14 +49,18 @@ class Level : public Layer
 	void addUIToLevel();
 	std::vector<Action> sensorStagesParser(std::vector<std::string> stages);
 	tinyxml2::XMLElement * findAmongSiblings(tinyxml2::XMLElement * element, std::string name);
+	template<typename T>
+	auto checkElementExistence(T smf_to_check, std::string error_msg);
+	std::string fileExistsTest(const std::string& name);
 	std::vector<std::string> stringDelimiter(std::string init_str);
 	std::vector<std::pair<double, double>> buildTrajectory(tinyxml2::XMLElement * objectgroup, std::string trajectory_name, bool* is_rounded);
 	void changeCurrentHero();
 	void tryToSwitchLever();
 	void pickUpBox();
 	void throwBox(double x, double y);
+	void countTime();
 public:
-	Level(std::string filename);
+	Level(std::string prefix, std::string filename);
 	~Level();
 	bool loadLevel(std::string filename);
 	void smthHappend(Events what_happened);
@@ -61,4 +68,15 @@ public:
 	void getLayerSize(double* width, double* height);
 	void getLayerCenter(double* x, double* y);
 	void update();
+	void repause();
 };
+
+template<typename T>
+inline auto Level::checkElementExistence(T smf_to_check, std::string error_msg)
+{
+	if (smf_to_check == nullptr)
+	{
+		throw error_msg;
+	}
+	return smf_to_check;
+}

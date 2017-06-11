@@ -1,12 +1,13 @@
 #include "Bonus.h"
 
-Bonus::Bonus(double modificator, double time, BonusType _bonus_type, Player** _current_player, b2Body* _body, Object* _object):
+Bonus::Bonus(double modificator, double time, BonusType _bonus_type, Player** _current_player, b2Body* _body, Object* _object, std::chrono::duration<double>* _duration):
 	bonus_modificator(modificator),
 	time_interval(time),
 	bonus_type(_bonus_type),
 	current_player(_current_player),
 	body(_body),
-	object(_object)
+	object(_object),
+	duration(_duration)
 {
 	body->SetUserData(this);
 	b2Filter filter = body->GetFixtureList()->GetFilterData();
@@ -33,7 +34,7 @@ bool Bonus::activate(Object* _object)
 	if (bonus_type != BonusType::HEALTH)
 	{
 		iam_activate_this_player = *current_player;
-		start = std::chrono::system_clock::now();
+		start = *duration;
 		_object->number_in_image_list = object->number_in_image_list;
 		object = _object;
 		object->is_valid = true;
@@ -50,9 +51,7 @@ void Bonus::deactivate()
 
 void Bonus::update()
 {
-	end = std::chrono::system_clock::now();
-	duration = end - start;
-	dts = std::chrono::duration_cast<std::chrono::seconds>(duration);
+	dts = std::chrono::duration_cast<std::chrono::seconds>(*duration-start);
 	time = dts.count();
 	if (time > time_interval)
 	{

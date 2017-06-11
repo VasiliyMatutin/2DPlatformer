@@ -81,6 +81,7 @@
     <ClCompile Include="DangerObject.cpp" />
     <ClCompile Include="DexterousPlayer.cpp" />
     <ClCompile Include="EndOfTheGame.cpp" />
+    <ClCompile Include="ErrorWindow.cpp" />
     <ClCompile Include="Events.cpp" />
     <ClCompile Include="Final.cpp" />
     <ClCompile Include="GameOver.cpp" />
@@ -117,6 +118,7 @@
     <ClInclude Include="DangerObject.h" />
     <ClInclude Include="DexterousPlayer.h" />
     <ClInclude Include="EndOfTheGame.h" />
+    <ClInclude Include="ErrorWindow.h" />
     <ClInclude Include="Final.h" />
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="Layer.h" />

@@ -1,2 +1,355 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Controller" Collapsed="true">
+    <Position X="23" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACQAAAAAAAAAAAACAAAAAAAAIAAAAAAAIAAA=</HashCode>
+      <FileName>Controller.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model" Collapsed="true">
+    <Position X="24.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAUBICQEIAAAAAAAQCAAAAAAgAAAgEAAI=</HashCode>
+      <FileName>Model.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Layer" Collapsed="true">
+    <Position X="6.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIAAAIQEAAQQACAQAAIAAAQAUAAAAQAEAAAAAMAGAAA=</HashCode>
+      <FileName>Layer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Storage" Collapsed="true">
+    <Position X="24.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAEAAACAAQgCABAAAAAAAIAAAAAEIAAAAAAAAAQ=</HashCode>
+      <FileName>LevelStorage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Level" Collapsed="true">
+    <Position X="1" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AICAAIAECQQZEDEQKQRVAQEgAACBBAJBAEAKAAIFBAA=</HashCode>
+      <FileName>Level.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Object" Collapsed="true">
+    <Position X="28.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAQAQACAAAgAAAAIAAAAAADgAAAEAAA=</HashCode>
+      <FileName>LevelBox.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextObject" Collapsed="true">
+    <Position X="26.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAIAABgAAAAAAA=</HashCode>
+      <FileName>LevelBox.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NonStaticObj" Collapsed="true">
+    <Position X="7" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAACAQQAAAACAQAEAAAQAAIAAAAAAQAAAEBAA=</HashCode>
+      <FileName>NonStaticObj.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ManualPlatform" Collapsed="true">
+    <Position X="9.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAQIAAAACCAAAAABAAAAAEAAAAAAAAMAAA=</HashCode>
+      <FileName>ManualPlatform.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Platform" Collapsed="true">
+    <Position X="9.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAACACAABUAAAAABAAAAEAACAEACBIAQBAFAAA=</HashCode>
+      <FileName>Platform.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RevoluteBridge" Collapsed="true">
+    <Position X="7" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAEBCAAAAIAAgAAAAAAAEAAA=</HashCode>
+      <FileName>RevoluteBridge.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DexterousPlayer" Collapsed="true">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DexterousPlayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="4.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQHQAEAAIAAAAkIQDIQBEQIIIAAAAAQAUAAC1AlBqk=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerSensor" Collapsed="true">
+    <Position X="11.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAEAAAEAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>PlayerSensor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerUI" Collapsed="true">
+    <Position X="23" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAgwAAAAAAEAAAAAAGAACQACAAAAAAAAAAQAAEAAg=</HashCode>
+      <FileName>PlayerUI.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StrongPlayer" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="Player" FixedFromPoint="true">
+      <Path>
+        <Point X="5.5" Y="3.941" />
+        <Point X="5.5" Y="4.375" />
+        <Point X="4.25" Y="4.375" />
+        <Point X="4.25" Y="4.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAABAIAAAAgACAAAAAAAAAAgAAAAEACA=</HashCode>
+      <FileName>StrongPlayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bonus" Collapsed="true">
+    <Position X="13.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAABAEIAACSAAAAgACAAQAAAAwAAAgAAAAQAAgAEAAA=</HashCode>
+      <FileName>Bonus.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DangerObject" Collapsed="true">
+    <Position X="16" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAABAAIAAAAAkAAgAAAAAEAAAAAAAAAAAAQAAgAEAAI=</HashCode>
+      <FileName>DangerObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final" Collapsed="true">
+    <Position X="20.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAEAABAAAABAAAAAAEAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Final.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lever" Collapsed="true">
+    <Position X="2.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAACQAAAAAAgAAQAAAAQBACAAAAAAACAAEAAA=</HashCode>
+      <FileName>Lever.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ManualSwitchObj" Collapsed="true">
+    <Position X="12" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAACAAAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ManualSwitchObj.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Timer" Collapsed="true">
+    <Position X="28.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAICCAAAACAgAgAAAAAAAAAACAAIAAQAAAAEBAA=</HashCode>
+      <FileName>Timer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VisibleSensor" Collapsed="true">
+    <Position X="18.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CACAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>VisibleSensor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sensor" Collapsed="true">
+    <Position X="18.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEAAAAAAAQAAAAAAAgAAAAAAAAAACAAAAAAASABEAAA=</HashCode>
+      <FileName>Sensor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ContactObject" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ContactObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyContactListener" Collapsed="true">
+    <Position X="26.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAABAAAAAAAAAAAAAAAEEAAAAAAAACA=</HashCode>
+      <FileName>ContactListener.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AuxiliaryLayer" Collapsed="true">
+    <Position X="7.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AuxiliaryLayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EndOfTheGame" Collapsed="true">
+    <Position X="10" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAgAAIA=</HashCode>
+      <FileName>EndOfTheGame.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameOver" Collapsed="true">
+    <Position X="12.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAQAAAAAAAAgAAAAAACAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>GameOver.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LocalMenu" Collapsed="true">
+    <Position X="3.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQQAAAAAAAgAAIAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>LocalMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenu" Collapsed="true">
+    <Position X="5.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAEAAAIAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ErrorWindow" Collapsed="true">
+    <Position X="7.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAAAAQCAAAAAAAAAAAAQABAAAAAAAAAAAAACA=</HashCode>
+      <FileName>ErrorWindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdvancedDisplay" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAEAAAAABAAAAAAAAAAAAAAAAAAIgACEAII=</HashCode>
+      <FileName>AdvancedDisplay.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Display" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAIAAAAAAAAAAAAAAQAAQQAgAAAAAgAIAQAIDAAEAIA=</HashCode>
+      <FileName>Display.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Viewer" Collapsed="true">
+    <Position X="23" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAQAAAAAgAAIAAAAAAAMAKA=</HashCode>
+      <FileName>Viewer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinSingleton" Collapsed="true">
+    <Position X="24.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAUAAAAgAAAAQAA=</HashCode>
+      <FileName>WinSingleton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="MouseClickCoordinates" Collapsed="true">
+    <Position X="23" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>Events.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="TilesetImg" Collapsed="true">
+    <Position X="24.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAACAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>LevelBox.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="Events" Collapsed="true">
+    <Position X="24.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAgCADAAAAACAAAAABwAAAAAAAAAAAAAAgAAEAAAAA=</HashCode>
+      <FileName>Events.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ViewEvents" Collapsed="true">
+    <Position X="26.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAEgAAAAAAAAAQAAABIAAAAAA=</HashCode>
+      <FileName>Events.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ReturnEvents" Collapsed="true">
+    <Position X="28.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIgAAAAAARAACAAAAAAAAAgAAIAAAAAAAAAAAAAEBAA=</HashCode>
+      <FileName>Events.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BodyType" Collapsed="true">
+    <Position X="24.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAQAAAAAAAAAAAASAAAAAAAAAAAQA=</HashCode>
+      <FileName>Level.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Sides" Collapsed="true">
+    <Position X="23" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAICAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Level.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ObjectType" Collapsed="true">
+    <Position X="26.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAMAAAAgAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NonStaticObj.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BonusType" Collapsed="true">
+    <Position X="26.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAACAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Action" Collapsed="true">
+    <Position X="23" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIIAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>ManualSwitchObj.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="StaticType" Collapsed="true">
+    <Position X="24.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>ContactObject.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EntityCategory" Collapsed="true">
+    <Position X="28.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAABAAAgAAAAAYAAAAAA=</HashCode>
+      <FileName>ContactObject.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EntityGroup" Collapsed="true">
+    <Position X="23" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAACAAAAAAAAAAAAAABEAAAAAAA=</HashCode>
+      <FileName>ContactObject.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

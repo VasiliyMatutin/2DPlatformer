@@ -7,7 +7,7 @@ void DangerObject::contactEvent(b2Contact * contact, bool is_begin)
 		list_of_contact.push_back(static_cast<Player*>(contact->GetFixtureA()->GetBody()->GetUserData()));
 		if (!is_contact)
 		{
-			start = std::chrono::system_clock::now();
+			start = *duration;
 		}
 		is_contact++;
 	}
@@ -25,9 +25,10 @@ void DangerObject::contactEvent(b2Contact * contact, bool is_begin)
 	}
 }
 
-DangerObject::DangerObject(std::list<b2Body*> _boundaries, double _damage, b2Body* body):
+DangerObject::DangerObject(std::list<b2Body*> _boundaries, double _damage, b2Body* body, std::chrono::duration<double>* _duration):
 	is_contact(0),
-	damage(_damage)
+	damage(_damage),
+	duration(_duration)
 {
 	b2Filter filter;
 	filter.categoryBits = DANGERS;
@@ -45,9 +46,7 @@ void DangerObject::update()
 {
 	if (is_contact)
 	{
-		end = std::chrono::system_clock::now();
-		duration = end - start;
-		dts = std::chrono::duration_cast<std::chrono::milliseconds>(duration);
+		dts = std::chrono::duration_cast<std::chrono::milliseconds>(*duration-start);
 		time = dts.count();
 		if (time > time_interval)
 		{
@@ -55,7 +54,7 @@ void DangerObject::update()
 			{
 				list_of_contact[i]->activate_bonus(-damage, BonusType::HEALTH);
 			}
-			start = std::chrono::system_clock::now();
+			start = *duration;
 		}
 	}
 }

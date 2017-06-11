@@ -39,7 +39,22 @@ enum class ReturnEvents
 	DEFAULT
 };
 
+enum class ModelReaction
+{
+	ADD,
+	DELETE,
+	CLEARALLANDADD,
+	CLOSE,
+	NOTHING
+};
+
 struct MouseClickCoordinates
+{
+	static double x;
+	static double y;
+};
+
+struct PositionRelativelyScreen
 {
 	static double x;
 	static double y;

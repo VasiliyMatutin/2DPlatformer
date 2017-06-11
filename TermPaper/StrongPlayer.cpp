@@ -68,11 +68,11 @@ void StrongPlayer::tryToPickupBox()
 
 void StrongPlayer::throwBox(double x, double y)
 {
-	if (is_joint_set && (x / PIXEL_PER_METER-box->GetPosition().x)*(box->GetPosition().x- body->GetPosition().x) > 0)
+	if (is_joint_set && (x / PIXEL_PER_METER - PositionRelativelyScreen::x / PIXEL_PER_METER)*(box->GetPosition().x - body->GetPosition().x) > 0)
 	{
 		body->GetWorld()->DestroyJoint(joint);
 		is_joint_set = false;
-		b2Vec2 direction(x/PIXEL_PER_METER - body->GetPosition().x, y/PIXEL_PER_METER - body->GetPosition().y);
+		b2Vec2 direction(x/PIXEL_PER_METER - PositionRelativelyScreen::x / PIXEL_PER_METER, y/PIXEL_PER_METER - PositionRelativelyScreen::y / PIXEL_PER_METER);
 		direction.Normalize();
 		box->ApplyLinearImpulseToCenter(b2Vec2(100 * direction.x, 100 * direction.y), 1);
 	}

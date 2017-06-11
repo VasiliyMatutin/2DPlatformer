@@ -24,6 +24,7 @@ public:
 	virtual void getLayerCenter(double* x, double* y);
 	virtual bool isDoubleView();
 	virtual void smthHappend(Events what_happened) = 0;
+	virtual void repause();
 	virtual void update();
 	virtual std::vector<std::string>& getImagesList();
 	virtual ReturnEvents* getRetEvent();

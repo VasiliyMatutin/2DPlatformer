@@ -1,6 +1,18 @@
 #include "Model.h"
 #include <fstream>
 
+void Model::clearAllLayers()
+{
+	while (!layers_list.empty())
+	{
+		if (layers_list.top()->isDoubleView())
+		{
+			delete layers_list.top();
+		}
+		layers_list.pop();
+	}
+}
+
 Model::Model() :
 	game_over(true),
 	win(false),
@@ -10,7 +22,9 @@ Model::Model() :
 		std::ifstream fin("Levels/levels_list.txt");
 		for (std::string line; std::getline(fin, line); )
 		{
-			level_names.push_back("Levels/" + line + ".tmx");
+			level_dir.push_back(line);
+			std::getline(fin, line);
+			level_names.push_back(line + ".tmx");
 		}
 	}
 	layers_list.push(&main_menu);
@@ -32,7 +46,7 @@ Layer * Model::returnUpperLayer()
 	return layers_list.top();
 }
 
-ReturnEvents Model::checkResponse()
+ModelReaction Model::checkResponse()
 {
 	ReturnEvents re = *(layers_list.top()->getRetEvent());
 	*(layers_list.top()->getRetEvent()) = ReturnEvents::DEFAULT;
@@ -42,65 +56,74 @@ ReturnEvents Model::checkResponse()
 		break;
 	case ReturnEvents::NEXTLEVEL:
 	{
-		layers_list.pop();
+		clearAllLayers();
 		current_level++;
 		if (current_level + 1 > level_names.size())
 		{
-			while (!layers_list.empty())
-			{
-				layers_list.pop();
-			}
 			layers_list.push(&eotg);
-			current_level = -1;
-			return ReturnEvents::OPENMENU;
+			current_level = 0;
+			return ModelReaction::CLEARALLANDADD;
 		}
-		Level* test_level = new Level(std::string(level_names[current_level]));
-		layers_list.push(test_level);
-		break;
+		try
+		{
+			Level* test_level = new Level(level_dir[current_level],level_names[current_level]);
+			layers_list.push(test_level);
+		}
+		catch (std::string ex)
+		{
+			if (current_level + 2 > level_names.size())
+			{
+				current_level = 0;
+			}
+			else
+			{
+				current_level++;
+			}
+			clearAllLayers();
+			ew.setErrorMsg(ex);
+			layers_list.push(&ew);
+			return ModelReaction::CLEARALLANDADD;
+		}
+		return ModelReaction::CLEARALLANDADD;
 	}
 	case ReturnEvents::CLOSELOCALMENU:
 	{
 		layers_list.pop();
-		break;
+		layers_list.top()->repause();
+		return ModelReaction::DELETE;
 	}
 	case ReturnEvents::OPENMENU:
 	{
-		while (!layers_list.empty())
-		{
-			layers_list.pop();
-		}
+		current_level--;
+		clearAllLayers();
 		layers_list.push(&main_menu);
-		current_level = -1;
-		break;
+		return ModelReaction::CLEARALLANDADD;
 	}
 	case ReturnEvents::OPENLOCALMENU:
 	{
 		layers_list.push(&local_menu);
-		return ReturnEvents::NEXTLEVEL;
+		return ModelReaction::ADD;
 	}
 	break;
 	case ReturnEvents::RESTART:
 	{
-		while (!layers_list.empty())
-		{
-			layers_list.pop();
-		}
-		Level* test_level = new Level(std::string(level_names[current_level]));
+		clearAllLayers();
+		Level* test_level = new Level(level_dir[current_level], level_names[current_level]);
 		layers_list.push(test_level);
-		return ReturnEvents::OPENMENU;
+		return ModelReaction::CLEARALLANDADD;
 	}
 	case ReturnEvents::WIN:
 	{
 		layers_list.push(&win);
-		return ReturnEvents::NEXTLEVEL;
+		return ModelReaction::ADD;
 	}
 	case ReturnEvents::GAMEOVER:
 	{
 		layers_list.push(&game_over);
-		return ReturnEvents::NEXTLEVEL;
+		return ModelReaction::ADD;
 	}
 	case ReturnEvents::CLOSE:
-		break;
+		return ModelReaction::CLOSE;
 	}
-	return re;
+	return ModelReaction::NOTHING;
 }

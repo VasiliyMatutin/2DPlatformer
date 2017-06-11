@@ -42,6 +42,10 @@ bool Layer::isDoubleView()
 	return false;
 }
 
+void Layer::repause()
+{
+}
+
 void Layer::update()
 {
 }

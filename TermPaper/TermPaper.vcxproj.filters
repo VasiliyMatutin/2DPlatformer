@@ -141,6 +141,9 @@
     <ClCompile Include="EndOfTheGame.cpp">
       <Filter>main\Model\Layer\AuxiliaryLayers</Filter>
     </ClCompile>
+    <ClCompile Include="ErrorWindow.cpp">
+      <Filter>main\Model\Layer\AuxiliaryLayers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controller.h">
@@ -246,6 +249,9 @@
       <Filter>main\Model\Layer\Level\Sensor</Filter>
     </ClInclude>
     <ClInclude Include="EndOfTheGame.h">
+      <Filter>main\Model\Layer\AuxiliaryLayers</Filter>
+    </ClInclude>
+    <ClInclude Include="ErrorWindow.h">
       <Filter>main\Model\Layer\AuxiliaryLayers</Filter>
     </ClInclude>
   </ItemGroup>

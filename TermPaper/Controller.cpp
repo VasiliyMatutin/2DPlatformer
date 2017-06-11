@@ -90,19 +90,17 @@ void Controller::observe()
 		}
 		switch (model->checkResponse())
 		{
-		case ReturnEvents::DEFAULT:
-			break;
-		case ReturnEvents::NEXTLEVEL:
+		case ModelReaction::ADD:
 			viewer->handleViewerEvent(ViewEvents::ADDLAYER);
 			break;
-		case ReturnEvents::CLOSELOCALMENU:
+		case ModelReaction::DELETE:
 			viewer->handleViewerEvent(ViewEvents::DELETELAYER);
 			break;
-		case ReturnEvents::OPENMENU:
+		case ModelReaction::CLEARALLANDADD:
 			viewer->handleViewerEvent(ViewEvents::DELETEALLLAYERS);
 			viewer->handleViewerEvent(ViewEvents::ADDLAYER);
 			break;
-		case ReturnEvents::CLOSE:
+		case ModelReaction::CLOSE:
 			window->close();
 			return;
 		}

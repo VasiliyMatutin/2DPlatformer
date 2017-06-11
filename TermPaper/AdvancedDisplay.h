@@ -4,9 +4,8 @@
 class AdvancedDisplay : public Display
 {
 	sf::View viewUI;
-	sf::Font font;
-	sf::Text text;
 	sf::Vector2f max_size, min_size;
+	double l_heigth, l_width;
 	void centerView();
 	void changeZoom(bool make_closer);
 public:

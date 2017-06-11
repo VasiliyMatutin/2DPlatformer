@@ -70,7 +70,7 @@
   <object id="69" type="danger" x="672.5" y="490.5" width="126.667" height="86.5"/>
  </objectgroup>
  <objectgroup name="Dynamic">
-  <object id="60" name="strong_player" type="player" x="88.028" y="325.233" width="32" height="48">
+  <object id="60" name="strong_player" type="player" x="521.028" y="330.233" width="32" height="48">
    <properties>
     <property name="health" value="50"/>
     <property name="image" value="player.png"/>
@@ -116,7 +116,7 @@
     <property name="image" value="metal_crate.png"/>
    </properties>
   </object>
-  <object id="86" x="546.667" y="343.667" width="32" height="32">
+  <object id="86" x="743.667" y="378.667" width="32" height="32">
    <properties>
     <property name="density" type="float" value="10"/>
     <property name="image" value="crate.png"/>
@@ -128,7 +128,7 @@
     <property name="image" value="crate.png"/>
    </properties>
   </object>
-  <object id="88" x="136.333" y="338" width="32" height="32">
+  <object id="88" x="258.333" y="418" width="32" height="32">
    <properties>
     <property name="density" type="float" value="10"/>
     <property name="image" value="crate.png"/>
@@ -146,7 +146,7 @@
     <property name="image" value="crate.png"/>
    </properties>
   </object>
-  <object id="103" name="dexterous_player" type="player" x="587.695" y="384.566" width="32" height="32">
+  <object id="103" name="dexterous_player" type="player" x="75.695" y="347.566" width="32" height="32">
    <properties>
     <property name="health" value="20"/>
     <property name="image" value="dex_player.png"/>
@@ -277,8 +277,9 @@
     <property name="image" value="button.png"/>
     <property name="is_keeping" value="1"/>
     <property name="is_visible" value="1"/>
-    <property name="observables" value="platform2"/>
+    <property name="observables" value="platform2 bridge2"/>
     <property name="repeat_allowed" value="0"/>
+    <property name="stages" value="down up"/>
    </properties>
   </object>
   <object id="51" type="timer" x="0" y="0">
@@ -303,7 +304,7 @@
     <property name="player" value="dexterous"/>
    </properties>
   </object>
-  <object id="110" name="player2_final" type="final" x="547" y="338" width="32" height="48">
+  <object id="110" name="player2_final" type="final" x="542" y="333" width="32" height="48">
    <properties>
     <property name="image" value="strong_final.png"/>
     <property name="player" value="strong"/>

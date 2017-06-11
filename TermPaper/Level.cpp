@@ -1,13 +1,15 @@
 #include "Level.h"
 #include <iostream>
+#include <fstream>
 #include <sstream>
 #include <vector>
 #include <iterator>
 #include "ManualPlatform.h"
 
-Level::Level(std::string filename):
+Level::Level(std::string prefix, std::string filename):
 	strong_player(nullptr),
-	dexterous_player(nullptr)
+	dexterous_player(nullptr),
+	prefix(prefix)
 {
 	b2Vec2 gravity(0.0f, 9.8f);
 	level_world = new b2World(gravity);
@@ -15,6 +17,7 @@ Level::Level(std::string filename):
 	level_world->SetContactListener(my_contact_listener_ptr);
 	storage.to_destroy_list = my_contact_listener_ptr->getToDestroyListPtr();
 	loadLevel(filename);
+	prev_step = std::chrono::system_clock::now();
 }
 
 Level::~Level()
@@ -136,9 +139,17 @@ void Level::throwBox(double x, double y)
 	}
 }
 
+void Level::countTime()
+{
+	std::chrono::time_point<std::chrono::system_clock> step = std::chrono::system_clock::now();
+	level_time += step - prev_step;
+	prev_step = step;
+}
+
 void Level::update()
 {
 	level_world->Step(1.0f / 60.0f, 3, 3);
+	countTime();
 	int n = 0;
 	for (auto it : *storage.to_destroy_list)
 	{
@@ -163,6 +174,21 @@ void Level::update()
 	}
 }
 
+void Level::repause()
+{
+	prev_step = std::chrono::system_clock::now();
+}
+
+std::string Level::fileExistsTest(const std::string& name)
+{
+	std::ifstream f(name.c_str());
+	if (!f.good())
+	{
+		throw std::string("Loading image \"" + name + "\" failed. \n\t\t\t\t\t\t Couldn't find file");
+	}
+	return name;
+}
+
 bool Level::loadLevel(std::string filename)
 {
 	//load XML-file with level description
@@ -173,8 +199,7 @@ bool Level::loadLevel(std::string filename)
 	//Error verification
 	if (error != 0)
 	{
-		std::cout << "Loading level \"" << filename << "\" failed." << std::endl; //////////////////////////////////////////////////////////////////////////////Exeptions!!!! Won't forget!!
-		return false;
+		throw std::string("Loading level \"" + filename + "\" failed. \n\t\t\t\t\t\t Couldn't find file");
 	}
 
 	//Set map parameters
@@ -185,6 +210,23 @@ bool Level::loadLevel(std::string filename)
 	//Add objects group
 	loadObjects(map);
 
+	if (strong_player == nullptr)
+	{
+		throw std::string("Strong player hasn't been found at this level");
+	}
+	else if (dexterous_player == nullptr)
+	{
+		throw std::string("Dexterous player hasn't been found at this level");
+	}
+	else if (storage.final_list[0] == nullptr)
+	{
+		throw std::string("Final point for strong player \n\t hasn't been found at this level");
+	}
+	else if (storage.final_list[1] == nullptr)
+	{
+		throw std::string("Final point for dexterous player \n\t hasn't been found at this level");
+	}
+
 	addUIToLevel();
 
 	return 1;
@@ -192,10 +234,10 @@ bool Level::loadLevel(std::string filename)
 
 void Level::loadMap(tinyxml2::XMLElement *map)
 {
-	level_width = atof(map->Attribute("width"));
-	level_height = atof(map->Attribute("height"));
-	tile_width = atof(map->Attribute("tilewidth"));
-	tile_height = atof(map->Attribute("tileheight"));
+	level_width = atof(checkElementExistence(map->Attribute("width"),"Level has no width"));
+	level_height = atof(checkElementExistence(map->Attribute("height"), "Level has no height"));
+	tile_width = atof(checkElementExistence(map->Attribute("tilewidth"), "Unknown tile width"));
+	tile_height = atof(checkElementExistence(map->Attribute("tileheight"), "Unknown tile height"));
 
 	//Add tileset image
 	std::vector <TilesetImg> image_list;
@@ -208,7 +250,7 @@ void Level::loadMap(tinyxml2::XMLElement *map)
 		tg.last_gid = tg.first_gid + atof(tileset->Attribute("tilecount")) - 1;
 		tinyxml2::XMLElement *image;
 		image = tileset->FirstChildElement("image");
-		images.push_back(std::string(image->Attribute("source")));
+		images.push_back(fileExistsTest(prefix+image->Attribute("source")));
 		image_list.push_back(tg);
 		tileset = tileset->NextSiblingElement("tileset");
 	}
@@ -255,23 +297,27 @@ void Level::loadObjects(tinyxml2::XMLElement *map)
 	BodyType b_type;
 	while (objectgroup)
 	{
-		if (std::string(objectgroup->Attribute("name")) == std::string("Static"))
+		if (std::string(checkElementExistence(objectgroup->Attribute("name"), "No objectgroup name found")) == std::string("Static"))
 		{
 			b_type = BodyType::STATIC;
 		}
-		else if (std::string(objectgroup->Attribute("name")) == std::string("Kinematic"))
+		else if (std::string(checkElementExistence(objectgroup->Attribute("name"), "No objectgroup name found")) == std::string("Kinematic"))
 		{
 			b_type = BodyType::KINEMATIC;
 		}
-		else if (std::string(objectgroup->Attribute("name")) == std::string("Dynamic"))
+		else if (std::string(checkElementExistence(objectgroup->Attribute("name"), "No objectgroup name found")) == std::string("Dynamic"))
 		{
 			b_type = BodyType::DYNAMIC;
 		}
-		else if (std::string(objectgroup->Attribute("name")) == std::string("Sensors") || std::string(objectgroup->Attribute("name")) == std::string("Dangers"))
+		else if (std::string(checkElementExistence(objectgroup->Attribute("name"), "No objectgroup name found")) == std::string("Sensors") || std::string(checkElementExistence(objectgroup->Attribute("name"), "No objectgroup name found")) == std::string("Dangers"))
 		{
 			//process sensors at the end
 			objectgroup = objectgroup->NextSiblingElement("objectgroup");
 			continue;
+		}
+		else
+		{
+			throw std::string("Incorrect objectgroup name");
 		}
 		loadObject(objectgroup, b_type);
 		objectgroup = objectgroup->NextSiblingElement("objectgroup");
@@ -287,6 +333,10 @@ void Level::loadObjects(tinyxml2::XMLElement *map)
 
 void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 {
+	if (objectgroup == nullptr)
+	{
+		return;
+	}
 	Object tmp_obj;
 	tmp_obj.top = 0;
 	tmp_obj.left = 0;
@@ -295,10 +345,10 @@ void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 
 	while (object)
 	{
-		if (b_type == BodyType::KINEMATIC && !object->Attribute("type")) //////////////////////////////////////////crutch
+		if (b_type == BodyType::KINEMATIC && !object->Attribute("type")) 
 		{
 			object = object->NextSiblingElement("object");
-continue;
+			continue;
 		}
 		b2BodyDef body_def;
 		b2PolygonShape shape;
@@ -319,7 +369,7 @@ continue;
 		tmp_obj.rotation = 0;
 		tmp_obj.width = 0;
 		tmp_obj.height = 0;
-		if (object->Attribute("width") != nullptr && object->Attribute("height"))
+		if (object->Attribute("width") && object->Attribute("height"))
 		{
 			tmp_obj.width = atof(object->Attribute("width"));
 			tmp_obj.height = atof(object->Attribute("height"));
@@ -395,7 +445,7 @@ continue;
 		}
 		case BodyType::KINEMATIC:
 		{
-			images.push_back(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("image"))->Attribute("value"));
+			images.push_back(fileExistsTest(prefix + (checkElementExistence(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("image")), "No image was found for one of the kinematic object")->Attribute("value"))));
 			tmp_obj.number_in_image_list = images.size() - 1;
 
 			fixture_def.shape = &shape;
@@ -405,7 +455,7 @@ continue;
 
 			if (object->Attribute("type") == nullptr)
 			{
-				body->GetFixtureList()->SetDensity(std::stod(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("density"))->Attribute("value")));
+				body->GetFixtureList()->SetDensity(std::stod(checkElementExistence(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("density")), "No density for box was found")->Attribute("value")));
 				body->GetFixtureList()->SetFriction(2.0f);
 				body->ResetMassData();
 				NonStaticObj* nso = new NonStaticObj(body, &changeable_objects.back(), ObjectType::BOX);
@@ -416,7 +466,7 @@ continue;
 
 			if (std::string(object->Attribute("type")) == std::string("player"))
 			{
-				int health = std::stoi(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("health"))->Attribute("value"));
+				int health = std::stoi(checkElementExistence(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("health")), "No health description for player was found")->Attribute("value"));
 				if (std::string(object->Attribute("name")) == std::string("strong_player"))
 				{
 					strong_player = new StrongPlayer(level_width*tile_width, level_height*tile_height, body, &changeable_objects.back(), health, &re);
@@ -440,7 +490,8 @@ continue;
 			else if (object->Attribute("type") == std::string("bonus"))
 			{
 				BonusType bt;
-				std::string string_bt = findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("type"))->Attribute("value");
+				double time = 0;
+				std::string string_bt = checkElementExistence(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("type")), "No bonus type was found")->Attribute("value");
 				if (string_bt == "health")
 				{
 					bt = BonusType::HEALTH;
@@ -448,14 +499,15 @@ continue;
 				else if (string_bt == "speed")
 				{
 					bt = BonusType::RUN;
+					time = std::stod(checkElementExistence(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("time")), "No time duration for bonus was found")->Attribute("value"));
 				}
 				else if (string_bt == "jump")
 				{
 					bt = BonusType::JUMP;
+					time = std::stod(checkElementExistence(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("time")), "No time duration for bonus is found")->Attribute("value"));
 				}
-				double modificator = std::stod(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("modificator"))->Attribute("value"));
-				double time = std::stod(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("time"))->Attribute("value"));
-				Bonus* bn = new Bonus(modificator, time, bt, &player, body, &changeable_objects.back());
+				double modificator = std::stod(checkElementExistence(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("modificator")), "No bonus modificator is found")->Attribute("value"));
+				Bonus* bn = new Bonus(modificator, time, bt, &player, body, &changeable_objects.back(), &level_time);
 			}
 			else if (std::string(object->Attribute("type")) == std::string("revolute_bridge") || std::string(object->Attribute("type")) == std::string("partition"))
 			{
@@ -480,10 +532,10 @@ void Level::parsePlatform(tinyxml2::XMLElement * object, tinyxml2::XMLElement * 
 {
 	tinyxml2::XMLElement *properties = object->FirstChildElement("properties");
 	bool is_rounded = 0;
-	std::vector<std::pair<double, double>> traj_coord = buildTrajectory(objectgroup, findAmongSiblings(properties->FirstChildElement("property"), std::string("trajectory"))->Attribute("value"), &is_rounded);
-	int speed = atoi(findAmongSiblings(properties->FirstChildElement("property"), std::string("speed"))->Attribute("value"));
-	int steps = atoi(findAmongSiblings(properties->FirstChildElement("property"), std::string("steps"))->Attribute("value"));
-	if (atoi(findAmongSiblings(properties->FirstChildElement("property"), std::string("is_auto"))->Attribute("value")))
+	std::vector<std::pair<double, double>> traj_coord = buildTrajectory(objectgroup, checkElementExistence(findAmongSiblings(properties->FirstChildElement("property"), std::string("trajectory")), "No trajectory for platform was found")->Attribute("value"), &is_rounded);
+	int speed = atoi(checkElementExistence(findAmongSiblings(properties->FirstChildElement("property"), std::string("speed")),"No speed for platform was found")->Attribute("value"));
+	int steps = atoi(checkElementExistence(findAmongSiblings(properties->FirstChildElement("property"), std::string("steps")),"No steps for platdorm was found")->Attribute("value"));
+	if (checkElementExistence(findAmongSiblings(properties->FirstChildElement("property"), std::string("is_auto")),"Unknown automatic platform or no")->BoolAttribute("value"))
 	{
 		//create auto platform
 		Platform* platform;
@@ -495,7 +547,7 @@ void Level::parsePlatform(tinyxml2::XMLElement * object, tinyxml2::XMLElement * 
 		//create platfrom controlling by sensor
 		ManualPlatform* platform = new ManualPlatform(level_width*tile_width, level_height*tile_height, body, &changeable_objects.back(), traj_coord, speed, is_rounded, steps);
 		storage.non_static_objects.push_back(platform);
-		storage.future_observables.insert(std::pair<std::string, ManualSwitchObj*>(std::string(object->Attribute("name")), platform));
+		storage.future_observables.insert(std::pair<std::string, ManualSwitchObj*>(std::string(checkElementExistence(object->Attribute("name"),"Platform has no name")), platform));
 	}
 }
 
@@ -503,11 +555,12 @@ void Level::parsePlatform(tinyxml2::XMLElement * object, tinyxml2::XMLElement * 
 void Level::parseSensor(tinyxml2::XMLElement * object, b2Body * body, std::vector<Action> stages)
 {
 	tinyxml2::XMLElement *property = object->FirstChildElement("properties")->FirstChildElement("property");
+	checkElementExistence(object->Attribute("type"), "Incorrect sensor type");
 	if (object->Attribute("type") == std::string("final"))
 	{
-		images.push_back(findAmongSiblings(property, std::string("image"))->Attribute("value"));
+		images.push_back(fileExistsTest(prefix + (checkElementExistence(findAmongSiblings(property, std::string("image")),"No image for final point was found")->Attribute("value"))));
 		changeable_objects.front().number_in_image_list = images.size() - 1;
-		if (findAmongSiblings(property, std::string("player"))->Attribute("value") == std::string("strong"))
+		if (checkElementExistence(findAmongSiblings(property, std::string("player")), "No player type for final point was found")->Attribute("value") == std::string("strong"))
 		{
 			Final* final = new Final(body, true);
 			storage.final_list[0] = final;
@@ -519,7 +572,7 @@ void Level::parseSensor(tinyxml2::XMLElement * object, b2Body * body, std::vecto
 		}
 		return;
 	}
-	bool repeated_allowed = findAmongSiblings(property, std::string("repeat_allowed"))->BoolAttribute("value");
+	bool repeated_allowed = checkElementExistence(findAmongSiblings(property, std::string("repeat_allowed")), "Can't define repeat modificator for sensor")->BoolAttribute("value");
 	tinyxml2::XMLElement *observables_property = findAmongSiblings(property, std::string("observables"));
 	std::list<ManualSwitchObj*> observables;
 	if (observables_property)
@@ -528,19 +581,24 @@ void Level::parseSensor(tinyxml2::XMLElement * object, b2Body * body, std::vecto
 		std::vector<std::string> results = stringDelimiter(observables_property->Attribute("value"));
 		for (auto it : results)
 		{
-			observables.push_back(storage.future_observables.find(it)->second);
+			auto obser = storage.future_observables.find(it);
+			if (obser == storage.future_observables.end())
+			{
+				throw std::string("Observable object for sensor wasn't found");
+			}
+			observables.push_back(obser->second);
 		}
 	}
 	if (object->Attribute("type") == std::string("sensor"))
 	{
 		//create sensor
-		bool is_keeping = findAmongSiblings(property, std::string("is_keeping"))->BoolAttribute("value");
-		bool is_visible = findAmongSiblings(property, std::string("is_visible"))->BoolAttribute("value");
+		bool is_keeping = checkElementExistence(findAmongSiblings(property, std::string("is_keeping")),"Can't define keep modificator for sensor")->BoolAttribute("value");
+		bool is_visible = checkElementExistence(findAmongSiblings(property, std::string("is_visible")), "Can't define visibility modificator for sensor")->BoolAttribute("value");
 		Sensor* sensor;
 		if (is_visible)
 		{
 			//visible sensor
-			images.push_back(findAmongSiblings(property, std::string("image"))->Attribute("value"));
+			images.push_back(fileExistsTest(prefix + (checkElementExistence(findAmongSiblings(property, std::string("image")),"No image for sensor was found")->Attribute("value"))));
 			changeable_objects.front().number_in_image_list = images.size() - 1;
 			sensor = new VisibleSensor(observables, repeated_allowed, is_keeping, body, &changeable_objects.front(), stages);
 		}
@@ -554,7 +612,7 @@ void Level::parseSensor(tinyxml2::XMLElement * object, b2Body * body, std::vecto
 	else if (object->Attribute("type") == std::string("lever"))
 	{
 		//create lever - sensor switching by player
-		images.push_back(findAmongSiblings(property, std::string("image"))->Attribute("value"));
+		images.push_back(fileExistsTest(prefix + (checkElementExistence(findAmongSiblings(property, std::string("image")), "No image for lever was found")->Attribute("value"))));
 		changeable_objects.front().number_in_image_list = images.size() - 1;
 		Lever* lever = new Lever(observables, repeated_allowed, body, &changeable_objects.front(), &player, stages);
 		storage.lever_list.push_back(lever);
@@ -565,7 +623,7 @@ void Level::parseSensor(tinyxml2::XMLElement * object, b2Body * body, std::vecto
 void Level::parseTimer(tinyxml2::XMLElement * object, std::vector<Action> stages)
 {
 	tinyxml2::XMLElement *property = object->FirstChildElement("properties")->FirstChildElement("property");
-	bool is_rounded = findAmongSiblings(property, std::string("is_rounded"))->BoolAttribute("value");
+	bool is_rounded = checkElementExistence(findAmongSiblings(property, std::string("is_rounded")), "Can't define round modificator for timer")->BoolAttribute("value");
 	tinyxml2::XMLElement *observables_property = findAmongSiblings(property, std::string("observables"));
 	std::list<ManualSwitchObj*> observables;
 	if (observables_property)
@@ -595,7 +653,7 @@ void Level::parseBridge(tinyxml2::XMLElement * object, b2Body * body, b2BodyDef*
 	body->SetFixedRotation(false);
 
 	tinyxml2::XMLElement *property = object->FirstChildElement("properties")->FirstChildElement("property");
-	std::string ancor = findAmongSiblings(property, "ancor")->Attribute("value");
+	std::string ancor = checkElementExistence(findAmongSiblings(property, "ancor"), "Can't find ancor value for partition or bridge")->Attribute("value");
 	std::string::size_type pos = ancor.find(' '); // devide x & y coordinates
 	double tmpx = stod(ancor.substr(0, pos))*tmp_obj->width / 2;
 	double tmpy = stod(ancor.substr(pos + 1))*tmp_obj->height / 2;
@@ -608,8 +666,8 @@ void Level::parseBridge(tinyxml2::XMLElement * object, b2Body * body, b2BodyDef*
 
 	rev_def.localAnchorA.Set(tmpx / PIXEL_PER_METER, tmpy / PIXEL_PER_METER);
 	// establish a limit minimum corner
-	rev_def.lowerAngle = std::stod(findAmongSiblings(property, "min_angle")->Attribute("value"));
-	rev_def.upperAngle = std::stod(findAmongSiblings(property, "max_angle")->Attribute("value"));
+	rev_def.lowerAngle = std::stod(checkElementExistence(findAmongSiblings(property, "min_angle"),"Can't find min_angle for bridge or partition")->Attribute("value"));
+	rev_def.upperAngle = std::stod(checkElementExistence(findAmongSiblings(property, "max_angle"), "Can't find max_angle for bridge or partition")->Attribute("value"));
 	rev_def.enableLimit = true;
 	if (rev_def.lowerAngle == 0 && rev_def.upperAngle == 360)
 	{
@@ -625,7 +683,7 @@ void Level::parseBridge(tinyxml2::XMLElement * object, b2Body * body, b2BodyDef*
 		// expose the moment of force (motor power)
 		bridge_joint->SetMaxMotorTorque(body->GetGravityScale()*body->GetMass() * 1000);
 		// angular speed
-		double motor_speed = std::stod(findAmongSiblings(property, "speed")->Attribute("value"));
+		double motor_speed = std::stod(checkElementExistence(findAmongSiblings(property, "speed"), "Can't find speed for bridge")->Attribute("value"));
 		if (abs(rev_def.lowerAngle) > abs(rev_def.upperAngle))
 		{
 			motor_speed = -motor_speed;
@@ -635,7 +693,7 @@ void Level::parseBridge(tinyxml2::XMLElement * object, b2Body * body, b2BodyDef*
 		storage.non_static_objects.push_back(rb);
 		storage.future_observables.insert(std::pair<std::string, ManualSwitchObj*>(std::string(object->Attribute("name")), rb));
 		//make initial action
-		std::string init_state = findAmongSiblings(property, "init_state")->Attribute("value");
+		std::string init_state = checkElementExistence(findAmongSiblings(property, "init_state"), "Can't find init_state for bridge")->Attribute("value");
 		if (init_state == std::string("up"))
 		{
 			rb->makeAction(Action::Up);
@@ -660,14 +718,14 @@ void Level::parseBridge(tinyxml2::XMLElement * object, b2Body * body, b2BodyDef*
 void Level::parseDangerObject(tinyxml2::XMLElement * object, b2Body * body, Object* tmp_obj, tinyxml2::XMLElement * objectgroup)
 {
 	tinyxml2::XMLElement *property = object->FirstChildElement("properties")->FirstChildElement("property");
-	double damage = std::stod(findAmongSiblings(property, "damage")->Attribute("value"));
+	double damage = std::stod(checkElementExistence(findAmongSiblings(property, "damage"), "Damage modificator for danger object wasn't found")->Attribute("value"));
 
-	images.push_back(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("image"))->Attribute("value"));
+	images.push_back(fileExistsTest(prefix + (checkElementExistence(findAmongSiblings(object->FirstChildElement("properties")->FirstChildElement("property"), std::string("image")),"Can't find image for danger object")->Attribute("value"))));
 
-	if (findAmongSiblings(property, "is_movable")->BoolAttribute("value"))
+	if (checkElementExistence(findAmongSiblings(property, "is_movable"),"Can't define movable modificator for danger object")->BoolAttribute("value"))
 	{
 		level_world->DestroyBody(body);
-		ManualPlatform* man_platf = static_cast<ManualPlatform*>(storage.future_observables.find(findAmongSiblings(property, "stick_platform")->Attribute("value"))->second);
+		ManualPlatform* man_platf = static_cast<ManualPlatform*>(storage.future_observables.find(checkElementExistence(findAmongSiblings(property, "stick_platform"), "Stick platdorm wasn't found")->Attribute("value"))->second);
 		body = man_platf->getBody();
 		tmp_obj = man_platf->getObject();
 		tmp_obj->number_in_image_list = images.size() - 1;
@@ -680,23 +738,23 @@ void Level::parseDangerObject(tinyxml2::XMLElement * object, b2Body * body, Obje
 
 	std::list<b2Body*> boundaries;
 
-	if (findAmongSiblings(property, "left_side")->BoolAttribute("value"))
+	if (checkElementExistence(findAmongSiblings(property, "left_side"),"The left_side midificator wasn't found")->BoolAttribute("value"))
 	{
 		boundaries.push_back(createBorderSensor(body, &changeable_objects.back(), Sides::LEFT));
 	}
-	if (findAmongSiblings(property, "up_side")->BoolAttribute("value"))
+	if (checkElementExistence(findAmongSiblings(property, "up_side"), "The up_side midificator wasn't found")->BoolAttribute("value"))
 	{
 		boundaries.push_back(createBorderSensor(body, &changeable_objects.back(), Sides::UP));
 	}
-	if (findAmongSiblings(property, "right_side")->BoolAttribute("value"))
+	if (checkElementExistence(findAmongSiblings(property, "right_side"), "The right_side midificator wasn't found")->BoolAttribute("value"))
 	{
 		boundaries.push_back(createBorderSensor(body, &changeable_objects.back(), Sides::RIGHT));
 	}
-	if (findAmongSiblings(property, "down_side")->BoolAttribute("value"))
+	if (checkElementExistence(findAmongSiblings(property, "down_side"), "The down_side midificator wasn't found")->BoolAttribute("value"))
 	{
 		boundaries.push_back(createBorderSensor(body, &changeable_objects.back(), Sides::DOWN));
 	}
-	DangerObject* d_obj = new DangerObject(boundaries, damage, body);
+	DangerObject* d_obj = new DangerObject(boundaries, damage, body, &level_time);
 	storage.danger_list.push_back(d_obj);
 }
 
@@ -833,7 +891,7 @@ std::vector<std::pair<double, double>> Level::buildTrajectory(tinyxml2::XMLEleme
 		std::pair<double, double> point(tmp_x / PIXEL_PER_METER, tmp_y / PIXEL_PER_METER);
 		coord_set.push_back(point);
 	}
-	*is_rounded = findAmongSiblings(trajectory->FirstChildElement("properties")->FirstChildElement("property"), std::string("is_rounded"))->BoolAttribute("value");
+	*is_rounded = checkElementExistence(findAmongSiblings(trajectory->FirstChildElement("properties")->FirstChildElement("property"), std::string("is_rounded")), "Round modificator for trajectory wasn't found")->BoolAttribute("value");
 	return coord_set;
 }
 
