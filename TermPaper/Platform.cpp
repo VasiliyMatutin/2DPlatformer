@@ -59,10 +59,6 @@ void Platform::update()
 	}
 }
 
-Platform::~Platform()
-{
-}
-
 void Platform::reverseMoving()
 {
 	counter_incr = 1;

@@ -1,0 +1,80 @@
+\hypertarget{class_controller}{}\section{Controller Class Reference}
+\label{class_controller}\index{Controller@{Controller}}
+
+
+Operating element in M\+VC structure.  
+
+
+
+
+{\ttfamily \#include $<$Controller.\+h$>$}
+
+
+
+Collaboration diagram for Controller\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{class_controller__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_controller_ae2231c787d852af79c95433cf30cbe9f}{Controller} (\hyperlink{class_model}{Model} $\ast$\+\_\+model, \hyperlink{class_viewer}{Viewer} $\ast$\+\_\+viewer)
+\begin{DoxyCompactList}\small\item\em Defined constructor for this class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_controller_a6ebc30e3213a87318b8f6d7c7f2edc7c}\label{class_controller_a6ebc30e3213a87318b8f6d7c7f2edc7c}} 
+void \hyperlink{class_controller_a6ebc30e3213a87318b8f6d7c7f2edc7c}{observe} ()
+\begin{DoxyCompactList}\small\item\em Start the game life cycle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_controller_a9c31118fa8ad5b061deae97b57fadbec}\label{class_controller_a9c31118fa8ad5b061deae97b57fadbec}} 
+sf\+::\+Render\+Window $\ast$ \hyperlink{class_controller_a9c31118fa8ad5b061deae97b57fadbec}{window}
+\begin{DoxyCompactList}\small\item\em Pointer to the instance window of the game. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_controller_a6f6ea54052742d3940adfcfce885bae9}\label{class_controller_a6f6ea54052742d3940adfcfce885bae9}} 
+\hyperlink{class_model}{Model} $\ast$ \hyperlink{class_controller_a6f6ea54052742d3940adfcfce885bae9}{model}
+\begin{DoxyCompactList}\small\item\em Pointer to the \hyperlink{class_model}{Model} class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_controller_a81f966e6dcf07b90a15453ee54945182}\label{class_controller_a81f966e6dcf07b90a15453ee54945182}} 
+\hyperlink{class_viewer}{Viewer} $\ast$ \hyperlink{class_controller_a81f966e6dcf07b90a15453ee54945182}{viewer}
+\begin{DoxyCompactList}\small\item\em Pointer to the \hyperlink{class_viewer}{Viewer} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Operating element in M\+VC structure. 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017
+\end{DoxyDate}
+Processes S\+F\+M\+L-\/window events and provides communication between \hyperlink{class_viewer}{Viewer} and \hyperlink{class_model}{Model} classes 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_controller_ae2231c787d852af79c95433cf30cbe9f}\label{class_controller_ae2231c787d852af79c95433cf30cbe9f}} 
+\index{Controller@{Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{Controller()}{Controller()}}
+{\footnotesize\ttfamily Controller\+::\+Controller (\begin{DoxyParamCaption}\item[{\hyperlink{class_model}{Model} $\ast$}]{\+\_\+model,  }\item[{\hyperlink{class_viewer}{Viewer} $\ast$}]{\+\_\+viewer }\end{DoxyParamCaption})}
+
+
+
+Defined constructor for this class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+model} & pointer to the \hyperlink{class_model}{Model} class, which will use in M\+VC model \\
+\hline
+{\em \+\_\+viewer} & pointer to the \hyperlink{class_viewer}{Viewer} class, which will use in M\+VC model \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_controller_8h}{Controller.\+h}\item 
+Controller.\+cpp\end{DoxyCompactItemize}

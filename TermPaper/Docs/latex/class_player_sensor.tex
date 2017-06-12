@@ -1,0 +1,77 @@
+\hypertarget{class_player_sensor}{}\section{Player\+Sensor Class Reference}
+\label{class_player_sensor}\index{Player\+Sensor@{Player\+Sensor}}
+
+
+Special sensor for character.  
+
+
+
+
+{\ttfamily \#include $<$Player\+Sensor.\+h$>$}
+
+
+
+Collaboration diagram for Player\+Sensor\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{class_player_sensor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_player_sensor_a1e74f6ad656f4cdc6449fc55b41dff42}{Player\+Sensor} (\hyperlink{class_player}{Player} $\ast$observable\+\_\+player, b2\+Body $\ast$body)
+\begin{DoxyCompactList}\small\item\em Defined constructor for this class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_sensor_a6977b8699ebf0d3d2d2b177665060f21}\label{class_player_sensor_a6977b8699ebf0d3d2d2b177665060f21}} 
+void \hyperlink{class_player_sensor_a6977b8699ebf0d3d2d2b177665060f21}{contact\+Event} (b2\+Contact $\ast$contact, bool is\+\_\+begin)
+\begin{DoxyCompactList}\small\item\em inhereted from \hyperlink{class_contact_object}{Contact\+Object} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_player_sensor_afd6fd57380fc1752edbd601566e52980}\label{class_player_sensor_afd6fd57380fc1752edbd601566e52980}} 
+int \hyperlink{class_player_sensor_afd6fd57380fc1752edbd601566e52980}{contact\+\_\+count}
+\begin{DoxyCompactList}\small\item\em the number of active contact \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_sensor_a28ca9f490022e0473064290956fe6852}\label{class_player_sensor_a28ca9f490022e0473064290956fe6852}} 
+\hyperlink{class_player}{Player} $\ast$ \hyperlink{class_player_sensor_a28ca9f490022e0473064290956fe6852}{player}
+\begin{DoxyCompactList}\small\item\em pointer to the player object to which this sensor is attached \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Special sensor for character. 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017
+\end{DoxyDate}
+Allow define position of the hero relatively the ground (see on\+\_\+ground in \hyperlink{class_player}{Player} class) 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_player_sensor_a1e74f6ad656f4cdc6449fc55b41dff42}\label{class_player_sensor_a1e74f6ad656f4cdc6449fc55b41dff42}} 
+\index{Player\+Sensor@{Player\+Sensor}!Player\+Sensor@{Player\+Sensor}}
+\index{Player\+Sensor@{Player\+Sensor}!Player\+Sensor@{Player\+Sensor}}
+\subsubsection{\texorpdfstring{Player\+Sensor()}{PlayerSensor()}}
+{\footnotesize\ttfamily Player\+Sensor\+::\+Player\+Sensor (\begin{DoxyParamCaption}\item[{\hyperlink{class_player}{Player} $\ast$}]{observable\+\_\+player,  }\item[{b2\+Body $\ast$}]{body }\end{DoxyParamCaption})}
+
+
+
+Defined constructor for this class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observable\+\_\+player} & pointer to the \hyperlink{class_player}{Player} class to which body this sensor is attached \\
+\hline
+{\em \+\_\+body} & pointer to the box2d body assigned to this sensor \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_player_sensor_8h}{Player\+Sensor.\+h}\item 
+Player\+Sensor.\+cpp\end{DoxyCompactItemize}

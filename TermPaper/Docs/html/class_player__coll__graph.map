@@ -1,0 +1,5 @@
+<map id="Player" name="Player">
+<area shape="rect" id="node4" href="$class_bonus.html" title="{Bonus\n|&#45; body\land 7 more...\l|+ Bonus()\land 5 more...\l}" alt="" coords="87,403,186,509"/>
+<area shape="rect" id="node2" href="$class_non_static_obj.html" title="{NonStaticObj\n|# body\land 2 more...\l|+ NonStaticObj()\land 7 more...\l}" alt="" coords="5,5,124,112"/>
+<area shape="rect" id="node3" href="$class_player_u_i.html" title="Contains the necessary&#45;for&#45;display information about the hero. " alt="" coords="149,5,271,112"/>
+</map>

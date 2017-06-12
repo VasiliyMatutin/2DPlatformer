@@ -1,0 +1,68 @@
+\hypertarget{class_contact_object}{}\section{Contact\+Object Class Reference}
+\label{class_contact_object}\index{Contact\+Object@{Contact\+Object}}
+
+
+Interface for an object which can collide with another in box2d world.  
+
+
+
+
+{\ttfamily \#include $<$Contact\+Object.\+h$>$}
+
+
+
+Collaboration diagram for Contact\+Object\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{class_contact_object__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_contact_object_a53d2dfc1d9c2821e9c62e80ce62a6435}{contact\+Event} (b2\+Contact $\ast$contact, bool is\+Begin)=0
+\begin{DoxyCompactList}\small\item\em Define object reaction to the collision in box2d world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface for an object which can collide with another in box2d world. 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017 
+\end{DoxyDate}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_contact_object_a53d2dfc1d9c2821e9c62e80ce62a6435}\label{class_contact_object_a53d2dfc1d9c2821e9c62e80ce62a6435}} 
+\index{Contact\+Object@{Contact\+Object}!contact\+Event@{contact\+Event}}
+\index{contact\+Event@{contact\+Event}!Contact\+Object@{Contact\+Object}}
+\subsubsection{\texorpdfstring{contact\+Event()}{contactEvent()}}
+{\footnotesize\ttfamily virtual void Contact\+Object\+::contact\+Event (\begin{DoxyParamCaption}\item[{b2\+Contact $\ast$}]{contact,  }\item[{bool}]{is\+Begin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Define object reaction to the collision in box2d world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contact} & pointer to box2d b2\+Contact class \\
+\hline
+{\em is\+Begin} & \textquotesingle{}false\textquotesingle{} -\/ end of the collision; \textquotesingle{}true\textquotesingle{} -\/ start of the collision \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_player_sensor_a6977b8699ebf0d3d2d2b177665060f21}{Player\+Sensor}, \hyperlink{class_bonus_a903865168ff7fd91e0e2de23f849c553}{Bonus}, \hyperlink{class_non_static_obj_ae129119384cf9df2b7b1a7849b6112de}{Non\+Static\+Obj}, \hyperlink{class_danger_object_aebfc6b5b3dc2452cae78b157a29e8824}{Danger\+Object}, \hyperlink{class_lever_a9ec153b4c960d0a187539cc8f07e5bd9}{Lever}, \hyperlink{class_sensor_a08bfa36c84277677f3bd5fb14127fca7}{Sensor}, \hyperlink{class_final_a9ebc21296dd28e993f2ee8cbb47a3b37}{Final}, and \hyperlink{class_visible_sensor_a63bcb9da7556a6356cca3b08f7808bd8}{Visible\+Sensor}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_contact_object_8h}{Contact\+Object.\+h}\end{DoxyCompactItemize}

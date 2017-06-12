@@ -1,6 +1,8 @@
+#include <windows.h>  
+#include <tchar.h> 
 #include "Controller.h"
 
-int main()
+int WINAPI WinMain(HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpszArgument, int nCmdShow)
 {
 	Model model;
 	Viewer viewer(&model);

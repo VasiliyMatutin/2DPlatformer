@@ -1,0 +1,67 @@
+\hypertarget{class_final}{}\section{Final Class Reference}
+\label{class_final}\index{Final@{Final}}
+
+
+Collaboration diagram for Final\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{class_final__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_final_ad8e4afdefd9ea952bfbb7123af09c710}\label{class_final_ad8e4afdefd9ea952bfbb7123af09c710}} 
+{\bfseries Final} (b2\+Body $\ast$body, bool is\+\_\+strong)
+\item 
+\mbox{\Hypertarget{class_final_af7a2beabd2de1cc0fcbe017f2012e41c}\label{class_final_af7a2beabd2de1cc0fcbe017f2012e41c}} 
+bool {\bfseries is\+Reach} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_final_a9ebc21296dd28e993f2ee8cbb47a3b37}{contact\+Event} (b2\+Contact $\ast$, bool)
+\begin{DoxyCompactList}\small\item\em Define object reaction to the collision in box2d world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_final_ac09c1e5af1c2317a59fd2bdac39aac9f}\label{class_final_ac09c1e5af1c2317a59fd2bdac39aac9f}} 
+\hyperlink{class_player}{Player} $\ast$ {\bfseries my\+\_\+player}
+\item 
+\mbox{\Hypertarget{class_final_a637485b836c9226c062c92a34e0a679d}\label{class_final_a637485b836c9226c062c92a34e0a679d}} 
+bool {\bfseries is\+\_\+contact}
+\item 
+\mbox{\Hypertarget{class_final_a4beb08f8f72e6339e8544ae121fb717d}\label{class_final_a4beb08f8f72e6339e8544ae121fb717d}} 
+bool {\bfseries is\+\_\+strong}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_final_a9ebc21296dd28e993f2ee8cbb47a3b37}\label{class_final_a9ebc21296dd28e993f2ee8cbb47a3b37}} 
+\index{Final@{Final}!contact\+Event@{contact\+Event}}
+\index{contact\+Event@{contact\+Event}!Final@{Final}}
+\subsubsection{\texorpdfstring{contact\+Event()}{contactEvent()}}
+{\footnotesize\ttfamily void Final\+::contact\+Event (\begin{DoxyParamCaption}\item[{b2\+Contact $\ast$}]{contact,  }\item[{bool}]{is\+Begin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Define object reaction to the collision in box2d world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contact} & pointer to box2d b2\+Contact class \\
+\hline
+{\em is\+Begin} & \textquotesingle{}false\textquotesingle{} -\/ end of the collision; \textquotesingle{}true\textquotesingle{} -\/ start of the collision \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_contact_object_a53d2dfc1d9c2821e9c62e80ce62a6435}{Contact\+Object}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Final.\+h\item 
+Final.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,166 @@
+\hypertarget{class_player_u_i}{}\section{Player\+UI Class Reference}
+\label{class_player_u_i}\index{Player\+UI@{Player\+UI}}
+
+
+Contains the necessary-\/for-\/display information about the hero.  
+
+
+
+
+{\ttfamily \#include $<$Player\+U\+I.\+h$>$}
+
+
+
+Collaboration diagram for Player\+UI\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{class_player_u_i__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_player_u_i_a6258658ac25fa64b122bffdf8e1e41fc}\label{class_player_u_i_a6258658ac25fa64b122bffdf8e1e41fc}} 
+\hyperlink{class_player_u_i_a6258658ac25fa64b122bffdf8e1e41fc}{Player\+UI} ()
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{class_text_object}{Text\+Object} $\ast$ \hyperlink{class_player_u_i_a757ad508c40877d30f9f8b45f8afeccf}{get\+Player\+Name} ()
+\item 
+\hyperlink{class_text_object}{Text\+Object} $\ast$ \hyperlink{class_player_u_i_a45451abaa9482efb72379df93c2ca37e}{get\+Player\+Type} ()
+\item 
+void \hyperlink{class_player_u_i_a5cb795f694ec795a49591e6c3a7c7e64}{set\+Health\+Line\+Img} (int i)
+\begin{DoxyCompactList}\small\item\em set level of health bar \end{DoxyCompactList}\item 
+void \hyperlink{class_player_u_i_ae89b4bc3d9337f7010c504f6dd89e473}{set\+Player\+Name} (std\+::string name)
+\item 
+void \hyperlink{class_player_u_i_ab43462a4fd71580e29c06f6516f279b4}{set\+Player\+Type} (std\+::string type)
+\item 
+\hyperlink{class_object}{Object} $\ast$ \hyperlink{class_player_u_i_aebce345a44f53a6ae0a6ac495aa6e17a}{get\+Active\+Bonuses\+Ptr} (int number)
+\begin{DoxyCompactList}\small\item\em return bonus \hyperlink{class_object}{Object} from defined ui cell \end{DoxyCompactList}\item 
+\hyperlink{class_object}{Object} $\ast$ \hyperlink{class_player_u_i_a013d923f183d6fb7f6e2a2cc2d1dd806}{get\+Health\+Ptr} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_player_u_i_a6d4c17615d2bf85c7db65d6e3557d5f0}\label{class_player_u_i_a6d4c17615d2bf85c7db65d6e3557d5f0}} 
+void \hyperlink{class_player_u_i_a6d4c17615d2bf85c7db65d6e3557d5f0}{create\+Bonus\+UI} ()
+\begin{DoxyCompactList}\small\item\em Prepares array of bonus cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_player_u_i_ab9651a40a71fc4c84fad8e3d626a3386}\label{class_player_u_i_ab9651a40a71fc4c84fad8e3d626a3386}} 
+\hyperlink{class_text_object}{Text\+Object} \hyperlink{class_player_u_i_ab9651a40a71fc4c84fad8e3d626a3386}{player\+\_\+name}
+\begin{DoxyCompactList}\small\item\em player name \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_u_i_a97dbafa8c5c0a651d62d25abbca726a1}\label{class_player_u_i_a97dbafa8c5c0a651d62d25abbca726a1}} 
+\hyperlink{class_text_object}{Text\+Object} \hyperlink{class_player_u_i_a97dbafa8c5c0a651d62d25abbca726a1}{player\+\_\+type}
+\begin{DoxyCompactList}\small\item\em player type (strong or dexterous) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_u_i_ae72b43eec4a8060f917d38516e715da2}\label{class_player_u_i_ae72b43eec4a8060f917d38516e715da2}} 
+\hyperlink{class_object}{Object} \hyperlink{class_player_u_i_ae72b43eec4a8060f917d38516e715da2}{active\+\_\+bonuses} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em array of bonus cell \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_u_i_a5ca02efb3a04ec5661789dd97d6676fb}\label{class_player_u_i_a5ca02efb3a04ec5661789dd97d6676fb}} 
+\hyperlink{class_object}{Object} \hyperlink{class_player_u_i_a5ca02efb3a04ec5661789dd97d6676fb}{health} \{ 0, 0, 0, 28, 52, 10, 99, 0, true, 255 \}
+\begin{DoxyCompactList}\small\item\em health bar \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the necessary-\/for-\/display information about the hero. 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017 
+\end{DoxyDate}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_player_u_i_aebce345a44f53a6ae0a6ac495aa6e17a}\label{class_player_u_i_aebce345a44f53a6ae0a6ac495aa6e17a}} 
+\index{Player\+UI@{Player\+UI}!get\+Active\+Bonuses\+Ptr@{get\+Active\+Bonuses\+Ptr}}
+\index{get\+Active\+Bonuses\+Ptr@{get\+Active\+Bonuses\+Ptr}!Player\+UI@{Player\+UI}}
+\subsubsection{\texorpdfstring{get\+Active\+Bonuses\+Ptr()}{getActiveBonusesPtr()}}
+{\footnotesize\ttfamily \hyperlink{class_object}{Object} $\ast$ Player\+U\+I\+::get\+Active\+Bonuses\+Ptr (\begin{DoxyParamCaption}\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+return bonus \hyperlink{class_object}{Object} from defined ui cell 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & cell-\/number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bonus \hyperlink{class_object}{Object} in this cell 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_u_i_a013d923f183d6fb7f6e2a2cc2d1dd806}\label{class_player_u_i_a013d923f183d6fb7f6e2a2cc2d1dd806}} 
+\index{Player\+UI@{Player\+UI}!get\+Health\+Ptr@{get\+Health\+Ptr}}
+\index{get\+Health\+Ptr@{get\+Health\+Ptr}!Player\+UI@{Player\+UI}}
+\subsubsection{\texorpdfstring{get\+Health\+Ptr()}{getHealthPtr()}}
+{\footnotesize\ttfamily \hyperlink{class_object}{Object} $\ast$ Player\+U\+I\+::get\+Health\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+health bar \hyperlink{class_object}{Object} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_u_i_a757ad508c40877d30f9f8b45f8afeccf}\label{class_player_u_i_a757ad508c40877d30f9f8b45f8afeccf}} 
+\index{Player\+UI@{Player\+UI}!get\+Player\+Name@{get\+Player\+Name}}
+\index{get\+Player\+Name@{get\+Player\+Name}!Player\+UI@{Player\+UI}}
+\subsubsection{\texorpdfstring{get\+Player\+Name()}{getPlayerName()}}
+{\footnotesize\ttfamily \hyperlink{class_text_object}{Text\+Object} $\ast$ Player\+U\+I\+::get\+Player\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_text_object}{Text\+Object} with player name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_u_i_a45451abaa9482efb72379df93c2ca37e}\label{class_player_u_i_a45451abaa9482efb72379df93c2ca37e}} 
+\index{Player\+UI@{Player\+UI}!get\+Player\+Type@{get\+Player\+Type}}
+\index{get\+Player\+Type@{get\+Player\+Type}!Player\+UI@{Player\+UI}}
+\subsubsection{\texorpdfstring{get\+Player\+Type()}{getPlayerType()}}
+{\footnotesize\ttfamily \hyperlink{class_text_object}{Text\+Object} $\ast$ Player\+U\+I\+::get\+Player\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_text_object}{Text\+Object} with player type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_u_i_a5cb795f694ec795a49591e6c3a7c7e64}\label{class_player_u_i_a5cb795f694ec795a49591e6c3a7c7e64}} 
+\index{Player\+UI@{Player\+UI}!set\+Health\+Line\+Img@{set\+Health\+Line\+Img}}
+\index{set\+Health\+Line\+Img@{set\+Health\+Line\+Img}!Player\+UI@{Player\+UI}}
+\subsubsection{\texorpdfstring{set\+Health\+Line\+Img()}{setHealthLineImg()}}
+{\footnotesize\ttfamily void Player\+U\+I\+::set\+Health\+Line\+Img (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+set level of health bar 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & level of hero health \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_player_u_i_ae89b4bc3d9337f7010c504f6dd89e473}\label{class_player_u_i_ae89b4bc3d9337f7010c504f6dd89e473}} 
+\index{Player\+UI@{Player\+UI}!set\+Player\+Name@{set\+Player\+Name}}
+\index{set\+Player\+Name@{set\+Player\+Name}!Player\+UI@{Player\+UI}}
+\subsubsection{\texorpdfstring{set\+Player\+Name()}{setPlayerName()}}
+{\footnotesize\ttfamily void Player\+U\+I\+::set\+Player\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & player name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_player_u_i_ab43462a4fd71580e29c06f6516f279b4}\label{class_player_u_i_ab43462a4fd71580e29c06f6516f279b4}} 
+\index{Player\+UI@{Player\+UI}!set\+Player\+Type@{set\+Player\+Type}}
+\index{set\+Player\+Type@{set\+Player\+Type}!Player\+UI@{Player\+UI}}
+\subsubsection{\texorpdfstring{set\+Player\+Type()}{setPlayerType()}}
+{\footnotesize\ttfamily void Player\+U\+I\+::set\+Player\+Type (\begin{DoxyParamCaption}\item[{std\+::string}]{type }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & player type \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_player_u_i_8h}{Player\+U\+I.\+h}\item 
+Player\+U\+I.\+cpp\end{DoxyCompactItemize}

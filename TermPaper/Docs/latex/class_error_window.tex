@@ -1,0 +1,103 @@
+\hypertarget{class_error_window}{}\section{Error\+Window Class Reference}
+\label{class_error_window}\index{Error\+Window@{Error\+Window}}
+
+
+\char`\"{}\+The Error\char`\"{} screen  
+
+
+
+
+{\ttfamily \#include $<$Error\+Window.\+h$>$}
+
+
+
+Collaboration diagram for Error\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_error_window__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_error_window_a6a1f634d7aab03610249b4988f374314}\label{class_error_window_a6a1f634d7aab03610249b4988f374314}} 
+\hyperlink{class_error_window_a6a1f634d7aab03610249b4988f374314}{Error\+Window} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_error_window_ac5adc252881ca2932b4804a51da44d3e}{set\+Error\+Msg} (std\+::string \hyperlink{class_error_window_ad282b1abbf57a6c004b1ccfa48355f49}{error\+\_\+msg})
+\begin{DoxyCompactList}\small\item\em Set error message to display. \end{DoxyCompactList}\item 
+void \hyperlink{class_error_window_af9096dfdd53c4e788e62ce543f939f01}{smth\+Happend} (Events what\+\_\+happened)
+\begin{DoxyCompactList}\small\item\em Listener of player action. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_error_window_af19cefec0afdefc61a143fbba66a293b}\label{class_error_window_af19cefec0afdefc61a143fbba66a293b}} 
+\hyperlink{class_text_object}{Text\+Object} \hyperlink{class_error_window_af19cefec0afdefc61a143fbba66a293b}{introduction}
+\begin{DoxyCompactList}\small\item\em Heading of the screen. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_error_window_ad282b1abbf57a6c004b1ccfa48355f49}\label{class_error_window_ad282b1abbf57a6c004b1ccfa48355f49}} 
+\hyperlink{class_text_object}{Text\+Object} \hyperlink{class_error_window_ad282b1abbf57a6c004b1ccfa48355f49}{error\+\_\+msg}
+\begin{DoxyCompactList}\small\item\em Error message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_error_window_a0f1580b68d4e10e07b4cd7d03a6431c4}\label{class_error_window_a0f1580b68d4e10e07b4cd7d03a6431c4}} 
+\hyperlink{class_text_object}{Text\+Object} \hyperlink{class_error_window_a0f1580b68d4e10e07b4cd7d03a6431c4}{conclusion}
+\begin{DoxyCompactList}\small\item\em Recommendation for user to contact developer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_error_window_aa155c8753f726ace716eabca851255dc}\label{class_error_window_aa155c8753f726ace716eabca851255dc}} 
+\hyperlink{class_object}{Object} $\ast$ \hyperlink{class_error_window_aa155c8753f726ace716eabca851255dc}{ok\+\_\+button}
+\begin{DoxyCompactList}\small\item\em Pointer to object contain button \char`\"{}\+O\+K\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\char`\"{}\+The Error\char`\"{} screen 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017
+\end{DoxyDate}
+Stores information needed to display \char`\"{}\+The Error\char`\"{} screen 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_error_window_ac5adc252881ca2932b4804a51da44d3e}\label{class_error_window_ac5adc252881ca2932b4804a51da44d3e}} 
+\index{Error\+Window@{Error\+Window}!set\+Error\+Msg@{set\+Error\+Msg}}
+\index{set\+Error\+Msg@{set\+Error\+Msg}!Error\+Window@{Error\+Window}}
+\subsubsection{\texorpdfstring{set\+Error\+Msg()}{setErrorMsg()}}
+{\footnotesize\ttfamily void Error\+Window\+::set\+Error\+Msg (\begin{DoxyParamCaption}\item[{std\+::string}]{error\+\_\+msg }\end{DoxyParamCaption})}
+
+
+
+Set error message to display. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+\_\+msg} & string containing error message \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_error_window_af9096dfdd53c4e788e62ce543f939f01}\label{class_error_window_af9096dfdd53c4e788e62ce543f939f01}} 
+\index{Error\+Window@{Error\+Window}!smth\+Happend@{smth\+Happend}}
+\index{smth\+Happend@{smth\+Happend}!Error\+Window@{Error\+Window}}
+\subsubsection{\texorpdfstring{smth\+Happend()}{smthHappend()}}
+{\footnotesize\ttfamily void Error\+Window\+::smth\+Happend (\begin{DoxyParamCaption}\item[{Events}]{what\+\_\+happened }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Listener of player action. 
+
+Virtual method, inhereted from \hyperlink{class_layer}{Layer} class, which allow react to user action 
+\begin{DoxyParams}{Parameters}
+{\em what\+\_\+happened} & enum describing player action \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_layer}{Layer}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_error_window_8h}{Error\+Window.\+h}\item 
+Error\+Window.\+cpp\end{DoxyCompactItemize}

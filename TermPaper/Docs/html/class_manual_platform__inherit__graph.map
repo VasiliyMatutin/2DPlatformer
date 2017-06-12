@@ -1,0 +1,6 @@
+<map id="ManualPlatform" name="ManualPlatform">
+<area shape="rect" id="node2" href="$class_platform.html" title="{Platform\n|# coord_set\land 11 more...\l|+ Platform()\land 2 more...\l# reverseMoving()\land 1 more...\l}" alt="" coords="5,300,128,436"/>
+<area shape="rect" id="node3" href="$class_non_static_obj.html" title="{NonStaticObj\n|# body\land 3 more...\l|+ NonStaticObj()\land 7 more...\l}" alt="" coords="7,145,126,252"/>
+<area shape="rect" id="node4" href="$class_contact_object.html" title="{ContactObject\n||+ contactEvent()\land 1 more...\l}" alt="" coords="8,5,125,97"/>
+<area shape="rect" id="node5" href="$class_manual_switch_obj.html" title="{ManualSwitchObj\n|# is_active\l|+ makeAction()\land 2 more...\l}" alt="" coords="152,322,275,414"/>
+</map>

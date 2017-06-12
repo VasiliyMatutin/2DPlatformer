@@ -1,0 +1,82 @@
+\hypertarget{class_danger_object}{}\section{Danger\+Object Class Reference}
+\label{class_danger_object}\index{Danger\+Object@{Danger\+Object}}
+
+
+Collaboration diagram for Danger\+Object\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{class_danger_object__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_danger_object_a87186516066d7d47dcea87eec44ee616}\label{class_danger_object_a87186516066d7d47dcea87eec44ee616}} 
+{\bfseries Danger\+Object} (std\+::list$<$ b2\+Body $\ast$$>$ \+\_\+boundaries, double \+\_\+damage, b2\+Body $\ast$body, std\+::chrono\+::duration$<$ double $>$ $\ast$\+\_\+duration)
+\item 
+\mbox{\Hypertarget{class_danger_object_a0c058336c21ee3e9b8fca876adda2dda}\label{class_danger_object_a0c058336c21ee3e9b8fca876adda2dda}} 
+void {\bfseries update} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_danger_object_aebfc6b5b3dc2452cae78b157a29e8824}{contact\+Event} (b2\+Contact $\ast$, bool)
+\begin{DoxyCompactList}\small\item\em Define object reaction to the collision in box2d world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_danger_object_a3b032f295d584177435e4ee71e8a0647}\label{class_danger_object_a3b032f295d584177435e4ee71e8a0647}} 
+std\+::vector$<$ \hyperlink{class_player}{Player} $\ast$ $>$ {\bfseries list\+\_\+of\+\_\+contact}
+\item 
+\mbox{\Hypertarget{class_danger_object_aaa4d163e7501c8028ef02a6a30dd8ad4}\label{class_danger_object_aaa4d163e7501c8028ef02a6a30dd8ad4}} 
+int {\bfseries is\+\_\+contact}
+\item 
+\mbox{\Hypertarget{class_danger_object_a81602fd52def64c26dd7ae488d523111}\label{class_danger_object_a81602fd52def64c26dd7ae488d523111}} 
+double {\bfseries damage}
+\item 
+\mbox{\Hypertarget{class_danger_object_a1a5e8ba303583a6a1dae79b218e07f6f}\label{class_danger_object_a1a5e8ba303583a6a1dae79b218e07f6f}} 
+double {\bfseries time\+\_\+interval}
+\item 
+\mbox{\Hypertarget{class_danger_object_a47bc7031c9d5afd3dffc902e464e6911}\label{class_danger_object_a47bc7031c9d5afd3dffc902e464e6911}} 
+double {\bfseries time}
+\item 
+\mbox{\Hypertarget{class_danger_object_a2cb289f3bf483c5e73282342ced2bd77}\label{class_danger_object_a2cb289f3bf483c5e73282342ced2bd77}} 
+std\+::chrono\+::milliseconds {\bfseries dts}
+\item 
+\mbox{\Hypertarget{class_danger_object_a4bb9e8dffdc1815094e867824ea4e393}\label{class_danger_object_a4bb9e8dffdc1815094e867824ea4e393}} 
+std\+::chrono\+::duration$<$ double $>$ $\ast$ {\bfseries duration}
+\item 
+\mbox{\Hypertarget{class_danger_object_aa56801b799fc9193bb3ae64c400aa614}\label{class_danger_object_aa56801b799fc9193bb3ae64c400aa614}} 
+std\+::chrono\+::duration$<$ double $>$ {\bfseries start}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_danger_object_aebfc6b5b3dc2452cae78b157a29e8824}\label{class_danger_object_aebfc6b5b3dc2452cae78b157a29e8824}} 
+\index{Danger\+Object@{Danger\+Object}!contact\+Event@{contact\+Event}}
+\index{contact\+Event@{contact\+Event}!Danger\+Object@{Danger\+Object}}
+\subsubsection{\texorpdfstring{contact\+Event()}{contactEvent()}}
+{\footnotesize\ttfamily void Danger\+Object\+::contact\+Event (\begin{DoxyParamCaption}\item[{b2\+Contact $\ast$}]{contact,  }\item[{bool}]{is\+Begin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Define object reaction to the collision in box2d world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contact} & pointer to box2d b2\+Contact class \\
+\hline
+{\em is\+Begin} & \textquotesingle{}false\textquotesingle{} -\/ end of the collision; \textquotesingle{}true\textquotesingle{} -\/ start of the collision \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_contact_object_a53d2dfc1d9c2821e9c62e80ce62a6435}{Contact\+Object}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Danger\+Object.\+h\item 
+Danger\+Object.\+cpp\end{DoxyCompactItemize}

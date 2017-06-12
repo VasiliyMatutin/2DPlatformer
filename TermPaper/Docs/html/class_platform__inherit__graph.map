@@ -1,0 +1,5 @@
+<map id="Platform" name="Platform">
+<area shape="rect" id="node4" href="$class_manual_platform.html" title="{ManualPlatform\n|&#45; node_number\land 2 more...\l|+ ManualPlatform()\land 5 more...\l}" alt="" coords="5,484,137,591"/>
+<area shape="rect" id="node2" href="$class_non_static_obj.html" title="{NonStaticObj\n|# body\land 3 more...\l|+ NonStaticObj()\land 7 more...\l}" alt="" coords="12,145,131,252"/>
+<area shape="rect" id="node3" href="$class_contact_object.html" title="{ContactObject\n||+ contactEvent()\land 1 more...\l}" alt="" coords="13,5,130,97"/>
+</map>

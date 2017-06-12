@@ -1,0 +1,11 @@
+<map id="LevelStorage.h" name="LevelStorage.h">
+<area shape="rect" id="node3" href="$_platform_8h.html" title="Platform.h" alt="" coords="76,80,157,107"/>
+<area shape="rect" id="node4" href="$_visible_sensor_8h.html" title="VisibleSensor.h" alt="" coords="181,80,295,107"/>
+<area shape="rect" id="node5" href="$_lever_8h.html" title="Lever.h" alt="" coords="319,80,381,107"/>
+<area shape="rect" id="node6" href="$_timer_8h.html" title="Timer.h" alt="" coords="405,80,471,107"/>
+<area shape="rect" id="node7" href="$_danger_object_8h.html" title="DangerObject.h" alt="" coords="495,80,607,107"/>
+<area shape="rect" id="node8" href="$_revolute_bridge_8h.html" title="RevoluteBridge.h" alt="" coords="632,80,751,107"/>
+<area shape="rect" id="node9" href="$_player_sensor_8h.html" title="PlayerSensor.h" alt="" coords="775,80,885,107"/>
+<area shape="rect" id="node10" href="$_bonus_8h.html" title="Bonus.h" alt="" coords="909,80,980,107"/>
+<area shape="rect" id="node11" href="$_final_8h.html" title="Final.h" alt="" coords="1005,80,1066,107"/>
+</map>

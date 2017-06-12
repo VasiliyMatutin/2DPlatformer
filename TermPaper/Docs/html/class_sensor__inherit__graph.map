@@ -1,0 +1,4 @@
+<map id="Sensor" name="Sensor">
+<area shape="rect" id="node3" href="$class_visible_sensor.html" title="{VisibleSensor\n|&#45; object\l|+ VisibleSensor()\l&#45; contactEvent()\l}" alt="" coords="5,300,128,392"/>
+<area shape="rect" id="node2" href="$class_contact_object.html" title="{ContactObject\n||+ contactEvent()\land 1 more...\l}" alt="" coords="8,5,125,97"/>
+</map>

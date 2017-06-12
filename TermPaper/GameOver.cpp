@@ -38,7 +38,7 @@ void GameOver::smthHappend(Events what_happened)
 {
 	switch (what_happened)
 	{
-	case Events::MouseClicked:
+	case Events::MOUSECLICKED:
 		if (isContains(MouseClickCoordinates::x, MouseClickCoordinates::y, restart_button))
 		{
 			if (is_bad)

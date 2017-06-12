@@ -1,0 +1,112 @@
+\hypertarget{class_revolute_bridge}{}\section{Revolute\+Bridge Class Reference}
+\label{class_revolute_bridge}\index{Revolute\+Bridge@{Revolute\+Bridge}}
+
+
+Drawbridge which can be activated by the sensor.  
+
+
+
+
+{\ttfamily \#include $<$Revolute\+Bridge.\+h$>$}
+
+
+
+Collaboration diagram for Revolute\+Bridge\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{class_revolute_bridge__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_revolute_bridge_a2b0f68222d155f93018b85bd5629c4b4}{Revolute\+Bridge} (b2\+Body $\ast$\+\_\+body, \hyperlink{class_object}{Object} $\ast$\+\_\+object, b2\+Revolute\+Joint $\ast$\+\_\+bridge\+\_\+joint, double \+\_\+motor\+\_\+speed)
+\begin{DoxyCompactList}\small\item\em Defined constructor for this class. \end{DoxyCompactList}\item 
+void \hyperlink{class_revolute_bridge_aad7a57a94ab4bd41cd4e1da48d627d00}{make\+Action} (Action action)
+\begin{DoxyCompactList}\small\item\em causes the bridge to make some action \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_revolute_bridge_ae3777840011c40e126e6e3fce4706f9a}\label{class_revolute_bridge_ae3777840011c40e126e6e3fce4706f9a}} 
+bool \hyperlink{class_revolute_bridge_ae3777840011c40e126e6e3fce4706f9a}{destroy} ()
+\begin{DoxyCompactList}\small\item\em destroy the bridge \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_revolute_bridge_ac462a7308f806d30c53e35b2b8a57e5d}\label{class_revolute_bridge_ac462a7308f806d30c53e35b2b8a57e5d}} 
+void \hyperlink{class_revolute_bridge_ac462a7308f806d30c53e35b2b8a57e5d}{update} ()
+\begin{DoxyCompactList}\small\item\em inhereted from \hyperlink{class_non_static_obj}{Non\+Static\+Obj} class \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_revolute_bridge_a43f73302f3cf2296ef6693244af857c9}\label{class_revolute_bridge_a43f73302f3cf2296ef6693244af857c9}} 
+double \hyperlink{class_revolute_bridge_a43f73302f3cf2296ef6693244af857c9}{motor\+\_\+speed}
+\begin{DoxyCompactList}\small\item\em speed of bridge rotation \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_revolute_bridge_a2a2330cd9538b2d2f049710494648de9}\label{class_revolute_bridge_a2a2330cd9538b2d2f049710494648de9}} 
+b2\+Revolute\+Joint $\ast$ \hyperlink{class_revolute_bridge_a2a2330cd9538b2d2f049710494648de9}{joint}
+\begin{DoxyCompactList}\small\item\em pointer to the box2d joint where bridge pin to the world ground \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_revolute_bridge_a2acc242725606650e33a98f3d8f0b382}\label{class_revolute_bridge_a2acc242725606650e33a98f3d8f0b382}} 
+bool \hyperlink{class_revolute_bridge_a2acc242725606650e33a98f3d8f0b382}{is\+\_\+joint\+\_\+exist}
+\begin{DoxyCompactList}\small\item\em define joint existense \textquotesingle{}true\textquotesingle{} -\/ exist; \textquotesingle{}false\textquotesingle{} -\/ dosen\textquotesingle{}t exist \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Drawbridge which can be activated by the sensor. 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_revolute_bridge_a2b0f68222d155f93018b85bd5629c4b4}\label{class_revolute_bridge_a2b0f68222d155f93018b85bd5629c4b4}} 
+\index{Revolute\+Bridge@{Revolute\+Bridge}!Revolute\+Bridge@{Revolute\+Bridge}}
+\index{Revolute\+Bridge@{Revolute\+Bridge}!Revolute\+Bridge@{Revolute\+Bridge}}
+\subsubsection{\texorpdfstring{Revolute\+Bridge()}{RevoluteBridge()}}
+{\footnotesize\ttfamily Revolute\+Bridge\+::\+Revolute\+Bridge (\begin{DoxyParamCaption}\item[{b2\+Body $\ast$}]{\+\_\+body,  }\item[{\hyperlink{class_object}{Object} $\ast$}]{\+\_\+object,  }\item[{b2\+Revolute\+Joint $\ast$}]{\+\_\+bridge\+\_\+joint,  }\item[{double}]{\+\_\+motor\+\_\+speed }\end{DoxyParamCaption})}
+
+
+
+Defined constructor for this class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+body} & pointer to the box2d body assigned to this bridge \\
+\hline
+{\em \+\_\+object} & pointer to the \hyperlink{class_object}{Object} class assigned to this bridge \\
+\hline
+{\em \+\_\+bridge\+\_\+joint} & pointer to the \hyperlink{class_viewer}{Viewer} class, which will use in M\+VC model \\
+\hline
+{\em \+\_\+motor\+\_\+speed} & speed of bridge rotation \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_revolute_bridge_aad7a57a94ab4bd41cd4e1da48d627d00}\label{class_revolute_bridge_aad7a57a94ab4bd41cd4e1da48d627d00}} 
+\index{Revolute\+Bridge@{Revolute\+Bridge}!make\+Action@{make\+Action}}
+\index{make\+Action@{make\+Action}!Revolute\+Bridge@{Revolute\+Bridge}}
+\subsubsection{\texorpdfstring{make\+Action()}{makeAction()}}
+{\footnotesize\ttfamily void Revolute\+Bridge\+::make\+Action (\begin{DoxyParamCaption}\item[{Action}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+causes the bridge to make some action 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & what necessary to make (types of the action see in enum Action) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_revolute_bridge_8h}{Revolute\+Bridge.\+h}\item 
+Revolute\+Bridge.\+cpp\end{DoxyCompactItemize}

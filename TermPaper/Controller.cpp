@@ -13,7 +13,6 @@ void Controller::observe()
 {
 	viewer->handleViewerEvent(ViewEvents::ADDLAYER);
 	sf::Event event;
-	window->setKeyRepeatEnabled(false); // To disable repeated KeyPressed events
 	while (window->isOpen())
 	{
 		if (window->pollEvent(event))
@@ -27,28 +26,28 @@ void Controller::observe()
 				switch (event.key.code)
 				{
 				case sf::Keyboard::Left:
-					model->handleEvent(Events::LeftButton);
+					model->handleEvent(Events::LEFTBUTTON);
 					break;
 				case sf::Keyboard::Right:
-					model->handleEvent(Events::RightButton);
+					model->handleEvent(Events::RIGHTBUTTON);
 					break;
 				case sf::Keyboard::Up:
-					model->handleEvent(Events::UpButton);
+					model->handleEvent(Events::UPBUTTON);
 					break;
 				case sf::Keyboard::I:
-					model->handleEvent(Events::IButton);
+					model->handleEvent(Events::IBUTTON);
 					break;
 				case sf::Keyboard::P:
-					model->handleEvent(Events::PButton);
+					model->handleEvent(Events::PBUTTON);
 					break;
 				case sf::Keyboard::C:
-					model->handleEvent(Events::CButton);
+					model->handleEvent(Events::CBUTTON);
 					break;
 				case sf::Keyboard::Escape:
-					model->handleEvent(Events::EscButton);
+					model->handleEvent(Events::ESCBUTTON);
 					break;
 				case sf::Keyboard::Return:
-					model->handleEvent(Events::EnterButton);
+					model->handleEvent(Events::ENTERBUTTON);
 					break;
 				}
 				break;
@@ -56,13 +55,13 @@ void Controller::observe()
 				switch (event.key.code)
 				{
 				case sf::Keyboard::Left:
-					model->handleEvent(Events::LeftButtonReleased);
+					model->handleEvent(Events::LEFTBUTTONRELEASED);
 					break;
 				case sf::Keyboard::Right:
-					model->handleEvent(Events::RightButtonReleased);
+					model->handleEvent(Events::RIGHTBUTTONRELEASED);
 					break;
 				case sf::Keyboard::Up:
-					model->handleEvent(Events::UpButtonReleased);
+					model->handleEvent(Events::UPBUTTONRELEASED);
 					break;
 				}
 				break;
@@ -81,8 +80,9 @@ void Controller::observe()
 				{
 					MouseClickCoordinates::x = event.mouseButton.x / (double)window->getSize().x * X_WIN_SIZE;
 					MouseClickCoordinates::y = event.mouseButton.y / (double)window->getSize().y * Y_WIN_SIZE;
-					model->handleEvent(Events::MouseClicked);
+					model->handleEvent(Events::MOUSECLICKED);
 				}
+				break;
 			case sf::Event::Resized:
 				viewer->handleViewerEvent(ViewEvents::WINRESIZE);
 				break;
@@ -93,7 +93,7 @@ void Controller::observe()
 		case ModelReaction::ADD:
 			viewer->handleViewerEvent(ViewEvents::ADDLAYER);
 			break;
-		case ModelReaction::DELETE:
+		case ModelReaction::REMOVE:
 			viewer->handleViewerEvent(ViewEvents::DELETELAYER);
 			break;
 		case ModelReaction::CLEARALLANDADD:
@@ -103,6 +103,12 @@ void Controller::observe()
 		case ModelReaction::CLOSE:
 			window->close();
 			return;
+		case ModelReaction::FULLSCREEN:
+			WinSingleton::toFullScreen();
+			break;
+		case ModelReaction::WINDOWED:
+			WinSingleton::toWindow();
+			break;
 		}
 		model->update();
 		viewer->update();

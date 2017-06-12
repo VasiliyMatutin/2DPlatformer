@@ -1,0 +1,77 @@
+\hypertarget{class_my_contact_listener}{}\section{My\+Contact\+Listener Class Reference}
+\label{class_my_contact_listener}\index{My\+Contact\+Listener@{My\+Contact\+Listener}}
+
+
+Override for standart box2d Contact\+Listener.  
+
+
+
+
+{\ttfamily \#include $<$Contact\+Listener.\+h$>$}
+
+
+
+Collaboration diagram for My\+Contact\+Listener\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{class_my_contact_listener__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::list$<$ \hyperlink{class_non_static_obj}{Non\+Static\+Obj} $\ast$ $>$ $\ast$ \hyperlink{class_my_contact_listener_a3e414c674f98a2f35e2c894923d045b2}{get\+To\+Destroy\+List\+Ptr} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_my_contact_listener_abad225bec15c17598d20da175c169495}\label{class_my_contact_listener_abad225bec15c17598d20da175c169495}} 
+void \hyperlink{class_my_contact_listener_abad225bec15c17598d20da175c169495}{Begin\+Contact} (b2\+Contact $\ast$contact)
+\begin{DoxyCompactList}\small\item\em Override standart box2d function (see box2d man) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_my_contact_listener_aa28063f833c2bf6162b044c03474436d}\label{class_my_contact_listener_aa28063f833c2bf6162b044c03474436d}} 
+void \hyperlink{class_my_contact_listener_aa28063f833c2bf6162b044c03474436d}{End\+Contact} (b2\+Contact $\ast$contact)
+\begin{DoxyCompactList}\small\item\em Override standart box2d function (see box2d man) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_my_contact_listener_a691495aee67681d73d94c91e7c7a4df6}\label{class_my_contact_listener_a691495aee67681d73d94c91e7c7a4df6}} 
+void \hyperlink{class_my_contact_listener_a691495aee67681d73d94c91e7c7a4df6}{Post\+Solve} (b2\+Contact $\ast$contact, const b2\+Contact\+Impulse $\ast$impulse)
+\begin{DoxyCompactList}\small\item\em Override standart box2d function (see box2d man) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_my_contact_listener_a41da507e8c150d1898d73172e4e3f916}\label{class_my_contact_listener_a41da507e8c150d1898d73172e4e3f916}} 
+std\+::list$<$ \hyperlink{class_non_static_obj}{Non\+Static\+Obj} $\ast$ $>$ \hyperlink{class_my_contact_listener_a41da507e8c150d1898d73172e4e3f916}{to\+\_\+destroy\+\_\+list}
+\begin{DoxyCompactList}\small\item\em List, containing pointer level objects, which will be destroy after the end of box2d world simulation at the next update iteration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Override for standart box2d Contact\+Listener. 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017 
+\end{DoxyDate}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_my_contact_listener_a3e414c674f98a2f35e2c894923d045b2}\label{class_my_contact_listener_a3e414c674f98a2f35e2c894923d045b2}} 
+\index{My\+Contact\+Listener@{My\+Contact\+Listener}!get\+To\+Destroy\+List\+Ptr@{get\+To\+Destroy\+List\+Ptr}}
+\index{get\+To\+Destroy\+List\+Ptr@{get\+To\+Destroy\+List\+Ptr}!My\+Contact\+Listener@{My\+Contact\+Listener}}
+\subsubsection{\texorpdfstring{get\+To\+Destroy\+List\+Ptr()}{getToDestroyListPtr()}}
+{\footnotesize\ttfamily std\+::list$<$ \hyperlink{class_non_static_obj}{Non\+Static\+Obj} $\ast$ $>$ $\ast$ My\+Contact\+Listener\+::get\+To\+Destroy\+List\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em return} & pointer to the \textquotesingle{}to\+\_\+destroy\+\_\+list\textquotesingle{} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_contact_listener_8h}{Contact\+Listener.\+h}\item 
+Contact\+Listener.\+cpp\end{DoxyCompactItemize}

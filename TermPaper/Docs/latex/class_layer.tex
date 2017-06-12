@@ -1,0 +1,77 @@
+\hypertarget{class_layer}{}\section{Layer Class Reference}
+\label{class_layer}\index{Layer@{Layer}}
+
+
+Collaboration diagram for Layer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class_layer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_layer_a88251ea7cc836a16dbca1e134c5a5ee5}\label{class_layer_a88251ea7cc836a16dbca1e134c5a5ee5}} 
+std\+::list$<$ \hyperlink{class_object}{Object} $>$ {\bfseries get\+Unchangeable\+Objects} ()
+\item 
+\mbox{\Hypertarget{class_layer_af1303bfbd28803f32708729f54ca13ec}\label{class_layer_af1303bfbd28803f32708729f54ca13ec}} 
+std\+::list$<$ \hyperlink{class_object}{Object} $>$ {\bfseries get\+Changeable\+Objects} ()
+\item 
+\mbox{\Hypertarget{class_layer_a2aebff84a5f25f25d56d3886c8c3a4b1}\label{class_layer_a2aebff84a5f25f25d56d3886c8c3a4b1}} 
+std\+::list$<$ \hyperlink{class_object}{Object} $\ast$ $>$ {\bfseries get\+U\+I\+Objects} ()
+\item 
+\mbox{\Hypertarget{class_layer_abd1a2a8242a5d43b389e896a3d3de800}\label{class_layer_abd1a2a8242a5d43b389e896a3d3de800}} 
+std\+::list$<$ \hyperlink{class_text_object}{Text\+Object} $\ast$ $>$ {\bfseries get\+Text\+Objects} ()
+\item 
+\mbox{\Hypertarget{class_layer_a62b75693308f561bd8454a32dab9e10f}\label{class_layer_a62b75693308f561bd8454a32dab9e10f}} 
+virtual void {\bfseries get\+Layer\+Size} (double $\ast$width, double $\ast$height)
+\item 
+\mbox{\Hypertarget{class_layer_af2778374314bfe517007c0b0ac3fc896}\label{class_layer_af2778374314bfe517007c0b0ac3fc896}} 
+virtual void {\bfseries get\+Layer\+Center} (double $\ast$x, double $\ast$y)
+\item 
+\mbox{\Hypertarget{class_layer_a952ad194d28fe6999b85bd3d9d28ee31}\label{class_layer_a952ad194d28fe6999b85bd3d9d28ee31}} 
+virtual bool {\bfseries is\+Double\+View} ()
+\item 
+\mbox{\Hypertarget{class_layer_a41318993a0f6c7ba3bc6d964f7802c10}\label{class_layer_a41318993a0f6c7ba3bc6d964f7802c10}} 
+virtual void {\bfseries smth\+Happend} (Events what\+\_\+happened)=0
+\item 
+\mbox{\Hypertarget{class_layer_a9e197da9a85a455af77c83301ebb4d1d}\label{class_layer_a9e197da9a85a455af77c83301ebb4d1d}} 
+virtual void {\bfseries repause} ()
+\item 
+\mbox{\Hypertarget{class_layer_a4243d1a4b059eb7433cbfe7cdfc2c191}\label{class_layer_a4243d1a4b059eb7433cbfe7cdfc2c191}} 
+virtual void {\bfseries update} ()
+\item 
+\mbox{\Hypertarget{class_layer_a9acbfda611b85762f4a39ece4ea4df33}\label{class_layer_a9acbfda611b85762f4a39ece4ea4df33}} 
+virtual std\+::vector$<$ std\+::string $>$ \& {\bfseries get\+Images\+List} ()
+\item 
+\mbox{\Hypertarget{class_layer_ac57343394c8dba2a180a7762cd3a20b6}\label{class_layer_ac57343394c8dba2a180a7762cd3a20b6}} 
+virtual Return\+Events $\ast$ {\bfseries get\+Ret\+Event} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_layer_ada06fdf26fe10efb2bb66ada8d10d3e0}\label{class_layer_ada06fdf26fe10efb2bb66ada8d10d3e0}} 
+std\+::list$<$ \hyperlink{class_object}{Object} $>$ {\bfseries unchangeable\+\_\+objects}
+\item 
+\mbox{\Hypertarget{class_layer_a6e160468d3c84bba8324a11b05be6b6e}\label{class_layer_a6e160468d3c84bba8324a11b05be6b6e}} 
+std\+::list$<$ \hyperlink{class_object}{Object} $>$ {\bfseries changeable\+\_\+objects}
+\item 
+\mbox{\Hypertarget{class_layer_a98666cc5fd94f591c3e9ffccc02ee45c}\label{class_layer_a98666cc5fd94f591c3e9ffccc02ee45c}} 
+std\+::list$<$ \hyperlink{class_object}{Object} $\ast$ $>$ {\bfseries U\+I\+\_\+objects}
+\item 
+\mbox{\Hypertarget{class_layer_a46c6bac93a96f1afc853aca03a42351a}\label{class_layer_a46c6bac93a96f1afc853aca03a42351a}} 
+std\+::list$<$ \hyperlink{class_text_object}{Text\+Object} $\ast$ $>$ {\bfseries text\+\_\+objects}
+\item 
+\mbox{\Hypertarget{class_layer_a0bfe2f79d24415f8619a4a7491bf1fd8}\label{class_layer_a0bfe2f79d24415f8619a4a7491bf1fd8}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries images}
+\item 
+\mbox{\Hypertarget{class_layer_a157765c60d80f37a81c5f317da6495fe}\label{class_layer_a157765c60d80f37a81c5f317da6495fe}} 
+Return\+Events {\bfseries re}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Layer.\+h\item 
+Layer.\+cpp\end{DoxyCompactItemize}

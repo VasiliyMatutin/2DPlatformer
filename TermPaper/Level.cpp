@@ -30,37 +30,37 @@ void Level::smthHappend(Events what_happened)
 {
 	switch (what_happened)
 	{
-	case Events::LeftButton:
+	case Events::LEFTBUTTON:
 		player->moveLeft();
 		break;
-	case Events::RightButton:
+	case Events::RIGHTBUTTON:
 		player->moveRight();
 		break;
-	case Events::UpButton:
+	case Events::UPBUTTON:
 		player->jump();
 		break;
-	case Events::LeftButtonReleased:
+	case Events::LEFTBUTTONRELEASED:
 		player->stopLeft();
 		break;
-	case Events::RightButtonReleased:
+	case Events::RIGHTBUTTONRELEASED:
 		player->stopRight();
 		break;
-	case Events::IButton:
+	case Events::IBUTTON:
 		tryToSwitchLever();
 		break;
-	case Events::PButton:
+	case Events::PBUTTON:
 		pickUpBox();
 		break;
-	case Events::CButton:
+	case Events::CBUTTON:
 		changeCurrentHero();
 		break;
-	case Events::MouseClicked:
+	case Events::MOUSECLICKED:
 		throwBox(MouseClickCoordinates::x, MouseClickCoordinates::y);
 		break;
-	case Events::EscButton:
+	case Events::ESCBUTTON:
 		re = ReturnEvents::OPENLOCALMENU;
 		break;
-	case Events::EnterButton:
+	case Events::ENTERBUTTON:
 		if (storage.final_list[0]->isReach() && storage.final_list[1]->isReach())
 		{
 			re = ReturnEvents::WIN;
@@ -397,8 +397,7 @@ void Level::loadObject(tinyxml2::XMLElement *objectgroup, BodyType b_type)
 			{
 				if (object->Attribute("type") == std::string("danger"))
 				{
-					storage.ground_type.push_back(StaticType::DANGER);
-					body->SetUserData(&storage.ground_type.back());
+					body->SetUserData(&body);
 				}
 			}
 		}

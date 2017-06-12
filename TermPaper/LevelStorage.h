@@ -20,7 +20,6 @@ public:
 	std::list<NonStaticObj*>* to_destroy_list;
 	std::list<DangerObject*> danger_list;
 	Final* final_list[2];
-	std::list<StaticType> ground_type;
 	std::list<Bonus*> bonus_list;
 	std::map<std::string, ManualSwitchObj*> future_observables;
 	~Storage()

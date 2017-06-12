@@ -1,0 +1,110 @@
+\hypertarget{_contact_object_8h}{}\section{Contact\+Object.\+h File Reference}
+\label{_contact_object_8h}\index{Contact\+Object.\+h@{Contact\+Object.\+h}}
+{\ttfamily \#include \char`\"{}Box2\+D\textbackslash{}\+Box2\+D.\+h\char`\"{}}\newline
+Include dependency graph for Contact\+Object.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{_contact_object_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_contact_object_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_contact_object}{Contact\+Object}
+\begin{DoxyCompactList}\small\item\em Interface for an object which can collide with another in box2d world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_contact_object_8h_a684af1cf542217fe5ea2859096b5fa51}{Entity\+Category} \{ \newline
+\hyperlink{_contact_object_8h_a684af1cf542217fe5ea2859096b5fa51ae95dcc9c84efdb46a30b0e2e6a477ce3}{S\+T\+R\+O\+N\+G\+\_\+\+P\+L\+A\+Y\+ER} = 0x0001, 
+\hyperlink{_contact_object_8h_a684af1cf542217fe5ea2859096b5fa51a92b136a57e2a1a3a80292e811ac53ad6}{D\+E\+X\+T\+E\+R\+O\+U\+S\+\_\+\+P\+L\+A\+Y\+ER} = 0x0002, 
+\hyperlink{_contact_object_8h_a684af1cf542217fe5ea2859096b5fa51a137858cdb6aa2ed51a2389be72b9552c}{D\+A\+N\+G\+E\+RS} = 0x0004, 
+\hyperlink{_contact_object_8h_a684af1cf542217fe5ea2859096b5fa51a4af5fe82e7a2c651d3a04f3d5aa2bef7}{O\+T\+H\+E\+RS} = 0x0008, 
+\newline
+\hyperlink{_contact_object_8h_a684af1cf542217fe5ea2859096b5fa51a640a1773614b51214db3c0e77219ce1d}{B\+O\+N\+U\+S\+ES} = 0x0010
+ \}\begin{DoxyCompactList}\small\item\em Bitmask for objects, participating box2d collision. \end{DoxyCompactList}
+\item 
+enum \hyperlink{_contact_object_8h_a51b6f30553a2b7a2c81727faaacd1613}{Entity\+Group} \{ \newline
+\hyperlink{_contact_object_8h_a51b6f30553a2b7a2c81727faaacd1613a773fa1db63a772499c5951ea9f7a781f}{M\+A\+S\+K\+\_\+\+P\+L\+A\+Y\+E\+RS} = S\+T\+R\+O\+N\+G\+\_\+\+P\+L\+A\+Y\+ER $\vert$ D\+E\+X\+T\+E\+R\+O\+U\+S\+\_\+\+P\+L\+A\+Y\+ER, 
+\hyperlink{_contact_object_8h_a51b6f30553a2b7a2c81727faaacd1613ae4a6082b7586ae5a73f21757ff2c11a4}{M\+A\+S\+K\+\_\+\+P\+L\+A\+Y\+ER} = $\sim$\+M\+A\+S\+K\+\_\+\+P\+L\+A\+Y\+E\+RS, 
+\hyperlink{_contact_object_8h_a51b6f30553a2b7a2c81727faaacd1613a405be940b75cd32230f86e7260e0abf2}{M\+A\+S\+K\+\_\+\+D\+A\+N\+G\+E\+RS} = M\+A\+S\+K\+\_\+\+P\+L\+A\+Y\+E\+RS, 
+\hyperlink{_contact_object_8h_a51b6f30553a2b7a2c81727faaacd1613aaa5264382487de8648462a49e203aaf5}{M\+A\+S\+K\+\_\+\+O\+T\+H\+E\+RS} = M\+A\+S\+K\+\_\+\+P\+L\+A\+Y\+E\+RS $\vert$ O\+T\+H\+E\+RS, 
+\newline
+\hyperlink{_contact_object_8h_a51b6f30553a2b7a2c81727faaacd1613a5622b177bb0b248e766b36c26b5d420b}{M\+A\+S\+K\+\_\+\+B\+O\+N\+U\+S\+ES} = M\+A\+S\+K\+\_\+\+P\+L\+A\+Y\+E\+RS
+ \}\begin{DoxyCompactList}\small\item\em Bitmask-\/rule for box2d collision. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_contact_object_8h_a684af1cf542217fe5ea2859096b5fa51}\label{_contact_object_8h_a684af1cf542217fe5ea2859096b5fa51}} 
+\index{Contact\+Object.\+h@{Contact\+Object.\+h}!Entity\+Category@{Entity\+Category}}
+\index{Entity\+Category@{Entity\+Category}!Contact\+Object.\+h@{Contact\+Object.\+h}}
+\subsubsection{\texorpdfstring{Entity\+Category}{EntityCategory}}
+{\footnotesize\ttfamily enum \hyperlink{_contact_object_8h_a684af1cf542217fe5ea2859096b5fa51}{Entity\+Category}}
+
+
+
+Bitmask for objects, participating box2d collision. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+R\+O\+N\+G\+\_\+\+P\+L\+A\+Y\+ER@{S\+T\+R\+O\+N\+G\+\_\+\+P\+L\+A\+Y\+ER}!Contact\+Object.\+h@{Contact\+Object.\+h}}\index{Contact\+Object.\+h@{Contact\+Object.\+h}!S\+T\+R\+O\+N\+G\+\_\+\+P\+L\+A\+Y\+ER@{S\+T\+R\+O\+N\+G\+\_\+\+P\+L\+A\+Y\+ER}}}\mbox{\Hypertarget{_contact_object_8h_a684af1cf542217fe5ea2859096b5fa51ae95dcc9c84efdb46a30b0e2e6a477ce3}\label{_contact_object_8h_a684af1cf542217fe5ea2859096b5fa51ae95dcc9c84efdb46a30b0e2e6a477ce3}} 
+S\+T\+R\+O\+N\+G\+\_\+\+P\+L\+A\+Y\+ER&Mask for strong player. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+X\+T\+E\+R\+O\+U\+S\+\_\+\+P\+L\+A\+Y\+ER@{D\+E\+X\+T\+E\+R\+O\+U\+S\+\_\+\+P\+L\+A\+Y\+ER}!Contact\+Object.\+h@{Contact\+Object.\+h}}\index{Contact\+Object.\+h@{Contact\+Object.\+h}!D\+E\+X\+T\+E\+R\+O\+U\+S\+\_\+\+P\+L\+A\+Y\+ER@{D\+E\+X\+T\+E\+R\+O\+U\+S\+\_\+\+P\+L\+A\+Y\+ER}}}\mbox{\Hypertarget{_contact_object_8h_a684af1cf542217fe5ea2859096b5fa51a92b136a57e2a1a3a80292e811ac53ad6}\label{_contact_object_8h_a684af1cf542217fe5ea2859096b5fa51a92b136a57e2a1a3a80292e811ac53ad6}} 
+D\+E\+X\+T\+E\+R\+O\+U\+S\+\_\+\+P\+L\+A\+Y\+ER&Mask for dexterous player. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+A\+N\+G\+E\+RS@{D\+A\+N\+G\+E\+RS}!Contact\+Object.\+h@{Contact\+Object.\+h}}\index{Contact\+Object.\+h@{Contact\+Object.\+h}!D\+A\+N\+G\+E\+RS@{D\+A\+N\+G\+E\+RS}}}\mbox{\Hypertarget{_contact_object_8h_a684af1cf542217fe5ea2859096b5fa51a137858cdb6aa2ed51a2389be72b9552c}\label{_contact_object_8h_a684af1cf542217fe5ea2859096b5fa51a137858cdb6aa2ed51a2389be72b9552c}} 
+D\+A\+N\+G\+E\+RS&Mask for kinematic danger objects. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+T\+H\+E\+RS@{O\+T\+H\+E\+RS}!Contact\+Object.\+h@{Contact\+Object.\+h}}\index{Contact\+Object.\+h@{Contact\+Object.\+h}!O\+T\+H\+E\+RS@{O\+T\+H\+E\+RS}}}\mbox{\Hypertarget{_contact_object_8h_a684af1cf542217fe5ea2859096b5fa51a4af5fe82e7a2c651d3a04f3d5aa2bef7}\label{_contact_object_8h_a684af1cf542217fe5ea2859096b5fa51a4af5fe82e7a2c651d3a04f3d5aa2bef7}} 
+O\+T\+H\+E\+RS&Mask for all other objects. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+O\+N\+U\+S\+ES@{B\+O\+N\+U\+S\+ES}!Contact\+Object.\+h@{Contact\+Object.\+h}}\index{Contact\+Object.\+h@{Contact\+Object.\+h}!B\+O\+N\+U\+S\+ES@{B\+O\+N\+U\+S\+ES}}}\mbox{\Hypertarget{_contact_object_8h_a684af1cf542217fe5ea2859096b5fa51a640a1773614b51214db3c0e77219ce1d}\label{_contact_object_8h_a684af1cf542217fe5ea2859096b5fa51a640a1773614b51214db3c0e77219ce1d}} 
+B\+O\+N\+U\+S\+ES&Mask for bonus objects. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_contact_object_8h_a51b6f30553a2b7a2c81727faaacd1613}\label{_contact_object_8h_a51b6f30553a2b7a2c81727faaacd1613}} 
+\index{Contact\+Object.\+h@{Contact\+Object.\+h}!Entity\+Group@{Entity\+Group}}
+\index{Entity\+Group@{Entity\+Group}!Contact\+Object.\+h@{Contact\+Object.\+h}}
+\subsubsection{\texorpdfstring{Entity\+Group}{EntityGroup}}
+{\footnotesize\ttfamily enum \hyperlink{_contact_object_8h_a51b6f30553a2b7a2c81727faaacd1613}{Entity\+Group}}
+
+
+
+Bitmask-\/rule for box2d collision. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+A\+S\+K\+\_\+\+P\+L\+A\+Y\+E\+RS@{M\+A\+S\+K\+\_\+\+P\+L\+A\+Y\+E\+RS}!Contact\+Object.\+h@{Contact\+Object.\+h}}\index{Contact\+Object.\+h@{Contact\+Object.\+h}!M\+A\+S\+K\+\_\+\+P\+L\+A\+Y\+E\+RS@{M\+A\+S\+K\+\_\+\+P\+L\+A\+Y\+E\+RS}}}\mbox{\Hypertarget{_contact_object_8h_a51b6f30553a2b7a2c81727faaacd1613a773fa1db63a772499c5951ea9f7a781f}\label{_contact_object_8h_a51b6f30553a2b7a2c81727faaacd1613a773fa1db63a772499c5951ea9f7a781f}} 
+M\+A\+S\+K\+\_\+\+P\+L\+A\+Y\+E\+RS&Mask for players. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+A\+S\+K\+\_\+\+P\+L\+A\+Y\+ER@{M\+A\+S\+K\+\_\+\+P\+L\+A\+Y\+ER}!Contact\+Object.\+h@{Contact\+Object.\+h}}\index{Contact\+Object.\+h@{Contact\+Object.\+h}!M\+A\+S\+K\+\_\+\+P\+L\+A\+Y\+ER@{M\+A\+S\+K\+\_\+\+P\+L\+A\+Y\+ER}}}\mbox{\Hypertarget{_contact_object_8h_a51b6f30553a2b7a2c81727faaacd1613ae4a6082b7586ae5a73f21757ff2c11a4}\label{_contact_object_8h_a51b6f30553a2b7a2c81727faaacd1613ae4a6082b7586ae5a73f21757ff2c11a4}} 
+M\+A\+S\+K\+\_\+\+P\+L\+A\+Y\+ER&Rule for players. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+A\+S\+K\+\_\+\+D\+A\+N\+G\+E\+RS@{M\+A\+S\+K\+\_\+\+D\+A\+N\+G\+E\+RS}!Contact\+Object.\+h@{Contact\+Object.\+h}}\index{Contact\+Object.\+h@{Contact\+Object.\+h}!M\+A\+S\+K\+\_\+\+D\+A\+N\+G\+E\+RS@{M\+A\+S\+K\+\_\+\+D\+A\+N\+G\+E\+RS}}}\mbox{\Hypertarget{_contact_object_8h_a51b6f30553a2b7a2c81727faaacd1613a405be940b75cd32230f86e7260e0abf2}\label{_contact_object_8h_a51b6f30553a2b7a2c81727faaacd1613a405be940b75cd32230f86e7260e0abf2}} 
+M\+A\+S\+K\+\_\+\+D\+A\+N\+G\+E\+RS&Rule for kinematic danger objects. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+A\+S\+K\+\_\+\+O\+T\+H\+E\+RS@{M\+A\+S\+K\+\_\+\+O\+T\+H\+E\+RS}!Contact\+Object.\+h@{Contact\+Object.\+h}}\index{Contact\+Object.\+h@{Contact\+Object.\+h}!M\+A\+S\+K\+\_\+\+O\+T\+H\+E\+RS@{M\+A\+S\+K\+\_\+\+O\+T\+H\+E\+RS}}}\mbox{\Hypertarget{_contact_object_8h_a51b6f30553a2b7a2c81727faaacd1613aaa5264382487de8648462a49e203aaf5}\label{_contact_object_8h_a51b6f30553a2b7a2c81727faaacd1613aaa5264382487de8648462a49e203aaf5}} 
+M\+A\+S\+K\+\_\+\+O\+T\+H\+E\+RS&Rule for all other objects. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+A\+S\+K\+\_\+\+B\+O\+N\+U\+S\+ES@{M\+A\+S\+K\+\_\+\+B\+O\+N\+U\+S\+ES}!Contact\+Object.\+h@{Contact\+Object.\+h}}\index{Contact\+Object.\+h@{Contact\+Object.\+h}!M\+A\+S\+K\+\_\+\+B\+O\+N\+U\+S\+ES@{M\+A\+S\+K\+\_\+\+B\+O\+N\+U\+S\+ES}}}\mbox{\Hypertarget{_contact_object_8h_a51b6f30553a2b7a2c81727faaacd1613a5622b177bb0b248e766b36c26b5d420b}\label{_contact_object_8h_a51b6f30553a2b7a2c81727faaacd1613a5622b177bb0b248e766b36c26b5d420b}} 
+M\+A\+S\+K\+\_\+\+B\+O\+N\+U\+S\+ES&Rule for bonus objects. \\
+\hline
+
+\end{DoxyEnumFields}

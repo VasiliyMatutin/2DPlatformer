@@ -1,6 +1,5 @@
 #include "Player.h"
 #include "Bonus.h"
-#include <iostream>
 
 Player::Player(int _level_width, int _level_height, b2Body* _body, Object* _object, int _health, ReturnEvents* _re) : NonStaticObj(_body, _object, ObjectType::PLAYER),
 	level_width(_level_width),
@@ -191,6 +190,12 @@ void Player::update()
 	if (object->x + object->width / 2 >= level_width - 1 && x_speed > 0 || object->x - object->width / 2 <= 1 && x_speed < 0) //check of collisions with level boundaries
 	{
 		x_speed = 0;
+	}
+	if (object->y + object->height / 2 >= level_height - 1 && vel.y > 0 || object->y - object->height / 2 <= 1 && vel.y < 0) //check of collisions with level boundaries
+	{
+		health = 0;
+		destroy();
+		return;
 	}
 	float velChange = x_speed - vel.x;
 	float impulse = body->GetMass() * velChange;

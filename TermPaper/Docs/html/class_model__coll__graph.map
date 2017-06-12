@@ -1,0 +1,7 @@
+<map id="Model" name="Model">
+<area shape="rect" id="node2" href="$class_error_window.html" title="&quot;The Error&quot; screen " alt="" coords="5,5,121,97"/>
+<area shape="rect" id="node3" href="$class_game_over.html" title="&quot;Game Over&quot; screen " alt="" coords="145,5,248,97"/>
+<area shape="rect" id="node4" href="$class_end_of_the_game.html" title="&quot;The End&quot; screen " alt="" coords="272,5,407,97"/>
+<area shape="rect" id="node5" href="$class_main_menu.html" title="&quot;Main menu&quot; screen " alt="" coords="431,5,533,97"/>
+<area shape="rect" id="node6" href="$class_local_menu.html" title="&quot;Local menu&quot; screen " alt="" coords="557,5,663,97"/>
+</map>

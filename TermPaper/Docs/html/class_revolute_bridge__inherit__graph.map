@@ -1,0 +1,5 @@
+<map id="RevoluteBridge" name="RevoluteBridge">
+<area shape="rect" id="node2" href="$class_non_static_obj.html" title="{NonStaticObj\n|# body\land 3 more...\l|+ NonStaticObj()\land 7 more...\l}" alt="" coords="5,145,124,252"/>
+<area shape="rect" id="node3" href="$class_contact_object.html" title="{ContactObject\n||+ contactEvent()\land 1 more...\l}" alt="" coords="6,5,123,97"/>
+<area shape="rect" id="node4" href="$class_manual_switch_obj.html" title="{ManualSwitchObj\n|# is_active\l|+ makeAction()\land 2 more...\l}" alt="" coords="149,153,271,245"/>
+</map>

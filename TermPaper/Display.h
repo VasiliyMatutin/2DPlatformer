@@ -18,6 +18,7 @@ protected:
 	void updateWithoutText();
 public:
 	Display(Layer* _layer);
+	virtual ~Display() {};
 	virtual void changeScale(double x, double y);
 	virtual void handleViewerEvent(ViewEvents);
 	virtual void update();

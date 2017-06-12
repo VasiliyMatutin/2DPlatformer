@@ -1,0 +1,65 @@
+\hypertarget{class_timer}{}\section{Timer Class Reference}
+\label{class_timer}\index{Timer@{Timer}}
+
+
+Collaboration diagram for Timer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_timer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_timer_a0b2aa28140cd3a79edb0fbdafcbb9ee0}\label{class_timer_a0b2aa28140cd3a79edb0fbdafcbb9ee0}} 
+{\bfseries Timer} (std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$$>$ \+\_\+observables, std\+::vector$<$ double $>$ \+\_\+stages\+\_\+duration, bool \+\_\+is\+\_\+rounded, std\+::vector$<$ Action $>$ \+\_\+stages)
+\item 
+\mbox{\Hypertarget{class_timer_a745ad59b5a46744cd871a1129a25d74f}\label{class_timer_a745ad59b5a46744cd871a1129a25d74f}} 
+void {\bfseries update} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_timer_acf215281063a8be431d810725a804224}\label{class_timer_acf215281063a8be431d810725a804224}} 
+std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$ $>$ {\bfseries observables}
+\item 
+\mbox{\Hypertarget{class_timer_a77e0f14caf59087a0afa9e466b3b8c4b}\label{class_timer_a77e0f14caf59087a0afa9e466b3b8c4b}} 
+std\+::vector$<$ double $>$ {\bfseries stages\+\_\+duration}
+\item 
+\mbox{\Hypertarget{class_timer_a8f8c7d41223e9976d4588ef212286fb5}\label{class_timer_a8f8c7d41223e9976d4588ef212286fb5}} 
+std\+::vector$<$ Action $>$ {\bfseries stages}
+\item 
+\mbox{\Hypertarget{class_timer_ac397f8917b155e12401dd9ab793c91d9}\label{class_timer_ac397f8917b155e12401dd9ab793c91d9}} 
+bool {\bfseries is\+\_\+rounded}
+\item 
+\mbox{\Hypertarget{class_timer_a6f1066d49764f5fc746f5fd669d95a9f}\label{class_timer_a6f1066d49764f5fc746f5fd669d95a9f}} 
+bool {\bfseries is\+\_\+active}
+\item 
+\mbox{\Hypertarget{class_timer_aa410e9f94d1cdb79090fcf159f8f4d8c}\label{class_timer_aa410e9f94d1cdb79090fcf159f8f4d8c}} 
+double {\bfseries time}
+\item 
+\mbox{\Hypertarget{class_timer_ae5b386341474f4cb8f11227e884250ab}\label{class_timer_ae5b386341474f4cb8f11227e884250ab}} 
+int {\bfseries curr\+\_\+iter}
+\item 
+\mbox{\Hypertarget{class_timer_a34caee928e5a02b075496a74329abaeb}\label{class_timer_a34caee928e5a02b075496a74329abaeb}} 
+int {\bfseries stage\+\_\+iter}
+\item 
+\mbox{\Hypertarget{class_timer_a196651dd936adea933d014145a9ae38e}\label{class_timer_a196651dd936adea933d014145a9ae38e}} 
+std\+::chrono\+::seconds {\bfseries dts}
+\item 
+\mbox{\Hypertarget{class_timer_a1f7d523a49922d1d2bbfa2b49ebd4b38}\label{class_timer_a1f7d523a49922d1d2bbfa2b49ebd4b38}} 
+std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$ {\bfseries start}
+\item 
+\mbox{\Hypertarget{class_timer_abb300a4bdf620b8711d1e90980096291}\label{class_timer_abb300a4bdf620b8711d1e90980096291}} 
+std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$ {\bfseries end}
+\item 
+\mbox{\Hypertarget{class_timer_a331df3365dd6a3a6eb3382a9bb36e3cc}\label{class_timer_a331df3365dd6a3a6eb3382a9bb36e3cc}} 
+std\+::chrono\+::duration$<$ double $>$ {\bfseries duration}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Timer.\+h\item 
+Timer.\+cpp\end{DoxyCompactItemize}

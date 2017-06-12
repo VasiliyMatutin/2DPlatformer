@@ -1,0 +1,128 @@
+\hypertarget{class_platform}{}\section{Platform Class Reference}
+\label{class_platform}\index{Platform@{Platform}}
+
+
+Kinematic object moving along the trajectory.  
+
+
+
+
+{\ttfamily \#include $<$Platform.\+h$>$}
+
+
+
+Collaboration diagram for Platform\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_platform__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_platform_a39509ca7de720cf50d0b0ea71e29bfaf}{Platform} (int \+\_\+level\+\_\+width, int \+\_\+level\+\_\+height, b2\+Body $\ast$\+\_\+body, \hyperlink{class_object}{Object} $\ast$\+\_\+object, std\+::vector$<$ std\+::pair$<$ double, double $>$$>$ traj\+\_\+coord, int \+\_\+fixed\+\_\+speed, bool \+\_\+is\+\_\+rounded, int \+\_\+node\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Defined constructor for this class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_platform_aa601f00a3625669bb39252cfc932efa0}\label{class_platform_aa601f00a3625669bb39252cfc932efa0}} 
+void \hyperlink{class_platform_aa601f00a3625669bb39252cfc932efa0}{update} ()
+\begin{DoxyCompactList}\small\item\em inherited from \hyperlink{class_non_static_obj}{Non\+Static\+Obj} class \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_platform_aae68e047eaa1046773ad62654c99421a}\label{class_platform_aae68e047eaa1046773ad62654c99421a}} 
+void \hyperlink{class_platform_aae68e047eaa1046773ad62654c99421a}{reverse\+Moving} ()
+\begin{DoxyCompactList}\small\item\em causes platform to begin reverse moving \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_platform_a5462c5ec9fc865988ffccd2e0d67b2a9}\label{class_platform_a5462c5ec9fc865988ffccd2e0d67b2a9}} 
+void \hyperlink{class_platform_a5462c5ec9fc865988ffccd2e0d67b2a9}{to\+Next\+Point} ()
+\begin{DoxyCompactList}\small\item\em causes platform to begin moving to the next point \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_platform_a17b9655a30c0c75e237cb54ce5939901}\label{class_platform_a17b9655a30c0c75e237cb54ce5939901}} 
+std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \hyperlink{class_platform_a17b9655a30c0c75e237cb54ce5939901}{coord\+\_\+set}
+\begin{DoxyCompactList}\small\item\em set of the trajectory coordinates for this platform \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_platform_a5cffd298e38b51b6a079721d9ddafd1a}\label{class_platform_a5cffd298e38b51b6a079721d9ddafd1a}} 
+int \hyperlink{class_platform_a5cffd298e38b51b6a079721d9ddafd1a}{point\+\_\+iter}
+\begin{DoxyCompactList}\small\item\em current node of the trajectory for this platform \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_platform_a6a72a0e87078f6ec39d2638b0826c3f9}\label{class_platform_a6a72a0e87078f6ec39d2638b0826c3f9}} 
+int \hyperlink{class_platform_a6a72a0e87078f6ec39d2638b0826c3f9}{incr}
+\begin{DoxyCompactList}\small\item\em current increment or decrement of point\+\_\+iter \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_platform_ac7e442d3f0cbb881046089a27de27270}\label{class_platform_ac7e442d3f0cbb881046089a27de27270}} 
+int \hyperlink{class_platform_ac7e442d3f0cbb881046089a27de27270}{node\+\_\+number}
+\begin{DoxyCompactList}\small\item\em max number of trajectory nodes which platform passed before reverse moving or the stop \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_platform_ac237ae97ec177455984a8ceb80ad294a}\label{class_platform_ac237ae97ec177455984a8ceb80ad294a}} 
+int \hyperlink{class_platform_ac237ae97ec177455984a8ceb80ad294a}{counter}
+\begin{DoxyCompactList}\small\item\em the number of passed nodes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_platform_a36158e28df3d35b04ffa531cde921e48}\label{class_platform_a36158e28df3d35b04ffa531cde921e48}} 
+int \hyperlink{class_platform_a36158e28df3d35b04ffa531cde921e48}{counter\+\_\+incr}
+\begin{DoxyCompactList}\small\item\em current increment or decrement of counter \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_platform_a03da0eb526cdf8ae29cdc626b07fcf3e}\label{class_platform_a03da0eb526cdf8ae29cdc626b07fcf3e}} 
+int \hyperlink{class_platform_a03da0eb526cdf8ae29cdc626b07fcf3e}{fixed\+\_\+speed}
+\begin{DoxyCompactList}\small\item\em speed of the platform \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_platform_ac9eacf4c7c58d649be944b94ffeeb7b5}\label{class_platform_ac9eacf4c7c58d649be944b94ffeeb7b5}} 
+int \hyperlink{class_platform_ac9eacf4c7c58d649be944b94ffeeb7b5}{level\+\_\+width}
+\begin{DoxyCompactList}\small\item\em width of the current level \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_platform_a180664b41270365d3be526b48fa2567b}\label{class_platform_a180664b41270365d3be526b48fa2567b}} 
+int \hyperlink{class_platform_a180664b41270365d3be526b48fa2567b}{level\+\_\+height}
+\begin{DoxyCompactList}\small\item\em height of the current level \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_platform_ab3e380bb3ba10bb3ab5c58e0d37f9095}\label{class_platform_ab3e380bb3ba10bb3ab5c58e0d37f9095}} 
+bool \hyperlink{class_platform_ab3e380bb3ba10bb3ab5c58e0d37f9095}{is\+\_\+rouded}
+\begin{DoxyCompactList}\small\item\em defines the shape of trajectory \textquotesingle{}true\textquotesingle{} -\/ closed \textquotesingle{}false\textquotesingle{} -\/ torn \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_platform_a3a9d45f38361924cb60ef5b17bef0cac}\label{class_platform_a3a9d45f38361924cb60ef5b17bef0cac}} 
+bool \hyperlink{class_platform_a3a9d45f38361924cb60ef5b17bef0cac}{is\+\_\+active}
+\begin{DoxyCompactList}\small\item\em defines the state of the platform \textquotesingle{}true\textquotesingle{} -\/ moves \textquotesingle{}false\textquotesingle{} -\/ doesn\textquotesingle{}t move \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_platform_a2f120cbb66ac4972fdd05ba816484dc0}\label{class_platform_a2f120cbb66ac4972fdd05ba816484dc0}} 
+b2\+Vec2 \hyperlink{class_platform_a2f120cbb66ac4972fdd05ba816484dc0}{tmp}
+\begin{DoxyCompactList}\small\item\em temprorary storage for platform coordinates \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Kinematic object moving along the trajectory. 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_platform_a39509ca7de720cf50d0b0ea71e29bfaf}\label{class_platform_a39509ca7de720cf50d0b0ea71e29bfaf}} 
+\index{Platform@{Platform}!Platform@{Platform}}
+\index{Platform@{Platform}!Platform@{Platform}}
+\subsubsection{\texorpdfstring{Platform()}{Platform()}}
+{\footnotesize\ttfamily Platform\+::\+Platform (\begin{DoxyParamCaption}\item[{int}]{\+\_\+level\+\_\+width,  }\item[{int}]{\+\_\+level\+\_\+height,  }\item[{b2\+Body $\ast$}]{\+\_\+body,  }\item[{\hyperlink{class_object}{Object} $\ast$}]{\+\_\+object,  }\item[{std\+::vector$<$ std\+::pair$<$ double, double $>$$>$}]{traj\+\_\+coord,  }\item[{int}]{\+\_\+fixed\+\_\+speed,  }\item[{bool}]{\+\_\+is\+\_\+rounded,  }\item[{int}]{\+\_\+node\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+Defined constructor for this class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+level\+\_\+width} & the width in pixels of this level \\
+\hline
+{\em \+\_\+level\+\_\+height} & the height in pixels of this level \\
+\hline
+{\em \+\_\+body} & pointer to the box2d body assigned to this platform \\
+\hline
+{\em \+\_\+object} & pointer to the \hyperlink{class_object}{Object} class assigned to this platform \\
+\hline
+{\em \+\_\+traj\+\_\+coord} & set of the trajectory coordinates for this platform \\
+\hline
+{\em \+\_\+fixed\+\_\+speed} & speed of the platform \\
+\hline
+{\em \+\_\+is\+\_\+rounded} & defines the shape of trajectory \textquotesingle{}true\textquotesingle{} -\/ closed \textquotesingle{}false\textquotesingle{} -\/ torn \\
+\hline
+{\em \+\_\+node\+\_\+number} & max number of trajectory nodes which platform passed before reverse moving or the stop \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_platform_8h}{Platform.\+h}\item 
+Platform.\+cpp\end{DoxyCompactItemize}

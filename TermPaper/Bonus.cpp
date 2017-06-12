@@ -1,4 +1,5 @@
 #include "Bonus.h"
+#include "Player.h"
 
 Bonus::Bonus(double modificator, double time, BonusType _bonus_type, Player** _current_player, b2Body* _body, Object* _object, std::chrono::duration<double>* _duration):
 	bonus_modificator(modificator),

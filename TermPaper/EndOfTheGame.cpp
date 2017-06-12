@@ -20,7 +20,7 @@ void EndOfTheGame::smthHappend(Events what_happened)
 {
 	switch (what_happened)
 	{
-	case Events::MouseClicked:
+	case Events::MOUSECLICKED:
 		if (isContains(MouseClickCoordinates::x, MouseClickCoordinates::y, quit_button))
 		{
 			re = ReturnEvents::OPENMENU;

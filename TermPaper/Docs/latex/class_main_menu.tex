@@ -1,0 +1,132 @@
+\hypertarget{class_main_menu}{}\section{Main\+Menu Class Reference}
+\label{class_main_menu}\index{Main\+Menu@{Main\+Menu}}
+
+
+\char`\"{}\+Main menu\char`\"{} screen  
+
+
+
+
+{\ttfamily \#include $<$Main\+Menu.\+h$>$}
+
+
+
+Collaboration diagram for Main\+Menu\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_menu__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_main_menu_a53eecf9d5ffd094f54ac4193e7e57eaf}\label{class_main_menu_a53eecf9d5ffd094f54ac4193e7e57eaf}} 
+\hyperlink{class_main_menu_a53eecf9d5ffd094f54ac4193e7e57eaf}{Main\+Menu} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_menu_aa4272e1cb2c70c23c869d301f2dd2110}{smth\+Happend} (Events what\+\_\+happened)
+\begin{DoxyCompactList}\small\item\em Listener of player action. \end{DoxyCompactList}\item 
+bool \hyperlink{class_main_menu_a9b8bc5319e82474ecc03ae19b52c4293}{is\+ContainsC} (double x, double y, \hyperlink{class_object}{Object} $\ast$button)
+\begin{DoxyCompactList}\small\item\em Check the entry of a coordinate into an object (button default) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_main_menu_a2202aa0a009aaa8593766768934f2ed2}\label{class_main_menu_a2202aa0a009aaa8593766768934f2ed2}} 
+\hyperlink{class_text_object}{Text\+Object} \hyperlink{class_main_menu_a2202aa0a009aaa8593766768934f2ed2}{introduction}
+\begin{DoxyCompactList}\small\item\em Title of the game. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_menu_a49c056eefba301d78aff8840fd376cc7}\label{class_main_menu_a49c056eefba301d78aff8840fd376cc7}} 
+\hyperlink{class_object}{Object} $\ast$ \hyperlink{class_main_menu_a49c056eefba301d78aff8840fd376cc7}{start\+\_\+button}
+\begin{DoxyCompactList}\small\item\em Pointer to object contain button \char`\"{}\+Start\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_menu_aaa1f9030ef6aedef97961b5da7dde06a}\label{class_main_menu_aaa1f9030ef6aedef97961b5da7dde06a}} 
+\hyperlink{class_object}{Object} $\ast$ \hyperlink{class_main_menu_aaa1f9030ef6aedef97961b5da7dde06a}{exit\+\_\+button}
+\begin{DoxyCompactList}\small\item\em Pointer to object contain button \char`\"{}\+Exit\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_menu_a6de7ff52312a688a795acbe4baddb781}\label{class_main_menu_a6de7ff52312a688a795acbe4baddb781}} 
+\hyperlink{class_object}{Object} $\ast$ \hyperlink{class_main_menu_a6de7ff52312a688a795acbe4baddb781}{f\+\_\+mode\+\_\+button}
+\begin{DoxyCompactList}\small\item\em Pointer to object contain button \char`\"{}\+Fullscreen\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_menu_a61f684f61f99383c58f4fc09c50b1f9d}\label{class_main_menu_a61f684f61f99383c58f4fc09c50b1f9d}} 
+\hyperlink{class_object}{Object} $\ast$ \hyperlink{class_main_menu_a61f684f61f99383c58f4fc09c50b1f9d}{w\+\_\+mode\+\_\+button}
+\begin{DoxyCompactList}\small\item\em Pointer to object contain button \char`\"{}\+Windowed\char`\"{}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_main_menu_a22890c1716e56c182b500088c13d7f34}{fs}
+\begin{DoxyCompactList}\small\item\em Define which button active now. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\char`\"{}\+Main menu\char`\"{} screen 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017
+\end{DoxyDate}
+Stores information needed to display \char`\"{}\+Main menu\char`\"{} 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_main_menu_a9b8bc5319e82474ecc03ae19b52c4293}\label{class_main_menu_a9b8bc5319e82474ecc03ae19b52c4293}} 
+\index{Main\+Menu@{Main\+Menu}!is\+ContainsC@{is\+ContainsC}}
+\index{is\+ContainsC@{is\+ContainsC}!Main\+Menu@{Main\+Menu}}
+\subsubsection{\texorpdfstring{is\+Contains\+C()}{isContainsC()}}
+{\footnotesize\ttfamily bool Main\+Menu\+::is\+ContainsC (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{\hyperlink{class_object}{Object} $\ast$}]{button }\end{DoxyParamCaption})}
+
+
+
+Check the entry of a coordinate into an object (button default) 
+
+Special function to dynamic object which origin is their center, not an left-\/top corner (diff. from is\+Contains in \hyperlink{class_auxiliary_layer}{Auxiliary\+Layer} class) 
+\begin{DoxyParams}{Parameters}
+{\em x} & x coordinate \\
+\hline
+{\em y} & y coordinate \\
+\hline
+{\em button} & object to check \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_menu_aa4272e1cb2c70c23c869d301f2dd2110}\label{class_main_menu_aa4272e1cb2c70c23c869d301f2dd2110}} 
+\index{Main\+Menu@{Main\+Menu}!smth\+Happend@{smth\+Happend}}
+\index{smth\+Happend@{smth\+Happend}!Main\+Menu@{Main\+Menu}}
+\subsubsection{\texorpdfstring{smth\+Happend()}{smthHappend()}}
+{\footnotesize\ttfamily void Main\+Menu\+::smth\+Happend (\begin{DoxyParamCaption}\item[{Events}]{what\+\_\+happened }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Listener of player action. 
+
+Virtual method, inhereted from \hyperlink{class_layer}{Layer} class, which allow react to user action 
+\begin{DoxyParams}{Parameters}
+{\em what\+\_\+happened} & enum describing player action \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_layer}{Layer}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_main_menu_a22890c1716e56c182b500088c13d7f34}\label{class_main_menu_a22890c1716e56c182b500088c13d7f34}} 
+\index{Main\+Menu@{Main\+Menu}!fs@{fs}}
+\index{fs@{fs}!Main\+Menu@{Main\+Menu}}
+\subsubsection{\texorpdfstring{fs}{fs}}
+{\footnotesize\ttfamily bool Main\+Menu\+::fs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Define which button active now. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em false} & \char`\"{}\+Windowed\char`\"{} button active \\
+\hline
+{\em true} & \char`\"{}\+Fullscreen\char`\"{} button active \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_main_menu_8h}{Main\+Menu.\+h}\item 
+Main\+Menu.\+cpp\end{DoxyCompactItemize}

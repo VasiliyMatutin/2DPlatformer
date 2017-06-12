@@ -11,7 +11,7 @@ void AdvancedDisplay::centerView()
 	}
 	else if (hero_x > l_width - size.x / 2)
 	{
-		hero_x = max_size.x - size.x / 2;
+		hero_x = l_width - size.x / 2;
 	}
 	if (hero_y < size.y / 2)
 	{
@@ -19,7 +19,7 @@ void AdvancedDisplay::centerView()
 	}
 	else if (hero_y > l_heigth - size.y / 2)
 	{
-		hero_y = max_size.y - size.y / 2;
+		hero_y = l_heigth - size.y / 2;
 	}
 	view.setCenter(hero_x, hero_y);
 	layer->getLayerCenter(&hero_x, &hero_y);

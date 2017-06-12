@@ -1,0 +1,8 @@
+<map id="AuxiliaryLayer" name="AuxiliaryLayer">
+<area shape="rect" id="node3" href="$class_end_of_the_game.html" title="{EndOfTheGame\n|&#45; quit_button\l|+ EndOfTheGame()\land 1 more...\l}" alt="" coords="5,307,140,399"/>
+<area shape="rect" id="node4" href="$class_error_window.html" title="{ErrorWindow\n|&#45; introduction\land 3 more...\l|+ ErrorWindow()\land 2 more...\l}" alt="" coords="164,300,280,407"/>
+<area shape="rect" id="node5" href="$class_game_over.html" title="{GameOver\n|&#45; restart_button\land 2 more...\l|+ GameOver()\land 1 more...\l}" alt="" coords="304,300,415,407"/>
+<area shape="rect" id="node6" href="$class_local_menu.html" title="{LocalMenu\n|&#45; restart_button\land 2 more...\l|+ LocalMenu()\land 1 more...\l}" alt="" coords="439,300,549,407"/>
+<area shape="rect" id="node7" href="$class_main_menu.html" title="{MainMenu\n|&#45; introduction\land 5 more...\l|+ MainMenu()\land 2 more...\l}" alt="" coords="573,300,676,407"/>
+<area shape="rect" id="node2" href="$class_layer.html" title="{Layer\n|# unchangeable_objects\land 5 more...\l|+ ~Layer()\land 12 more...\l# Layer()\l}" alt="" coords="278,5,441,127"/>
+</map>

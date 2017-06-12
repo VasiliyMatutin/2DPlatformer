@@ -1,0 +1,4 @@
+<map id="ManualPlatform" name="ManualPlatform">
+<area shape="rect" id="node2" href="$class_platform.html" title="Kinematic object moving along the trajectory. " alt="" coords="5,5,128,141"/>
+<area shape="rect" id="node3" href="$class_manual_switch_obj.html" title="{ManualSwitchObj\n|# is_active\l|+ makeAction()\land 2 more...\l}" alt="" coords="152,27,275,119"/>
+</map>

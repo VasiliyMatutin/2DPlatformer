@@ -1,0 +1,9 @@
+<map id="NonStaticObj" name="NonStaticObj">
+<area shape="rect" id="node3" href="$class_platform.html" title="{Platform\n|# coord_set\land 11 more...\l|+ Platform()\land 2 more...\l# reverseMoving()\land 1 more...\l}" alt="" coords="15,300,138,436"/>
+<area shape="rect" id="node5" href="$class_player.html" title="{Player\n|# img_row\land 20 more...\l|+ activate_bonus()\land 16 more...\l# Player()\land 1 more...\l}" alt="" coords="167,300,295,436"/>
+<area shape="rect" id="node8" href="$class_revolute_bridge.html" title="{RevoluteBridge\n|&#45; motor_speed\land 2 more...\l|+ RevoluteBridge()\land 3 more...\l}" alt="" coords="319,315,447,421"/>
+<area shape="rect" id="node2" href="$class_contact_object.html" title="{ContactObject\n||+ contactEvent()\land 1 more...\l}" alt="" coords="173,5,290,97"/>
+<area shape="rect" id="node4" href="$class_manual_platform.html" title="{ManualPlatform\n|&#45; node_number\land 2 more...\l|+ ManualPlatform()\land 5 more...\l}" alt="" coords="5,484,137,591"/>
+<area shape="rect" id="node6" href="$class_dexterous_player.html" title="{DexterousPlayer\n||+ DexterousPlayer()\l}" alt="" coords="162,499,301,576"/>
+<area shape="rect" id="node7" href="$class_strong_player.html" title="{StrongPlayer\n|&#45; joint\land 3 more...\l|+ StrongPlayer()\land 3 more...\l}" alt="" coords="325,484,442,591"/>
+</map>

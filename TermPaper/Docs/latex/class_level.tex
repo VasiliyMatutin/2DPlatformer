@@ -1,0 +1,159 @@
+\hypertarget{class_level}{}\section{Level Class Reference}
+\label{class_level}\index{Level@{Level}}
+
+
+Collaboration diagram for Level\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_level_ae66cbb137b426e4dd1c9f0566ca04aa1}\label{class_level_ae66cbb137b426e4dd1c9f0566ca04aa1}} 
+{\bfseries Level} (std\+::string prefix, std\+::string filename)
+\item 
+\mbox{\Hypertarget{class_level_a3bb921b463d085db2c9c5cb5db4f3ef9}\label{class_level_a3bb921b463d085db2c9c5cb5db4f3ef9}} 
+bool {\bfseries load\+Level} (std\+::string filename)
+\item 
+\mbox{\Hypertarget{class_level_a4e898cb21d15947077dbedfb979c63be}\label{class_level_a4e898cb21d15947077dbedfb979c63be}} 
+void {\bfseries smth\+Happend} (Events what\+\_\+happened)
+\item 
+\mbox{\Hypertarget{class_level_ae3584a92caee4cf544abd2c4f946cb18}\label{class_level_ae3584a92caee4cf544abd2c4f946cb18}} 
+bool {\bfseries is\+Double\+View} ()
+\item 
+\mbox{\Hypertarget{class_level_a7909f2ebe4d0f676adf9c84db2c1abc8}\label{class_level_a7909f2ebe4d0f676adf9c84db2c1abc8}} 
+void {\bfseries get\+Layer\+Size} (double $\ast$width, double $\ast$height)
+\item 
+\mbox{\Hypertarget{class_level_a4c49b93b4c3060fd650890790fc677e9}\label{class_level_a4c49b93b4c3060fd650890790fc677e9}} 
+void {\bfseries get\+Layer\+Center} (double $\ast$x, double $\ast$y)
+\item 
+\mbox{\Hypertarget{class_level_a62e412eaad753d2baa2f94239cb80e41}\label{class_level_a62e412eaad753d2baa2f94239cb80e41}} 
+void {\bfseries update} ()
+\item 
+\mbox{\Hypertarget{class_level_ab0ac8520d565a0ff6ae912baff7f1895}\label{class_level_ab0ac8520d565a0ff6ae912baff7f1895}} 
+void {\bfseries repause} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_level_ac95aee215b31865a7f010d077e9e59b8}\label{class_level_ac95aee215b31865a7f010d077e9e59b8}} 
+void {\bfseries load\+Map} (tinyxml2\+::\+X\+M\+L\+Element $\ast$map)
+\item 
+\mbox{\Hypertarget{class_level_a366a0ac7ecbca8e3fa56d8e271d155a9}\label{class_level_a366a0ac7ecbca8e3fa56d8e271d155a9}} 
+void {\bfseries load\+Objects} (tinyxml2\+::\+X\+M\+L\+Element $\ast$map)
+\item 
+\mbox{\Hypertarget{class_level_a69835ba3b93667d000f1bd7feece7217}\label{class_level_a69835ba3b93667d000f1bd7feece7217}} 
+void {\bfseries load\+Object} (tinyxml2\+::\+X\+M\+L\+Element $\ast$objectgroup, Body\+Type b\+\_\+type)
+\item 
+\mbox{\Hypertarget{class_level_a2d4fd0491266cd6635edeb1f9b24d373}\label{class_level_a2d4fd0491266cd6635edeb1f9b24d373}} 
+void {\bfseries parse\+Platform} (tinyxml2\+::\+X\+M\+L\+Element $\ast$object, tinyxml2\+::\+X\+M\+L\+Element $\ast$objectgroup, b2\+Body $\ast$body)
+\item 
+\mbox{\Hypertarget{class_level_afe367884e3e0e7e1ca1870566eababd8}\label{class_level_afe367884e3e0e7e1ca1870566eababd8}} 
+void {\bfseries parse\+Sensor} (tinyxml2\+::\+X\+M\+L\+Element $\ast$object, b2\+Body $\ast$body, std\+::vector$<$ Action $>$ stages)
+\item 
+\mbox{\Hypertarget{class_level_a0230969dca0cd75ab48e212c3ec559ce}\label{class_level_a0230969dca0cd75ab48e212c3ec559ce}} 
+void {\bfseries parse\+Timer} (tinyxml2\+::\+X\+M\+L\+Element $\ast$object, std\+::vector$<$ Action $>$ stages)
+\item 
+\mbox{\Hypertarget{class_level_aa1921baab6b1d686f68d81efd235ebc4}\label{class_level_aa1921baab6b1d686f68d81efd235ebc4}} 
+void {\bfseries parse\+Bridge} (tinyxml2\+::\+X\+M\+L\+Element $\ast$object, b2\+Body $\ast$body, b2\+Body\+Def $\ast$body\+\_\+def, \hyperlink{class_object}{Object} $\ast$tmp\+\_\+obj)
+\item 
+\mbox{\Hypertarget{class_level_a4e4b69194e33200fff8f9b0282e10559}\label{class_level_a4e4b69194e33200fff8f9b0282e10559}} 
+void {\bfseries parse\+Danger\+Object} (tinyxml2\+::\+X\+M\+L\+Element $\ast$object, b2\+Body $\ast$body, \hyperlink{class_object}{Object} $\ast$tmp\+\_\+obj, tinyxml2\+::\+X\+M\+L\+Element $\ast$objectgroup)
+\item 
+\mbox{\Hypertarget{class_level_a604d7a27a6c6fb3ab631b85e6c063364}\label{class_level_a604d7a27a6c6fb3ab631b85e6c063364}} 
+b2\+Body $\ast$ {\bfseries create\+Border\+Sensor} (b2\+Body $\ast$body, \hyperlink{class_object}{Object} $\ast$tmp\+\_\+obj, Sides)
+\item 
+\mbox{\Hypertarget{class_level_a9977ee08d7036b23eb0467a6d8d2e176}\label{class_level_a9977ee08d7036b23eb0467a6d8d2e176}} 
+void {\bfseries add\+U\+I\+To\+Level} ()
+\item 
+\mbox{\Hypertarget{class_level_ab61118c640a3426f77d88990a4ddc697}\label{class_level_ab61118c640a3426f77d88990a4ddc697}} 
+std\+::vector$<$ Action $>$ {\bfseries sensor\+Stages\+Parser} (std\+::vector$<$ std\+::string $>$ stages)
+\item 
+\mbox{\Hypertarget{class_level_a214fb496aebd1994f8aae99bc5f6eb24}\label{class_level_a214fb496aebd1994f8aae99bc5f6eb24}} 
+tinyxml2\+::\+X\+M\+L\+Element $\ast$ {\bfseries find\+Among\+Siblings} (tinyxml2\+::\+X\+M\+L\+Element $\ast$element, std\+::string name)
+\item 
+\mbox{\Hypertarget{class_level_aa41dee685cdbf78a7b0305b118441945}\label{class_level_aa41dee685cdbf78a7b0305b118441945}} 
+{\footnotesize template$<$typename T $>$ }\\auto {\bfseries check\+Element\+Existence} (T smf\+\_\+to\+\_\+check, std\+::string error\+\_\+msg)
+\item 
+\mbox{\Hypertarget{class_level_a1965bb306d89207706d1e9ac315ffb43}\label{class_level_a1965bb306d89207706d1e9ac315ffb43}} 
+std\+::string {\bfseries file\+Exists\+Test} (const std\+::string \&name)
+\item 
+\mbox{\Hypertarget{class_level_a6aecafb8e2e9a33178c9d18d100d7261}\label{class_level_a6aecafb8e2e9a33178c9d18d100d7261}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries string\+Delimiter} (std\+::string init\+\_\+str)
+\item 
+\mbox{\Hypertarget{class_level_ac8bdc4273913a8f0bf8523c6fe20450a}\label{class_level_ac8bdc4273913a8f0bf8523c6fe20450a}} 
+std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ {\bfseries build\+Trajectory} (tinyxml2\+::\+X\+M\+L\+Element $\ast$objectgroup, std\+::string trajectory\+\_\+name, bool $\ast$is\+\_\+rounded)
+\item 
+\mbox{\Hypertarget{class_level_a4d1a3f12d428bf22faa547fa170df275}\label{class_level_a4d1a3f12d428bf22faa547fa170df275}} 
+void {\bfseries change\+Current\+Hero} ()
+\item 
+\mbox{\Hypertarget{class_level_ab82d5f8bcf7c4e630d7e166b2a78e3aa}\label{class_level_ab82d5f8bcf7c4e630d7e166b2a78e3aa}} 
+void {\bfseries try\+To\+Switch\+Lever} ()
+\item 
+\mbox{\Hypertarget{class_level_aa52fdbf5c43c826b21b640cc53d11d1b}\label{class_level_aa52fdbf5c43c826b21b640cc53d11d1b}} 
+void {\bfseries pick\+Up\+Box} ()
+\item 
+\mbox{\Hypertarget{class_level_a911bba94df90e7adabac1a5a0519ea47}\label{class_level_a911bba94df90e7adabac1a5a0519ea47}} 
+void {\bfseries throw\+Box} (double x, double y)
+\item 
+\mbox{\Hypertarget{class_level_afd0bf2f408a9871d56e386d7a7dced72}\label{class_level_afd0bf2f408a9871d56e386d7a7dced72}} 
+void {\bfseries count\+Time} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_level_a9d19634a546f199e98e01d97b02e2d2a}\label{class_level_a9d19634a546f199e98e01d97b02e2d2a}} 
+int {\bfseries level\+\_\+width}
+\item 
+\mbox{\Hypertarget{class_level_ae360d8c791cebb14d097de1e60c64b64}\label{class_level_ae360d8c791cebb14d097de1e60c64b64}} 
+int {\bfseries level\+\_\+height}
+\item 
+\mbox{\Hypertarget{class_level_ac846cb2f8b1bd0f92a60a484ce1e50ef}\label{class_level_ac846cb2f8b1bd0f92a60a484ce1e50ef}} 
+int {\bfseries tile\+\_\+width}
+\item 
+\mbox{\Hypertarget{class_level_a75ae0539332f57c52edac380fa0fc0c3}\label{class_level_a75ae0539332f57c52edac380fa0fc0c3}} 
+int {\bfseries tile\+\_\+height}
+\item 
+\mbox{\Hypertarget{class_level_a9b248f2588ae94e071750a8b2ba06e71}\label{class_level_a9b248f2588ae94e071750a8b2ba06e71}} 
+bool {\bfseries strong\+\_\+player\+\_\+now}
+\item 
+\mbox{\Hypertarget{class_level_a08f8815ed6a37bb8b1a2c045946cdd68}\label{class_level_a08f8815ed6a37bb8b1a2c045946cdd68}} 
+std\+::string {\bfseries prefix}
+\item 
+\mbox{\Hypertarget{class_level_af137cabe605aaef11c8e388d80924314}\label{class_level_af137cabe605aaef11c8e388d80924314}} 
+\hyperlink{class_storage}{Storage} {\bfseries storage}
+\item 
+\mbox{\Hypertarget{class_level_a76b010ccc524cef1ae0c3adc2a63d3b1}\label{class_level_a76b010ccc524cef1ae0c3adc2a63d3b1}} 
+\hyperlink{class_player}{Player} $\ast$ {\bfseries player}
+\item 
+\mbox{\Hypertarget{class_level_a25923eb853764ea106f714dc5fe8cf94}\label{class_level_a25923eb853764ea106f714dc5fe8cf94}} 
+\hyperlink{class_strong_player}{Strong\+Player} $\ast$ {\bfseries strong\+\_\+player}
+\item 
+\mbox{\Hypertarget{class_level_afb99ff2b6c3eee226c8c6703733071fa}\label{class_level_afb99ff2b6c3eee226c8c6703733071fa}} 
+\hyperlink{class_dexterous_player}{Dexterous\+Player} $\ast$ {\bfseries dexterous\+\_\+player}
+\item 
+\mbox{\Hypertarget{class_level_ab71a19e06640f896110d22af9142b856}\label{class_level_ab71a19e06640f896110d22af9142b856}} 
+b2\+World $\ast$ {\bfseries level\+\_\+world}
+\item 
+\mbox{\Hypertarget{class_level_a04e0e1e3a076f70e85a37caf33689416}\label{class_level_a04e0e1e3a076f70e85a37caf33689416}} 
+\hyperlink{class_my_contact_listener}{My\+Contact\+Listener} $\ast$ {\bfseries my\+\_\+contact\+\_\+listener\+\_\+ptr}
+\item 
+\mbox{\Hypertarget{class_level_a89802def1a1b4e8768806a41d972c32c}\label{class_level_a89802def1a1b4e8768806a41d972c32c}} 
+std\+::list$<$ \hyperlink{class_object}{Object} $>$ {\bfseries static\+\_\+\+U\+I\+\_\+objects}
+\item 
+\mbox{\Hypertarget{class_level_a456b63f58afc3c2a0ae917e955ca80df}\label{class_level_a456b63f58afc3c2a0ae917e955ca80df}} 
+std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$ {\bfseries prev\+\_\+step}
+\item 
+\mbox{\Hypertarget{class_level_a2c22c40ee8972da9630a327d93db30ed}\label{class_level_a2c22c40ee8972da9630a327d93db30ed}} 
+std\+::chrono\+::duration$<$ double $>$ {\bfseries level\+\_\+time}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Level.\+h\item 
+Level.\+cpp\end{DoxyCompactItemize}

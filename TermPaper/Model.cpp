@@ -31,6 +31,11 @@ Model::Model() :
 	re = layers_list.top()->getRetEvent();
 }
 
+Model::~Model()
+{
+	clearAllLayers();
+}
+
 void Model::handleEvent(Events _event)
 {
 	layers_list.top()->smthHappend(_event);
@@ -66,7 +71,7 @@ ModelReaction Model::checkResponse()
 		}
 		try
 		{
-			Level* test_level = new Level(level_dir[current_level],level_names[current_level]);
+			Level* test_level = new Level(level_dir[current_level], level_names[current_level]);
 			layers_list.push(test_level);
 		}
 		catch (std::string ex)
@@ -90,7 +95,7 @@ ModelReaction Model::checkResponse()
 	{
 		layers_list.pop();
 		layers_list.top()->repause();
-		return ModelReaction::DELETE;
+		return ModelReaction::REMOVE;
 	}
 	case ReturnEvents::OPENMENU:
 	{
@@ -124,6 +129,10 @@ ModelReaction Model::checkResponse()
 	}
 	case ReturnEvents::CLOSE:
 		return ModelReaction::CLOSE;
+	case ReturnEvents::FULLSCREEN:
+		return ModelReaction::FULLSCREEN;
+	case ReturnEvents::WINDOWED:
+		return ModelReaction::WINDOWED;
 	}
 	return ModelReaction::NOTHING;
 }

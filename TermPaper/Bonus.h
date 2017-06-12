@@ -1,7 +1,17 @@
 #pragma once
 #include "ContactObject.h"
-#include "Player.h"
+#include "LevelBox.h"
 #include <chrono>
+
+///Type of the bonus
+enum class BonusType
+{
+	JUMP,///< increase/decrease jump heigth
+	RUN,///< increase/decrease speed
+	HEALTH///< increase/decrease healt
+};
+
+class Player;
 
 class Bonus : public ContactObject
 {

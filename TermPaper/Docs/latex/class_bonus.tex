@@ -1,0 +1,97 @@
+\hypertarget{class_bonus}{}\section{Bonus Class Reference}
+\label{class_bonus}\index{Bonus@{Bonus}}
+
+
+Collaboration diagram for Bonus\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_bonus__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_bonus_ac8581e33c82c8d6515b78ccffcf6f11b}\label{class_bonus_ac8581e33c82c8d6515b78ccffcf6f11b}} 
+{\bfseries Bonus} (double modificator, double time, Bonus\+Type bonus\+\_\+type, \hyperlink{class_player}{Player} $\ast$$\ast$\+\_\+current\+\_\+player, b2\+Body $\ast$\+\_\+body, \hyperlink{class_object}{Object} $\ast$\+\_\+object, std\+::chrono\+::duration$<$ double $>$ $\ast$duration)
+\item 
+void \hyperlink{class_bonus_a903865168ff7fd91e0e2de23f849c553}{contact\+Event} (b2\+Contact $\ast$, bool)
+\begin{DoxyCompactList}\small\item\em Define object reaction to the collision in box2d world. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_bonus_a5964466dfbb4b4e3e7d3eafcb9dae7db}\label{class_bonus_a5964466dfbb4b4e3e7d3eafcb9dae7db}} 
+\hyperlink{class_object}{Object} $\ast$ {\bfseries get\+Object} ()
+\item 
+\mbox{\Hypertarget{class_bonus_a78f64b402daa7593afb28b78baf6d15e}\label{class_bonus_a78f64b402daa7593afb28b78baf6d15e}} 
+bool {\bfseries activate} (\hyperlink{class_object}{Object} $\ast$\+\_\+object)
+\item 
+\mbox{\Hypertarget{class_bonus_a52875b799a9937f5c398f8f95d9ead98}\label{class_bonus_a52875b799a9937f5c398f8f95d9ead98}} 
+void {\bfseries deactivate} ()
+\item 
+\mbox{\Hypertarget{class_bonus_a40703fa50a436a844f0638557a175be0}\label{class_bonus_a40703fa50a436a844f0638557a175be0}} 
+void {\bfseries update} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_bonus_a0c3f3fe18e7d7df28ab12fe2c023d3ff}\label{class_bonus_a0c3f3fe18e7d7df28ab12fe2c023d3ff}} 
+b2\+Body $\ast$ {\bfseries body}
+\item 
+\mbox{\Hypertarget{class_bonus_a7493d5e3afda12e197c5505a66a1c7a1}\label{class_bonus_a7493d5e3afda12e197c5505a66a1c7a1}} 
+\hyperlink{class_object}{Object} $\ast$ {\bfseries object}
+\item 
+\mbox{\Hypertarget{class_bonus_a5c03f6529a87fd393efaedb0db7e8b49}\label{class_bonus_a5c03f6529a87fd393efaedb0db7e8b49}} 
+\hyperlink{class_player}{Player} $\ast$ {\bfseries iam\+\_\+activate\+\_\+this\+\_\+player}
+\item 
+\mbox{\Hypertarget{class_bonus_ad5b0534727679d924f60eeaef2ac988d}\label{class_bonus_ad5b0534727679d924f60eeaef2ac988d}} 
+\hyperlink{class_player}{Player} $\ast$$\ast$ {\bfseries current\+\_\+player}
+\item 
+\mbox{\Hypertarget{class_bonus_a4a5cd25b27a40406d018e1e3e651d21f}\label{class_bonus_a4a5cd25b27a40406d018e1e3e651d21f}} 
+double {\bfseries time\+\_\+interval}
+\item 
+\mbox{\Hypertarget{class_bonus_a7af3e40f87206d34e4689f53e37733b3}\label{class_bonus_a7af3e40f87206d34e4689f53e37733b3}} 
+double {\bfseries time}
+\item 
+\mbox{\Hypertarget{class_bonus_a55548c98a8969d5994fbbcbdd6f35752}\label{class_bonus_a55548c98a8969d5994fbbcbdd6f35752}} 
+double {\bfseries bonus\+\_\+modificator}
+\item 
+\mbox{\Hypertarget{class_bonus_a3e8678940c7ea4679428e78874d92117}\label{class_bonus_a3e8678940c7ea4679428e78874d92117}} 
+Bonus\+Type {\bfseries bonus\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_bonus_a07620733fe137be73855a2ac4353771c}\label{class_bonus_a07620733fe137be73855a2ac4353771c}} 
+std\+::chrono\+::seconds {\bfseries dts}
+\item 
+\mbox{\Hypertarget{class_bonus_a98befe64efce3a1c5c93f2d694ea1abc}\label{class_bonus_a98befe64efce3a1c5c93f2d694ea1abc}} 
+std\+::chrono\+::duration$<$ double $>$ $\ast$ {\bfseries duration}
+\item 
+\mbox{\Hypertarget{class_bonus_a288adde51bbfb1c9a22fc0cad3e5e8b0}\label{class_bonus_a288adde51bbfb1c9a22fc0cad3e5e8b0}} 
+std\+::chrono\+::duration$<$ double $>$ {\bfseries start}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_bonus_a903865168ff7fd91e0e2de23f849c553}\label{class_bonus_a903865168ff7fd91e0e2de23f849c553}} 
+\index{Bonus@{Bonus}!contact\+Event@{contact\+Event}}
+\index{contact\+Event@{contact\+Event}!Bonus@{Bonus}}
+\subsubsection{\texorpdfstring{contact\+Event()}{contactEvent()}}
+{\footnotesize\ttfamily void Bonus\+::contact\+Event (\begin{DoxyParamCaption}\item[{b2\+Contact $\ast$}]{contact,  }\item[{bool}]{is\+Begin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Define object reaction to the collision in box2d world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contact} & pointer to box2d b2\+Contact class \\
+\hline
+{\em is\+Begin} & \textquotesingle{}false\textquotesingle{} -\/ end of the collision; \textquotesingle{}true\textquotesingle{} -\/ start of the collision \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_contact_object_a53d2dfc1d9c2821e9c62e80ce62a6435}{Contact\+Object}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Bonus.\+h\item 
+Bonus.\+cpp\end{DoxyCompactItemize}

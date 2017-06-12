@@ -24,6 +24,7 @@ class Model
 	void clearAllLayers();
 public:
 	Model();
+	~Model();
 	void handleEvent(Events);
 	void update();
 	Layer* returnUpperLayer();

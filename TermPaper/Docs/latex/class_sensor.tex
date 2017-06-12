@@ -1,0 +1,80 @@
+\hypertarget{class_sensor}{}\section{Sensor Class Reference}
+\label{class_sensor}\index{Sensor@{Sensor}}
+
+
+Collaboration diagram for Sensor\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{class_sensor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sensor_a7988853c8a9278171ce8956ccdde63c8}\label{class_sensor_a7988853c8a9278171ce8956ccdde63c8}} 
+{\bfseries Sensor} (std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$$>$ \+\_\+observables, bool \+\_\+repeat\+\_\+allowed, bool \+\_\+is\+\_\+keeping, b2\+Body $\ast$\+\_\+body, std\+::vector$<$ Action $>$ \+\_\+stages)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_sensor_a08bfa36c84277677f3bd5fb14127fca7}{contact\+Event} (b2\+Contact $\ast$, bool)
+\begin{DoxyCompactList}\small\item\em Define object reaction to the collision in box2d world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sensor_a3056529f52d9af83b78bc7ca7e2e7ef2}\label{class_sensor_a3056529f52d9af83b78bc7ca7e2e7ef2}} 
+std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$ $>$ {\bfseries observables}
+\item 
+\mbox{\Hypertarget{class_sensor_a2450a980532d0448e7ea1f9db91f79f7}\label{class_sensor_a2450a980532d0448e7ea1f9db91f79f7}} 
+std\+::vector$<$ Action $>$ {\bfseries stages}
+\item 
+\mbox{\Hypertarget{class_sensor_a8554cb0f6e9cfcc6f277795bdd45ce14}\label{class_sensor_a8554cb0f6e9cfcc6f277795bdd45ce14}} 
+bool {\bfseries repeat\+\_\+allowed}
+\item 
+\mbox{\Hypertarget{class_sensor_ace9f91b1e1034b501ba8f16e46b61698}\label{class_sensor_ace9f91b1e1034b501ba8f16e46b61698}} 
+bool {\bfseries is\+\_\+keeping}
+\item 
+\mbox{\Hypertarget{class_sensor_a40badc87a0a663f3bcbc95867b6f6296}\label{class_sensor_a40badc87a0a663f3bcbc95867b6f6296}} 
+bool {\bfseries non\+\_\+run}
+\item 
+\mbox{\Hypertarget{class_sensor_aff0be53ae0ed2e7f2a34e93bd78eed5d}\label{class_sensor_aff0be53ae0ed2e7f2a34e93bd78eed5d}} 
+int {\bfseries is\+\_\+pressed}
+\item 
+\mbox{\Hypertarget{class_sensor_aaf93d0f69a770e911edaf5f265eec623}\label{class_sensor_aaf93d0f69a770e911edaf5f265eec623}} 
+int {\bfseries stage\+\_\+iter}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sensor_a08bfa36c84277677f3bd5fb14127fca7}\label{class_sensor_a08bfa36c84277677f3bd5fb14127fca7}} 
+\index{Sensor@{Sensor}!contact\+Event@{contact\+Event}}
+\index{contact\+Event@{contact\+Event}!Sensor@{Sensor}}
+\subsubsection{\texorpdfstring{contact\+Event()}{contactEvent()}}
+{\footnotesize\ttfamily void Sensor\+::contact\+Event (\begin{DoxyParamCaption}\item[{b2\+Contact $\ast$}]{contact,  }\item[{bool}]{is\+Begin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Define object reaction to the collision in box2d world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contact} & pointer to box2d b2\+Contact class \\
+\hline
+{\em is\+Begin} & \textquotesingle{}false\textquotesingle{} -\/ end of the collision; \textquotesingle{}true\textquotesingle{} -\/ start of the collision \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_contact_object_a53d2dfc1d9c2821e9c62e80ce62a6435}{Contact\+Object}.
+
+
+
+Reimplemented in \hyperlink{class_visible_sensor_a63bcb9da7556a6356cca3b08f7808bd8}{Visible\+Sensor}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Sensor.\+h\item 
+Sensor.\+cpp\end{DoxyCompactItemize}

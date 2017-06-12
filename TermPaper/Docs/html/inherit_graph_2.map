@@ -1,0 +1,10 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_layer.html" title="Layer" alt="" coords="5,132,60,159"/>
+<area shape="rect" id="node2" href="$class_auxiliary_layer.html" title="Superstructure class for built&#45;in Layer classes. " alt="" coords="108,107,212,133"/>
+<area shape="rect" id="node8" href="$class_level.html" title="Level" alt="" coords="135,157,185,184"/>
+<area shape="rect" id="node3" href="$class_end_of_the_game.html" title="&quot;The End&quot; screen " alt="" coords="260,5,375,32"/>
+<area shape="rect" id="node4" href="$class_error_window.html" title="&quot;The Error&quot; screen " alt="" coords="269,56,365,83"/>
+<area shape="rect" id="node5" href="$class_game_over.html" title="&quot;Game Over&quot; screen " alt="" coords="276,107,359,133"/>
+<area shape="rect" id="node6" href="$class_local_menu.html" title="&quot;Local menu&quot; screen " alt="" coords="275,157,360,184"/>
+<area shape="rect" id="node7" href="$class_main_menu.html" title="&quot;Main menu&quot; screen " alt="" coords="276,208,359,235"/>
+</map>

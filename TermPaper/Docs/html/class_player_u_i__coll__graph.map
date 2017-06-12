@@ -1,0 +1,4 @@
+<map id="PlayerUI" name="PlayerUI">
+<area shape="rect" id="node2" href="$class_object.html" title="{Object\n|+ number_in_image_list\land 9 more...\l|}" alt="" coords="5,5,165,97"/>
+<area shape="rect" id="node3" href="$class_text_object.html" title="{TextObject\n|+ text\land 3 more...\l|}" alt="" coords="189,5,288,97"/>
+</map>

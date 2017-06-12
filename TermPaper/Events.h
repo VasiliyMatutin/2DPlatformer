@@ -2,18 +2,18 @@
 
 enum class Events 
 { 
-	LeftButton,
-	LeftButtonReleased,
-	RightButton,
-	RightButtonReleased,
-	UpButton,
-	UpButtonReleased,
-	IButton,
-	PButton,
-	CButton,
-	EscButton,
-	EnterButton,
-	MouseClicked
+	LEFTBUTTON,
+	LEFTBUTTONRELEASED,
+	RIGHTBUTTON,
+	RIGHTBUTTONRELEASED,
+	UPBUTTON,
+	UPBUTTONRELEASED,
+	IBUTTON,
+	PBUTTON,
+	CBUTTON,
+	ESCBUTTON,
+	ENTERBUTTON,
+	MOUSECLICKED
 };
 
 enum class ViewEvents
@@ -36,16 +36,20 @@ enum class ReturnEvents
 	OPENMENU,
 	OPENLOCALMENU,
 	CLOSELOCALMENU,
-	DEFAULT
+	DEFAULT,
+	FULLSCREEN,
+	WINDOWED
 };
 
 enum class ModelReaction
 {
 	ADD,
-	DELETE,
+	REMOVE,
 	CLEARALLANDADD,
 	CLOSE,
-	NOTHING
+	NOTHING,
+	FULLSCREEN,
+	WINDOWED
 };
 
 struct MouseClickCoordinates

@@ -12,6 +12,7 @@ class Viewer
 	void deleteDisplay();
 public:
 	Viewer(Model* model);
+	~Viewer();
 	void update();
 	void handleViewerEvent(ViewEvents);
 };

@@ -1,0 +1,79 @@
+\hypertarget{class_non_static_obj}{}\section{Non\+Static\+Obj Class Reference}
+\label{class_non_static_obj}\index{Non\+Static\+Obj@{Non\+Static\+Obj}}
+
+
+Collaboration diagram for Non\+Static\+Obj\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_non_static_obj__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_non_static_obj_a0295a381b988a0d0ab17eb3dcc229704}\label{class_non_static_obj_a0295a381b988a0d0ab17eb3dcc229704}} 
+{\bfseries Non\+Static\+Obj} (b2\+Body $\ast$\+\_\+body, \hyperlink{class_object}{Object} $\ast$\+\_\+object, Object\+Type type)
+\item 
+void \hyperlink{class_non_static_obj_ae129119384cf9df2b7b1a7849b6112de}{contact\+Event} (b2\+Contact $\ast$, bool)
+\begin{DoxyCompactList}\small\item\em Define object reaction to the collision in box2d world. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_non_static_obj_a01e6db05d41ec62cb5c258b5069b083e}\label{class_non_static_obj_a01e6db05d41ec62cb5c258b5069b083e}} 
+Object\+Type {\bfseries who\+AmI} ()
+\item 
+\mbox{\Hypertarget{class_non_static_obj_a55713a3f848d7629176398333e84a015}\label{class_non_static_obj_a55713a3f848d7629176398333e84a015}} 
+b2\+Body $\ast$ {\bfseries get\+Body} ()
+\item 
+\mbox{\Hypertarget{class_non_static_obj_abdf0a375a987d99795bd298a1c84940c}\label{class_non_static_obj_abdf0a375a987d99795bd298a1c84940c}} 
+\hyperlink{class_object}{Object} $\ast$ {\bfseries get\+Object} ()
+\item 
+\mbox{\Hypertarget{class_non_static_obj_a6a67af264af5093665ca91273c9c6f34}\label{class_non_static_obj_a6a67af264af5093665ca91273c9c6f34}} 
+virtual void {\bfseries update} ()
+\item 
+\mbox{\Hypertarget{class_non_static_obj_a197ed3470e1a7b4f10b1e5567fdc5253}\label{class_non_static_obj_a197ed3470e1a7b4f10b1e5567fdc5253}} 
+virtual bool {\bfseries destroy} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_non_static_obj_a42cf308f091557d0d8a8e6ae8ee0fcf1}\label{class_non_static_obj_a42cf308f091557d0d8a8e6ae8ee0fcf1}} 
+b2\+Body $\ast$ {\bfseries body}
+\item 
+\mbox{\Hypertarget{class_non_static_obj_a61a8004d502132c7a13258e945300a5e}\label{class_non_static_obj_a61a8004d502132c7a13258e945300a5e}} 
+\hyperlink{class_object}{Object} $\ast$ {\bfseries object}
+\item 
+\mbox{\Hypertarget{class_non_static_obj_a41c92f702f36f05877e74fef1fcb3a71}\label{class_non_static_obj_a41c92f702f36f05877e74fef1fcb3a71}} 
+bool {\bfseries is\+\_\+valid}
+\item 
+\mbox{\Hypertarget{class_non_static_obj_a4328e86d88a94270b88acb0d3965112b}\label{class_non_static_obj_a4328e86d88a94270b88acb0d3965112b}} 
+Object\+Type {\bfseries my\+\_\+type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_non_static_obj_ae129119384cf9df2b7b1a7849b6112de}\label{class_non_static_obj_ae129119384cf9df2b7b1a7849b6112de}} 
+\index{Non\+Static\+Obj@{Non\+Static\+Obj}!contact\+Event@{contact\+Event}}
+\index{contact\+Event@{contact\+Event}!Non\+Static\+Obj@{Non\+Static\+Obj}}
+\subsubsection{\texorpdfstring{contact\+Event()}{contactEvent()}}
+{\footnotesize\ttfamily void Non\+Static\+Obj\+::contact\+Event (\begin{DoxyParamCaption}\item[{b2\+Contact $\ast$}]{contact,  }\item[{bool}]{is\+Begin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Define object reaction to the collision in box2d world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contact} & pointer to box2d b2\+Contact class \\
+\hline
+{\em is\+Begin} & \textquotesingle{}false\textquotesingle{} -\/ end of the collision; \textquotesingle{}true\textquotesingle{} -\/ start of the collision \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_contact_object_a53d2dfc1d9c2821e9c62e80ce62a6435}{Contact\+Object}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Non\+Static\+Obj.\+h\item 
+Non\+Static\+Obj.\+cpp\end{DoxyCompactItemize}

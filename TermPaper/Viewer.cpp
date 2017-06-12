@@ -25,6 +25,14 @@ Viewer::Viewer(Model * _model) :
 	window = WinSingleton::getInstance();
 }
 
+Viewer::~Viewer()
+{
+	for (auto it : display_list)
+	{
+		delete it;
+	}
+}
+
 void Viewer::handleViewerEvent(ViewEvents ev)
 {
 	switch (ev)
@@ -33,6 +41,10 @@ void Viewer::handleViewerEvent(ViewEvents ev)
 		prepareNewDisplay();
 		break;
 	case ViewEvents::DELETEALLLAYERS:
+		for (auto it : display_list)
+		{
+			delete it;
+		}
 		display_list.clear();
 		break;
 	case ViewEvents::DELETELAYER:

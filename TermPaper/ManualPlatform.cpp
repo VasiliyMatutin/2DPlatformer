@@ -45,7 +45,3 @@ Object * ManualPlatform::getObject()
 {
 	return object;
 }
-
-ManualPlatform::~ManualPlatform()
-{
-}

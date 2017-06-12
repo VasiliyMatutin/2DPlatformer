@@ -1,0 +1,79 @@
+\hypertarget{class_lever}{}\section{Lever Class Reference}
+\label{class_lever}\index{Lever@{Lever}}
+
+
+Collaboration diagram for Lever\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_lever__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_lever_a2b4dd6cea65837c09711dda3d02d7cae}\label{class_lever_a2b4dd6cea65837c09711dda3d02d7cae}} 
+{\bfseries Lever} (std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$$>$ \+\_\+observables, bool \+\_\+repeat\+\_\+allowed, b2\+Body $\ast$\+\_\+body, \hyperlink{class_object}{Object} $\ast$\+\_\+object, \hyperlink{class_player}{Player} $\ast$$\ast$\+\_\+current\+\_\+player, std\+::vector$<$ Action $>$ \+\_\+stages)
+\item 
+\mbox{\Hypertarget{class_lever_a0aafb7fa0e219a59362cfdbdc30f6203}\label{class_lever_a0aafb7fa0e219a59362cfdbdc30f6203}} 
+void {\bfseries activate} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_lever_a9ec153b4c960d0a187539cc8f07e5bd9}{contact\+Event} (b2\+Contact $\ast$, bool)
+\begin{DoxyCompactList}\small\item\em Define object reaction to the collision in box2d world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_lever_aa063d5dab7eefeee48b93c0ea694bb42}\label{class_lever_aa063d5dab7eefeee48b93c0ea694bb42}} 
+b2\+Body $\ast$ {\bfseries body}
+\item 
+\mbox{\Hypertarget{class_lever_aee2d6a9e2fc7ff31a9d8eea2f98b7e32}\label{class_lever_aee2d6a9e2fc7ff31a9d8eea2f98b7e32}} 
+\hyperlink{class_object}{Object} $\ast$ {\bfseries object}
+\item 
+\mbox{\Hypertarget{class_lever_ac710b732ab842d55f84488f9d88e325b}\label{class_lever_ac710b732ab842d55f84488f9d88e325b}} 
+\hyperlink{class_player}{Player} $\ast$$\ast$ {\bfseries current\+\_\+player}
+\item 
+\mbox{\Hypertarget{class_lever_a8352c41d4452bf72a3f7d4dded03598c}\label{class_lever_a8352c41d4452bf72a3f7d4dded03598c}} 
+std\+::vector$<$ Action $>$ {\bfseries stages}
+\item 
+\mbox{\Hypertarget{class_lever_ae7161c7fb8bc611f7d4cc3525d406e81}\label{class_lever_ae7161c7fb8bc611f7d4cc3525d406e81}} 
+std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$ $>$ {\bfseries observables}
+\item 
+\mbox{\Hypertarget{class_lever_a0a44f2d62a5ebc3bb5ae4aaed55076fb}\label{class_lever_a0a44f2d62a5ebc3bb5ae4aaed55076fb}} 
+int {\bfseries stage\+\_\+iter}
+\item 
+\mbox{\Hypertarget{class_lever_a8c464b1b28d5978e48bc3bc85a8cb67d}\label{class_lever_a8c464b1b28d5978e48bc3bc85a8cb67d}} 
+bool {\bfseries repeat\+\_\+allowed}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_lever_a9ec153b4c960d0a187539cc8f07e5bd9}\label{class_lever_a9ec153b4c960d0a187539cc8f07e5bd9}} 
+\index{Lever@{Lever}!contact\+Event@{contact\+Event}}
+\index{contact\+Event@{contact\+Event}!Lever@{Lever}}
+\subsubsection{\texorpdfstring{contact\+Event()}{contactEvent()}}
+{\footnotesize\ttfamily void Lever\+::contact\+Event (\begin{DoxyParamCaption}\item[{b2\+Contact $\ast$}]{contact,  }\item[{bool}]{is\+Begin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Define object reaction to the collision in box2d world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contact} & pointer to box2d b2\+Contact class \\
+\hline
+{\em is\+Begin} & \textquotesingle{}false\textquotesingle{} -\/ end of the collision; \textquotesingle{}true\textquotesingle{} -\/ start of the collision \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_contact_object_a53d2dfc1d9c2821e9c62e80ce62a6435}{Contact\+Object}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Lever.\+h\item 
+Lever.\+cpp\end{DoxyCompactItemize}

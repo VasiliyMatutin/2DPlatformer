@@ -1,0 +1,115 @@
+\hypertarget{class_game_over}{}\section{Game\+Over Class Reference}
+\label{class_game_over}\index{Game\+Over@{Game\+Over}}
+
+
+\char`\"{}\+Game Over\char`\"{} screen  
+
+
+
+
+{\ttfamily \#include $<$Game\+Over.\+h$>$}
+
+
+
+Collaboration diagram for Game\+Over\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_game_over__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_game_over_a3eb13fd94a63ff6dace1e1265b0c535d}{Game\+Over} (bool \hyperlink{class_game_over_a4a7103cf4db129cad83b0c001c32d116}{is\+\_\+bad})
+\item 
+void \hyperlink{class_game_over_a919e7ac37c476bf288f732f9a8106016}{smth\+Happend} (Events what\+\_\+happened)
+\begin{DoxyCompactList}\small\item\em Listener of player action. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_over_a5d017200c062c83022d9efe2c29e0633}\label{class_game_over_a5d017200c062c83022d9efe2c29e0633}} 
+\hyperlink{class_object}{Object} $\ast$ \hyperlink{class_game_over_a5d017200c062c83022d9efe2c29e0633}{restart\+\_\+button}
+\begin{DoxyCompactList}\small\item\em Pointer to object contain button \char`\"{}\+Restart\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_over_a60a67578fd38fa4f4b464f69edc7ef9b}\label{class_game_over_a60a67578fd38fa4f4b464f69edc7ef9b}} 
+\hyperlink{class_object}{Object} $\ast$ \hyperlink{class_game_over_a60a67578fd38fa4f4b464f69edc7ef9b}{quit\+\_\+button}
+\begin{DoxyCompactList}\small\item\em Pointer to object contain button \char`\"{}\+Quit\char`\"{}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_game_over_a4a7103cf4db129cad83b0c001c32d116}{is\+\_\+bad}
+\begin{DoxyCompactList}\small\item\em Define type of the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\char`\"{}\+Game Over\char`\"{} screen 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017
+\end{DoxyDate}
+Stores information needed to display \char`\"{}\+Game Over\char`\"{} or \char`\"{}\+You win\char`\"{} screen 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game_over_a3eb13fd94a63ff6dace1e1265b0c535d}\label{class_game_over_a3eb13fd94a63ff6dace1e1265b0c535d}} 
+\index{Game\+Over@{Game\+Over}!Game\+Over@{Game\+Over}}
+\index{Game\+Over@{Game\+Over}!Game\+Over@{Game\+Over}}
+\subsubsection{\texorpdfstring{Game\+Over()}{GameOver()}}
+{\footnotesize\ttfamily Game\+Over\+::\+Game\+Over (\begin{DoxyParamCaption}\item[{bool}]{is\+\_\+bad }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+\_\+bad} & set the type of the screen (see is\+\_\+bad private flag) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_over_a919e7ac37c476bf288f732f9a8106016}\label{class_game_over_a919e7ac37c476bf288f732f9a8106016}} 
+\index{Game\+Over@{Game\+Over}!smth\+Happend@{smth\+Happend}}
+\index{smth\+Happend@{smth\+Happend}!Game\+Over@{Game\+Over}}
+\subsubsection{\texorpdfstring{smth\+Happend()}{smthHappend()}}
+{\footnotesize\ttfamily void Game\+Over\+::smth\+Happend (\begin{DoxyParamCaption}\item[{Events}]{what\+\_\+happened }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Listener of player action. 
+
+Virtual method, inhereted from \hyperlink{class_layer}{Layer} class, which allow react to user action 
+\begin{DoxyParams}{Parameters}
+{\em what\+\_\+happened} & enum describing player action \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_layer}{Layer}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_game_over_a4a7103cf4db129cad83b0c001c32d116}\label{class_game_over_a4a7103cf4db129cad83b0c001c32d116}} 
+\index{Game\+Over@{Game\+Over}!is\+\_\+bad@{is\+\_\+bad}}
+\index{is\+\_\+bad@{is\+\_\+bad}!Game\+Over@{Game\+Over}}
+\subsubsection{\texorpdfstring{is\+\_\+bad}{is\_bad}}
+{\footnotesize\ttfamily bool Game\+Over\+::is\+\_\+bad\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Define type of the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em false} & \char`\"{}\+You win\char`\"{} screen \\
+\hline
+{\em true} & \char`\"{}\+Game over\char`\"{} screen \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_game_over_8h}{Game\+Over.\+h}\item 
+Game\+Over.\+cpp\end{DoxyCompactItemize}
