@@ -70,7 +70,7 @@
   <object id="69" type="danger" x="672.5" y="490.5" width="126.667" height="86.5"/>
  </objectgroup>
  <objectgroup name="Dynamic">
-  <object id="60" name="strong_player" type="player" x="541.028" y="329.233" width="32" height="48">
+  <object id="60" name="strong_player" type="player" x="521.028" y="330.233" width="32" height="48">
    <properties>
     <property name="health" value="50"/>
     <property name="image" value="player.png"/>
@@ -86,7 +86,7 @@
     <property name="speed" value="1"/>
    </properties>
   </object>
-  <object id="64" name="bridge2" type="revolute_bridge" x="353.445" y="383.217" width="157.5" height="7">
+  <object id="64" name="bridge2" type="revolute_bridge" x="586.445" y="347.217" width="157.5" height="7">
    <properties>
     <property name="ancor" value="1 -1"/>
     <property name="image" value="platform.png"/>
@@ -128,13 +128,13 @@
     <property name="image" value="crate.png"/>
    </properties>
   </object>
-  <object id="88" x="372.333" y="451.333" width="32" height="32">
+  <object id="88" x="258.333" y="418" width="32" height="32">
    <properties>
     <property name="density" type="float" value="10"/>
     <property name="image" value="crate.png"/>
    </properties>
   </object>
-  <object id="89" x="359.667" y="494" width="32" height="32">
+  <object id="89" x="431.667" y="508" width="32" height="32">
    <properties>
     <property name="density" type="float" value="20"/>
     <property name="image" value="metal_crate.png"/>
@@ -146,7 +146,7 @@
     <property name="image" value="crate.png"/>
    </properties>
   </object>
-  <object id="103" name="dexterous_player" type="player" x="92.0283" y="346.733" width="32" height="32">
+  <object id="103" name="dexterous_player" type="player" x="75.695" y="347.566" width="32" height="32">
    <properties>
     <property name="health" value="20"/>
     <property name="image" value="dex_player.png"/>
@@ -167,7 +167,7 @@
    <properties>
     <property name="image" value="platform.png"/>
     <property name="is_auto" value="0"/>
-    <property name="speed" value="2"/>
+    <property name="speed" value="1"/>
     <property name="steps" value="0"/>
     <property name="trajectory" value="trajectory2"/>
    </properties>
@@ -281,6 +281,13 @@
     <property name="repeat_allowed" value="0"/>
    </properties>
   </object>
+  <object id="51" type="timer" x="0" y="0">
+   <properties>
+    <property name="is_rounded" value="1"/>
+    <property name="observables" value="platform3 platform1"/>
+    <property name="time_stages" value="1 2 3"/>
+   </properties>
+  </object>
   <object id="82" type="sensor" x="593" y="492" width="29" height="43">
    <properties>
     <property name="is_keeping" value="0"/>
@@ -303,7 +310,7 @@
   </object>
  </objectgroup>
  <objectgroup name="Dangers">
-  <object id="113" name="spike1" type="danger" x="408" y="312">
+  <object id="73" name="spike1" type="danger" x="0" y="0">
    <properties>
     <property name="damage" value="2"/>
     <property name="down_side" value="0"/>

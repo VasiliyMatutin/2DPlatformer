@@ -15,6 +15,7 @@ var searchData=
   ['is_5fpressed',['is_pressed',['../class_sensor.html#aff0be53ae0ed2e7f2a34e93bd78eed5d',1,'Sensor']]],
   ['is_5frouded',['is_rouded',['../class_platform.html#ab3e380bb3ba10bb3ab5c58e0d37f9095',1,'Platform']]],
   ['is_5frounded',['is_rounded',['../class_timer.html#ac397f8917b155e12401dd9ab793c91d9',1,'Timer']]],
+  ['is_5fstop',['is_stop',['../class_platform.html#ae26e486a480978c747779d580aa27918',1,'Platform::is_stop()'],['../class_player.html#a264c11a27a7fdfe032efb4f15b51c41f',1,'Player::is_stop()']]],
   ['is_5fstrong',['is_strong',['../class_final.html#a4beb08f8f72e6339e8544ae121fb717d',1,'Final']]],
   ['is_5fvalid',['is_valid',['../class_object.html#ae0881e8e5fd72a025663b048f2444555',1,'Object::is_valid()'],['../class_non_static_obj.html#a41c92f702f36f05877e74fef1fcb3a71',1,'NonStaticObj::is_valid()']]]
 ];
