@@ -737,19 +737,19 @@ void Level::parseDangerObject(tinyxml2::XMLElement * object, b2Body * body, Obje
 
 	if (checkElementExistence(findAmongSiblings(property, "left_side"),"The left_side midificator wasn't found")->BoolAttribute("value"))
 	{
-		boundaries.push_back(createBorderSensor(body, &changeable_objects.back(), Sides::LEFT));
+		boundaries.push_back(createBorderSensor(body, tmp_obj, Sides::LEFT));
 	}
 	if (checkElementExistence(findAmongSiblings(property, "up_side"), "The up_side midificator wasn't found")->BoolAttribute("value"))
 	{
-		boundaries.push_back(createBorderSensor(body, &changeable_objects.back(), Sides::UP));
+		boundaries.push_back(createBorderSensor(body, tmp_obj, Sides::UP));
 	}
 	if (checkElementExistence(findAmongSiblings(property, "right_side"), "The right_side midificator wasn't found")->BoolAttribute("value"))
 	{
-		boundaries.push_back(createBorderSensor(body, &changeable_objects.back(), Sides::RIGHT));
+		boundaries.push_back(createBorderSensor(body, tmp_obj, Sides::RIGHT));
 	}
 	if (checkElementExistence(findAmongSiblings(property, "down_side"), "The down_side midificator wasn't found")->BoolAttribute("value"))
 	{
-		boundaries.push_back(createBorderSensor(body, &changeable_objects.back(), Sides::DOWN));
+		boundaries.push_back(createBorderSensor(body, tmp_obj, Sides::DOWN));
 	}
 	DangerObject* d_obj = new DangerObject(boundaries, damage, body, &level_time);
 	storage.danger_list.push_back(d_obj);
@@ -759,7 +759,7 @@ b2Body* Level::createBorderSensor(b2Body * body, Object * tmp_obj, Sides side)
 {
 	b2BodyDef body_def;
 	body_def.type = b2_dynamicBody;
-	body_def.position = b2Vec2(0, 0);
+	body_def.position = body->GetPosition();
 	b2WeldJointDef wjd;
 	wjd.bodyA = body;
 	b2FixtureDef fixture_def;
@@ -775,13 +775,13 @@ b2Body* Level::createBorderSensor(b2Body * body, Object * tmp_obj, Sides side)
 		case Sides::DOWN:
 		{
 			wjd.localAnchorA.Set(0, tmpy);
-			shape.SetAsBox(tmpx - 0.01, 0.01);
+			shape.SetAsBox(tmpx - 0.01, 0.0000001);
 			break;
 		}
 		case Sides::UP:
 		{
 			wjd.localAnchorA.Set(0, -tmpy);
-			shape.SetAsBox(tmpx - 0.01, 0.01);
+			shape.SetAsBox(tmpx - 0.01, 0.0000001);
 			break;
 		}
 		case Sides::LEFT:

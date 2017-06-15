@@ -131,7 +131,7 @@
     <property name="time_stages" value="0.5"/>
    </properties>
   </object>
-  <object id="49" type="sensor" x="1392.5" y="357.5" width="29" height="43">
+  <object id="49" type="sensor" x="1489" y="369.5" width="29" height="43">
    <properties>
     <property name="is_keeping" value="0"/>
     <property name="is_visible" value="0"/>
@@ -163,7 +163,7 @@
    </properties>
    <polyline points="0,0 0,-16"/>
   </object>
-  <object id="42" name="platform3" type="platform" x="1536.83" y="416" width="62.6667" height="15">
+  <object id="42" name="platform3" type="platform" x="1536.83" y="416" width="62" height="9">
    <properties>
     <property name="image" value="platform.png"/>
     <property name="is_auto" value="0"/>
@@ -172,13 +172,13 @@
     <property name="trajectory" value="trajectory3"/>
    </properties>
   </object>
-  <object id="45" name="trajectory3" x="1566.67" y="423.333">
+  <object id="45" name="trajectory3" x="1567.54" y="433.208">
    <properties>
     <property name="is_rounded" value="0"/>
    </properties>
    <polyline points="0,0 0,-16"/>
   </object>
-  <object id="38" name="platform2" type="platform" x="1473.33" y="404.167" width="62" height="9">
+  <object id="38" name="platform2" type="platform" x="1202" y="494.167" width="62" height="9">
    <properties>
     <property name="image" value="platform.png"/>
     <property name="is_auto" value="0"/>
@@ -187,7 +187,7 @@
     <property name="trajectory" value="trajectory2"/>
    </properties>
   </object>
-  <object id="39" name="trajectory2" x="1503.06" y="417.576">
+  <object id="39" name="trajectory2" x="320.144" y="511.326">
    <properties>
     <property name="is_rounded" value="0"/>
    </properties>
@@ -216,7 +216,7 @@
     <property name="type" value="jump"/>
    </properties>
   </object>
-  <object id="50" type="bonus" x="1434" y="371" width="32" height="32">
+  <object id="50" type="bonus" x="1327.5" y="368" width="32" height="32">
    <properties>
     <property name="image" value="bonus_speed.png"/>
     <property name="modificator" value="2"/>
@@ -226,16 +226,16 @@
   </object>
  </objectgroup>
  <objectgroup name="Dynamic">
-  <object id="3" name="dexterous_player" type="player" x="1485" y="339.334" width="32" height="32">
-   <properties>
-    <property name="health" value="20"/>
-    <property name="image" value="dex_player.png"/>
-   </properties>
-  </object>
-  <object id="5" name="strong_player" type="player" x="431.333" y="422.667" width="32" height="48">
+  <object id="5" name="strong_player" type="player" x="235.333" y="428.667" width="32" height="48">
    <properties>
     <property name="health" value="50"/>
     <property name="image" value="player.png"/>
+   </properties>
+  </object>
+  <object id="3" name="dexterous_player" type="player" x="1438.5" y="374.834" width="32" height="32">
+   <properties>
+    <property name="health" value="20"/>
+    <property name="image" value="dex_player.png"/>
    </properties>
   </object>
   <object id="11" x="917.667" y="252.667" width="32" height="32">
