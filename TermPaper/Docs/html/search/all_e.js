@@ -1,16 +1,11 @@
 var searchData=
 [
-  ['platform',['Platform',['../class_platform.html',1,'Platform'],['../class_platform.html#a39509ca7de720cf50d0b0ea71e29bfaf',1,'Platform::Platform()']]],
-  ['platform_2eh',['Platform.h',['../_platform_8h.html',1,'']]],
-  ['player',['Player',['../class_player.html',1,'Player'],['../class_player_sensor.html#a28ca9f490022e0473064290956fe6852',1,'PlayerSensor::player()'],['../class_player.html#abf1330c477ecd5d2c0154a4876cf4154',1,'Player::Player()']]],
-  ['player_2eh',['Player.h',['../_player_8h.html',1,'']]],
-  ['player_5fname',['player_name',['../class_player_u_i.html#ab9651a40a71fc4c84fad8e3d626a3386',1,'PlayerUI']]],
-  ['player_5ftype',['player_type',['../class_player_u_i.html#a97dbafa8c5c0a651d62d25abbca726a1',1,'PlayerUI']]],
-  ['playersensor',['PlayerSensor',['../class_player_sensor.html',1,'PlayerSensor'],['../class_player_sensor.html#a1e74f6ad656f4cdc6449fc55b41dff42',1,'PlayerSensor::PlayerSensor()']]],
-  ['playersensor_2eh',['PlayerSensor.h',['../_player_sensor_8h.html',1,'']]],
-  ['playerui',['PlayerUI',['../class_player_u_i.html',1,'PlayerUI'],['../class_player_u_i.html#a6258658ac25fa64b122bffdf8e1e41fc',1,'PlayerUI::PlayerUI()']]],
-  ['playerui_2eh',['PlayerUI.h',['../_player_u_i_8h.html',1,'']]],
-  ['point_5fiter',['point_iter',['../class_platform.html#a5cffd298e38b51b6a079721d9ddafd1a',1,'Platform']]],
-  ['positionrelativelyscreen',['PositionRelativelyScreen',['../struct_position_relatively_screen.html',1,'']]],
-  ['postsolve',['PostSolve',['../class_my_contact_listener.html#a691495aee67681d73d94c91e7c7a4df6',1,'MyContactListener']]]
+  ['object',['Object',['../class_object.html',1,'Object'],['../class_bonus.html#a7493d5e3afda12e197c5505a66a1c7a1',1,'Bonus::object()'],['../class_lever.html#aee2d6a9e2fc7ff31a9d8eea2f98b7e32',1,'Lever::object()'],['../class_non_static_obj.html#a61a8004d502132c7a13258e945300a5e',1,'NonStaticObj::object()'],['../class_visible_sensor.html#a933e07d2186c63f9333778a213dd0cd5',1,'VisibleSensor::object()']]],
+  ['objecttype',['ObjectType',['../_non_static_obj_8h.html#a842c5e2e69277690b064bf363c017980',1,'NonStaticObj.h']]],
+  ['observables',['observables',['../class_lever.html#ae7161c7fb8bc611f7d4cc3525d406e81',1,'Lever::observables()'],['../class_sensor.html#a3056529f52d9af83b78bc7ca7e2e7ef2',1,'Sensor::observables()'],['../class_timer.html#acf215281063a8be431d810725a804224',1,'Timer::observables()']]],
+  ['observe',['observe',['../class_controller.html#a6ebc30e3213a87318b8f6d7c7f2edc7c',1,'Controller']]],
+  ['off',['OFF',['../_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498a88559a0cfd8250c9d65970cc145c92d4',1,'ManualSwitchObj.h']]],
+  ['ok_5fbutton',['ok_button',['../class_error_window.html#aa155c8753f726ace716eabca851255dc',1,'ErrorWindow']]],
+  ['on_5fground',['on_ground',['../class_player.html#a2dc679f61d4728895221afb567aede2f',1,'Player']]],
+  ['others',['OTHERS',['../_contact_object_8h.html#a684af1cf542217fe5ea2859096b5fa51a4af5fe82e7a2c651d3a04f3d5aa2bef7',1,'ContactObject.h']]]
 ];

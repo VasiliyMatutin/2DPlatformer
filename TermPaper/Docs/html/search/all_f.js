@@ -1,4 +1,27 @@
 var searchData=
 [
-  ['quit_5fbutton',['quit_button',['../class_end_of_the_game.html#af4d60352787faf883df1eec46183eee9',1,'EndOfTheGame::quit_button()'],['../class_game_over.html#a60a67578fd38fa4f4b464f69edc7ef9b',1,'GameOver::quit_button()'],['../class_local_menu.html#a8a16de3ea6b9bb26b14cbbbaac7ff877',1,'LocalMenu::quit_button()']]]
+  ['parsebridge',['parseBridge',['../class_level.html#aa1921baab6b1d686f68d81efd235ebc4',1,'Level']]],
+  ['parsedangerobject',['parseDangerObject',['../class_level.html#a4e4b69194e33200fff8f9b0282e10559',1,'Level']]],
+  ['parseplatform',['parsePlatform',['../class_level.html#a2d4fd0491266cd6635edeb1f9b24d373',1,'Level']]],
+  ['parsesensor',['parseSensor',['../class_level.html#afe367884e3e0e7e1ca1870566eababd8',1,'Level']]],
+  ['parsetimer',['parseTimer',['../class_level.html#a0230969dca0cd75ab48e212c3ec559ce',1,'Level']]],
+  ['pickupbox',['pickUpBox',['../class_level.html#aa52fdbf5c43c826b21b640cc53d11d1b',1,'Level']]],
+  ['pixel_5fper_5fmeter',['PIXEL_PER_METER',['../_level_box_8h.html#af8e32eb3a8f70e4471600c63c442a7a0',1,'LevelBox.h']]],
+  ['platform',['Platform',['../class_platform.html',1,'Platform'],['../class_platform.html#a7c8e5045e5df1165c1154605e1a05339',1,'Platform::Platform()'],['../_non_static_obj_8h.html#a842c5e2e69277690b064bf363c017980a8b55a44b49368262df89fd0e17b1a181',1,'PLATFORM():&#160;NonStaticObj.h']]],
+  ['platform_2eh',['Platform.h',['../_platform_8h.html',1,'']]],
+  ['player',['Player',['../class_player.html',1,'Player'],['../class_player.html#abf1330c477ecd5d2c0154a4876cf4154',1,'Player::Player()'],['../class_level.html#a76b010ccc524cef1ae0c3adc2a63d3b1',1,'Level::player()'],['../class_player_sensor.html#a28ca9f490022e0473064290956fe6852',1,'PlayerSensor::player()'],['../_non_static_obj_8h.html#a842c5e2e69277690b064bf363c017980a07c80e2a355d91402a00d82b1fa13855',1,'PLAYER():&#160;NonStaticObj.h']]],
+  ['player_2eh',['Player.h',['../_player_8h.html',1,'']]],
+  ['player_5fname',['player_name',['../class_player_u_i.html#ab9651a40a71fc4c84fad8e3d626a3386',1,'PlayerUI']]],
+  ['player_5ftype',['player_type',['../class_player_u_i.html#a97dbafa8c5c0a651d62d25abbca726a1',1,'PlayerUI']]],
+  ['players_5fsensors_5flist',['players_sensors_list',['../class_storage.html#a9003cf58d8b5c48ca1ac7d0ce7323238',1,'Storage']]],
+  ['playersensor',['PlayerSensor',['../class_player_sensor.html',1,'PlayerSensor'],['../class_player_sensor.html#a1e74f6ad656f4cdc6449fc55b41dff42',1,'PlayerSensor::PlayerSensor()']]],
+  ['playersensor_2eh',['PlayerSensor.h',['../_player_sensor_8h.html',1,'']]],
+  ['playerui',['PlayerUI',['../class_player_u_i.html',1,'PlayerUI'],['../class_player.html#a31637dcf493a77b73258e87641b339d4',1,'Player::playerUI()'],['../class_player_u_i.html#a6258658ac25fa64b122bffdf8e1e41fc',1,'PlayerUI::PlayerUI()']]],
+  ['playerui_2eh',['PlayerUI.h',['../_player_u_i_8h.html',1,'']]],
+  ['point_5fiter',['point_iter',['../class_platform.html#a5cffd298e38b51b6a079721d9ddafd1a',1,'Platform']]],
+  ['positionrelativelyscreen',['PositionRelativelyScreen',['../struct_position_relatively_screen.html',1,'']]],
+  ['postsolve',['PostSolve',['../class_my_contact_listener.html#a691495aee67681d73d94c91e7c7a4df6',1,'MyContactListener']]],
+  ['prefix',['prefix',['../class_level.html#a08f8815ed6a37bb8b1a2c045946cdd68',1,'Level']]],
+  ['preparenewdisplay',['prepareNewDisplay',['../class_viewer.html#a2726818329086632b258a855b22e55ac',1,'Viewer']]],
+  ['prev_5fstep',['prev_step',['../class_level.html#a456b63f58afc3c2a0ae917e955ca80df',1,'Level']]]
 ];

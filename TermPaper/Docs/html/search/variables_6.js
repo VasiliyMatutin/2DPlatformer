@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['health',['health',['../class_player.html#aad33b52bfe73c4c978a3135172f286a0',1,'Player::health()'],['../class_player_u_i.html#a5ca02efb3a04ec5661789dd97d6676fb',1,'PlayerUI::health()']]]
+  ['game_5fover',['game_over',['../class_model.html#a905afcc359caed9ea41d17dfc5cef784',1,'Model']]],
+  ['gradtorad',['GRADTORAD',['../_level_box_8h.html#a532127a5624454d5153e37a05709022a',1,'LevelBox.h']]]
 ];

@@ -2,7 +2,17 @@
 \label{class_win_singleton}\index{Win\+Singleton@{Win\+Singleton}}
 
 
-Collaboration diagram for Win\+Singleton\+:\nopagebreak
+Application window.  
+
+
+
+
+{\ttfamily \#include $<$Win\+Singleton.\+h$>$}
+
+
+
+Collaboration diagram for Win\+Singleton\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,15 +22,14 @@ Collaboration diagram for Win\+Singleton\+:\nopagebreak
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_win_singleton_a82935bb60c8e4bb14350ac45813b33ca}\label{class_win_singleton_a82935bb60c8e4bb14350ac45813b33ca}} 
-static sf\+::\+Render\+Window $\ast$ {\bfseries get\+Instance} ()
-\item 
+static sf\+::\+Render\+Window $\ast$ \hyperlink{class_win_singleton_a82935bb60c8e4bb14350ac45813b33ca}{get\+Instance} ()
+\begin{DoxyCompactList}\small\item\em create new or return unique application window \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_win_singleton_a58684b65df9dadcdc798faba86aeb0b6}\label{class_win_singleton_a58684b65df9dadcdc798faba86aeb0b6}} 
-static void {\bfseries to\+Full\+Screen} ()
-\item 
+static void \hyperlink{class_win_singleton_a58684b65df9dadcdc798faba86aeb0b6}{to\+Full\+Screen} ()
+\begin{DoxyCompactList}\small\item\em change window mode to fullscreen \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_win_singleton_abba34d9cbdf6a9ff14da654b2b88aba3}\label{class_win_singleton_abba34d9cbdf6a9ff14da654b2b88aba3}} 
-static void {\bfseries to\+Window} ()
-\end{DoxyCompactItemize}
+static void \hyperlink{class_win_singleton_abba34d9cbdf6a9ff14da654b2b88aba3}{to\+Window} ()
+\begin{DoxyCompactList}\small\item\em change window mode to 800$\ast$600 \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -34,11 +43,41 @@ static void {\bfseries to\+Window} ()
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_win_singleton_ad2469dc3ef435d5739cda832be2b556f}\label{class_win_singleton_ad2469dc3ef435d5739cda832be2b556f}} 
-static sf\+::\+Render\+Window $\ast$ {\bfseries win} = nullptr
-\end{DoxyCompactItemize}
+static sf\+::\+Render\+Window $\ast$ \hyperlink{class_win_singleton_ad2469dc3ef435d5739cda832be2b556f}{win} = nullptr
+\begin{DoxyCompactList}\small\item\em sfml window \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Application window. 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017 
+\end{DoxyDate}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_win_singleton_a82935bb60c8e4bb14350ac45813b33ca}\label{class_win_singleton_a82935bb60c8e4bb14350ac45813b33ca}} 
+\index{Win\+Singleton@{Win\+Singleton}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Win\+Singleton@{Win\+Singleton}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily static sf\+::\+Render\+Window$\ast$ Win\+Singleton\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+create new or return unique application window 
+
+\begin{DoxyReturn}{Returns}
+application window 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Win\+Singleton.\+h\item 
+\hyperlink{_win_singleton_8h}{Win\+Singleton.\+h}\item 
 Win\+Singleton.\+cpp\end{DoxyCompactItemize}

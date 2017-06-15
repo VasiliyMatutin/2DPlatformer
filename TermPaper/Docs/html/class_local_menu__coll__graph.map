@@ -1,4 +1,4 @@
 <map id="LocalMenu" name="LocalMenu">
 <area shape="rect" id="node2" href="$class_auxiliary_layer.html" title="Superstructure class for built&#45;in Layer classes. " alt="" coords="5,5,137,112"/>
-<area shape="rect" id="node3" href="$class_object.html" title="{Object\n|+ number_in_image_list\land 9 more...\l|}" alt="" coords="162,13,322,105"/>
+<area shape="rect" id="node3" href="$class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes..." alt="" coords="162,13,322,105"/>
 </map>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['health',['HEALTH',['../_player_8h.html#ad6d58ebabfbf9aa4181bfe97a5d8d984a785a1e256fca0cd6be7b3dced4281845',1,'Player.h']]]
+  ['platform',['PLATFORM',['../_non_static_obj_8h.html#a842c5e2e69277690b064bf363c017980a8b55a44b49368262df89fd0e17b1a181',1,'NonStaticObj.h']]],
+  ['player',['PLAYER',['../_non_static_obj_8h.html#a842c5e2e69277690b064bf363c017980a07c80e2a355d91402a00d82b1fa13855',1,'NonStaticObj.h']]]
 ];

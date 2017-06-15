@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Docs: Lever Class Reference</title>
+<title>JUST2D Platformer: Lever Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Docs
+   <div id="projectname">JUST2D Platformer
    </div>
   </td>
  </tr>
@@ -67,77 +67,117 @@ $(function() {
 <div class="title">Lever Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Special sensor that can be activated only by hero.  
+ <a href="class_lever.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_lever_8h_source.html">Lever.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Lever:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_lever__coll__graph.png" border="0" usemap="#_lever_coll__map" alt="Collaboration graph"/></div>
 <map name="_lever_coll__map" id="_lever_coll__map">
 <area shape="rect" id="node2" href="class_contact_object.html" title="Interface for an object which can collide with another in box2d world. " alt="" coords="5,27,123,119"/>
-<area shape="rect" id="node3" href="class_player.html" title="Parent class for DexterousPlayer and StrongPlayer classes. " alt="" coords="147,5,275,141"/>
-<area shape="rect" id="node4" href="class_object.html" title="{Object\n|+ number_in_image_list\land 9 more...\l|}" alt="" coords="299,27,459,119"/>
+<area shape="rect" id="node5" href="class_player.html" title="Parent class for DexterousPlayer and StrongPlayer classes. " alt="" coords="533,5,661,141"/>
+<area shape="rect" id="node6" href="class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes..." alt="" coords="685,27,845,119"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2b4dd6cea65837c09711dda3d02d7cae"><td class="memItemLeft" align="right" valign="top"><a id="a2b4dd6cea65837c09711dda3d02d7cae"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Lever</b> (std::list&lt; <a class="el" href="class_manual_switch_obj.html">ManualSwitchObj</a> *&gt; _observables, bool _repeat_allowed, b2Body *_body, <a class="el" href="class_object.html">Object</a> *_object, <a class="el" href="class_player.html">Player</a> **_current_player, std::vector&lt; Action &gt; _stages)</td></tr>
+<tr class="memitem:a2b4dd6cea65837c09711dda3d02d7cae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lever.html#a2b4dd6cea65837c09711dda3d02d7cae">Lever</a> (std::list&lt; <a class="el" href="class_manual_switch_obj.html">ManualSwitchObj</a> *&gt; _observables, bool _repeat_allowed, b2Body *_body, <a class="el" href="class_object.html">Object</a> *_object, <a class="el" href="class_player.html">Player</a> **_current_player, std::vector&lt; <a class="el" href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498">Action</a> &gt; _stages)</td></tr>
+<tr class="memdesc:a2b4dd6cea65837c09711dda3d02d7cae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defined constructor for this class.  <a href="#a2b4dd6cea65837c09711dda3d02d7cae">More...</a><br /></td></tr>
 <tr class="separator:a2b4dd6cea65837c09711dda3d02d7cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0aafb7fa0e219a59362cfdbdc30f6203"><td class="memItemLeft" align="right" valign="top"><a id="a0aafb7fa0e219a59362cfdbdc30f6203"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>activate</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lever.html#a0aafb7fa0e219a59362cfdbdc30f6203">activate</a> ()</td></tr>
+<tr class="memdesc:a0aafb7fa0e219a59362cfdbdc30f6203"><td class="mdescLeft">&#160;</td><td class="mdescRight">causes the lever try to send next command to observables objects <br /></td></tr>
 <tr class="separator:a0aafb7fa0e219a59362cfdbdc30f6203"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a9ec153b4c960d0a187539cc8f07e5bd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lever.html#a9ec153b4c960d0a187539cc8f07e5bd9">contactEvent</a> (b2Contact *, bool)</td></tr>
-<tr class="memdesc:a9ec153b4c960d0a187539cc8f07e5bd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define object reaction to the collision in box2d world.  <a href="#a9ec153b4c960d0a187539cc8f07e5bd9">More...</a><br /></td></tr>
-<tr class="separator:a9ec153b4c960d0a187539cc8f07e5bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08d617d4aad99c811df6013648843d8b"><td class="memItemLeft" align="right" valign="top"><a id="a08d617d4aad99c811df6013648843d8b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lever.html#a08d617d4aad99c811df6013648843d8b">contactEvent</a> (b2Contact *contact, bool is_begin)</td></tr>
+<tr class="memdesc:a08d617d4aad99c811df6013648843d8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">inherited from <a class="el" href="class_contact_object.html" title="Interface for an object which can collide with another in box2d world. ">ContactObject</a> class <br /></td></tr>
+<tr class="separator:a08d617d4aad99c811df6013648843d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:aa063d5dab7eefeee48b93c0ea694bb42"><td class="memItemLeft" align="right" valign="top"><a id="aa063d5dab7eefeee48b93c0ea694bb42"></a>
-b2Body *&#160;</td><td class="memItemRight" valign="bottom"><b>body</b></td></tr>
+b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lever.html#aa063d5dab7eefeee48b93c0ea694bb42">body</a></td></tr>
+<tr class="memdesc:aa063d5dab7eefeee48b93c0ea694bb42"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the box2d body assigned to this lever <br /></td></tr>
 <tr class="separator:aa063d5dab7eefeee48b93c0ea694bb42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee2d6a9e2fc7ff31a9d8eea2f98b7e32"><td class="memItemLeft" align="right" valign="top"><a id="aee2d6a9e2fc7ff31a9d8eea2f98b7e32"></a>
-<a class="el" href="class_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>object</b></td></tr>
+<a class="el" href="class_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lever.html#aee2d6a9e2fc7ff31a9d8eea2f98b7e32">object</a></td></tr>
+<tr class="memdesc:aee2d6a9e2fc7ff31a9d8eea2f98b7e32"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the <a class="el" href="class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes...">Object</a> class assigned to this lever <br /></td></tr>
 <tr class="separator:aee2d6a9e2fc7ff31a9d8eea2f98b7e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac710b732ab842d55f84488f9d88e325b"><td class="memItemLeft" align="right" valign="top"><a id="ac710b732ab842d55f84488f9d88e325b"></a>
-<a class="el" href="class_player.html">Player</a> **&#160;</td><td class="memItemRight" valign="bottom"><b>current_player</b></td></tr>
+<a class="el" href="class_player.html">Player</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lever.html#ac710b732ab842d55f84488f9d88e325b">current_player</a></td></tr>
+<tr class="memdesc:ac710b732ab842d55f84488f9d88e325b"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the pointer containing infofmation about current active hero <br /></td></tr>
 <tr class="separator:ac710b732ab842d55f84488f9d88e325b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8352c41d4452bf72a3f7d4dded03598c"><td class="memItemLeft" align="right" valign="top"><a id="a8352c41d4452bf72a3f7d4dded03598c"></a>
-std::vector&lt; Action &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>stages</b></td></tr>
+std::vector&lt; <a class="el" href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498">Action</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lever.html#a8352c41d4452bf72a3f7d4dded03598c">stages</a></td></tr>
+<tr class="memdesc:a8352c41d4452bf72a3f7d4dded03598c"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector of stages(commands) through which observables objects should pass <br /></td></tr>
 <tr class="separator:a8352c41d4452bf72a3f7d4dded03598c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7161c7fb8bc611f7d4cc3525d406e81"><td class="memItemLeft" align="right" valign="top"><a id="ae7161c7fb8bc611f7d4cc3525d406e81"></a>
-std::list&lt; <a class="el" href="class_manual_switch_obj.html">ManualSwitchObj</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>observables</b></td></tr>
+std::list&lt; <a class="el" href="class_manual_switch_obj.html">ManualSwitchObj</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lever.html#ae7161c7fb8bc611f7d4cc3525d406e81">observables</a></td></tr>
+<tr class="memdesc:ae7161c7fb8bc611f7d4cc3525d406e81"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of observables objects <br /></td></tr>
 <tr class="separator:ae7161c7fb8bc611f7d4cc3525d406e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a44f2d62a5ebc3bb5ae4aaed55076fb"><td class="memItemLeft" align="right" valign="top"><a id="a0a44f2d62a5ebc3bb5ae4aaed55076fb"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>stage_iter</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lever.html#a0a44f2d62a5ebc3bb5ae4aaed55076fb">stage_iter</a></td></tr>
+<tr class="memdesc:a0a44f2d62a5ebc3bb5ae4aaed55076fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">number current stage from stages vector <br /></td></tr>
 <tr class="separator:a0a44f2d62a5ebc3bb5ae4aaed55076fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c464b1b28d5978e48bc3bc85a8cb67d"><td class="memItemLeft" align="right" valign="top"><a id="a8c464b1b28d5978e48bc3bc85a8cb67d"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>repeat_allowed</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lever.html#a8c464b1b28d5978e48bc3bc85a8cb67d">repeat_allowed</a></td></tr>
+<tr class="memdesc:a8c464b1b28d5978e48bc3bc85a8cb67d"><td class="mdescLeft">&#160;</td><td class="mdescRight">determines whether it is possible to send next command to the observables objects when they doesn't complete previous action: 'true' - possible; 'false' - impossible <br /></td></tr>
 <tr class="separator:a8c464b1b28d5978e48bc3bc85a8cb67d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9ec153b4c960d0a187539cc8f07e5bd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ec153b4c960d0a187539cc8f07e5bd9">&#9670;&nbsp;</a></span>contactEvent()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Special sensor that can be activated only by hero. </p>
+<dl class="section author"><dt>Author</dt><dd>Vasily </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>June 2017 </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2b4dd6cea65837c09711dda3d02d7cae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b4dd6cea65837c09711dda3d02d7cae">&#9670;&nbsp;</a></span>Lever()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Lever::contactEvent </td>
+          <td class="memname">Lever::Lever </td>
           <td>(</td>
-          <td class="paramtype">b2Contact *&#160;</td>
-          <td class="paramname"><em>contact</em>, </td>
+          <td class="paramtype">std::list&lt; <a class="el" href="class_manual_switch_obj.html">ManualSwitchObj</a> *&gt;&#160;</td>
+          <td class="paramname"><em>_observables</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>isBegin</em>&#160;</td>
+          <td class="paramname"><em>_repeat_allowed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">b2Body *&#160;</td>
+          <td class="paramname"><em>_body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_object.html">Object</a> *&#160;</td>
+          <td class="paramname"><em>_object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_player.html">Player</a> **&#160;</td>
+          <td class="paramname"><em>_current_player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498">Action</a> &gt;&#160;</td>
+          <td class="paramname"><em>_stages</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -145,23 +185,20 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>repeat_allowed</b></t
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Define object reaction to the collision in box2d world. </p>
+<p>Defined constructor for this class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">contact</td><td>pointer to box2d b2Contact class </td></tr>
-    <tr><td class="paramname">isBegin</td><td>'false' - end of the collision; 'true' - start of the collision </td></tr>
+    <tr><td class="paramname">_observables</td><td>list of observables objects </td></tr>
+    <tr><td class="paramname">_repeat_allowed</td><td>determines whether it is possible to send next command to the observables objects when they doesn't complete previous action: 'true' - possible; 'false' - impossible </td></tr>
+    <tr><td class="paramname">_body</td><td>pointer to the box2d body assigned to this entity </td></tr>
+    <tr><td class="paramname">_object</td><td>pointer to the <a class="el" href="class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes...">Object</a> class assigned to this entity </td></tr>
+    <tr><td class="paramname">_current_player</td><td>pointer to the pointer containing infofmation about current active hero </td></tr>
+    <tr><td class="paramname">_stages</td><td>vector of stages(commands) through which observables objects should pass </td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Implements <a class="el" href="class_contact_object.html#a53d2dfc1d9c2821e9c62e80ce62a6435">ContactObject</a>.</p>
 
 </div>
 </div>

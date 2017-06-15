@@ -36,6 +36,8 @@ protected:
 	bool is_rouded;
 	///defines the state of the platform 'true' - moves 'false' - doesn't move
 	bool is_active;
+	///defines whether platform stop itself 'true' - yes 'false' - not
+	bool is_stop;
 	///temprorary storage for platform coordinates
 	b2Vec2 tmp;
 	///causes platform to begin reverse moving
@@ -54,7 +56,7 @@ public:
 	\param _is_rounded defines the shape of trajectory 'true' - closed 'false' - torn
 	\param _node_number max number of trajectory nodes which platform passed before reverse moving or the stop
 	*/
-	Platform(int _level_width, int _level_height, b2Body* _body, Object* _object, std::vector<std::pair<double,double>> traj_coord, int _fixed_speed, bool _is_rounded, int _node_number);
+	Platform(int _level_width, int _level_height, b2Body* _body, Object* _object, std::vector<std::pair<double,double>> _traj_coord, int _fixed_speed, bool _is_rounded, int _node_number);
 	///inherited from NonStaticObj class
 	void update();
 	virtual ~Platform(){};

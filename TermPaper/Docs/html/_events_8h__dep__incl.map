@@ -1,7 +1,5 @@
 <map id="Events.h" name="Events.h">
 <area shape="rect" id="node2" href="$_layer_8h.html" title="Layer.h" alt="" coords="5,80,71,107"/>
 <area shape="rect" id="node3" href="$_player_8h.html" title="Player.h" alt="" coords="95,80,165,107"/>
-<area shape="rect" id="node4" href="$_controller_8h.html" title="Controller.h" alt="" coords="195,155,283,181"/>
-<area shape="rect" id="node5" href="$_model_8h.html" title="Model.h" alt="" coords="241,80,309,107"/>
-<area shape="rect" id="node6" href="$_events_8cpp.html" title="Events.cpp" alt="" coords="333,80,420,107"/>
+<area shape="rect" id="node4" href="$_model_8h.html" title="Model.h" alt="" coords="189,80,257,107"/>
 </map>

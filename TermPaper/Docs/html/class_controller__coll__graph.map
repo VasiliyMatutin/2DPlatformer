@@ -1,4 +1,4 @@
 <map id="Controller" name="Controller">
-<area shape="rect" id="node2" href="$class_model.html" title="{Model\n|&#45; re\land 4 more...\l|+ Model()\land 5 more...\l&#45; clearAllLayers()\l}" alt="" coords="20,5,140,127"/>
-<area shape="rect" id="node3" href="$class_viewer.html" title="{Viewer\n|&#45; window\land 1 more...\l|+ Viewer()\land 3 more...\l&#45; prepareNewDisplay()\land 1 more...\l}" alt="" coords="101,189,251,325"/>
+<area shape="rect" id="node2" href="$class_model.html" title="Element&#45;container in MVC structure. " alt="" coords="20,5,140,112"/>
+<area shape="rect" id="node3" href="$class_viewer.html" title="Viewer&#45;element in MVC structure. " alt="" coords="101,175,251,296"/>
 </map>

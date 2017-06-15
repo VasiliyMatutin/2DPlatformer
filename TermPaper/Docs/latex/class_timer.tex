@@ -2,64 +2,110 @@
 \label{class_timer}\index{Timer@{Timer}}
 
 
-Collaboration diagram for Timer\+:\nopagebreak
+An entity that can activate observables \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} classes at a certain moment (dosen\textquotesingle{}t display at the monitor)  
+
+
+
+
+{\ttfamily \#include $<$Timer.\+h$>$}
+
+
+
+Collaboration diagram for Timer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=160pt]{class_timer__coll__graph}
+\includegraphics[width=350pt]{class_timer__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_timer_a0b2aa28140cd3a79edb0fbdafcbb9ee0}\label{class_timer_a0b2aa28140cd3a79edb0fbdafcbb9ee0}} 
-{\bfseries Timer} (std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$$>$ \+\_\+observables, std\+::vector$<$ double $>$ \+\_\+stages\+\_\+duration, bool \+\_\+is\+\_\+rounded, std\+::vector$<$ Action $>$ \+\_\+stages)
-\item 
+\hyperlink{class_timer_a18ad778fac9c2ccf488d4fa2e64b5d75}{Timer} (std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$$>$ \+\_\+observables, std\+::vector$<$ double $>$ \+\_\+stages\+\_\+duration, bool \+\_\+is\+\_\+rounded, std\+::vector$<$ \hyperlink{_manual_switch_obj_8h_a8bb1ef53467e4f61410d12822d922498}{Action} $>$ \+\_\+stages, std\+::chrono\+::duration$<$ double $>$ $\ast$\+\_\+duration)
+\begin{DoxyCompactList}\small\item\em Defined constructor for this class. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_timer_a745ad59b5a46744cd871a1129a25d74f}\label{class_timer_a745ad59b5a46744cd871a1129a25d74f}} 
-void {\bfseries update} ()
-\end{DoxyCompactItemize}
+void \hyperlink{class_timer_a745ad59b5a46744cd871a1129a25d74f}{update} ()
+\begin{DoxyCompactList}\small\item\em update timer state (remaining time before next iteration) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_timer_acf215281063a8be431d810725a804224}\label{class_timer_acf215281063a8be431d810725a804224}} 
-std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$ $>$ {\bfseries observables}
-\item 
+std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$ $>$ \hyperlink{class_timer_acf215281063a8be431d810725a804224}{observables}
+\begin{DoxyCompactList}\small\item\em list of observables objects \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_timer_a77e0f14caf59087a0afa9e466b3b8c4b}\label{class_timer_a77e0f14caf59087a0afa9e466b3b8c4b}} 
-std\+::vector$<$ double $>$ {\bfseries stages\+\_\+duration}
-\item 
+std\+::vector$<$ double $>$ \hyperlink{class_timer_a77e0f14caf59087a0afa9e466b3b8c4b}{stages\+\_\+duration}
+\begin{DoxyCompactList}\small\item\em vector of duration intervals between commands \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_timer_a8f8c7d41223e9976d4588ef212286fb5}\label{class_timer_a8f8c7d41223e9976d4588ef212286fb5}} 
-std\+::vector$<$ Action $>$ {\bfseries stages}
-\item 
+std\+::vector$<$ \hyperlink{_manual_switch_obj_8h_a8bb1ef53467e4f61410d12822d922498}{Action} $>$ \hyperlink{class_timer_a8f8c7d41223e9976d4588ef212286fb5}{stages}
+\begin{DoxyCompactList}\small\item\em vector of stages(commands) through which observables objects should pass \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_timer_ac397f8917b155e12401dd9ab793c91d9}\label{class_timer_ac397f8917b155e12401dd9ab793c91d9}} 
-bool {\bfseries is\+\_\+rounded}
-\item 
+bool \hyperlink{class_timer_ac397f8917b155e12401dd9ab793c91d9}{is\+\_\+rounded}
+\begin{DoxyCompactList}\small\item\em defines should timer resume the cycle then all iterasion has been passed\+: \textquotesingle{}true\textquotesingle{} -\/ should; \textquotesingle{}false\textquotesingle{} -\/shouldn\textquotesingle{}t \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_timer_a6f1066d49764f5fc746f5fd669d95a9f}\label{class_timer_a6f1066d49764f5fc746f5fd669d95a9f}} 
-bool {\bfseries is\+\_\+active}
-\item 
+bool \hyperlink{class_timer_a6f1066d49764f5fc746f5fd669d95a9f}{is\+\_\+active}
+\begin{DoxyCompactList}\small\item\em defines is active timer now or already completed its work \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_timer_aa410e9f94d1cdb79090fcf159f8f4d8c}\label{class_timer_aa410e9f94d1cdb79090fcf159f8f4d8c}} 
-double {\bfseries time}
-\item 
+double \hyperlink{class_timer_aa410e9f94d1cdb79090fcf159f8f4d8c}{time}
+\begin{DoxyCompactList}\small\item\em current time from the previous interval \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_timer_ae5b386341474f4cb8f11227e884250ab}\label{class_timer_ae5b386341474f4cb8f11227e884250ab}} 
-int {\bfseries curr\+\_\+iter}
-\item 
+int \hyperlink{class_timer_ae5b386341474f4cb8f11227e884250ab}{curr\+\_\+iter}
+\begin{DoxyCompactList}\small\item\em number of current interval from stages\+\_\+duration vector \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_timer_a34caee928e5a02b075496a74329abaeb}\label{class_timer_a34caee928e5a02b075496a74329abaeb}} 
-int {\bfseries stage\+\_\+iter}
-\item 
+int \hyperlink{class_timer_a34caee928e5a02b075496a74329abaeb}{stage\+\_\+iter}
+\begin{DoxyCompactList}\small\item\em number of current stage from stages vector \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_timer_a196651dd936adea933d014145a9ae38e}\label{class_timer_a196651dd936adea933d014145a9ae38e}} 
-std\+::chrono\+::seconds {\bfseries dts}
-\item 
-\mbox{\Hypertarget{class_timer_a1f7d523a49922d1d2bbfa2b49ebd4b38}\label{class_timer_a1f7d523a49922d1d2bbfa2b49ebd4b38}} 
-std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$ {\bfseries start}
-\item 
-\mbox{\Hypertarget{class_timer_abb300a4bdf620b8711d1e90980096291}\label{class_timer_abb300a4bdf620b8711d1e90980096291}} 
-std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$ {\bfseries end}
-\item 
-\mbox{\Hypertarget{class_timer_a331df3365dd6a3a6eb3382a9bb36e3cc}\label{class_timer_a331df3365dd6a3a6eb3382a9bb36e3cc}} 
-std\+::chrono\+::duration$<$ double $>$ {\bfseries duration}
-\end{DoxyCompactItemize}
+std\+::chrono\+::seconds \hyperlink{class_timer_a196651dd936adea933d014145a9ae38e}{dts}
+\begin{DoxyCompactList}\small\item\em chrono service information \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_timer_adbfe2ce4f502d555df6468e551a00f93}\label{class_timer_adbfe2ce4f502d555df6468e551a00f93}} 
+std\+::chrono\+::duration$<$ double $>$ $\ast$ \hyperlink{class_timer_adbfe2ce4f502d555df6468e551a00f93}{duration}
+\begin{DoxyCompactList}\small\item\em pointer to the variable containing information about level time \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_timer_a9ad79c94db842e09125f74e776fa784a}\label{class_timer_a9ad79c94db842e09125f74e776fa784a}} 
+std\+::chrono\+::duration$<$ double $>$ \hyperlink{class_timer_a9ad79c94db842e09125f74e776fa784a}{start}
+\begin{DoxyCompactList}\small\item\em chrono start of impact \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An entity that can activate observables \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} classes at a certain moment (dosen\textquotesingle{}t display at the monitor) 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_timer_a18ad778fac9c2ccf488d4fa2e64b5d75}\label{class_timer_a18ad778fac9c2ccf488d4fa2e64b5d75}} 
+\index{Timer@{Timer}!Timer@{Timer}}
+\index{Timer@{Timer}!Timer@{Timer}}
+\subsubsection{\texorpdfstring{Timer()}{Timer()}}
+{\footnotesize\ttfamily Timer\+::\+Timer (\begin{DoxyParamCaption}\item[{std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$$>$}]{\+\_\+observables,  }\item[{std\+::vector$<$ double $>$}]{\+\_\+stages\+\_\+duration,  }\item[{bool}]{\+\_\+is\+\_\+rounded,  }\item[{std\+::vector$<$ \hyperlink{_manual_switch_obj_8h_a8bb1ef53467e4f61410d12822d922498}{Action} $>$}]{\+\_\+stages,  }\item[{std\+::chrono\+::duration$<$ double $>$ $\ast$}]{\+\_\+duration }\end{DoxyParamCaption})}
+
+
+
+Defined constructor for this class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+observables} & list of observables objects \\
+\hline
+{\em \+\_\+stages\+\_\+duration} & vector of duration intervals between commands \\
+\hline
+{\em \+\_\+is\+\_\+rounded} & defines should timer resume the cycle then all iterasion has been passed\+: \textquotesingle{}true\textquotesingle{} -\/ should; \textquotesingle{}false\textquotesingle{} -\/shouldn\textquotesingle{}t \\
+\hline
+{\em \+\_\+stages} & vector of stages(commands) through which observables objects should pass \\
+\hline
+{\em \+\_\+duration} & pointer to the variable containing information about level time \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Timer.\+h\item 
+\hyperlink{_timer_8h}{Timer.\+h}\item 
 Timer.\+cpp\end{DoxyCompactItemize}

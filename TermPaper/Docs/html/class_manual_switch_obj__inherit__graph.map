@@ -1,4 +1,0 @@
-<map id="ManualSwitchObj" name="ManualSwitchObj">
-<area shape="rect" id="node2" href="$class_manual_platform.html" title="{ManualPlatform\n|&#45; node_number\land 2 more...\l|+ ManualPlatform()\land 5 more...\l}" alt="" coords="5,145,137,252"/>
-<area shape="rect" id="node3" href="$class_revolute_bridge.html" title="{RevoluteBridge\n|&#45; motor_speed\land 2 more...\l|+ RevoluteBridge()\land 3 more...\l}" alt="" coords="162,145,290,252"/>
-</map>

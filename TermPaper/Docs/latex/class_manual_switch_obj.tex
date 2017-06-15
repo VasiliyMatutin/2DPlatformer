@@ -2,7 +2,17 @@
 \label{class_manual_switch_obj}\index{Manual\+Switch\+Obj@{Manual\+Switch\+Obj}}
 
 
-Collaboration diagram for Manual\+Switch\+Obj\+:\nopagebreak
+Based entity for objects that can be activated by the sensor.  
+
+
+
+
+{\ttfamily \#include $<$Manual\+Switch\+Obj.\+h$>$}
+
+
+
+Collaboration diagram for Manual\+Switch\+Obj\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,21 +22,68 @@ Collaboration diagram for Manual\+Switch\+Obj\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_manual_switch_obj_a138301db593d2b231bad0298a38e1680}\label{class_manual_switch_obj_a138301db593d2b231bad0298a38e1680}} 
-virtual void {\bfseries make\+Action} (Action)
-\item 
-\mbox{\Hypertarget{class_manual_switch_obj_a4d6cc0a3de424ab6bf4665eeb0f639af}\label{class_manual_switch_obj_a4d6cc0a3de424ab6bf4665eeb0f639af}} 
-virtual bool {\bfseries is\+Active} ()
-\end{DoxyCompactItemize}
+virtual void \hyperlink{class_manual_switch_obj_a4d4a826fb8211a787f158b2973f843ae}{make\+Action} (\hyperlink{_manual_switch_obj_8h_a8bb1ef53467e4f61410d12822d922498}{Action} action)
+\begin{DoxyCompactList}\small\item\em causes the object to make some action \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_manual_switch_obj_a4d6cc0a3de424ab6bf4665eeb0f639af}{is\+Active} ()
+\begin{DoxyCompactList}\small\item\em defines the state of the object \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_manual_switch_obj_aa1d16c8a1740f4dc3152470088154f97}\label{class_manual_switch_obj_aa1d16c8a1740f4dc3152470088154f97}} 
-bool {\bfseries is\+\_\+active} = false
-\end{DoxyCompactItemize}
+bool \hyperlink{class_manual_switch_obj_aa1d16c8a1740f4dc3152470088154f97}{is\+\_\+active} = false
+\begin{DoxyCompactList}\small\item\em defines the state of the object \textquotesingle{}true\textquotesingle{} -\/ moves \textquotesingle{}false\textquotesingle{} -\/ doesn\textquotesingle{}t move \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Based entity for objects that can be activated by the sensor. 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017 
+\end{DoxyDate}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_manual_switch_obj_a4d6cc0a3de424ab6bf4665eeb0f639af}\label{class_manual_switch_obj_a4d6cc0a3de424ab6bf4665eeb0f639af}} 
+\index{Manual\+Switch\+Obj@{Manual\+Switch\+Obj}!is\+Active@{is\+Active}}
+\index{is\+Active@{is\+Active}!Manual\+Switch\+Obj@{Manual\+Switch\+Obj}}
+\subsubsection{\texorpdfstring{is\+Active()}{isActive()}}
+{\footnotesize\ttfamily bool Manual\+Switch\+Obj\+::is\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+defines the state of the object 
+
+\begin{DoxyReturn}{Returns}
+\textquotesingle{}true\textquotesingle{} -\/ moves \textquotesingle{}false\textquotesingle{} -\/ doesn\textquotesingle{}t move 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_manual_switch_obj_a4d4a826fb8211a787f158b2973f843ae}\label{class_manual_switch_obj_a4d4a826fb8211a787f158b2973f843ae}} 
+\index{Manual\+Switch\+Obj@{Manual\+Switch\+Obj}!make\+Action@{make\+Action}}
+\index{make\+Action@{make\+Action}!Manual\+Switch\+Obj@{Manual\+Switch\+Obj}}
+\subsubsection{\texorpdfstring{make\+Action()}{makeAction()}}
+{\footnotesize\ttfamily void Manual\+Switch\+Obj\+::make\+Action (\begin{DoxyParamCaption}\item[{\hyperlink{_manual_switch_obj_8h_a8bb1ef53467e4f61410d12822d922498}{Action}}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+causes the object to make some action 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & what necessary to make \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_manual_platform_ad7ae2aac108330a84246e3337fb5af81}{Manual\+Platform}, and \hyperlink{class_revolute_bridge_aad7a57a94ab4bd41cd4e1da48d627d00}{Revolute\+Bridge}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Manual\+Switch\+Obj.\+h\item 
+\hyperlink{_manual_switch_obj_8h}{Manual\+Switch\+Obj.\+h}\item 
 Manual\+Switch\+Obj.\+cpp\end{DoxyCompactItemize}

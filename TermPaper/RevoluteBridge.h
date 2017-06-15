@@ -8,7 +8,6 @@
 */
 
 #pragma once
-#include "ContactObject.h"
 #include "ManualSwitchObj.h"
 #include "NonStaticObj.h"
 
@@ -30,17 +29,10 @@ public:
 	\param _motor_speed speed of bridge rotation
 	*/
 	RevoluteBridge(b2Body* _body, Object* _object, b2RevoluteJoint* _bridge_joint, double _motor_speed);
-	/*!
-	\brief causes the bridge to make some action
-	\param action what necessary to make (types of the action see in enum Action)
-	*/
+	///inhereted from ManualSwitchObj class
 	void makeAction(Action action);
-	/*!
-	\brief destroy the bridge
-	*/
+	///inhereted from NonStaticObj class
 	bool destroy();
-	/*!
-	\brief inhereted from NonStaticObj class
-	*/
+	///inhereted from NonStaticObj class
 	void update();
 };

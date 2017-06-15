@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['player',['player',['../class_player_sensor.html#a28ca9f490022e0473064290956fe6852',1,'PlayerSensor']]],
-  ['player_5fname',['player_name',['../class_player_u_i.html#ab9651a40a71fc4c84fad8e3d626a3386',1,'PlayerUI']]],
-  ['player_5ftype',['player_type',['../class_player_u_i.html#a97dbafa8c5c0a651d62d25abbca726a1',1,'PlayerUI']]],
-  ['point_5fiter',['point_iter',['../class_platform.html#a5cffd298e38b51b6a079721d9ddafd1a',1,'Platform']]]
+  ['object',['object',['../class_bonus.html#a7493d5e3afda12e197c5505a66a1c7a1',1,'Bonus::object()'],['../class_lever.html#aee2d6a9e2fc7ff31a9d8eea2f98b7e32',1,'Lever::object()'],['../class_non_static_obj.html#a61a8004d502132c7a13258e945300a5e',1,'NonStaticObj::object()'],['../class_visible_sensor.html#a933e07d2186c63f9333778a213dd0cd5',1,'VisibleSensor::object()']]],
+  ['observables',['observables',['../class_lever.html#ae7161c7fb8bc611f7d4cc3525d406e81',1,'Lever::observables()'],['../class_sensor.html#a3056529f52d9af83b78bc7ca7e2e7ef2',1,'Sensor::observables()'],['../class_timer.html#acf215281063a8be431d810725a804224',1,'Timer::observables()']]],
+  ['ok_5fbutton',['ok_button',['../class_error_window.html#aa155c8753f726ace716eabca851255dc',1,'ErrorWindow']]],
+  ['on_5fground',['on_ground',['../class_player.html#a2dc679f61d4728895221afb567aede2f',1,'Player']]]
 ];

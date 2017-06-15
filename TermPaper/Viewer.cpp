@@ -59,7 +59,7 @@ void Viewer::handleViewerEvent(ViewEvents ev)
 	case ViewEvents::WINRESIZE:
 		if (!display_list.empty())
 		{
-			display_list.back()->changeScale(window->getSize().x / X_WIN_SIZE, window->getSize().y / Y_WIN_SIZE);
+			display_list.back()->changeScale();
 		}
 		break;
 	}

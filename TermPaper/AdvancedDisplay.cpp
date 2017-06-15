@@ -57,7 +57,7 @@ AdvancedDisplay::AdvancedDisplay(Layer* _layer) : Display(_layer)
 	viewUI.reset(sf::FloatRect(0, 0, max_size.x, max_size.y));
 }
 
-void AdvancedDisplay::changeScale(double x, double y)
+void AdvancedDisplay::changeScale()
 {
 	sf::Vector2u win_size = window->getSize();
 	layer->getLayerSize(&l_width, &l_heigth);

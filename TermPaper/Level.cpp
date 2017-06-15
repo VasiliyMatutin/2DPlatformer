@@ -189,7 +189,7 @@ std::string Level::fileExistsTest(const std::string& name)
 	return name;
 }
 
-bool Level::loadLevel(std::string filename)
+void Level::loadLevel(std::string filename)
 {
 	//load XML-file with level description
 	tinyxml2::XMLDocument level_file;
@@ -228,8 +228,6 @@ bool Level::loadLevel(std::string filename)
 	}
 
 	addUIToLevel();
-
-	return 1;
 }
 
 void Level::loadMap(tinyxml2::XMLElement *map)
@@ -640,7 +638,7 @@ void Level::parseTimer(tinyxml2::XMLElement * object, std::vector<Action> stages
 	{
 		stages_duration.push_back(stod(it));
 	}
-	Timer* timer = new Timer(observables, stages_duration, is_rounded, stages);
+	Timer* timer = new Timer(observables, stages_duration, is_rounded, stages, &level_time);
 	storage.timer_list.push_back(timer);
 }
 
@@ -695,15 +693,15 @@ void Level::parseBridge(tinyxml2::XMLElement * object, b2Body * body, b2BodyDef*
 		std::string init_state = checkElementExistence(findAmongSiblings(property, "init_state"), "Can't find init_state for bridge")->Attribute("value");
 		if (init_state == std::string("up"))
 		{
-			rb->makeAction(Action::Up);
+			rb->makeAction(Action::UP);
 		}
 		else if (init_state == std::string("down"))
 		{
-			rb->makeAction(Action::Down);
+			rb->makeAction(Action::DOWN);
 		}
 		else
 		{
-			rb->makeAction(Action::Off);
+			rb->makeAction(Action::OFF);
 		}
 	}
 	else
@@ -836,15 +834,15 @@ std::vector<Action> Level::sensorStagesParser(std::vector<std::string> stages)
 	{
 		if (it == std::string("up"))
 		{
-			result.push_back(Action::Up);
+			result.push_back(Action::UP);
 		}
 		else if (it == std::string("down"))
 		{
-			result.push_back(Action::Down);
+			result.push_back(Action::DOWN);
 		}
 		else if (it == std::string("off"))
 		{
-			result.push_back(Action::Off);
+			result.push_back(Action::OFF);
 		}
 	}
 	return result;

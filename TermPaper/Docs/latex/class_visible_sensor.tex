@@ -2,58 +2,86 @@
 \label{class_visible_sensor}\index{Visible\+Sensor@{Visible\+Sensor}}
 
 
-Collaboration diagram for Visible\+Sensor\+:\nopagebreak
+Visible trigger that can activate observables \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} classes.  
+
+
+
+
+{\ttfamily \#include $<$Visible\+Sensor.\+h$>$}
+
+
+
+Collaboration diagram for Visible\+Sensor\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=306pt]{class_visible_sensor__coll__graph}
+\includegraphics[width=308pt]{class_visible_sensor__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_visible_sensor_a45c102db9ef942dcb5bfc5dba9030add}\label{class_visible_sensor_a45c102db9ef942dcb5bfc5dba9030add}} 
-{\bfseries Visible\+Sensor} (std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$$>$ \+\_\+observables, bool \+\_\+repeat\+\_\+allowed, bool is\+\_\+keeping, b2\+Body $\ast$\+\_\+body, \hyperlink{class_object}{Object} $\ast$\+\_\+object, std\+::vector$<$ Action $>$ \+\_\+stages)
-\end{DoxyCompactItemize}
+\hyperlink{class_visible_sensor_a74f292ee517c8a41afe163cef670c707}{Visible\+Sensor} (std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$$>$ \+\_\+observables, bool \+\_\+repeat\+\_\+allowed, bool \+\_\+is\+\_\+keeping, b2\+Body $\ast$\+\_\+body, \hyperlink{class_object}{Object} $\ast$\+\_\+object, std\+::vector$<$ \hyperlink{_manual_switch_obj_8h_a8bb1ef53467e4f61410d12822d922498}{Action} $>$ \+\_\+stages)
+\begin{DoxyCompactList}\small\item\em Defined constructor for this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_visible_sensor_a63bcb9da7556a6356cca3b08f7808bd8}{contact\+Event} (b2\+Contact $\ast$, bool)
-\begin{DoxyCompactList}\small\item\em Define object reaction to the collision in box2d world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_visible_sensor_a33adba65182352abad1f71646b9ecfa5}\label{class_visible_sensor_a33adba65182352abad1f71646b9ecfa5}} 
+void \hyperlink{class_visible_sensor_a33adba65182352abad1f71646b9ecfa5}{contact\+Event} (b2\+Contact $\ast$contact, bool is\+\_\+begin)
+\begin{DoxyCompactList}\small\item\em inherited from \hyperlink{class_contact_object}{Contact\+Object} class \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_visible_sensor_a933e07d2186c63f9333778a213dd0cd5}\label{class_visible_sensor_a933e07d2186c63f9333778a213dd0cd5}} 
-\hyperlink{class_object}{Object} $\ast$ {\bfseries object}
-\end{DoxyCompactItemize}
+\hyperlink{class_object}{Object} $\ast$ \hyperlink{class_visible_sensor_a933e07d2186c63f9333778a213dd0cd5}{object}
+\begin{DoxyCompactList}\small\item\em pointer to the \hyperlink{class_object}{Object} class assigned to this trigger \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
-\subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_visible_sensor_a63bcb9da7556a6356cca3b08f7808bd8}\label{class_visible_sensor_a63bcb9da7556a6356cca3b08f7808bd8}} 
-\index{Visible\+Sensor@{Visible\+Sensor}!contact\+Event@{contact\+Event}}
-\index{contact\+Event@{contact\+Event}!Visible\+Sensor@{Visible\+Sensor}}
-\subsubsection{\texorpdfstring{contact\+Event()}{contactEvent()}}
-{\footnotesize\ttfamily void Visible\+Sensor\+::contact\+Event (\begin{DoxyParamCaption}\item[{b2\+Contact $\ast$}]{contact,  }\item[{bool}]{is\+Begin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+\subsection{Detailed Description}
+Visible trigger that can activate observables \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} classes. 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_visible_sensor_a74f292ee517c8a41afe163cef670c707}\label{class_visible_sensor_a74f292ee517c8a41afe163cef670c707}} 
+\index{Visible\+Sensor@{Visible\+Sensor}!Visible\+Sensor@{Visible\+Sensor}}
+\index{Visible\+Sensor@{Visible\+Sensor}!Visible\+Sensor@{Visible\+Sensor}}
+\subsubsection{\texorpdfstring{Visible\+Sensor()}{VisibleSensor()}}
+{\footnotesize\ttfamily Visible\+Sensor\+::\+Visible\+Sensor (\begin{DoxyParamCaption}\item[{std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$$>$}]{\+\_\+observables,  }\item[{bool}]{\+\_\+repeat\+\_\+allowed,  }\item[{bool}]{\+\_\+is\+\_\+keeping,  }\item[{b2\+Body $\ast$}]{\+\_\+body,  }\item[{\hyperlink{class_object}{Object} $\ast$}]{\+\_\+object,  }\item[{std\+::vector$<$ \hyperlink{_manual_switch_obj_8h_a8bb1ef53467e4f61410d12822d922498}{Action} $>$}]{\+\_\+stages }\end{DoxyParamCaption})}
 
 
 
-Define object reaction to the collision in box2d world. 
+Defined constructor for this class. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em contact} & pointer to box2d b2\+Contact class \\
+{\em \+\_\+observables} & list of observables objects \\
 \hline
-{\em is\+Begin} & \textquotesingle{}false\textquotesingle{} -\/ end of the collision; \textquotesingle{}true\textquotesingle{} -\/ start of the collision \\
+{\em \+\_\+repeat\+\_\+allowed} & determines whether it is possible to send next command to the observables objects when they doesn\textquotesingle{}t complete previous action\+: \textquotesingle{}true\textquotesingle{} -\/ possible; \textquotesingle{}false\textquotesingle{} -\/ impossible \\
+\hline
+{\em \+\_\+is\+\_\+keeping} & determines will be next command send afther end of the contact(end of the hold button)\+: \textquotesingle{}true\textquotesingle{} -\/ will be; \textquotesingle{}false\textquotesingle{} -\/ won\textquotesingle{}t be \\
+\hline
+{\em \+\_\+body} & pointer to the box2d body assigned to this sensor \\
+\hline
+{\em \+\_\+object} & pointer to the \hyperlink{class_object}{Object} class assigned to this sensor \\
+\hline
+{\em \+\_\+stages} & vector of stages(commands) through which observables objects should pass \\
 \hline
 \end{DoxyParams}
 
 
-Reimplemented from \hyperlink{class_sensor_a08bfa36c84277677f3bd5fb14127fca7}{Sensor}.
-
-
-
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Visible\+Sensor.\+h\item 
+\hyperlink{_visible_sensor_8h}{Visible\+Sensor.\+h}\item 
 Visible\+Sensor.\+cpp\end{DoxyCompactItemize}

@@ -19,14 +19,14 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=206pt]{_level_8h__dep__incl}
+\includegraphics[width=131pt]{_level_8h__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{class_level}{Level}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Contains all information about game level. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -37,13 +37,14 @@ enum \hyperlink{_level_8h_acf0ce63e34327e5bc336f9fe3d2d47a2}{Body\+Type} \{ \new
 \hyperlink{_level_8h_acf0ce63e34327e5bc336f9fe3d2d47a2a72700b6ac14b90435377dcbaeb77e908}{Body\+Type\+::\+S\+E\+N\+S\+OR}, 
 \newline
 \hyperlink{_level_8h_acf0ce63e34327e5bc336f9fe3d2d47a2a707e893c1db5175432f341eb5d6d1ca7}{Body\+Type\+::\+D\+A\+N\+G\+ER}
- \}
+ \}\begin{DoxyCompactList}\small\item\em Type of the $\ast$.tmx object group. \end{DoxyCompactList}
 \item 
-enum \hyperlink{_level_8h_aa8656d997df416abfebfcf4b3041f01c}{Sides} \{ \hyperlink{_level_8h_aa8656d997df416abfebfcf4b3041f01cafbaedde498cdead4f2780217646e9ba1}{Sides\+::\+UP}, 
-\hyperlink{_level_8h_aa8656d997df416abfebfcf4b3041f01cac4e0e4e3118472beeb2ae75827450f1f}{Sides\+::\+D\+O\+WN}, 
-\hyperlink{_level_8h_aa8656d997df416abfebfcf4b3041f01ca21507b40c80068eda19865706fdc2403}{Sides\+::\+R\+I\+G\+HT}, 
-\hyperlink{_level_8h_aa8656d997df416abfebfcf4b3041f01ca684d325a7303f52e64011467ff5c5758}{Sides\+::\+L\+E\+FT}
- \}
+\mbox{\Hypertarget{_level_8h_aa8656d997df416abfebfcf4b3041f01c}\label{_level_8h_aa8656d997df416abfebfcf4b3041f01c}} 
+enum \hyperlink{_level_8h_aa8656d997df416abfebfcf4b3041f01c}{Sides} \{ {\bfseries UP}, 
+{\bfseries D\+O\+WN}, 
+{\bfseries R\+I\+G\+HT}, 
+{\bfseries L\+E\+FT}
+ \}\begin{DoxyCompactList}\small\item\em Side of player sensor. \end{DoxyCompactList}
 \end{DoxyCompactItemize}
 
 
@@ -54,49 +55,29 @@ enum \hyperlink{_level_8h_aa8656d997df416abfebfcf4b3041f01c}{Sides} \{ \hyperlin
 \subsubsection{\texorpdfstring{Body\+Type}{BodyType}}
 {\footnotesize\ttfamily enum \hyperlink{_level_8h_acf0ce63e34327e5bc336f9fe3d2d47a2}{Body\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
 
+
+
+Type of the $\ast$.tmx object group. 
+
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+T\+IC@{S\+T\+A\+T\+IC}!Level.\+h@{Level.\+h}}\index{Level.\+h@{Level.\+h}!S\+T\+A\+T\+IC@{S\+T\+A\+T\+IC}}}\mbox{\Hypertarget{_level_8h_acf0ce63e34327e5bc336f9fe3d2d47a2afe6f99ef1ec99efbdc19a9786cf1facc}\label{_level_8h_acf0ce63e34327e5bc336f9fe3d2d47a2afe6f99ef1ec99efbdc19a9786cf1facc}} 
-S\+T\+A\+T\+IC&\\
+S\+T\+A\+T\+IC&simple static bodies \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{K\+I\+N\+E\+M\+A\+T\+IC@{K\+I\+N\+E\+M\+A\+T\+IC}!Level.\+h@{Level.\+h}}\index{Level.\+h@{Level.\+h}!K\+I\+N\+E\+M\+A\+T\+IC@{K\+I\+N\+E\+M\+A\+T\+IC}}}\mbox{\Hypertarget{_level_8h_acf0ce63e34327e5bc336f9fe3d2d47a2a019b36cb8fbb31ba1f7c7b7595eb964d}\label{_level_8h_acf0ce63e34327e5bc336f9fe3d2d47a2a019b36cb8fbb31ba1f7c7b7595eb964d}} 
-K\+I\+N\+E\+M\+A\+T\+IC&\\
+K\+I\+N\+E\+M\+A\+T\+IC&force movable kinematic bodies \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{D\+Y\+N\+A\+M\+IC@{D\+Y\+N\+A\+M\+IC}!Level.\+h@{Level.\+h}}\index{Level.\+h@{Level.\+h}!D\+Y\+N\+A\+M\+IC@{D\+Y\+N\+A\+M\+IC}}}\mbox{\Hypertarget{_level_8h_acf0ce63e34327e5bc336f9fe3d2d47a2a0fcc90da4811c877ba9f9c12f7d60bc9}\label{_level_8h_acf0ce63e34327e5bc336f9fe3d2d47a2a0fcc90da4811c877ba9f9c12f7d60bc9}} 
-D\+Y\+N\+A\+M\+IC&\\
+D\+Y\+N\+A\+M\+IC&common dynamic bodies \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{S\+E\+N\+S\+OR@{S\+E\+N\+S\+OR}!Level.\+h@{Level.\+h}}\index{Level.\+h@{Level.\+h}!S\+E\+N\+S\+OR@{S\+E\+N\+S\+OR}}}\mbox{\Hypertarget{_level_8h_acf0ce63e34327e5bc336f9fe3d2d47a2a72700b6ac14b90435377dcbaeb77e908}\label{_level_8h_acf0ce63e34327e5bc336f9fe3d2d47a2a72700b6ac14b90435377dcbaeb77e908}} 
-S\+E\+N\+S\+OR&\\
+S\+E\+N\+S\+OR&see \hyperlink{class_sensor}{Sensor} and similar \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{D\+A\+N\+G\+ER@{D\+A\+N\+G\+ER}!Level.\+h@{Level.\+h}}\index{Level.\+h@{Level.\+h}!D\+A\+N\+G\+ER@{D\+A\+N\+G\+ER}}}\mbox{\Hypertarget{_level_8h_acf0ce63e34327e5bc336f9fe3d2d47a2a707e893c1db5175432f341eb5d6d1ca7}\label{_level_8h_acf0ce63e34327e5bc336f9fe3d2d47a2a707e893c1db5175432f341eb5d6d1ca7}} 
-D\+A\+N\+G\+ER&\\
-\hline
-
-\end{DoxyEnumFields}
-\mbox{\Hypertarget{_level_8h_aa8656d997df416abfebfcf4b3041f01c}\label{_level_8h_aa8656d997df416abfebfcf4b3041f01c}} 
-\index{Level.\+h@{Level.\+h}!Sides@{Sides}}
-\index{Sides@{Sides}!Level.\+h@{Level.\+h}}
-\subsubsection{\texorpdfstring{Sides}{Sides}}
-{\footnotesize\ttfamily enum \hyperlink{_level_8h_aa8656d997df416abfebfcf4b3041f01c}{Sides}\hspace{0.3cm}{\ttfamily [strong]}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UP@{UP}!Level.\+h@{Level.\+h}}\index{Level.\+h@{Level.\+h}!UP@{UP}}}\mbox{\Hypertarget{_level_8h_aa8656d997df416abfebfcf4b3041f01cafbaedde498cdead4f2780217646e9ba1}\label{_level_8h_aa8656d997df416abfebfcf4b3041f01cafbaedde498cdead4f2780217646e9ba1}} 
-UP&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+O\+WN@{D\+O\+WN}!Level.\+h@{Level.\+h}}\index{Level.\+h@{Level.\+h}!D\+O\+WN@{D\+O\+WN}}}\mbox{\Hypertarget{_level_8h_aa8656d997df416abfebfcf4b3041f01cac4e0e4e3118472beeb2ae75827450f1f}\label{_level_8h_aa8656d997df416abfebfcf4b3041f01cac4e0e4e3118472beeb2ae75827450f1f}} 
-D\+O\+WN&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+I\+G\+HT@{R\+I\+G\+HT}!Level.\+h@{Level.\+h}}\index{Level.\+h@{Level.\+h}!R\+I\+G\+HT@{R\+I\+G\+HT}}}\mbox{\Hypertarget{_level_8h_aa8656d997df416abfebfcf4b3041f01ca21507b40c80068eda19865706fdc2403}\label{_level_8h_aa8656d997df416abfebfcf4b3041f01ca21507b40c80068eda19865706fdc2403}} 
-R\+I\+G\+HT&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+E\+FT@{L\+E\+FT}!Level.\+h@{Level.\+h}}\index{Level.\+h@{Level.\+h}!L\+E\+FT@{L\+E\+FT}}}\mbox{\Hypertarget{_level_8h_aa8656d997df416abfebfcf4b3041f01ca684d325a7303f52e64011467ff5c5758}\label{_level_8h_aa8656d997df416abfebfcf4b3041f01ca684d325a7303f52e64011467ff5c5758}} 
-L\+E\+FT&\\
+D\+A\+N\+G\+ER&see \hyperlink{class_danger_object}{Danger\+Object} \\
 \hline
 
 \end{DoxyEnumFields}

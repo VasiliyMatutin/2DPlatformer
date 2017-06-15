@@ -2,7 +2,17 @@
 \label{class_non_static_obj}\index{Non\+Static\+Obj@{Non\+Static\+Obj}}
 
 
-Collaboration diagram for Non\+Static\+Obj\+:\nopagebreak
+Typical object (an entity) that participates in physics simulation.  
+
+
+
+
+{\ttfamily \#include $<$Non\+Static\+Obj.\+h$>$}
+
+
+
+Collaboration diagram for Non\+Static\+Obj\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,68 +22,114 @@ Collaboration diagram for Non\+Static\+Obj\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_non_static_obj_a0295a381b988a0d0ab17eb3dcc229704}\label{class_non_static_obj_a0295a381b988a0d0ab17eb3dcc229704}} 
-{\bfseries Non\+Static\+Obj} (b2\+Body $\ast$\+\_\+body, \hyperlink{class_object}{Object} $\ast$\+\_\+object, Object\+Type type)
+\hyperlink{class_non_static_obj_a0295a381b988a0d0ab17eb3dcc229704}{Non\+Static\+Obj} (b2\+Body $\ast$\+\_\+body, \hyperlink{class_object}{Object} $\ast$\+\_\+object, \hyperlink{_non_static_obj_8h_a842c5e2e69277690b064bf363c017980}{Object\+Type} type)
+\begin{DoxyCompactList}\small\item\em Defined constructor for this class. \end{DoxyCompactList}\item 
+\hyperlink{_non_static_obj_8h_a842c5e2e69277690b064bf363c017980}{Object\+Type} \hyperlink{class_non_static_obj_a01e6db05d41ec62cb5c258b5069b083e}{who\+AmI} ()
+\begin{DoxyCompactList}\small\item\em Allow to define type of an assigned dynamic object. \end{DoxyCompactList}\item 
+b2\+Body $\ast$ \hyperlink{class_non_static_obj_a55713a3f848d7629176398333e84a015}{get\+Body} ()
 \item 
-void \hyperlink{class_non_static_obj_ae129119384cf9df2b7b1a7849b6112de}{contact\+Event} (b2\+Contact $\ast$, bool)
-\begin{DoxyCompactList}\small\item\em Define object reaction to the collision in box2d world. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_non_static_obj_a01e6db05d41ec62cb5c258b5069b083e}\label{class_non_static_obj_a01e6db05d41ec62cb5c258b5069b083e}} 
-Object\+Type {\bfseries who\+AmI} ()
-\item 
-\mbox{\Hypertarget{class_non_static_obj_a55713a3f848d7629176398333e84a015}\label{class_non_static_obj_a55713a3f848d7629176398333e84a015}} 
-b2\+Body $\ast$ {\bfseries get\+Body} ()
-\item 
-\mbox{\Hypertarget{class_non_static_obj_abdf0a375a987d99795bd298a1c84940c}\label{class_non_static_obj_abdf0a375a987d99795bd298a1c84940c}} 
-\hyperlink{class_object}{Object} $\ast$ {\bfseries get\+Object} ()
+\hyperlink{class_object}{Object} $\ast$ \hyperlink{class_non_static_obj_abdf0a375a987d99795bd298a1c84940c}{get\+Object} ()
 \item 
 \mbox{\Hypertarget{class_non_static_obj_a6a67af264af5093665ca91273c9c6f34}\label{class_non_static_obj_a6a67af264af5093665ca91273c9c6f34}} 
-virtual void {\bfseries update} ()
-\item 
+virtual void \hyperlink{class_non_static_obj_a6a67af264af5093665ca91273c9c6f34}{update} ()
+\begin{DoxyCompactList}\small\item\em update entity state (position in the world, speed etc.) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_non_static_obj_a197ed3470e1a7b4f10b1e5567fdc5253}\label{class_non_static_obj_a197ed3470e1a7b4f10b1e5567fdc5253}} 
-virtual bool {\bfseries destroy} ()
-\end{DoxyCompactItemize}
+virtual bool \hyperlink{class_non_static_obj_a197ed3470e1a7b4f10b1e5567fdc5253}{destroy} ()
+\begin{DoxyCompactList}\small\item\em destroy the entity \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_non_static_obj_af2a40f79983a88c185c0bf9977e2d50d}\label{class_non_static_obj_af2a40f79983a88c185c0bf9977e2d50d}} 
+void \hyperlink{class_non_static_obj_af2a40f79983a88c185c0bf9977e2d50d}{contact\+Event} (b2\+Contact $\ast$contact, bool is\+\_\+begin)
+\begin{DoxyCompactList}\small\item\em inherited from \hyperlink{class_contact_object}{Contact\+Object} class \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_non_static_obj_a42cf308f091557d0d8a8e6ae8ee0fcf1}\label{class_non_static_obj_a42cf308f091557d0d8a8e6ae8ee0fcf1}} 
-b2\+Body $\ast$ {\bfseries body}
-\item 
+b2\+Body $\ast$ \hyperlink{class_non_static_obj_a42cf308f091557d0d8a8e6ae8ee0fcf1}{body}
+\begin{DoxyCompactList}\small\item\em pointer to the box2d body assigned to this entity \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_non_static_obj_a61a8004d502132c7a13258e945300a5e}\label{class_non_static_obj_a61a8004d502132c7a13258e945300a5e}} 
-\hyperlink{class_object}{Object} $\ast$ {\bfseries object}
-\item 
+\hyperlink{class_object}{Object} $\ast$ \hyperlink{class_non_static_obj_a61a8004d502132c7a13258e945300a5e}{object}
+\begin{DoxyCompactList}\small\item\em pointer to the \hyperlink{class_object}{Object} class assigned to this entity \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_non_static_obj_a41c92f702f36f05877e74fef1fcb3a71}\label{class_non_static_obj_a41c92f702f36f05877e74fef1fcb3a71}} 
-bool {\bfseries is\+\_\+valid}
-\item 
+bool \hyperlink{class_non_static_obj_a41c92f702f36f05877e74fef1fcb3a71}{is\+\_\+valid}
+\begin{DoxyCompactList}\small\item\em defines the state of the entity \textquotesingle{}true\textquotesingle{} -\/ participate in physics simulation \textquotesingle{}false\textquotesingle{} -\/ doesn\textquotesingle{}t paticipate \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_non_static_obj_a4328e86d88a94270b88acb0d3965112b}\label{class_non_static_obj_a4328e86d88a94270b88acb0d3965112b}} 
-Object\+Type {\bfseries my\+\_\+type}
-\end{DoxyCompactItemize}
+\hyperlink{_non_static_obj_8h_a842c5e2e69277690b064bf363c017980}{Object\+Type} \hyperlink{class_non_static_obj_a4328e86d88a94270b88acb0d3965112b}{my\+\_\+type}
+\begin{DoxyCompactList}\small\item\em define type of an dynamic object assigned to this entity \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_non_static_obj_ae129119384cf9df2b7b1a7849b6112de}\label{class_non_static_obj_ae129119384cf9df2b7b1a7849b6112de}} 
-\index{Non\+Static\+Obj@{Non\+Static\+Obj}!contact\+Event@{contact\+Event}}
-\index{contact\+Event@{contact\+Event}!Non\+Static\+Obj@{Non\+Static\+Obj}}
-\subsubsection{\texorpdfstring{contact\+Event()}{contactEvent()}}
-{\footnotesize\ttfamily void Non\+Static\+Obj\+::contact\+Event (\begin{DoxyParamCaption}\item[{b2\+Contact $\ast$}]{contact,  }\item[{bool}]{is\+Begin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\subsection{Detailed Description}
+Typical object (an entity) that participates in physics simulation. 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017
+\end{DoxyDate}
+An entity that have only base properties (can\textquotesingle{}t be controlled by the player, fully rely on box2d world rules) 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_non_static_obj_a0295a381b988a0d0ab17eb3dcc229704}\label{class_non_static_obj_a0295a381b988a0d0ab17eb3dcc229704}} 
+\index{Non\+Static\+Obj@{Non\+Static\+Obj}!Non\+Static\+Obj@{Non\+Static\+Obj}}
+\index{Non\+Static\+Obj@{Non\+Static\+Obj}!Non\+Static\+Obj@{Non\+Static\+Obj}}
+\subsubsection{\texorpdfstring{Non\+Static\+Obj()}{NonStaticObj()}}
+{\footnotesize\ttfamily Non\+Static\+Obj\+::\+Non\+Static\+Obj (\begin{DoxyParamCaption}\item[{b2\+Body $\ast$}]{\+\_\+body,  }\item[{\hyperlink{class_object}{Object} $\ast$}]{\+\_\+object,  }\item[{\hyperlink{_non_static_obj_8h_a842c5e2e69277690b064bf363c017980}{Object\+Type}}]{type }\end{DoxyParamCaption})}
 
 
 
-Define object reaction to the collision in box2d world. 
+Defined constructor for this class. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em contact} & pointer to box2d b2\+Contact class \\
+{\em \+\_\+body} & pointer to the box2d body assigned to this entity \\
 \hline
-{\em is\+Begin} & \textquotesingle{}false\textquotesingle{} -\/ end of the collision; \textquotesingle{}true\textquotesingle{} -\/ start of the collision \\
+{\em \+\_\+object} & pointer to the \hyperlink{class_object}{Object} class assigned to this entity \\
+\hline
+{\em type} & type from Object\+Type enum of an assigned dynamic object \\
 \hline
 \end{DoxyParams}
 
 
-Implements \hyperlink{class_contact_object_a53d2dfc1d9c2821e9c62e80ce62a6435}{Contact\+Object}.
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_non_static_obj_a55713a3f848d7629176398333e84a015}\label{class_non_static_obj_a55713a3f848d7629176398333e84a015}} 
+\index{Non\+Static\+Obj@{Non\+Static\+Obj}!get\+Body@{get\+Body}}
+\index{get\+Body@{get\+Body}!Non\+Static\+Obj@{Non\+Static\+Obj}}
+\subsubsection{\texorpdfstring{get\+Body()}{getBody()}}
+{\footnotesize\ttfamily b2\+Body $\ast$ Non\+Static\+Obj\+::get\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+\begin{DoxyReturn}{Returns}
+pointer to the box2d body assigned to this entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_non_static_obj_abdf0a375a987d99795bd298a1c84940c}\label{class_non_static_obj_abdf0a375a987d99795bd298a1c84940c}} 
+\index{Non\+Static\+Obj@{Non\+Static\+Obj}!get\+Object@{get\+Object}}
+\index{get\+Object@{get\+Object}!Non\+Static\+Obj@{Non\+Static\+Obj}}
+\subsubsection{\texorpdfstring{get\+Object()}{getObject()}}
+{\footnotesize\ttfamily \hyperlink{class_object}{Object} $\ast$ Non\+Static\+Obj\+::get\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+pointer to the \hyperlink{class_object}{Object} class assigned to this entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_non_static_obj_a01e6db05d41ec62cb5c258b5069b083e}\label{class_non_static_obj_a01e6db05d41ec62cb5c258b5069b083e}} 
+\index{Non\+Static\+Obj@{Non\+Static\+Obj}!who\+AmI@{who\+AmI}}
+\index{who\+AmI@{who\+AmI}!Non\+Static\+Obj@{Non\+Static\+Obj}}
+\subsubsection{\texorpdfstring{who\+Am\+I()}{whoAmI()}}
+{\footnotesize\ttfamily \hyperlink{_non_static_obj_8h_a842c5e2e69277690b064bf363c017980}{Object\+Type} Non\+Static\+Obj\+::who\+AmI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Allow to define type of an assigned dynamic object. 
+
+\begin{DoxyReturn}{Returns}
+type from Object\+Type enum of an assigned dynamic object 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Non\+Static\+Obj.\+h\item 
+\hyperlink{_non_static_obj_8h}{Non\+Static\+Obj.\+h}\item 
 Non\+Static\+Obj.\+cpp\end{DoxyCompactItemize}

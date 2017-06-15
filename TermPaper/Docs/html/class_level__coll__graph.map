@@ -1,8 +1,9 @@
 <map id="Level" name="Level">
-<area shape="rect" id="node2" href="$class_layer.html" title="{Layer\n|# unchangeable_objects\land 5 more...\l|+ ~Layer()\land 12 more...\l# Layer()\l}" alt="" coords="5,191,168,312"/>
-<area shape="rect" id="node3" href="$class_storage.html" title="{Storage\n|+ lever_list\land 7 more...\l|+ ~Storage()\l}" alt="" coords="192,205,291,297"/>
-<area shape="rect" id="node4" href="$class_strong_player.html" title="Contains information about strong characret. " alt="" coords="407,198,524,305"/>
-<area shape="rect" id="node5" href="$class_player.html" title="Parent class for DexterousPlayer and StrongPlayer classes. " alt="" coords="401,5,529,141"/>
-<area shape="rect" id="node7" href="$class_dexterous_player.html" title="Contains information about dexterous characret. " alt="" coords="548,213,687,290"/>
-<area shape="rect" id="node6" href="$class_my_contact_listener.html" title="Override for standart box2d ContactListener. " alt="" coords="711,198,868,305"/>
+<area shape="rect" id="node2" href="$class_layer.html" title="Determines a certain state of the model. " alt="" coords="148,219,255,325"/>
+<area shape="rect" id="node4" href="$class_storage.html" title="Class&#45;container which contains information about objects on the Level. " alt="" coords="280,233,374,311"/>
+<area shape="rect" id="node5" href="$class_strong_player.html" title="Contains information about strong characret. " alt="" coords="491,219,608,325"/>
+<area shape="rect" id="node6" href="$class_player.html" title="Parent class for DexterousPlayer and StrongPlayer classes. " alt="" coords="486,5,614,141"/>
+<area shape="rect" id="node9" href="$class_dexterous_player.html" title="Contains information about dexterous characret. " alt="" coords="632,233,771,311"/>
+<area shape="rect" id="node7" title="STL class. " alt="" coords="795,233,875,311"/>
+<area shape="rect" id="node8" href="$class_my_contact_listener.html" title="Override for standart box2d ContactListener. " alt="" coords="899,219,1056,325"/>
 </map>

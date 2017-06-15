@@ -17,17 +17,17 @@ void RevoluteBridge::makeAction(Action action)
 	}
 	switch (action)
 	{
-	case Action::Up:
+	case Action::UP:
 		joint->SetMotorSpeed(motor_speed);
 		joint->EnableMotor(1);
 		is_active = true;
 		break;
-	case Action::Down:
+	case Action::DOWN:
 		joint->SetMotorSpeed(-motor_speed);
 		joint->EnableMotor(1);
 		is_active = true;
 		break;
-	case Action::Off:
+	case Action::OFF:
 		joint->EnableMotor(0);
 		is_active = false;
 		break;

@@ -75,7 +75,7 @@ Display::Display(Layer * _layer):
 	loadDisplay();
 }
 
-void Display::changeScale(double x, double y)
+void Display::changeScale()
 {
 }
 

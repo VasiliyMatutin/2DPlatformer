@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Docs: Bonus.h File Reference</title>
+<title>JUST2D Platformer: Bonus.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Docs
+   <div id="projectname">JUST2D Platformer
    </div>
   </td>
  </tr>
@@ -59,13 +59,14 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">Bonus.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_contact_object_8h_source.html">ContactObject.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_player_8h_source.html">Player.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_level_box_8h_source.html">LevelBox.h</a>&quot;</code><br />
 <code>#include &lt;chrono&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Bonus.h:</div>
@@ -73,7 +74,7 @@ Include dependency graph for Bonus.h:</div>
 <div class="center"><img src="_bonus_8h__incl.png" border="0" usemap="#_bonus_8h" alt=""/></div>
 <map name="_bonus_8h" id="_bonus_8h">
 <area shape="rect" id="node2" href="_contact_object_8h.html" title="ContactObject.h" alt="" coords="5,80,121,107"/>
-<area shape="rect" id="node3" href="_player_8h.html" title="Player.h" alt="" coords="145,80,216,107"/>
+<area shape="rect" id="node3" href="_level_box_8h.html" title="LevelBox.h" alt="" coords="146,80,231,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -81,9 +82,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="_bonus_8h__dep__incl.png" border="0" usemap="#_bonus_8hdep" alt=""/></div>
 <map name="_bonus_8hdep" id="_bonus_8hdep">
-<area shape="rect" id="node2" href="_bonus_8cpp.html" title="Bonus.cpp" alt="" coords="5,80,89,107"/>
-<area shape="rect" id="node3" href="_level_storage_8h.html" title="LevelStorage.h" alt="" coords="114,80,221,107"/>
-<area shape="rect" id="node4" href="_player_8cpp.html" title="Player.cpp" alt="" coords="245,80,329,107"/>
+<area shape="rect" id="node2" href="_player_8h.html" title="Player.h" alt="" coords="5,80,76,107"/>
+<area shape="rect" id="node3" href="_level_storage_8h.html" title="LevelStorage.h" alt="" coords="101,80,207,107"/>
 </map>
 </div>
 </div>
@@ -92,8 +92,51 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonus.html">Bonus</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Some serum that have an impact to the hero.  <a href="class_bonus.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ad6d58ebabfbf9aa4181bfe97a5d8d984"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_bonus_8h.html#ad6d58ebabfbf9aa4181bfe97a5d8d984">BonusType</a> { <a class="el" href="_bonus_8h.html#ad6d58ebabfbf9aa4181bfe97a5d8d984a40222410c7347ec4b6bcaba3bcb21f3b">BonusType::JUMP</a>, 
+<a class="el" href="_bonus_8h.html#ad6d58ebabfbf9aa4181bfe97a5d8d984a855520d2a5b0b1a64b939e7e30889e2a">BonusType::RUN</a>, 
+<a class="el" href="_bonus_8h.html#ad6d58ebabfbf9aa4181bfe97a5d8d984a785a1e256fca0cd6be7b3dced4281845">BonusType::HEALTH</a>
+ }<tr class="memdesc:ad6d58ebabfbf9aa4181bfe97a5d8d984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of the bonus.  <a href="_bonus_8h.html#ad6d58ebabfbf9aa4181bfe97a5d8d984">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:ad6d58ebabfbf9aa4181bfe97a5d8d984"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ad6d58ebabfbf9aa4181bfe97a5d8d984"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6d58ebabfbf9aa4181bfe97a5d8d984">&#9670;&nbsp;</a></span>BonusType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_bonus_8h.html#ad6d58ebabfbf9aa4181bfe97a5d8d984">BonusType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Type of the bonus. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad6d58ebabfbf9aa4181bfe97a5d8d984a40222410c7347ec4b6bcaba3bcb21f3b"></a>JUMP&#160;</td><td class="fielddoc"><p>increase/decrease jump heigth </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad6d58ebabfbf9aa4181bfe97a5d8d984a855520d2a5b0b1a64b939e7e30889e2a"></a>RUN&#160;</td><td class="fielddoc"><p>increase/decrease speed </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad6d58ebabfbf9aa4181bfe97a5d8d984a785a1e256fca0cd6be7b3dced4281845"></a>HEALTH&#160;</td><td class="fielddoc"><p>increase/decrease healt </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

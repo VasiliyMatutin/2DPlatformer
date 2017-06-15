@@ -1,0 +1,100 @@
+\section*{This is a brief documentation for J\+U\+S\+T2D Platformer}
+
+\subsubsection*{How to run a game\+:}
+
+{\itshape Attention! This is Goofle\+Translated page}
+
+The application is supplied as a .7z archive. This software product does not require installation. It can be launched from any media (U\+SB Flash, CD, D\+VD, external hard disk), and from the directory of operating system directories. Unzip the contents of the archive into a convenient place for you. Do not delete, move, or modify any other files in the unpacked directory. This can lead to a complete or partial loss of the program. Go to the root directory of the unpacked application and run the file. Have a good game!
+
+Control keys\+:
+
+
+\begin{DoxyItemize}
+\item Right -\/ move character to the right
+
+
+\item Left -\/ move character to the left
+
+
+\item Up -\/ Jump
+
+
+\item C -\/ switch to another character
+
+
+\item P -\/ pick up the box (strong character)
+
+
+\item click the mouse -\/ throw the box in the specified direction
+
+
+\item I -\/ activate the lever 
+\end{DoxyItemize}
+
+\subsubsection*{How to create a level (for level designer only)}
+
+{\itshape Attention! This is Goofle\+Translated page}
+
+Information about the level is stored in a file of the .tmx format, it is recommended to use the freely distributed Tiled\+Map Editor to generate files of this format. Here is the instruction to create a level using this program. When creating a level, specify the format of the C\+SV layer. If the game level needs a background, then set the background layers according to the Tiled\+Map Editor. Note that all objects on the level must have a rectangular shape. Form the following groups of objects\+:
+
+
+\begin{DoxyItemize}
+\item Dangers
+
+
+\item Sensors
+
+
+\item Kinematic
+
+
+\item Static
+
+
+\item Dynamic 
+\end{DoxyItemize}
+
+In the group of Static objects, add \char`\"{}land\char`\"{} objects; for them, you do not need to specify anything additional, or objects of \char`\"{}mortal danger\char`\"{} type, for them type \char`\"{}danger\char`\"{} in the object type.
+
+In the group of Dynamic objects add two objects in the type of which specify \char`\"{}player\char`\"{}, as the name of one object is selected \char`\"{}strong$<$em$>$player\char`\"{}, for another -\/ \char`\"{}dexterous$<$/em$>$player\char`\"{}. It will be a strong and clever character. As the properties of the object they need to set the \char`\"{}health\char`\"{} field -\/ the health level in figures and \char`\"{}image\char`\"{} (it is recommended to specify the standard sizes of objects 32x48 and 32x32 pixels for strong and deft, respectively, and a standard set of images).
+
+
+\begin{DoxyPre}{\ttfamily In addition, the Dynamic group can be added:}\end{DoxyPre}
+
+
+
+\begin{DoxyPre}{\ttfamily     1. An object of the partition type (specify the partition type), setting the following characteristics for it: "ancor" - the location of the partitioning to the level relative to its center (normal values, eg -1 0), "image", "max\_angle" "Min\_angle" is the minimum angle of rotation.
+    2. Bridge type object (specify bridge type), properties are set in the same way as partition properties, with the addition of "init\_state" - the initial state of the bridge "up", "down" or "stop" is specified, which determines its behavior at level start, "speed" - indicates the speed of the bridge.
+    3. \hyperlink{class_object}{Object} type box (specify the type is not necessary) in the properties is indicated "image" and "density" - the gravity factor of the box (determines the possibility and speed of its movement by characters)
+}\end{DoxyPre}
+
+
+In the Kinematic object group, you can add\+:
+
+
+\begin{DoxyPre}{\ttfamily     1. A broken line is a trajectory (you do not need to specify a type), the properties indicate a logical value "is\_rounded" a closed path or not
+    2. \hyperlink{class_platform}{Platform} (platform type). The following properties are specified: "image", "is\_auto" is a logical value, determines whether it is possible to control the platform with the lever, "speed" is the platform speed, "steps" is the number of nodes of the path that it passes to the stop (for is\_auto = 0) , "Trajectory" indicates the name of the trajectory, according to which it must follow
+    3. \hyperlink{class_bonus}{Bonus} (type of bonus). The following properties are indicated: "image", "type" - bonus type ("speed", "jump", "health" - health), "modificator" - force of impact in times for jump and speed and units For health, "time" - the validity period of bonuses, except health
+}\end{DoxyPre}
+
+
+Two objects with the type \char`\"{}final\char`\"{} are added to the group of Sensors objects, they are indicated by the properties \char`\"{}image\char`\"{} and \char`\"{}player\char`\"{} -\/type of the player that activates the exit point \char`\"{}strong\char`\"{} or \char`\"{}dexterous\char`\"{}
+
+
+\begin{DoxyPre}{\ttfamily You can also add:}\end{DoxyPre}
+
+
+
+\begin{DoxyPre}{\ttfamily     1. \hyperlink{class_sensor}{Sensor} (sensor type). The following properties are specified: "is\_visible" is a Boolean value, indicates a visible or invisible object, "is\_keeping" is a Boolean value, indicates whether to permanently be near the object to activate it, "image" - is specified only for visible
+    2. \hyperlink{class_timer}{Timer} (type timer). The following properties are specified: "is\_rounded" - a logical value, determines whether to start counting first after the completion of the previous iteration, "time\_stages" - the number of switching in one iteration
+    3. The lever (type lever). The "image" property}\end{DoxyPre}
+
+
+
+\begin{DoxyPre}{\ttfamily For all sensor objects, the following properties are also specified: "observables" - a list of names of bridges and platforms that are controlled by this sensor, "repeat\_allowed" - a logical value, whether it is possible to reactivate if the previous one has not yet completed, "stages" - only for Bridges (optional), the order of the commands (indicated above as bridge states), which are executed by the bridge every time the sensor is activated, are indicated via a space.
+}\end{DoxyPre}
+
+
+Danger objects are added to the group of Dangers objects with the following characteristics\+: \char`\"{}image\char`\"{}, \char`\"{}damage\char`\"{} -\/ the level of damage inflicted to the player during the contact, \char`\"{}down$<$em$>$side\char`\"{} \char`\"{}up$<$/em$>$side\char`\"{} \char`\"{}left$<$em$>$side\char`\"{} \char`\"{}right$<$/em$>$side\char`\"{} -\/ logical values, determine which side of the object Is dangerous for the player (can be combined), \char`\"{}is$<$em$>$movable\char`\"{} -\/ a logical value, whether the dangerous object moves or not, \char`\"{}stick$<$/em$>$platform\char`\"{} -\/ specifies the name of the platform that will take the properties of the dangerous object if it moves.
+
+Adding characters and exit points for them at the level is a prerequisite, everything else is added at the discretion of the developer of the level, but you must correctly specify all properties of the added objects, otherwise the level will not be started or will not work correctly.

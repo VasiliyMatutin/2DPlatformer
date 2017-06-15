@@ -2,7 +2,17 @@
 \label{class_final}\index{Final@{Final}}
 
 
-Collaboration diagram for Final\+:\nopagebreak
+Special sensor which define end of the level (win position)  
+
+
+
+
+{\ttfamily \#include $<$Final.\+h$>$}
+
+
+
+Collaboration diagram for Final\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,56 +22,81 @@ Collaboration diagram for Final\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_final_ad8e4afdefd9ea952bfbb7123af09c710}\label{class_final_ad8e4afdefd9ea952bfbb7123af09c710}} 
-{\bfseries Final} (b2\+Body $\ast$body, bool is\+\_\+strong)
-\item 
-\mbox{\Hypertarget{class_final_af7a2beabd2de1cc0fcbe017f2012e41c}\label{class_final_af7a2beabd2de1cc0fcbe017f2012e41c}} 
-bool {\bfseries is\+Reach} ()
-\end{DoxyCompactItemize}
+\hyperlink{class_final_ad8e4afdefd9ea952bfbb7123af09c710}{Final} (b2\+Body $\ast$body, bool \hyperlink{class_final_a4beb08f8f72e6339e8544ae121fb717d}{is\+\_\+strong})
+\begin{DoxyCompactList}\small\item\em Defined constructor for this class. \end{DoxyCompactList}\item 
+bool \hyperlink{class_final_af7a2beabd2de1cc0fcbe017f2012e41c}{is\+Reach} ()
+\begin{DoxyCompactList}\small\item\em Define achive the player, who intended to gain this point, its goal or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_final_a9ebc21296dd28e993f2ee8cbb47a3b37}{contact\+Event} (b2\+Contact $\ast$, bool)
-\begin{DoxyCompactList}\small\item\em Define object reaction to the collision in box2d world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_final_abb9a6e24a09308aed3dfd510074b1201}\label{class_final_abb9a6e24a09308aed3dfd510074b1201}} 
+void \hyperlink{class_final_abb9a6e24a09308aed3dfd510074b1201}{contact\+Event} (b2\+Contact $\ast$contact, bool is\+\_\+begin)
+\begin{DoxyCompactList}\small\item\em inherited from \hyperlink{class_contact_object}{Contact\+Object} class \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_final_ac09c1e5af1c2317a59fd2bdac39aac9f}\label{class_final_ac09c1e5af1c2317a59fd2bdac39aac9f}} 
-\hyperlink{class_player}{Player} $\ast$ {\bfseries my\+\_\+player}
-\item 
+\hyperlink{class_player}{Player} $\ast$ \hyperlink{class_final_ac09c1e5af1c2317a59fd2bdac39aac9f}{my\+\_\+player}
+\begin{DoxyCompactList}\small\item\em pointer to the player which have to gain this point \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_final_a637485b836c9226c062c92a34e0a679d}\label{class_final_a637485b836c9226c062c92a34e0a679d}} 
-bool {\bfseries is\+\_\+contact}
-\item 
+bool \hyperlink{class_final_a637485b836c9226c062c92a34e0a679d}{is\+\_\+contact}
+\begin{DoxyCompactList}\small\item\em define achive the player, who intended to gain this point, its goal or not\+: \textquotesingle{}true\textquotesingle{} -\/ achive; \textquotesingle{}false\textquotesingle{} -\/ doesn\textquotesingle{}t achive \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_final_a4beb08f8f72e6339e8544ae121fb717d}\label{class_final_a4beb08f8f72e6339e8544ae121fb717d}} 
-bool {\bfseries is\+\_\+strong}
-\end{DoxyCompactItemize}
+bool \hyperlink{class_final_a4beb08f8f72e6339e8544ae121fb717d}{is\+\_\+strong}
+\begin{DoxyCompactList}\small\item\em define type of the player intended to gain this point\+: \textquotesingle{}true\textquotesingle{} -\/ strong player; \textquotesingle{}false\textquotesingle{} -\/ dexterous player \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_final_a9ebc21296dd28e993f2ee8cbb47a3b37}\label{class_final_a9ebc21296dd28e993f2ee8cbb47a3b37}} 
-\index{Final@{Final}!contact\+Event@{contact\+Event}}
-\index{contact\+Event@{contact\+Event}!Final@{Final}}
-\subsubsection{\texorpdfstring{contact\+Event()}{contactEvent()}}
-{\footnotesize\ttfamily void Final\+::contact\+Event (\begin{DoxyParamCaption}\item[{b2\+Contact $\ast$}]{contact,  }\item[{bool}]{is\+Begin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+\subsection{Detailed Description}
+Special sensor which define end of the level (win position) 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_final_ad8e4afdefd9ea952bfbb7123af09c710}\label{class_final_ad8e4afdefd9ea952bfbb7123af09c710}} 
+\index{Final@{Final}!Final@{Final}}
+\index{Final@{Final}!Final@{Final}}
+\subsubsection{\texorpdfstring{Final()}{Final()}}
+{\footnotesize\ttfamily Final\+::\+Final (\begin{DoxyParamCaption}\item[{b2\+Body $\ast$}]{body,  }\item[{bool}]{is\+\_\+strong }\end{DoxyParamCaption})}
 
 
 
-Define object reaction to the collision in box2d world. 
+Defined constructor for this class. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em contact} & pointer to box2d b2\+Contact class \\
+{\em is\+\_\+strong} & define type of the player intended to gain this point\+: \textquotesingle{}true\textquotesingle{} -\/ strong player; \textquotesingle{}false\textquotesingle{} -\/ dexterous player \\
 \hline
-{\em is\+Begin} & \textquotesingle{}false\textquotesingle{} -\/ end of the collision; \textquotesingle{}true\textquotesingle{} -\/ start of the collision \\
+{\em body} & pointer to the box2d body assigned to this final point \\
 \hline
 \end{DoxyParams}
 
 
-Implements \hyperlink{class_contact_object_a53d2dfc1d9c2821e9c62e80ce62a6435}{Contact\+Object}.
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_final_af7a2beabd2de1cc0fcbe017f2012e41c}\label{class_final_af7a2beabd2de1cc0fcbe017f2012e41c}} 
+\index{Final@{Final}!is\+Reach@{is\+Reach}}
+\index{is\+Reach@{is\+Reach}!Final@{Final}}
+\subsubsection{\texorpdfstring{is\+Reach()}{isReach()}}
+{\footnotesize\ttfamily bool Final\+::is\+Reach (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Define achive the player, who intended to gain this point, its goal or not. 
+
+\begin{DoxyReturn}{Returns}
+\textquotesingle{}true\textquotesingle{} -\/ achive; \textquotesingle{}false\textquotesingle{} -\/ doesn\textquotesingle{}t achive 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Final.\+h\item 
+\hyperlink{_final_8h}{Final.\+h}\item 
 Final.\+cpp\end{DoxyCompactItemize}

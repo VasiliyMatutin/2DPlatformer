@@ -2,70 +2,166 @@
 \label{class_display}\index{Display@{Display}}
 
 
-Collaboration diagram for Display\+:\nopagebreak
+Provides a display for \hyperlink{class_layer}{Layer} information.  
+
+
+
+
+{\ttfamily \#include $<$Display.\+h$>$}
+
+
+
+Collaboration diagram for Display\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=202pt]{class_display__coll__graph}
+\includegraphics[width=350pt]{class_display__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_display_a26d0e334f62107584f42e8fa3608f546}\label{class_display_a26d0e334f62107584f42e8fa3608f546}} 
-{\bfseries Display} (\hyperlink{class_layer}{Layer} $\ast$\+\_\+layer)
-\item 
-\mbox{\Hypertarget{class_display_a23741d950a417ff7f3a24ba0ee9582cb}\label{class_display_a23741d950a417ff7f3a24ba0ee9582cb}} 
-virtual void {\bfseries change\+Scale} (double x, double y)
-\item 
-\mbox{\Hypertarget{class_display_ad46fa6155c4ffe40f11ebf2daee6d67c}\label{class_display_ad46fa6155c4ffe40f11ebf2daee6d67c}} 
-virtual void {\bfseries handle\+Viewer\+Event} (View\+Events)
-\item 
+\hyperlink{class_display_a26d0e334f62107584f42e8fa3608f546}{Display} (\hyperlink{class_layer}{Layer} $\ast$\+\_\+layer)
+\begin{DoxyCompactList}\small\item\em Defined constructor for this class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_display_ab4a3db38f39ad17537c58cbd17bc0d04}\label{class_display_ab4a3db38f39ad17537c58cbd17bc0d04}} 
+virtual void \hyperlink{class_display_ab4a3db38f39ad17537c58cbd17bc0d04}{change\+Scale} ()
+\begin{DoxyCompactList}\small\item\em change scale of the screen \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_display_a0383047ebb0be089fe56826e84f9fcf1}{handle\+Viewer\+Event} (\hyperlink{_events_8h_a7e30376069ab6f940d101ae67eb3fb34}{View\+Events} event)
+\begin{DoxyCompactList}\small\item\em provide display reaction on user action and model changes (command from \hyperlink{class_controller}{Controller}) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_display_ad2740b779d61e461c4dcaaf34f1fcd8f}\label{class_display_ad2740b779d61e461c4dcaaf34f1fcd8f}} 
-virtual void {\bfseries update} ()
-\end{DoxyCompactItemize}
+virtual void \hyperlink{class_display_ad2740b779d61e461c4dcaaf34f1fcd8f}{update} ()
+\begin{DoxyCompactList}\small\item\em update information on the screen \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_display_aadebd92927d32d9766bc2d7bfff272f3}\label{class_display_aadebd92927d32d9766bc2d7bfff272f3}} 
-sf\+::\+Sprite {\bfseries set\+Sprite} (\hyperlink{class_object}{Object} it)
-\item 
-\mbox{\Hypertarget{class_display_ad7ab55961c0e45e5f4f3caddd9359b1b}\label{class_display_ad7ab55961c0e45e5f4f3caddd9359b1b}} 
-sf\+::\+Sprite {\bfseries set\+Dynamic\+Sprite} (\hyperlink{class_object}{Object} it)
-\item 
+sf\+::\+Sprite \hyperlink{class_display_aadebd92927d32d9766bc2d7bfff272f3}{set\+Sprite} (\hyperlink{class_object}{Object} it)
+\begin{DoxyCompactList}\small\item\em internal function which fill sfml sprite with information from \hyperlink{class_object}{Object} class \end{DoxyCompactList}\item 
+sf\+::\+Sprite \hyperlink{class_display_ad7ab55961c0e45e5f4f3caddd9359b1b}{set\+Dynamic\+Sprite} (\hyperlink{class_object}{Object} it)
+\begin{DoxyCompactList}\small\item\em internal function which fill sfml sprite with information from \hyperlink{class_object}{Object} class \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_display_ad0ff309e86415292e5b62e28ee658407}\label{class_display_ad0ff309e86415292e5b62e28ee658407}} 
-void {\bfseries load\+Display} ()
-\item 
+void \hyperlink{class_display_ad0ff309e86415292e5b62e28ee658407}{load\+Display} ()
+\begin{DoxyCompactList}\small\item\em prepare class for work \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_display_a316e10fdc05529ec6d73f6a82aedbf3a}\label{class_display_a316e10fdc05529ec6d73f6a82aedbf3a}} 
-void {\bfseries update\+Without\+Text} ()
-\end{DoxyCompactItemize}
+void \hyperlink{class_display_a316e10fdc05529ec6d73f6a82aedbf3a}{update\+Without\+Text} ()
+\begin{DoxyCompactList}\small\item\em special update without text information (which doesn\textquotesingle{}t display) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_display_a78cd676fe244dad818b5567367fdfb33}\label{class_display_a78cd676fe244dad818b5567367fdfb33}} 
-\hyperlink{class_layer}{Layer} $\ast$ {\bfseries layer}
-\item 
+\hyperlink{class_layer}{Layer} $\ast$ \hyperlink{class_display_a78cd676fe244dad818b5567367fdfb33}{layer}
+\begin{DoxyCompactList}\small\item\em pointer to the \hyperlink{class_layer}{Layer} with model information to display \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_display_ab2bec26675f5903449716d95bb0107bd}\label{class_display_ab2bec26675f5903449716d95bb0107bd}} 
-sf\+::\+Render\+Window $\ast$ {\bfseries window}
-\item 
+sf\+::\+Render\+Window $\ast$ \hyperlink{class_display_ab2bec26675f5903449716d95bb0107bd}{window}
+\begin{DoxyCompactList}\small\item\em pointer to the singletone application window \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_display_ad84f83c5fd704ce49ac3f038f07ae6dd}\label{class_display_ad84f83c5fd704ce49ac3f038f07ae6dd}} 
-sf\+::\+View {\bfseries view}
-\item 
+sf\+::\+View \hyperlink{class_display_ad84f83c5fd704ce49ac3f038f07ae6dd}{view}
+\begin{DoxyCompactList}\small\item\em base view for elements at the level \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_display_a2c39b9f00cdfb5f4114c5a40e8af076d}\label{class_display_a2c39b9f00cdfb5f4114c5a40e8af076d}} 
-sf\+::\+Font {\bfseries font}
-\item 
+sf\+::\+Font \hyperlink{class_display_a2c39b9f00cdfb5f4114c5a40e8af076d}{font}
+\begin{DoxyCompactList}\small\item\em text font \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_display_a8369eaf8bd4706d966c7e1be78d061fe}\label{class_display_a8369eaf8bd4706d966c7e1be78d061fe}} 
-sf\+::\+Text {\bfseries text}
-\item 
+sf\+::\+Text \hyperlink{class_display_a8369eaf8bd4706d966c7e1be78d061fe}{text}
+\begin{DoxyCompactList}\small\item\em sfml text container \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_display_a1a3dd88f53281f8bc2294f33862dced0}\label{class_display_a1a3dd88f53281f8bc2294f33862dced0}} 
-std\+::vector$<$ sf\+::\+Sprite $>$ {\bfseries constant\+\_\+sprite}
-\item 
+std\+::vector$<$ sf\+::\+Sprite $>$ \hyperlink{class_display_a1a3dd88f53281f8bc2294f33862dced0}{constant\+\_\+sprite}
+\begin{DoxyCompactList}\small\item\em vector containing sfml sprites for non-\/changeable elements \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_display_acc1a00673738d4dc7451caf213982e4d}\label{class_display_acc1a00673738d4dc7451caf213982e4d}} 
-std\+::vector$<$ sf\+::\+Texture $>$ {\bfseries texture}
-\end{DoxyCompactItemize}
+std\+::vector$<$ sf\+::\+Texture $>$ \hyperlink{class_display_acc1a00673738d4dc7451caf213982e4d}{texture}
+\begin{DoxyCompactList}\small\item\em vector containing sfml textures for all \hyperlink{class_layer}{Layer}\textquotesingle{}s images \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides a display for \hyperlink{class_layer}{Layer} information. 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_display_a26d0e334f62107584f42e8fa3608f546}\label{class_display_a26d0e334f62107584f42e8fa3608f546}} 
+\index{Display@{Display}!Display@{Display}}
+\index{Display@{Display}!Display@{Display}}
+\subsubsection{\texorpdfstring{Display()}{Display()}}
+{\footnotesize\ttfamily Display\+::\+Display (\begin{DoxyParamCaption}\item[{\hyperlink{class_layer}{Layer} $\ast$}]{\+\_\+layer }\end{DoxyParamCaption})}
+
+
+
+Defined constructor for this class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+layer} & container which contain model information for display \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_display_a0383047ebb0be089fe56826e84f9fcf1}\label{class_display_a0383047ebb0be089fe56826e84f9fcf1}} 
+\index{Display@{Display}!handle\+Viewer\+Event@{handle\+Viewer\+Event}}
+\index{handle\+Viewer\+Event@{handle\+Viewer\+Event}!Display@{Display}}
+\subsubsection{\texorpdfstring{handle\+Viewer\+Event()}{handleViewerEvent()}}
+{\footnotesize\ttfamily void Display\+::handle\+Viewer\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{_events_8h_a7e30376069ab6f940d101ae67eb3fb34}{View\+Events}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+provide display reaction on user action and model changes (command from \hyperlink{class_controller}{Controller}) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & command from \hyperlink{class_controller}{Controller} \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_advanced_display_ae7ce015fcaf05f4a34c123bff64ebb2e}{Advanced\+Display}.
+
+\mbox{\Hypertarget{class_display_ad7ab55961c0e45e5f4f3caddd9359b1b}\label{class_display_ad7ab55961c0e45e5f4f3caddd9359b1b}} 
+\index{Display@{Display}!set\+Dynamic\+Sprite@{set\+Dynamic\+Sprite}}
+\index{set\+Dynamic\+Sprite@{set\+Dynamic\+Sprite}!Display@{Display}}
+\subsubsection{\texorpdfstring{set\+Dynamic\+Sprite()}{setDynamicSprite()}}
+{\footnotesize\ttfamily sf\+::\+Sprite Display\+::set\+Dynamic\+Sprite (\begin{DoxyParamCaption}\item[{\hyperlink{class_object}{Object}}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+internal function which fill sfml sprite with information from \hyperlink{class_object}{Object} class 
+
+IT\textquotesingle{}S I\+M\+P\+O\+R\+T\+A\+N\+T! Sprite origin is the center of an object 
+\begin{DoxyParams}{Parameters}
+{\em it} & \hyperlink{class_object}{Object} with information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+created sfml sprite 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_display_aadebd92927d32d9766bc2d7bfff272f3}\label{class_display_aadebd92927d32d9766bc2d7bfff272f3}} 
+\index{Display@{Display}!set\+Sprite@{set\+Sprite}}
+\index{set\+Sprite@{set\+Sprite}!Display@{Display}}
+\subsubsection{\texorpdfstring{set\+Sprite()}{setSprite()}}
+{\footnotesize\ttfamily sf\+::\+Sprite Display\+::set\+Sprite (\begin{DoxyParamCaption}\item[{\hyperlink{class_object}{Object}}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+internal function which fill sfml sprite with information from \hyperlink{class_object}{Object} class 
+
+IT\textquotesingle{}S I\+M\+P\+O\+R\+T\+A\+N\+T! Sprite origin is the left-\/top point of an object 
+\begin{DoxyParams}{Parameters}
+{\em it} & \hyperlink{class_object}{Object} with information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+created sfml sprite 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Display.\+h\item 
+\hyperlink{_display_8h}{Display.\+h}\item 
 Display.\+cpp\end{DoxyCompactItemize}

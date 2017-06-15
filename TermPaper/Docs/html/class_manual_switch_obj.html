@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Docs: ManualSwitchObj Class Reference</title>
+<title>JUST2D Platformer: ManualSwitchObj Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Docs
+   <div id="projectname">JUST2D Platformer
    </div>
   </td>
  </tr>
@@ -66,27 +66,105 @@ $(function() {
 <div class="title">ManualSwitchObj Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Based entity for objects that can be activated by the sensor.  
+ <a href="class_manual_switch_obj.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_manual_switch_obj_8h_source.html">ManualSwitchObj.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for ManualSwitchObj:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_manual_switch_obj__coll__graph.png" border="0" usemap="#_manual_switch_obj_coll__map" alt="Collaboration graph"/></div>
+<map name="_manual_switch_obj_coll__map" id="_manual_switch_obj_coll__map">
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a138301db593d2b231bad0298a38e1680"><td class="memItemLeft" align="right" valign="top"><a id="a138301db593d2b231bad0298a38e1680"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>makeAction</b> (Action)</td></tr>
-<tr class="separator:a138301db593d2b231bad0298a38e1680"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d6cc0a3de424ab6bf4665eeb0f639af"><td class="memItemLeft" align="right" valign="top"><a id="a4d6cc0a3de424ab6bf4665eeb0f639af"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>isActive</b> ()</td></tr>
+<tr class="memitem:a4d4a826fb8211a787f158b2973f843ae"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manual_switch_obj.html#a4d4a826fb8211a787f158b2973f843ae">makeAction</a> (<a class="el" href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498">Action</a> action)</td></tr>
+<tr class="memdesc:a4d4a826fb8211a787f158b2973f843ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">causes the object to make some action  <a href="#a4d4a826fb8211a787f158b2973f843ae">More...</a><br /></td></tr>
+<tr class="separator:a4d4a826fb8211a787f158b2973f843ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d6cc0a3de424ab6bf4665eeb0f639af"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manual_switch_obj.html#a4d6cc0a3de424ab6bf4665eeb0f639af">isActive</a> ()</td></tr>
+<tr class="memdesc:a4d6cc0a3de424ab6bf4665eeb0f639af"><td class="mdescLeft">&#160;</td><td class="mdescRight">defines the state of the object  <a href="#a4d6cc0a3de424ab6bf4665eeb0f639af">More...</a><br /></td></tr>
 <tr class="separator:a4d6cc0a3de424ab6bf4665eeb0f639af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:aa1d16c8a1740f4dc3152470088154f97"><td class="memItemLeft" align="right" valign="top"><a id="aa1d16c8a1740f4dc3152470088154f97"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_active</b> = false</td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manual_switch_obj.html#aa1d16c8a1740f4dc3152470088154f97">is_active</a> = false</td></tr>
+<tr class="memdesc:aa1d16c8a1740f4dc3152470088154f97"><td class="mdescLeft">&#160;</td><td class="mdescRight">defines the state of the object 'true' - moves 'false' - doesn't move <br /></td></tr>
 <tr class="separator:aa1d16c8a1740f4dc3152470088154f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Based entity for objects that can be activated by the sensor. </p>
+<dl class="section author"><dt>Author</dt><dd>Vasily </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>June 2017 </dd></dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4d6cc0a3de424ab6bf4665eeb0f639af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d6cc0a3de424ab6bf4665eeb0f639af">&#9670;&nbsp;</a></span>isActive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ManualSwitchObj::isActive </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>defines the state of the object </p>
+<dl class="section return"><dt>Returns</dt><dd>'true' - moves 'false' - doesn't move </dd></dl>
+
+</div>
+</div>
+<a id="a4d4a826fb8211a787f158b2973f843ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d4a826fb8211a787f158b2973f843ae">&#9670;&nbsp;</a></span>makeAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ManualSwitchObj::makeAction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498">Action</a>&#160;</td>
+          <td class="paramname"><em>action</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>causes the object to make some action </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">action</td><td>what necessary to make </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="class_manual_platform.html#ad7ae2aac108330a84246e3337fb5af81">ManualPlatform</a>, and <a class="el" href="class_revolute_bridge.html#aad7a57a94ab4bd41cd4e1da48d627d00">RevoluteBridge</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_manual_switch_obj_8h_source.html">ManualSwitchObj.h</a></li>
 <li>ManualSwitchObj.cpp</li>

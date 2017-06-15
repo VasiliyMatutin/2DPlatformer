@@ -40,6 +40,8 @@ protected:
 	int on_ground;
 	///Define characters animation 'false' - non-animated; 'true' - animated
 	bool is_animated;
+	///Define was stop or not 'false' - wasn't; 'true' - was
+	bool is_stop;
 	///current column number in image tileset 
 	double current_frame;
 	///speed of hero animation
@@ -56,6 +58,7 @@ protected:
 	Bonus* activate_this_bonus;
 	///Pointer to the array of player ui bonus cell
 	Bonus* active_bonus[3];
+	///contains UI information for this player
 	PlayerUI playerUI;
 	/*!
 	\brief Defined constructor for this class
@@ -120,7 +123,7 @@ public:
 	\return pointer to the PlayerUI class
 	*/
 	PlayerUI* returnUI();
-	///destroy the hero
+	///inhereted from NonStaticObj class
 	bool destroy();
 	///inherited from NonStaticObj class
 	void update();

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Docs: NonStaticObj.h File Reference</title>
+<title>JUST2D Platformer: NonStaticObj.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Docs
+   <div id="projectname">JUST2D Platformer
    </div>
   </td>
  </tr>
@@ -85,7 +85,6 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" id="node3" href="_contact_listener_8h.html" title="ContactListener.h" alt="" coords="100,80,224,107"/>
 <area shape="rect" id="node4" href="_platform_8h.html" title="Platform.h" alt="" coords="248,80,329,107"/>
 <area shape="rect" id="node5" href="_revolute_bridge_8h.html" title="RevoluteBridge.h" alt="" coords="353,80,472,107"/>
-<area shape="rect" id="node6" href="_non_static_obj_8cpp.html" title="NonStaticObj.cpp" alt="" coords="496,80,620,107"/>
 </map>
 </div>
 </div>
@@ -94,15 +93,17 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_non_static_obj.html">NonStaticObj</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typical object (an entity) that participates in physics simulation.  <a href="class_non_static_obj.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:a842c5e2e69277690b064bf363c017980"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_non_static_obj_8h.html#a842c5e2e69277690b064bf363c017980">ObjectType</a> { <a class="el" href="_non_static_obj_8h.html#a842c5e2e69277690b064bf363c017980a07c80e2a355d91402a00d82b1fa13855">ObjectType::PLAYER</a>, 
-<a class="el" href="_non_static_obj_8h.html#a842c5e2e69277690b064bf363c017980a7e4c9c4630963af2576a0ef4b4ac15e0">ObjectType::BRIDGE_PARTITION</a>, 
+<b>BRIDGE_PARTITION</b>, 
 <a class="el" href="_non_static_obj_8h.html#a842c5e2e69277690b064bf363c017980a8b55a44b49368262df89fd0e17b1a181">ObjectType::PLATFORM</a>, 
 <a class="el" href="_non_static_obj_8h.html#a842c5e2e69277690b064bf363c017980ae657cce1913c857166b0475f18668ef5">ObjectType::BOX</a>
- }</td></tr>
+ }<tr class="memdesc:a842c5e2e69277690b064bf363c017980"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the type of an object of an <a class="el" href="class_non_static_obj.html" title="Typical object (an entity) that participates in physics simulation. ">NonStaticObj</a> class for dynamic box2d objects.  <a href="_non_static_obj_8h.html#a842c5e2e69277690b064bf363c017980">More...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:a842c5e2e69277690b064bf363c017980"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
@@ -125,11 +126,16 @@ Enumerations</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Define the type of an object of an <a class="el" href="class_non_static_obj.html" title="Typical object (an entity) that participates in physics simulation. ">NonStaticObj</a> class for dynamic box2d objects. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a842c5e2e69277690b064bf363c017980a07c80e2a355d91402a00d82b1fa13855"></a>PLAYER&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a842c5e2e69277690b064bf363c017980a7e4c9c4630963af2576a0ef4b4ac15e0"></a>BRIDGE_PARTITION&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a842c5e2e69277690b064bf363c017980a8b55a44b49368262df89fd0e17b1a181"></a>PLATFORM&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a842c5e2e69277690b064bf363c017980ae657cce1913c857166b0475f18668ef5"></a>BOX&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a842c5e2e69277690b064bf363c017980a07c80e2a355d91402a00d82b1fa13855"></a>PLAYER&#160;</td><td class="fielddoc"><p>it's hero object </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a842c5e2e69277690b064bf363c017980a8b55a44b49368262df89fd0e17b1a181"></a>PLATFORM&#160;</td><td class="fielddoc"><p>it's drawbridge or partition </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a842c5e2e69277690b064bf363c017980ae657cce1913c857166b0475f18668ef5"></a>BOX&#160;</td><td class="fielddoc"><p>it's platform </p>
+<p>it's box (doesn't matter metal or wooden) </p>
+</td></tr>
 </table>
 
 </div>

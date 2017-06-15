@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Docs: Bonus Class Reference</title>
+<title>JUST2D Platformer: Bonus Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Docs
+   <div id="projectname">JUST2D Platformer
    </div>
   </td>
  </tr>
@@ -60,101 +60,154 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_bonus-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Bonus Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Some serum that have an impact to the hero.  
+ <a href="class_bonus.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_bonus_8h_source.html">Bonus.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Bonus:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_bonus__coll__graph.png" border="0" usemap="#_bonus_coll__map" alt="Collaboration graph"/></div>
 <map name="_bonus_coll__map" id="_bonus_coll__map">
-<area shape="rect" id="node3" href="class_player.html" title="Parent class for DexterousPlayer and StrongPlayer classes. " alt="" coords="81,359,209,495"/>
+<area shape="rect" id="node3" href="class_player.html" title="Parent class for DexterousPlayer and StrongPlayer classes. " alt="" coords="81,373,209,509"/>
 <area shape="rect" id="node2" href="class_contact_object.html" title="Interface for an object which can collide with another in box2d world. " alt="" coords="5,5,123,97"/>
-<area shape="rect" id="node4" href="class_object.html" title="{Object\n|+ number_in_image_list\land 9 more...\l|}" alt="" coords="147,5,307,97"/>
+<area shape="rect" id="node4" href="class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes..." alt="" coords="147,5,307,97"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac8581e33c82c8d6515b78ccffcf6f11b"><td class="memItemLeft" align="right" valign="top"><a id="ac8581e33c82c8d6515b78ccffcf6f11b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Bonus</b> (double modificator, double time, BonusType bonus_type, <a class="el" href="class_player.html">Player</a> **_current_player, b2Body *_body, <a class="el" href="class_object.html">Object</a> *_object, std::chrono::duration&lt; double &gt; *duration)</td></tr>
+<tr class="memitem:ac8581e33c82c8d6515b78ccffcf6f11b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonus.html#ac8581e33c82c8d6515b78ccffcf6f11b">Bonus</a> (double modificator, double <a class="el" href="class_bonus.html#a7af3e40f87206d34e4689f53e37733b3">time</a>, <a class="el" href="_bonus_8h.html#ad6d58ebabfbf9aa4181bfe97a5d8d984">BonusType</a> <a class="el" href="class_bonus.html#a3e8678940c7ea4679428e78874d92117">bonus_type</a>, <a class="el" href="class_player.html">Player</a> **_current_player, b2Body *_body, <a class="el" href="class_object.html">Object</a> *_object, std::chrono::duration&lt; double &gt; *<a class="el" href="class_bonus.html#a98befe64efce3a1c5c93f2d694ea1abc">duration</a>)</td></tr>
+<tr class="memdesc:ac8581e33c82c8d6515b78ccffcf6f11b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defined constructor for this class.  <a href="#ac8581e33c82c8d6515b78ccffcf6f11b">More...</a><br /></td></tr>
 <tr class="separator:ac8581e33c82c8d6515b78ccffcf6f11b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a903865168ff7fd91e0e2de23f849c553"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonus.html#a903865168ff7fd91e0e2de23f849c553">contactEvent</a> (b2Contact *, bool)</td></tr>
-<tr class="memdesc:a903865168ff7fd91e0e2de23f849c553"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define object reaction to the collision in box2d world.  <a href="#a903865168ff7fd91e0e2de23f849c553">More...</a><br /></td></tr>
-<tr class="separator:a903865168ff7fd91e0e2de23f849c553"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5964466dfbb4b4e3e7d3eafcb9dae7db"><td class="memItemLeft" align="right" valign="top"><a id="a5964466dfbb4b4e3e7d3eafcb9dae7db"></a>
-<a class="el" href="class_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getObject</b> ()</td></tr>
+<tr class="memitem:a5964466dfbb4b4e3e7d3eafcb9dae7db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonus.html#a5964466dfbb4b4e3e7d3eafcb9dae7db">getObject</a> ()</td></tr>
 <tr class="separator:a5964466dfbb4b4e3e7d3eafcb9dae7db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78f64b402daa7593afb28b78baf6d15e"><td class="memItemLeft" align="right" valign="top"><a id="a78f64b402daa7593afb28b78baf6d15e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>activate</b> (<a class="el" href="class_object.html">Object</a> *_object)</td></tr>
+<tr class="memitem:a78f64b402daa7593afb28b78baf6d15e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonus.html#a78f64b402daa7593afb28b78baf6d15e">activate</a> (<a class="el" href="class_object.html">Object</a> *_object)</td></tr>
+<tr class="memdesc:a78f64b402daa7593afb28b78baf6d15e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apllies the bonus effect.  <a href="#a78f64b402daa7593afb28b78baf6d15e">More...</a><br /></td></tr>
 <tr class="separator:a78f64b402daa7593afb28b78baf6d15e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52875b799a9937f5c398f8f95d9ead98"><td class="memItemLeft" align="right" valign="top"><a id="a52875b799a9937f5c398f8f95d9ead98"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>deactivate</b> ()</td></tr>
+<tr class="memitem:a52875b799a9937f5c398f8f95d9ead98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonus.html#a52875b799a9937f5c398f8f95d9ead98">deactivate</a> ()</td></tr>
+<tr class="memdesc:a52875b799a9937f5c398f8f95d9ead98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminates the action of the bonus effect.  <a href="#a52875b799a9937f5c398f8f95d9ead98">More...</a><br /></td></tr>
 <tr class="separator:a52875b799a9937f5c398f8f95d9ead98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40703fa50a436a844f0638557a175be0"><td class="memItemLeft" align="right" valign="top"><a id="a40703fa50a436a844f0638557a175be0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonus.html#a40703fa50a436a844f0638557a175be0">update</a> ()</td></tr>
+<tr class="memdesc:a40703fa50a436a844f0638557a175be0"><td class="mdescLeft">&#160;</td><td class="mdescRight">update bonus state (remaining time of impact) <br /></td></tr>
 <tr class="separator:a40703fa50a436a844f0638557a175be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:abc52e8c896f8ec6631ac5dcd7e4daf12"><td class="memItemLeft" align="right" valign="top"><a id="abc52e8c896f8ec6631ac5dcd7e4daf12"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonus.html#abc52e8c896f8ec6631ac5dcd7e4daf12">contactEvent</a> (b2Contact *contact, bool is_begin)</td></tr>
+<tr class="memdesc:abc52e8c896f8ec6631ac5dcd7e4daf12"><td class="mdescLeft">&#160;</td><td class="mdescRight">inherited from <a class="el" href="class_contact_object.html" title="Interface for an object which can collide with another in box2d world. ">ContactObject</a> class <br /></td></tr>
+<tr class="separator:abc52e8c896f8ec6631ac5dcd7e4daf12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a0c3f3fe18e7d7df28ab12fe2c023d3ff"><td class="memItemLeft" align="right" valign="top"><a id="a0c3f3fe18e7d7df28ab12fe2c023d3ff"></a>
-b2Body *&#160;</td><td class="memItemRight" valign="bottom"><b>body</b></td></tr>
+b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonus.html#a0c3f3fe18e7d7df28ab12fe2c023d3ff">body</a></td></tr>
+<tr class="memdesc:a0c3f3fe18e7d7df28ab12fe2c023d3ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the box2d body assigned to this bonus <br /></td></tr>
 <tr class="separator:a0c3f3fe18e7d7df28ab12fe2c023d3ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7493d5e3afda12e197c5505a66a1c7a1"><td class="memItemLeft" align="right" valign="top"><a id="a7493d5e3afda12e197c5505a66a1c7a1"></a>
-<a class="el" href="class_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>object</b></td></tr>
+<a class="el" href="class_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonus.html#a7493d5e3afda12e197c5505a66a1c7a1">object</a></td></tr>
+<tr class="memdesc:a7493d5e3afda12e197c5505a66a1c7a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the <a class="el" href="class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes...">Object</a> class assigned to this bonus <br /></td></tr>
 <tr class="separator:a7493d5e3afda12e197c5505a66a1c7a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c03f6529a87fd393efaedb0db7e8b49"><td class="memItemLeft" align="right" valign="top"><a id="a5c03f6529a87fd393efaedb0db7e8b49"></a>
-<a class="el" href="class_player.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>iam_activate_this_player</b></td></tr>
+<a class="el" href="class_player.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonus.html#a5c03f6529a87fd393efaedb0db7e8b49">iam_activate_this_player</a></td></tr>
+<tr class="memdesc:a5c03f6529a87fd393efaedb0db7e8b49"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the <a class="el" href="class_player.html" title="Parent class for DexterousPlayer and StrongPlayer classes. ">Player</a> class to which bonus has been applied <br /></td></tr>
 <tr class="separator:a5c03f6529a87fd393efaedb0db7e8b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5b0534727679d924f60eeaef2ac988d"><td class="memItemLeft" align="right" valign="top"><a id="ad5b0534727679d924f60eeaef2ac988d"></a>
-<a class="el" href="class_player.html">Player</a> **&#160;</td><td class="memItemRight" valign="bottom"><b>current_player</b></td></tr>
+<a class="el" href="class_player.html">Player</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonus.html#ad5b0534727679d924f60eeaef2ac988d">current_player</a></td></tr>
+<tr class="memdesc:ad5b0534727679d924f60eeaef2ac988d"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the pointer containing infofmation about current active hero <br /></td></tr>
 <tr class="separator:ad5b0534727679d924f60eeaef2ac988d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a5cd25b27a40406d018e1e3e651d21f"><td class="memItemLeft" align="right" valign="top"><a id="a4a5cd25b27a40406d018e1e3e651d21f"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>time_interval</b></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonus.html#a4a5cd25b27a40406d018e1e3e651d21f">time_interval</a></td></tr>
+<tr class="memdesc:a4a5cd25b27a40406d018e1e3e651d21f"><td class="mdescLeft">&#160;</td><td class="mdescRight">duration of the impact <br /></td></tr>
 <tr class="separator:a4a5cd25b27a40406d018e1e3e651d21f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7af3e40f87206d34e4689f53e37733b3"><td class="memItemLeft" align="right" valign="top"><a id="a7af3e40f87206d34e4689f53e37733b3"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>time</b></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonus.html#a7af3e40f87206d34e4689f53e37733b3">time</a></td></tr>
+<tr class="memdesc:a7af3e40f87206d34e4689f53e37733b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">current time that has passed from the begin of the bonus application <br /></td></tr>
 <tr class="separator:a7af3e40f87206d34e4689f53e37733b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55548c98a8969d5994fbbcbdd6f35752"><td class="memItemLeft" align="right" valign="top"><a id="a55548c98a8969d5994fbbcbdd6f35752"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>bonus_modificator</b></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonus.html#a55548c98a8969d5994fbbcbdd6f35752">bonus_modificator</a></td></tr>
+<tr class="memdesc:a55548c98a8969d5994fbbcbdd6f35752"><td class="mdescLeft">&#160;</td><td class="mdescRight">power of the impact <br /></td></tr>
 <tr class="separator:a55548c98a8969d5994fbbcbdd6f35752"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e8678940c7ea4679428e78874d92117"><td class="memItemLeft" align="right" valign="top"><a id="a3e8678940c7ea4679428e78874d92117"></a>
-BonusType&#160;</td><td class="memItemRight" valign="bottom"><b>bonus_type</b></td></tr>
+<a class="el" href="_bonus_8h.html#ad6d58ebabfbf9aa4181bfe97a5d8d984">BonusType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonus.html#a3e8678940c7ea4679428e78874d92117">bonus_type</a></td></tr>
+<tr class="memdesc:a3e8678940c7ea4679428e78874d92117"><td class="mdescLeft">&#160;</td><td class="mdescRight">bonuse type (see enum BonusType) <br /></td></tr>
 <tr class="separator:a3e8678940c7ea4679428e78874d92117"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07620733fe137be73855a2ac4353771c"><td class="memItemLeft" align="right" valign="top"><a id="a07620733fe137be73855a2ac4353771c"></a>
-std::chrono::seconds&#160;</td><td class="memItemRight" valign="bottom"><b>dts</b></td></tr>
+std::chrono::seconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonus.html#a07620733fe137be73855a2ac4353771c">dts</a></td></tr>
+<tr class="memdesc:a07620733fe137be73855a2ac4353771c"><td class="mdescLeft">&#160;</td><td class="mdescRight">chrono service information <br /></td></tr>
 <tr class="separator:a07620733fe137be73855a2ac4353771c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98befe64efce3a1c5c93f2d694ea1abc"><td class="memItemLeft" align="right" valign="top"><a id="a98befe64efce3a1c5c93f2d694ea1abc"></a>
-std::chrono::duration&lt; double &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>duration</b></td></tr>
+std::chrono::duration&lt; double &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonus.html#a98befe64efce3a1c5c93f2d694ea1abc">duration</a></td></tr>
+<tr class="memdesc:a98befe64efce3a1c5c93f2d694ea1abc"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the variable containing information about level time <br /></td></tr>
 <tr class="separator:a98befe64efce3a1c5c93f2d694ea1abc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a288adde51bbfb1c9a22fc0cad3e5e8b0"><td class="memItemLeft" align="right" valign="top"><a id="a288adde51bbfb1c9a22fc0cad3e5e8b0"></a>
-std::chrono::duration&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>start</b></td></tr>
+std::chrono::duration&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonus.html#a288adde51bbfb1c9a22fc0cad3e5e8b0">start</a></td></tr>
+<tr class="memdesc:a288adde51bbfb1c9a22fc0cad3e5e8b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">chrono start of impact <br /></td></tr>
 <tr class="separator:a288adde51bbfb1c9a22fc0cad3e5e8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a903865168ff7fd91e0e2de23f849c553"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a903865168ff7fd91e0e2de23f849c553">&#9670;&nbsp;</a></span>contactEvent()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Some serum that have an impact to the hero. </p>
+<dl class="section author"><dt>Author</dt><dd>Vasily </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>June 2017 </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac8581e33c82c8d6515b78ccffcf6f11b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8581e33c82c8d6515b78ccffcf6f11b">&#9670;&nbsp;</a></span>Bonus()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Bonus::contactEvent </td>
+          <td class="memname">Bonus::Bonus </td>
           <td>(</td>
-          <td class="paramtype">b2Contact *&#160;</td>
-          <td class="paramname"><em>contact</em>, </td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>modificator</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>isBegin</em>&#160;</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_bonus_8h.html#ad6d58ebabfbf9aa4181bfe97a5d8d984">BonusType</a>&#160;</td>
+          <td class="paramname"><em>bonus_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_player.html">Player</a> **&#160;</td>
+          <td class="paramname"><em>_current_player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">b2Body *&#160;</td>
+          <td class="paramname"><em>_body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_object.html">Object</a> *&#160;</td>
+          <td class="paramname"><em>_object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::chrono::duration&lt; double &gt; *&#160;</td>
+          <td class="paramname"><em>duration</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -162,23 +215,86 @@ std::chrono::duration&lt; double &gt;&#160;</td><td class="memItemRight" valign=
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Define object reaction to the collision in box2d world. </p>
+<p>Defined constructor for this class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">contact</td><td>pointer to box2d b2Contact class </td></tr>
-    <tr><td class="paramname">isBegin</td><td>'false' - end of the collision; 'true' - start of the collision </td></tr>
+    <tr><td class="paramname">modificator</td><td>power of the impact </td></tr>
+    <tr><td class="paramname">time</td><td>duration of the impact </td></tr>
+    <tr><td class="paramname">bonus_type</td><td>bonuse type (see enum BonusType) </td></tr>
+    <tr><td class="paramname">_current_player</td><td>pointer to the pointer containing infofmation about current active hero </td></tr>
+    <tr><td class="paramname">_body</td><td>pointer to the box2d body assigned to this bonus </td></tr>
+    <tr><td class="paramname">_object</td><td>pointer to the <a class="el" href="class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes...">Object</a> class assigned to this bonus </td></tr>
+    <tr><td class="paramname">duration</td><td>pointer to the variable containing information about level time </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="class_contact_object.html#a53d2dfc1d9c2821e9c62e80ce62a6435">ContactObject</a>.</p>
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a78f64b402daa7593afb28b78baf6d15e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78f64b402daa7593afb28b78baf6d15e">&#9670;&nbsp;</a></span>activate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Bonus::activate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_object.html">Object</a> *&#160;</td>
+          <td class="paramname"><em>_object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Apllies the bonus effect. </p>
+<p>Delete the image of bonus from the screen and move it to hero ui bonus-cell </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_object</td><td>pointer to <a class="el" href="class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes...">Object</a> class which define ui bonus-cell </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a52875b799a9937f5c398f8f95d9ead98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52875b799a9937f5c398f8f95d9ead98">&#9670;&nbsp;</a></span>deactivate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bonus::deactivate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Terminates the action of the bonus effect. </p>
+<p>Delete the image of bonus from the hero ui bonus-cell </p>
+
+</div>
+</div>
+<a id="a5964466dfbb4b4e3e7d3eafcb9dae7db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5964466dfbb4b4e3e7d3eafcb9dae7db">&#9670;&nbsp;</a></span>getObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_object.html">Object</a> * Bonus::getObject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>pointer to the <a class="el" href="class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes...">Object</a> class assigned to this bonus or bonus-cell </dd></dl>
 
 </div>
 </div>

@@ -9,6 +9,8 @@ PlayerSensor::PlayerSensor(Player * observable_player, b2Body* body) :
 	filter.categoryBits = MASK_PLAYERS;
 	filter.maskBits = MASK_PLAYER;
 	body->GetFixtureList()->SetFilterData(filter);
+	body->GetFixtureList()->SetFriction(23.3f);
+	body->ResetMassData();
 	body->SetUserData(this);
 }
 

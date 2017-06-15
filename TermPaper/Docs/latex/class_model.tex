@@ -2,7 +2,17 @@
 \label{class_model}\index{Model@{Model}}
 
 
-Collaboration diagram for Model\+:\nopagebreak
+Element-\/container in M\+VC structure.  
+
+
+
+
+{\ttfamily \#include $<$Model.\+h$>$}
+
+
+
+Collaboration diagram for Model\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,63 +22,110 @@ Collaboration diagram for Model\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_model_a3505310b3aa1dc990032bce198a6c9fb}\label{class_model_a3505310b3aa1dc990032bce198a6c9fb}} 
-void {\bfseries handle\+Event} (Events)
-\item 
+\mbox{\Hypertarget{class_model_ae3b375de5f6df4faf74a95d64748e048}\label{class_model_ae3b375de5f6df4faf74a95d64748e048}} 
+\hyperlink{class_model_ae3b375de5f6df4faf74a95d64748e048}{Model} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_model_a2b3b7cbe02e7cac025290136e4c11e54}{handle\+Event} (\hyperlink{_events_8h_af60e00b78607064c5be6aa9397ea49c1}{Events} event)
+\begin{DoxyCompactList}\small\item\em causes \hyperlink{class_model}{Model} to react on \hyperlink{class_controller}{Controller} command \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_model_a8976f84f757eb3cd68b2aa7eeb5a345f}\label{class_model_a8976f84f757eb3cd68b2aa7eeb5a345f}} 
-void {\bfseries update} ()
+void \hyperlink{class_model_a8976f84f757eb3cd68b2aa7eeb5a345f}{update} ()
+\begin{DoxyCompactList}\small\item\em causes \hyperlink{class_model}{Model} to update state \end{DoxyCompactList}\item 
+\hyperlink{class_layer}{Layer} $\ast$ \hyperlink{class_model_acdaa9cd882c6f43d0ea60bc7010acfa2}{return\+Upper\+Layer} ()
 \item 
-\mbox{\Hypertarget{class_model_acdaa9cd882c6f43d0ea60bc7010acfa2}\label{class_model_acdaa9cd882c6f43d0ea60bc7010acfa2}} 
-\hyperlink{class_layer}{Layer} $\ast$ {\bfseries return\+Upper\+Layer} ()
-\item 
-\mbox{\Hypertarget{class_model_aabbd887291832c912bc39487f829fb9a}\label{class_model_aabbd887291832c912bc39487f829fb9a}} 
-Model\+Reaction {\bfseries check\+Response} ()
+\hyperlink{_events_8h_a387f1fc6b8a0efa93d5fed71c3d9c0bc}{Model\+Reaction} \hyperlink{class_model_aabbd887291832c912bc39487f829fb9a}{check\+Response} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_model_a3ad6a6d48906c82bc5ef7ff0ad00b190}\label{class_model_a3ad6a6d48906c82bc5ef7ff0ad00b190}} 
-void {\bfseries clear\+All\+Layers} ()
-\end{DoxyCompactItemize}
+void \hyperlink{class_model_a3ad6a6d48906c82bc5ef7ff0ad00b190}{clear\+All\+Layers} ()
+\begin{DoxyCompactList}\small\item\em clear stack \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_model_afa6410e7691fa0d6bda372b0b798dd70}\label{class_model_afa6410e7691fa0d6bda372b0b798dd70}} 
-Return\+Events $\ast$ {\bfseries re}
-\item 
 \mbox{\Hypertarget{class_model_af749476e8bdcd74948ebe837bd3dbfc8}\label{class_model_af749476e8bdcd74948ebe837bd3dbfc8}} 
-\hyperlink{class_main_menu}{Main\+Menu} {\bfseries main\+\_\+menu}
-\item 
+\hyperlink{class_main_menu}{Main\+Menu} \hyperlink{class_model_af749476e8bdcd74948ebe837bd3dbfc8}{main\+\_\+menu}
+\begin{DoxyCompactList}\small\item\em class with information needed to display \char`\"{}\+Main menu\char`\"{} \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_model_a905afcc359caed9ea41d17dfc5cef784}\label{class_model_a905afcc359caed9ea41d17dfc5cef784}} 
-\hyperlink{class_game_over}{Game\+Over} {\bfseries game\+\_\+over}
-\item 
+\hyperlink{class_game_over}{Game\+Over} \hyperlink{class_model_a905afcc359caed9ea41d17dfc5cef784}{game\+\_\+over}
+\begin{DoxyCompactList}\small\item\em class with information needed to display \char`\"{}\+Game over\char`\"{} \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_model_a6e4433103b304e645fb85a6a9612b42e}\label{class_model_a6e4433103b304e645fb85a6a9612b42e}} 
-\hyperlink{class_game_over}{Game\+Over} {\bfseries win}
-\item 
+\hyperlink{class_game_over}{Game\+Over} \hyperlink{class_model_a6e4433103b304e645fb85a6a9612b42e}{win}
+\begin{DoxyCompactList}\small\item\em class with information needed to display \char`\"{}\+You win\char`\"{} \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_model_a53a6421a918ea8fab218d6eb7bc69119}\label{class_model_a53a6421a918ea8fab218d6eb7bc69119}} 
-\hyperlink{class_local_menu}{Local\+Menu} {\bfseries local\+\_\+menu}
-\item 
+\hyperlink{class_local_menu}{Local\+Menu} \hyperlink{class_model_a53a6421a918ea8fab218d6eb7bc69119}{local\+\_\+menu}
+\begin{DoxyCompactList}\small\item\em class with information needed to display \char`\"{}\+Local menu\char`\"{} \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_model_a44c5d8b7f91c4a3ea5fe5643a6fbf26e}\label{class_model_a44c5d8b7f91c4a3ea5fe5643a6fbf26e}} 
-\hyperlink{class_end_of_the_game}{End\+Of\+The\+Game} {\bfseries eotg}
-\item 
+\hyperlink{class_end_of_the_game}{End\+Of\+The\+Game} \hyperlink{class_model_a44c5d8b7f91c4a3ea5fe5643a6fbf26e}{eotg}
+\begin{DoxyCompactList}\small\item\em class with information needed to display \char`\"{}\+The end\char`\"{} \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_model_a7f547d436448e326441b8170c3ac7835}\label{class_model_a7f547d436448e326441b8170c3ac7835}} 
-\hyperlink{class_error_window}{Error\+Window} {\bfseries ew}
-\item 
+\hyperlink{class_error_window}{Error\+Window} \hyperlink{class_model_a7f547d436448e326441b8170c3ac7835}{ew}
+\begin{DoxyCompactList}\small\item\em class with information needed to display \char`\"{}\+Error\char`\"{} \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_model_a72a4ba8da86e13263867c7e4e1cb9205}\label{class_model_a72a4ba8da86e13263867c7e4e1cb9205}} 
-int {\bfseries current\+\_\+level}
-\item 
+int \hyperlink{class_model_a72a4ba8da86e13263867c7e4e1cb9205}{current\+\_\+level}
+\begin{DoxyCompactList}\small\item\em current level number among all levels in the list \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_model_a357abb457c3e8bf987dce2418c6f09b2}\label{class_model_a357abb457c3e8bf987dce2418c6f09b2}} 
-std\+::vector$<$ std\+::string $>$ {\bfseries level\+\_\+dir}
-\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_model_a357abb457c3e8bf987dce2418c6f09b2}{level\+\_\+dir}
+\begin{DoxyCompactList}\small\item\em vector with paths to images file \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_model_a1450c4773eee836985f551c288490bf4}\label{class_model_a1450c4773eee836985f551c288490bf4}} 
-std\+::vector$<$ std\+::string $>$ {\bfseries level\+\_\+names}
-\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_model_a1450c4773eee836985f551c288490bf4}{level\+\_\+names}
+\begin{DoxyCompactList}\small\item\em vector with paths to the level file \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_model_ae25f86a150bc0b5c146ebd39567eea2f}\label{class_model_ae25f86a150bc0b5c146ebd39567eea2f}} 
-std\+::stack$<$ \hyperlink{class_layer}{Layer} $\ast$ $>$ {\bfseries layers\+\_\+list}
-\end{DoxyCompactItemize}
+std\+::stack$<$ \hyperlink{class_layer}{Layer} $\ast$ $>$ \hyperlink{class_model_ae25f86a150bc0b5c146ebd39567eea2f}{layers\+\_\+list}
+\begin{DoxyCompactList}\small\item\em stack for game-\/state managment (react only top \hyperlink{class_layer}{Layer}) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Element-\/container in M\+VC structure. 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017
+\end{DoxyDate}
+Contain necessary information and change state depending on controller commands 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_model_aabbd887291832c912bc39487f829fb9a}\label{class_model_aabbd887291832c912bc39487f829fb9a}} 
+\index{Model@{Model}!check\+Response@{check\+Response}}
+\index{check\+Response@{check\+Response}!Model@{Model}}
+\subsubsection{\texorpdfstring{check\+Response()}{checkResponse()}}
+{\footnotesize\ttfamily \hyperlink{_events_8h_a387f1fc6b8a0efa93d5fed71c3d9c0bc}{Model\+Reaction} Model\+::check\+Response (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+reaction of the model to the last \hyperlink{class_controller}{Controller} command or update action 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_model_a2b3b7cbe02e7cac025290136e4c11e54}\label{class_model_a2b3b7cbe02e7cac025290136e4c11e54}} 
+\index{Model@{Model}!handle\+Event@{handle\+Event}}
+\index{handle\+Event@{handle\+Event}!Model@{Model}}
+\subsubsection{\texorpdfstring{handle\+Event()}{handleEvent()}}
+{\footnotesize\ttfamily void Model\+::handle\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{_events_8h_af60e00b78607064c5be6aa9397ea49c1}{Events}}]{event }\end{DoxyParamCaption})}
+
+
+
+causes \hyperlink{class_model}{Model} to react on \hyperlink{class_controller}{Controller} command 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \hyperlink{class_controller}{Controller} command in enum Events form \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_acdaa9cd882c6f43d0ea60bc7010acfa2}\label{class_model_acdaa9cd882c6f43d0ea60bc7010acfa2}} 
+\index{Model@{Model}!return\+Upper\+Layer@{return\+Upper\+Layer}}
+\index{return\+Upper\+Layer@{return\+Upper\+Layer}!Model@{Model}}
+\subsubsection{\texorpdfstring{return\+Upper\+Layer()}{returnUpperLayer()}}
+{\footnotesize\ttfamily \hyperlink{class_layer}{Layer} $\ast$ Model\+::return\+Upper\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+top layer at \textquotesingle{}layers\+\_\+list\textquotesingle{} 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Model.\+h\item 
+\hyperlink{_model_8h}{Model.\+h}\item 
 Model.\+cpp\end{DoxyCompactItemize}

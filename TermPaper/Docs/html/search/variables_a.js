@@ -1,7 +1,19 @@
 var searchData=
 [
-  ['max_5fframe',['max_frame',['../class_player.html#a2eee5f54a0b42e1a98045ddbe25a75ca',1,'Player']]],
-  ['max_5fhealth',['max_health',['../class_player.html#ad38061042ee0864383dab6935fa0acea',1,'Player']]],
-  ['model',['model',['../class_controller.html#a6f6ea54052742d3940adfcfce885bae9',1,'Controller']]],
-  ['motor_5fspeed',['motor_speed',['../class_revolute_bridge.html#a43f73302f3cf2296ef6693244af857c9',1,'RevoluteBridge']]]
+  ['l_5fheigth',['l_heigth',['../class_advanced_display.html#a2107d1ad65c137bdf4fe2ebb64cff29c',1,'AdvancedDisplay']]],
+  ['l_5fwidth',['l_width',['../class_advanced_display.html#ae8c55cb678ad26dbbb47b6a837a74886',1,'AdvancedDisplay']]],
+  ['last_5fgid',['last_gid',['../struct_tileset_img.html#a2cf02afb15fac885b30fd7d4d56374c1',1,'TilesetImg']]],
+  ['layer',['layer',['../class_display.html#a78cd676fe244dad818b5567367fdfb33',1,'Display']]],
+  ['layers_5flist',['layers_list',['../class_model.html#ae25f86a150bc0b5c146ebd39567eea2f',1,'Model']]],
+  ['left',['left',['../class_object.html#a7fc665396287cedde719083c0ec6d28f',1,'Object']]],
+  ['left_5frow',['left_row',['../class_player.html#a336d4b7a8eb04bcffcfe62a69f8bff52',1,'Player']]],
+  ['level_5fdir',['level_dir',['../class_model.html#a357abb457c3e8bf987dce2418c6f09b2',1,'Model']]],
+  ['level_5fheight',['level_height',['../class_level.html#ae360d8c791cebb14d097de1e60c64b64',1,'Level::level_height()'],['../class_platform.html#a180664b41270365d3be526b48fa2567b',1,'Platform::level_height()'],['../class_player.html#a5543a988cb2e91cf2e61b60ff5382ce9',1,'Player::level_height()']]],
+  ['level_5fnames',['level_names',['../class_model.html#a1450c4773eee836985f551c288490bf4',1,'Model']]],
+  ['level_5ftime',['level_time',['../class_level.html#a2c22c40ee8972da9630a327d93db30ed',1,'Level']]],
+  ['level_5fwidth',['level_width',['../class_level.html#a9d19634a546f199e98e01d97b02e2d2a',1,'Level::level_width()'],['../class_platform.html#ac9eacf4c7c58d649be944b94ffeeb7b5',1,'Platform::level_width()'],['../class_player.html#a5a61bfa96e90f3fbf5d89efc0872915f',1,'Player::level_width()']]],
+  ['level_5fworld',['level_world',['../class_level.html#ab71a19e06640f896110d22af9142b856',1,'Level']]],
+  ['lever_5flist',['lever_list',['../class_storage.html#a183e52c6e96e3174e51b6ae47579ed55',1,'Storage']]],
+  ['list_5fof_5fcontact',['list_of_contact',['../class_danger_object.html#a3b032f295d584177435e4ee71e8a0647',1,'DangerObject']]],
+  ['local_5fmenu',['local_menu',['../class_model.html#a53a6421a918ea8fab218d6eb7bc69119',1,'Model']]]
 ];

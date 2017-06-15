@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Docs: Layer Class Reference</title>
+<title>JUST2D Platformer: Layer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Docs
+   <div id="projectname">JUST2D Platformer
    </div>
   </td>
  </tr>
@@ -66,72 +66,372 @@ $(function() {
 <div class="title">Layer Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Determines a certain state of the model.  
+ <a href="class_layer.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_layer_8h_source.html">Layer.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Layer:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_layer__coll__graph.png" border="0" usemap="#_layer_coll__map" alt="Collaboration graph"/></div>
+<map name="_layer_coll__map" id="_layer_coll__map">
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a88251ea7cc836a16dbca1e134c5a5ee5"><td class="memItemLeft" align="right" valign="top"><a id="a88251ea7cc836a16dbca1e134c5a5ee5"></a>
-std::list&lt; <a class="el" href="class_object.html">Object</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getUnchangeableObjects</b> ()</td></tr>
+<tr class="memitem:a88251ea7cc836a16dbca1e134c5a5ee5"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="class_object.html">Object</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a88251ea7cc836a16dbca1e134c5a5ee5">getUnchangeableObjects</a> ()</td></tr>
 <tr class="separator:a88251ea7cc836a16dbca1e134c5a5ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1303bfbd28803f32708729f54ca13ec"><td class="memItemLeft" align="right" valign="top"><a id="af1303bfbd28803f32708729f54ca13ec"></a>
-std::list&lt; <a class="el" href="class_object.html">Object</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getChangeableObjects</b> ()</td></tr>
+<tr class="memitem:af1303bfbd28803f32708729f54ca13ec"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="class_object.html">Object</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#af1303bfbd28803f32708729f54ca13ec">getChangeableObjects</a> ()</td></tr>
 <tr class="separator:af1303bfbd28803f32708729f54ca13ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2aebff84a5f25f25d56d3886c8c3a4b1"><td class="memItemLeft" align="right" valign="top"><a id="a2aebff84a5f25f25d56d3886c8c3a4b1"></a>
-std::list&lt; <a class="el" href="class_object.html">Object</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getUIObjects</b> ()</td></tr>
+<tr class="memitem:a2aebff84a5f25f25d56d3886c8c3a4b1"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="class_object.html">Object</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a2aebff84a5f25f25d56d3886c8c3a4b1">getUIObjects</a> ()</td></tr>
 <tr class="separator:a2aebff84a5f25f25d56d3886c8c3a4b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd1a2a8242a5d43b389e896a3d3de800"><td class="memItemLeft" align="right" valign="top"><a id="abd1a2a8242a5d43b389e896a3d3de800"></a>
-std::list&lt; <a class="el" href="class_text_object.html">TextObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getTextObjects</b> ()</td></tr>
+<tr class="memitem:abd1a2a8242a5d43b389e896a3d3de800"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="class_text_object.html">TextObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#abd1a2a8242a5d43b389e896a3d3de800">getTextObjects</a> ()</td></tr>
 <tr class="separator:abd1a2a8242a5d43b389e896a3d3de800"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62b75693308f561bd8454a32dab9e10f"><td class="memItemLeft" align="right" valign="top"><a id="a62b75693308f561bd8454a32dab9e10f"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>getLayerSize</b> (double *width, double *height)</td></tr>
+<tr class="memitem:a62b75693308f561bd8454a32dab9e10f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a62b75693308f561bd8454a32dab9e10f">getLayerSize</a> (double *width, double *height)</td></tr>
+<tr class="memdesc:a62b75693308f561bd8454a32dab9e10f"><td class="mdescLeft">&#160;</td><td class="mdescRight">provides opportunity to get layer width and height  <a href="#a62b75693308f561bd8454a32dab9e10f">More...</a><br /></td></tr>
 <tr class="separator:a62b75693308f561bd8454a32dab9e10f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2778374314bfe517007c0b0ac3fc896"><td class="memItemLeft" align="right" valign="top"><a id="af2778374314bfe517007c0b0ac3fc896"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>getLayerCenter</b> (double *x, double *y)</td></tr>
+<tr class="memitem:af2778374314bfe517007c0b0ac3fc896"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#af2778374314bfe517007c0b0ac3fc896">getLayerCenter</a> (double *x, double *y)</td></tr>
+<tr class="memdesc:af2778374314bfe517007c0b0ac3fc896"><td class="mdescLeft">&#160;</td><td class="mdescRight">provides opportunity to get layer center  <a href="#af2778374314bfe517007c0b0ac3fc896">More...</a><br /></td></tr>
 <tr class="separator:af2778374314bfe517007c0b0ac3fc896"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a952ad194d28fe6999b85bd3d9d28ee31"><td class="memItemLeft" align="right" valign="top"><a id="a952ad194d28fe6999b85bd3d9d28ee31"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>isDoubleView</b> ()</td></tr>
+<tr class="memitem:a952ad194d28fe6999b85bd3d9d28ee31"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a952ad194d28fe6999b85bd3d9d28ee31">isDoubleView</a> ()</td></tr>
+<tr class="memdesc:a952ad194d28fe6999b85bd3d9d28ee31"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the number of view entity on the level  <a href="#a952ad194d28fe6999b85bd3d9d28ee31">More...</a><br /></td></tr>
 <tr class="separator:a952ad194d28fe6999b85bd3d9d28ee31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41318993a0f6c7ba3bc6d964f7802c10"><td class="memItemLeft" align="right" valign="top"><a id="a41318993a0f6c7ba3bc6d964f7802c10"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>smthHappend</b> (Events what_happened)=0</td></tr>
+<tr class="memitem:a41318993a0f6c7ba3bc6d964f7802c10"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a41318993a0f6c7ba3bc6d964f7802c10">smthHappend</a> (<a class="el" href="_events_8h.html#af60e00b78607064c5be6aa9397ea49c1">Events</a> what_happened)=0</td></tr>
+<tr class="memdesc:a41318993a0f6c7ba3bc6d964f7802c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Listener of player action.  <a href="#a41318993a0f6c7ba3bc6d964f7802c10">More...</a><br /></td></tr>
 <tr class="separator:a41318993a0f6c7ba3bc6d964f7802c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e197da9a85a455af77c83301ebb4d1d"><td class="memItemLeft" align="right" valign="top"><a id="a9e197da9a85a455af77c83301ebb4d1d"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>repause</b> ()</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a9e197da9a85a455af77c83301ebb4d1d">repause</a> ()</td></tr>
+<tr class="memdesc:a9e197da9a85a455af77c83301ebb4d1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">informs that level again active <br /></td></tr>
 <tr class="separator:a9e197da9a85a455af77c83301ebb4d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4243d1a4b059eb7433cbfe7cdfc2c191"><td class="memItemLeft" align="right" valign="top"><a id="a4243d1a4b059eb7433cbfe7cdfc2c191"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a4243d1a4b059eb7433cbfe7cdfc2c191">update</a> ()</td></tr>
+<tr class="memdesc:a4243d1a4b059eb7433cbfe7cdfc2c191"><td class="mdescLeft">&#160;</td><td class="mdescRight">update layer state <br /></td></tr>
 <tr class="separator:a4243d1a4b059eb7433cbfe7cdfc2c191"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9acbfda611b85762f4a39ece4ea4df33"><td class="memItemLeft" align="right" valign="top"><a id="a9acbfda611b85762f4a39ece4ea4df33"></a>
-virtual std::vector&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getImagesList</b> ()</td></tr>
+<tr class="memitem:a9acbfda611b85762f4a39ece4ea4df33"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a9acbfda611b85762f4a39ece4ea4df33">getImagesList</a> ()</td></tr>
 <tr class="separator:a9acbfda611b85762f4a39ece4ea4df33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac57343394c8dba2a180a7762cd3a20b6"><td class="memItemLeft" align="right" valign="top"><a id="ac57343394c8dba2a180a7762cd3a20b6"></a>
-virtual ReturnEvents *&#160;</td><td class="memItemRight" valign="bottom"><b>getRetEvent</b> ()</td></tr>
+<tr class="memitem:ac57343394c8dba2a180a7762cd3a20b6"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_events_8h.html#a51620cf702f1b8fdf47cd0a5cfa0ba4f">ReturnEvents</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#ac57343394c8dba2a180a7762cd3a20b6">getRetEvent</a> ()</td></tr>
 <tr class="separator:ac57343394c8dba2a180a7762cd3a20b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:ada06fdf26fe10efb2bb66ada8d10d3e0"><td class="memItemLeft" align="right" valign="top"><a id="ada06fdf26fe10efb2bb66ada8d10d3e0"></a>
-std::list&lt; <a class="el" href="class_object.html">Object</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>unchangeable_objects</b></td></tr>
+std::list&lt; <a class="el" href="class_object.html">Object</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#ada06fdf26fe10efb2bb66ada8d10d3e0">unchangeable_objects</a></td></tr>
+<tr class="memdesc:ada06fdf26fe10efb2bb66ada8d10d3e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of an layers objects which can't change during simulation process <br /></td></tr>
 <tr class="separator:ada06fdf26fe10efb2bb66ada8d10d3e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e160468d3c84bba8324a11b05be6b6e"><td class="memItemLeft" align="right" valign="top"><a id="a6e160468d3c84bba8324a11b05be6b6e"></a>
-std::list&lt; <a class="el" href="class_object.html">Object</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>changeable_objects</b></td></tr>
+std::list&lt; <a class="el" href="class_object.html">Object</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a6e160468d3c84bba8324a11b05be6b6e">changeable_objects</a></td></tr>
+<tr class="memdesc:a6e160468d3c84bba8324a11b05be6b6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of an layers objects which can change during simulation process <br /></td></tr>
 <tr class="separator:a6e160468d3c84bba8324a11b05be6b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98666cc5fd94f591c3e9ffccc02ee45c"><td class="memItemLeft" align="right" valign="top"><a id="a98666cc5fd94f591c3e9ffccc02ee45c"></a>
-std::list&lt; <a class="el" href="class_object.html">Object</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>UI_objects</b></td></tr>
+std::list&lt; <a class="el" href="class_object.html">Object</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a98666cc5fd94f591c3e9ffccc02ee45c">UI_objects</a></td></tr>
+<tr class="memdesc:a98666cc5fd94f591c3e9ffccc02ee45c"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of an layers objects which represent layer UI <br /></td></tr>
 <tr class="separator:a98666cc5fd94f591c3e9ffccc02ee45c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46c6bac93a96f1afc853aca03a42351a"><td class="memItemLeft" align="right" valign="top"><a id="a46c6bac93a96f1afc853aca03a42351a"></a>
-std::list&lt; <a class="el" href="class_text_object.html">TextObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>text_objects</b></td></tr>
+std::list&lt; <a class="el" href="class_text_object.html">TextObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a46c6bac93a96f1afc853aca03a42351a">text_objects</a></td></tr>
+<tr class="memdesc:a46c6bac93a96f1afc853aca03a42351a"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of an layers text objects <br /></td></tr>
 <tr class="separator:a46c6bac93a96f1afc853aca03a42351a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bfe2f79d24415f8619a4a7491bf1fd8"><td class="memItemLeft" align="right" valign="top"><a id="a0bfe2f79d24415f8619a4a7491bf1fd8"></a>
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>images</b></td></tr>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a0bfe2f79d24415f8619a4a7491bf1fd8">images</a></td></tr>
+<tr class="memdesc:a0bfe2f79d24415f8619a4a7491bf1fd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of string names for all images dispalyes at this layer <br /></td></tr>
 <tr class="separator:a0bfe2f79d24415f8619a4a7491bf1fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a157765c60d80f37a81c5f317da6495fe"><td class="memItemLeft" align="right" valign="top"><a id="a157765c60d80f37a81c5f317da6495fe"></a>
-ReturnEvents&#160;</td><td class="memItemRight" valign="bottom"><b>re</b></td></tr>
+<a class="el" href="_events_8h.html#a51620cf702f1b8fdf47cd0a5cfa0ba4f">ReturnEvents</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a157765c60d80f37a81c5f317da6495fe">re</a></td></tr>
+<tr class="memdesc:a157765c60d80f37a81c5f317da6495fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">last event that happens at this layer <br /></td></tr>
 <tr class="separator:a157765c60d80f37a81c5f317da6495fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Determines a certain state of the model. </p>
+<dl class="section author"><dt>Author</dt><dd>Vasily </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>June 2017</dd></dl>
+<p>Class-layer with which works <a class="el" href="class_model.html" title="Element-container in MVC structure. ">Model</a> class </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="af1303bfbd28803f32708729f54ca13ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1303bfbd28803f32708729f54ca13ec">&#9670;&nbsp;</a></span>getChangeableObjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::list&lt; <a class="el" href="class_object.html">Object</a> &gt; Layer::getChangeableObjects </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>list of an layers objects which can change during simulation process </dd></dl>
+
+</div>
+</div>
+<a id="a9acbfda611b85762f4a39ece4ea4df33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9acbfda611b85762f4a39ece4ea4df33">&#9670;&nbsp;</a></span>getImagesList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; &amp; Layer::getImagesList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>list of string names for all images dispalyes at this layer </dd></dl>
+
+</div>
+</div>
+<a id="af2778374314bfe517007c0b0ac3fc896"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2778374314bfe517007c0b0ac3fc896">&#9670;&nbsp;</a></span>getLayerCenter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Layer::getLayerCenter </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>provides opportunity to get layer center </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>pointer to the variable where x coordinate will be written </td></tr>
+    <tr><td class="paramname">y</td><td>pointer to the variable where y coordinate will be written </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="class_level.html#a4c49b93b4c3060fd650890790fc677e9">Level</a>.</p>
+
+</div>
+</div>
+<a id="a62b75693308f561bd8454a32dab9e10f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62b75693308f561bd8454a32dab9e10f">&#9670;&nbsp;</a></span>getLayerSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Layer::getLayerSize </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>provides opportunity to get layer width and height </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>pointer to the variable where width will be written </td></tr>
+    <tr><td class="paramname">height</td><td>pointer to the variable where height will be written </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="class_level.html#a7909f2ebe4d0f676adf9c84db2c1abc8">Level</a>.</p>
+
+</div>
+</div>
+<a id="ac57343394c8dba2a180a7762cd3a20b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac57343394c8dba2a180a7762cd3a20b6">&#9670;&nbsp;</a></span>getRetEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_events_8h.html#a51620cf702f1b8fdf47cd0a5cfa0ba4f">ReturnEvents</a> * Layer::getRetEvent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>pointer to the last event that happens at this layer </dd></dl>
+
+</div>
+</div>
+<a id="abd1a2a8242a5d43b389e896a3d3de800"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd1a2a8242a5d43b389e896a3d3de800">&#9670;&nbsp;</a></span>getTextObjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::list&lt; <a class="el" href="class_text_object.html">TextObject</a> * &gt; Layer::getTextObjects </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>list of an layers text objects </dd></dl>
+
+</div>
+</div>
+<a id="a2aebff84a5f25f25d56d3886c8c3a4b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2aebff84a5f25f25d56d3886c8c3a4b1">&#9670;&nbsp;</a></span>getUIObjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::list&lt; <a class="el" href="class_object.html">Object</a> * &gt; Layer::getUIObjects </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>list of an layers objects which represent layer UI </dd></dl>
+
+</div>
+</div>
+<a id="a88251ea7cc836a16dbca1e134c5a5ee5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88251ea7cc836a16dbca1e134c5a5ee5">&#9670;&nbsp;</a></span>getUnchangeableObjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::list&lt; <a class="el" href="class_object.html">Object</a> &gt; Layer::getUnchangeableObjects </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>list of an layers objects which can't change during simulation process </dd></dl>
+
+</div>
+</div>
+<a id="a952ad194d28fe6999b85bd3d9d28ee31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a952ad194d28fe6999b85bd3d9d28ee31">&#9670;&nbsp;</a></span>isDoubleView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Layer::isDoubleView </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>return the number of view entity on the level </p>
+<dl class="section return"><dt>Returns</dt><dd>'true' - two entities; 'false' - one entity </dd></dl>
+
+<p>Reimplemented in <a class="el" href="class_level.html#ae3584a92caee4cf544abd2c4f946cb18">Level</a>.</p>
+
+</div>
+</div>
+<a id="a41318993a0f6c7ba3bc6d964f7802c10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41318993a0f6c7ba3bc6d964f7802c10">&#9670;&nbsp;</a></span>smthHappend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Layer::smthHappend </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_events_8h.html#af60e00b78607064c5be6aa9397ea49c1">Events</a>&#160;</td>
+          <td class="paramname"><em>what_happened</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Listener of player action. </p>
+<p>Allow react to user action </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">what_happened</td><td>enum describing player action </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_level.html#a4e898cb21d15947077dbedfb979c63be">Level</a>, <a class="el" href="class_main_menu.html#aa4272e1cb2c70c23c869d301f2dd2110">MainMenu</a>, <a class="el" href="class_error_window.html#af9096dfdd53c4e788e62ce543f939f01">ErrorWindow</a>, <a class="el" href="class_game_over.html#a919e7ac37c476bf288f732f9a8106016">GameOver</a>, <a class="el" href="class_local_menu.html#ad6db1f0ae5757a4e25269d40f6e369af">LocalMenu</a>, and <a class="el" href="class_end_of_the_game.html#a88ac00a6aaa5193c7642d9ea2c6be688">EndOfTheGame</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_layer_8h_source.html">Layer.h</a></li>
 <li>Layer.cpp</li>

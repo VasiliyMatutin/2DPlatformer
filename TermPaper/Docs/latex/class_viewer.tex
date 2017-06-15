@@ -2,49 +2,107 @@
 \label{class_viewer}\index{Viewer@{Viewer}}
 
 
-Collaboration diagram for Viewer\+:\nopagebreak
+Viewer-\/element in M\+VC structure.  
+
+
+
+
+{\ttfamily \#include $<$Viewer.\+h$>$}
+
+
+
+Collaboration diagram for Viewer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=192pt]{class_viewer__coll__graph}
+\includegraphics[width=292pt]{class_viewer__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_viewer_a767681a73f280357e6401f469c17ca4a}\label{class_viewer_a767681a73f280357e6401f469c17ca4a}} 
-{\bfseries Viewer} (\hyperlink{class_model}{Model} $\ast$model)
-\item 
+\hyperlink{class_viewer_a767681a73f280357e6401f469c17ca4a}{Viewer} (\hyperlink{class_model}{Model} $\ast$\hyperlink{class_viewer_a974fa8b6e46d1e09e334da06b769ab6b}{model})
+\begin{DoxyCompactList}\small\item\em Defined constructor for this class. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_viewer_a7122ce13ef7b396ac8b7e471e4c82693}\label{class_viewer_a7122ce13ef7b396ac8b7e471e4c82693}} 
-void {\bfseries update} ()
-\item 
-\mbox{\Hypertarget{class_viewer_aac14898275de71b0f0d43c11214852be}\label{class_viewer_aac14898275de71b0f0d43c11214852be}} 
-void {\bfseries handle\+Viewer\+Event} (View\+Events)
-\end{DoxyCompactItemize}
+void \hyperlink{class_viewer_a7122ce13ef7b396ac8b7e471e4c82693}{update} ()
+\begin{DoxyCompactList}\small\item\em update information in all displays \end{DoxyCompactList}\item 
+void \hyperlink{class_viewer_a84b2479e91627860dc69e0c24d453324}{handle\+Viewer\+Event} (\hyperlink{_events_8h_a7e30376069ab6f940d101ae67eb3fb34}{View\+Events} event)
+\begin{DoxyCompactList}\small\item\em provide displays reaction on user action and model changes (command from \hyperlink{class_controller}{Controller}) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_viewer_a2726818329086632b258a855b22e55ac}\label{class_viewer_a2726818329086632b258a855b22e55ac}} 
-void {\bfseries prepare\+New\+Display} ()
-\item 
+void \hyperlink{class_viewer_a2726818329086632b258a855b22e55ac}{prepare\+New\+Display} ()
+\begin{DoxyCompactList}\small\item\em create new display \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_viewer_a6ee06f2f80d48076c42208250c017663}\label{class_viewer_a6ee06f2f80d48076c42208250c017663}} 
-void {\bfseries delete\+Display} ()
-\end{DoxyCompactItemize}
+void \hyperlink{class_viewer_a6ee06f2f80d48076c42208250c017663}{delete\+Display} ()
+\begin{DoxyCompactList}\small\item\em delete display from the head of the list \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_viewer_a974fa8b6e46d1e09e334da06b769ab6b}\label{class_viewer_a974fa8b6e46d1e09e334da06b769ab6b}} 
-\hyperlink{class_model}{Model} $\ast$ {\bfseries model}
-\item 
+\hyperlink{class_model}{Model} $\ast$ \hyperlink{class_viewer_a974fa8b6e46d1e09e334da06b769ab6b}{model}
+\begin{DoxyCompactList}\small\item\em pointer to the model where information is stored \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_viewer_ae144a159f8ffcfd94e355cdab921b8d3}\label{class_viewer_ae144a159f8ffcfd94e355cdab921b8d3}} 
-sf\+::\+Render\+Window $\ast$ {\bfseries window}
-\item 
+sf\+::\+Render\+Window $\ast$ \hyperlink{class_viewer_ae144a159f8ffcfd94e355cdab921b8d3}{window}
+\begin{DoxyCompactList}\small\item\em pointer to the singletone application window \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_viewer_a3f38d8aec27298408b8e5856a7ef2995}\label{class_viewer_a3f38d8aec27298408b8e5856a7ef2995}} 
-std\+::list$<$ \hyperlink{class_display}{Display} $\ast$ $>$ {\bfseries display\+\_\+list}
-\end{DoxyCompactItemize}
+std\+::list$<$ \hyperlink{class_display}{Display} $\ast$ $>$ \hyperlink{class_viewer_a3f38d8aec27298408b8e5856a7ef2995}{display\+\_\+list}
+\begin{DoxyCompactList}\small\item\em list of active displays \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Viewer-\/element in M\+VC structure. 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017
+\end{DoxyDate}
+Provides display tools 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_viewer_a767681a73f280357e6401f469c17ca4a}\label{class_viewer_a767681a73f280357e6401f469c17ca4a}} 
+\index{Viewer@{Viewer}!Viewer@{Viewer}}
+\index{Viewer@{Viewer}!Viewer@{Viewer}}
+\subsubsection{\texorpdfstring{Viewer()}{Viewer()}}
+{\footnotesize\ttfamily Viewer\+::\+Viewer (\begin{DoxyParamCaption}\item[{\hyperlink{class_model}{Model} $\ast$}]{model }\end{DoxyParamCaption})}
+
+
+
+Defined constructor for this class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & pointer to the model where information is stored \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_viewer_a84b2479e91627860dc69e0c24d453324}\label{class_viewer_a84b2479e91627860dc69e0c24d453324}} 
+\index{Viewer@{Viewer}!handle\+Viewer\+Event@{handle\+Viewer\+Event}}
+\index{handle\+Viewer\+Event@{handle\+Viewer\+Event}!Viewer@{Viewer}}
+\subsubsection{\texorpdfstring{handle\+Viewer\+Event()}{handleViewerEvent()}}
+{\footnotesize\ttfamily void Viewer\+::handle\+Viewer\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{_events_8h_a7e30376069ab6f940d101ae67eb3fb34}{View\+Events}}]{event }\end{DoxyParamCaption})}
+
+
+
+provide displays reaction on user action and model changes (command from \hyperlink{class_controller}{Controller}) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & command from \hyperlink{class_controller}{Controller} \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Viewer.\+h\item 
+\hyperlink{_viewer_8h}{Viewer.\+h}\item 
 Viewer.\+cpp\end{DoxyCompactItemize}

@@ -11,7 +11,8 @@
 
 
 
-Collaboration diagram for Manual\+Platform\+:\nopagebreak
+Collaboration diagram for Manual\+Platform\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,17 +22,14 @@ Collaboration diagram for Manual\+Platform\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_manual_platform_a0192ef683b0f19b93bd238af98f8ce51}{Manual\+Platform} (int \+\_\+level\+\_\+width, int \+\_\+level\+\_\+height, b2\+Body $\ast$\+\_\+body, \hyperlink{class_object}{Object} $\ast$\+\_\+object, std\+::vector$<$ std\+::pair$<$ double, double $>$$>$ traj\+\_\+coord, int \+\_\+fixed\+\_\+speed, bool \+\_\+is\+\_\+rounded, int \+\_\+node\+\_\+number)
+\hyperlink{class_manual_platform_a72aef4e3ecab2a802e09dfcc89e1f8e4}{Manual\+Platform} (int \+\_\+level\+\_\+width, int \+\_\+level\+\_\+height, b2\+Body $\ast$\+\_\+body, \hyperlink{class_object}{Object} $\ast$\+\_\+object, std\+::vector$<$ std\+::pair$<$ double, double $>$$>$ \+\_\+traj\+\_\+coord, int \+\_\+fixed\+\_\+speed, bool \+\_\+is\+\_\+rounded, int \+\_\+node\+\_\+number)
 \begin{DoxyCompactList}\small\item\em Defined constructor for this class. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_manual_platform_ae77ccd8210c4ee32606b3475154325d4}\label{class_manual_platform_ae77ccd8210c4ee32606b3475154325d4}} 
 void \hyperlink{class_manual_platform_ae77ccd8210c4ee32606b3475154325d4}{update} ()
 \begin{DoxyCompactList}\small\item\em inherited from \hyperlink{class_platform}{Platform} class \end{DoxyCompactList}\item 
-void \hyperlink{class_manual_platform_ad7ae2aac108330a84246e3337fb5af81}{make\+Action} (Action)
-\begin{DoxyCompactList}\small\item\em causes the bridge to make some action \end{DoxyCompactList}\item 
-b2\+Body $\ast$ \hyperlink{class_manual_platform_ad8afd5278a85a63f1b597a3851bfc65d}{get\+Body} ()
-\item 
-\hyperlink{class_object}{Object} $\ast$ \hyperlink{class_manual_platform_ad7deba6261f272ed530786e0f742b2f5}{get\+Object} ()
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_manual_platform_ad7ae2aac108330a84246e3337fb5af81}\label{class_manual_platform_ad7ae2aac108330a84246e3337fb5af81}} 
+void \hyperlink{class_manual_platform_ad7ae2aac108330a84246e3337fb5af81}{make\+Action} (\hyperlink{_manual_switch_obj_8h_a8bb1ef53467e4f61410d12822d922498}{Action})
+\begin{DoxyCompactList}\small\item\em inherited from \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} class \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -56,11 +54,11 @@ June 2017
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_manual_platform_a0192ef683b0f19b93bd238af98f8ce51}\label{class_manual_platform_a0192ef683b0f19b93bd238af98f8ce51}} 
+\mbox{\Hypertarget{class_manual_platform_a72aef4e3ecab2a802e09dfcc89e1f8e4}\label{class_manual_platform_a72aef4e3ecab2a802e09dfcc89e1f8e4}} 
 \index{Manual\+Platform@{Manual\+Platform}!Manual\+Platform@{Manual\+Platform}}
 \index{Manual\+Platform@{Manual\+Platform}!Manual\+Platform@{Manual\+Platform}}
 \subsubsection{\texorpdfstring{Manual\+Platform()}{ManualPlatform()}}
-{\footnotesize\ttfamily Manual\+Platform\+::\+Manual\+Platform (\begin{DoxyParamCaption}\item[{int}]{\+\_\+level\+\_\+width,  }\item[{int}]{\+\_\+level\+\_\+height,  }\item[{b2\+Body $\ast$}]{\+\_\+body,  }\item[{\hyperlink{class_object}{Object} $\ast$}]{\+\_\+object,  }\item[{std\+::vector$<$ std\+::pair$<$ double, double $>$$>$}]{traj\+\_\+coord,  }\item[{int}]{\+\_\+fixed\+\_\+speed,  }\item[{bool}]{\+\_\+is\+\_\+rounded,  }\item[{int}]{\+\_\+node\+\_\+number }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Manual\+Platform\+::\+Manual\+Platform (\begin{DoxyParamCaption}\item[{int}]{\+\_\+level\+\_\+width,  }\item[{int}]{\+\_\+level\+\_\+height,  }\item[{b2\+Body $\ast$}]{\+\_\+body,  }\item[{\hyperlink{class_object}{Object} $\ast$}]{\+\_\+object,  }\item[{std\+::vector$<$ std\+::pair$<$ double, double $>$$>$}]{\+\_\+traj\+\_\+coord,  }\item[{int}]{\+\_\+fixed\+\_\+speed,  }\item[{bool}]{\+\_\+is\+\_\+rounded,  }\item[{int}]{\+\_\+node\+\_\+number }\end{DoxyParamCaption})}
 
 
 
@@ -85,46 +83,6 @@ Defined constructor for this class.
 {\em \+\_\+node\+\_\+number} & max number of trajectory nodes which platform passed before reverse moving or the stop \\
 \hline
 \end{DoxyParams}
-
-
-\subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_manual_platform_ad8afd5278a85a63f1b597a3851bfc65d}\label{class_manual_platform_ad8afd5278a85a63f1b597a3851bfc65d}} 
-\index{Manual\+Platform@{Manual\+Platform}!get\+Body@{get\+Body}}
-\index{get\+Body@{get\+Body}!Manual\+Platform@{Manual\+Platform}}
-\subsubsection{\texorpdfstring{get\+Body()}{getBody()}}
-{\footnotesize\ttfamily b2\+Body $\ast$ Manual\+Platform\+::get\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\begin{DoxyReturn}{Returns}
-pointer to the box2d body assigned to this platform 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_manual_platform_ad7deba6261f272ed530786e0f742b2f5}\label{class_manual_platform_ad7deba6261f272ed530786e0f742b2f5}} 
-\index{Manual\+Platform@{Manual\+Platform}!get\+Object@{get\+Object}}
-\index{get\+Object@{get\+Object}!Manual\+Platform@{Manual\+Platform}}
-\subsubsection{\texorpdfstring{get\+Object()}{getObject()}}
-{\footnotesize\ttfamily \hyperlink{class_object}{Object} $\ast$ Manual\+Platform\+::get\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\begin{DoxyReturn}{Returns}
-pointer to the \hyperlink{class_object}{Object} class assigned to this platform 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_manual_platform_ad7ae2aac108330a84246e3337fb5af81}\label{class_manual_platform_ad7ae2aac108330a84246e3337fb5af81}} 
-\index{Manual\+Platform@{Manual\+Platform}!make\+Action@{make\+Action}}
-\index{make\+Action@{make\+Action}!Manual\+Platform@{Manual\+Platform}}
-\subsubsection{\texorpdfstring{make\+Action()}{makeAction()}}
-{\footnotesize\ttfamily void Manual\+Platform\+::make\+Action (\begin{DoxyParamCaption}\item[{Action}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-causes the bridge to make some action 
-
-
-\begin{DoxyParams}{Parameters}
-{\em action} & what necessary to make (doesn\textquotesingle{}t matter; always Action\+::default is expected) \\
-\hline
-\end{DoxyParams}
-
-
-Reimplemented from \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj}.
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

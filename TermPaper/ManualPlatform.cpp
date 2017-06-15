@@ -18,30 +18,26 @@ void ManualPlatform::makeAction(Action)
 {
 	if (ManualSwitchObj::is_active == false)
 	{
-		Platform::is_active = true;
-		counter = backup_counter;
-		point_iter -= incr;
-		int back_counter_incr=counter_incr;
-		counter_incr = 0;
-		toNextPoint();
-		counter_incr = back_counter_incr;
+		if (node_number == 0 || (counter <= node_number+1 && !is_stop))
+		{
+			Platform::is_active = true;
+			counter = backup_counter;
+			point_iter -= incr;
+			int back_counter_incr = counter_incr;
+			counter_incr = 0;
+			toNextPoint();
+			counter_incr = back_counter_incr;
+		}
+		else
+		{
+			return;
+		}
 	}
 	else
 	{
 		Platform::is_active = false;
 		backup_counter = counter;
 		body->SetLinearVelocity(b2Vec2(0, 0));
-		counter = node_number + 1;
 	}
 	ManualSwitchObj::is_active = !ManualSwitchObj::is_active;
-}
-
-b2Body * ManualPlatform::getBody()
-{
-	return body;
-}
-
-Object * ManualPlatform::getObject()
-{
-	return object;
 }

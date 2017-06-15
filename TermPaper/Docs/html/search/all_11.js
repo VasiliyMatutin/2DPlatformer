@@ -1,17 +1,19 @@
 var searchData=
 [
-  ['sensor',['Sensor',['../class_sensor.html',1,'']]],
-  ['seterrormsg',['setErrorMsg',['../class_error_window.html#ac5adc252881ca2932b4804a51da44d3e',1,'ErrorWindow']]],
-  ['sethealthlineimg',['setHealthLineImg',['../class_player_u_i.html#a5cb795f694ec795a49591e6c3a7c7e64',1,'PlayerUI']]],
-  ['setplayername',['setPlayerName',['../class_player_u_i.html#ae89b4bc3d9337f7010c504f6dd89e473',1,'PlayerUI']]],
-  ['setplayertype',['setPlayerType',['../class_player_u_i.html#ab43462a4fd71580e29c06f6516f279b4',1,'PlayerUI']]],
-  ['setvel',['setVel',['../class_player.html#ade0e4463e66975e549986ce55cac9467',1,'Player']]],
-  ['smthhappend',['smthHappend',['../class_end_of_the_game.html#a88ac00a6aaa5193c7642d9ea2c6be688',1,'EndOfTheGame::smthHappend()'],['../class_error_window.html#af9096dfdd53c4e788e62ce543f939f01',1,'ErrorWindow::smthHappend()'],['../class_game_over.html#a919e7ac37c476bf288f732f9a8106016',1,'GameOver::smthHappend()'],['../class_local_menu.html#ad6db1f0ae5757a4e25269d40f6e369af',1,'LocalMenu::smthHappend()'],['../class_main_menu.html#aa4272e1cb2c70c23c869d301f2dd2110',1,'MainMenu::smthHappend()']]],
-  ['start_5fbutton',['start_button',['../class_main_menu.html#a49c056eefba301d78aff8840fd376cc7',1,'MainMenu']]],
-  ['stopleft',['stopLeft',['../class_player.html#aa150f941486096bb63cc67eabec9046c',1,'Player']]],
-  ['stopright',['stopRight',['../class_player.html#afebb6b7ca7210e7b1aa2c9ee4ff75b0e',1,'Player']]],
-  ['storage',['Storage',['../class_storage.html',1,'']]],
-  ['strong_5fplayer',['STRONG_PLAYER',['../_contact_object_8h.html#a684af1cf542217fe5ea2859096b5fa51ae95dcc9c84efdb46a30b0e2e6a477ce3',1,'ContactObject.h']]],
-  ['strongplayer',['StrongPlayer',['../class_strong_player.html',1,'StrongPlayer'],['../class_strong_player.html#ad8c557c1ae5ada0ce8676c601b16653d',1,'StrongPlayer::StrongPlayer()']]],
-  ['strongplayer_2eh',['StrongPlayer.h',['../_strong_player_8h.html',1,'']]]
+  ['radtograd',['RADTOGRAD',['../_level_box_8h.html#aaa1374875831dcb948095da58835e34c',1,'LevelBox.h']]],
+  ['re',['re',['../class_layer.html#a157765c60d80f37a81c5f317da6495fe',1,'Layer::re()'],['../class_player.html#a652a51b511e40c14cd43c906693670f6',1,'Player::re()']]],
+  ['repause',['repause',['../class_layer.html#a9e197da9a85a455af77c83301ebb4d1d',1,'Layer::repause()'],['../class_level.html#ab0ac8520d565a0ff6ae912baff7f1895',1,'Level::repause()']]],
+  ['repeat_5fallowed',['repeat_allowed',['../class_lever.html#a8c464b1b28d5978e48bc3bc85a8cb67d',1,'Lever::repeat_allowed()'],['../class_sensor.html#a8554cb0f6e9cfcc6f277795bdd45ce14',1,'Sensor::repeat_allowed()']]],
+  ['restart_5fbutton',['restart_button',['../class_game_over.html#a5d017200c062c83022d9efe2c29e0633',1,'GameOver::restart_button()'],['../class_local_menu.html#ae41e7879af3597e9813855ead692ac54',1,'LocalMenu::restart_button()']]],
+  ['resume_5fbutton',['resume_button',['../class_local_menu.html#ad7c83497bd1737707763c9350d99ab44',1,'LocalMenu']]],
+  ['returncoordinates',['returnCoordinates',['../class_player.html#ab3d8dc6872a9903ea2717b57d77790a3',1,'Player']]],
+  ['returnevents',['ReturnEvents',['../_events_8h.html#a51620cf702f1b8fdf47cd0a5cfa0ba4f',1,'Events.h']]],
+  ['returnui',['returnUI',['../class_player.html#aefa23e8642f25b0f7e72543599d567f6',1,'Player']]],
+  ['returnupperlayer',['returnUpperLayer',['../class_model.html#acdaa9cd882c6f43d0ea60bc7010acfa2',1,'Model']]],
+  ['reversemoving',['reverseMoving',['../class_platform.html#aae68e047eaa1046773ad62654c99421a',1,'Platform']]],
+  ['revolutebridge',['RevoluteBridge',['../class_revolute_bridge.html',1,'RevoluteBridge'],['../class_revolute_bridge.html#a2b0f68222d155f93018b85bd5629c4b4',1,'RevoluteBridge::RevoluteBridge()']]],
+  ['revolutebridge_2eh',['RevoluteBridge.h',['../_revolute_bridge_8h.html',1,'']]],
+  ['right_5frow',['right_row',['../class_player.html#a68fd86a5c42d0619eff999228b0be898',1,'Player']]],
+  ['rotation',['rotation',['../class_object.html#afb2fc6bd0f2d6e62901f6b68ac7dfbc8',1,'Object']]],
+  ['run',['RUN',['../_bonus_8h.html#ad6d58ebabfbf9aa4181bfe97a5d8d984a855520d2a5b0b1a64b939e7e30889e2a',1,'Bonus.h']]]
 ];

@@ -1,5 +1,5 @@
 <map id="Lever" name="Lever">
 <area shape="rect" id="node2" href="$class_contact_object.html" title="Interface for an object which can collide with another in box2d world. " alt="" coords="5,27,123,119"/>
-<area shape="rect" id="node3" href="$class_player.html" title="Parent class for DexterousPlayer and StrongPlayer classes. " alt="" coords="147,5,275,141"/>
-<area shape="rect" id="node4" href="$class_object.html" title="{Object\n|+ number_in_image_list\land 9 more...\l|}" alt="" coords="299,27,459,119"/>
+<area shape="rect" id="node5" href="$class_player.html" title="Parent class for DexterousPlayer and StrongPlayer classes. " alt="" coords="533,5,661,141"/>
+<area shape="rect" id="node6" href="$class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes..." alt="" coords="685,27,845,119"/>
 </map>

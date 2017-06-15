@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gameover',['GAMEOVER',['../_events_8h.html#a51620cf702f1b8fdf47cd0a5cfa0ba4fa5ec7230608d2c1c4505d756b77e0c76a',1,'Events.h']]]
+  ['off',['OFF',['../_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498a88559a0cfd8250c9d65970cc145c92d4',1,'ManualSwitchObj.h']]],
+  ['others',['OTHERS',['../_contact_object_8h.html#a684af1cf542217fe5ea2859096b5fa51a4af5fe82e7a2c651d3a04f3d5aa2bef7',1,'ContactObject.h']]]
 ];

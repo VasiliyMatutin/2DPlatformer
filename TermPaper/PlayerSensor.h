@@ -20,13 +20,13 @@ private:
 	int contact_count;
 	///pointer to the player object to which this sensor is attached
 	Player* player;
+	///inhereted from ContactObject
+	void contactEvent(b2Contact * contact, bool is_begin);
 public:
 	/*!
 	\brief Defined constructor for this class
 	\param observable_player pointer to the Player class to which body this sensor is attached
-	\param _body pointer to the box2d body assigned to this sensor
+	\param body pointer to the box2d body assigned to this sensor
 	*/
 	PlayerSensor(Player* observable_player, b2Body* body);
-	///inhereted from ContactObject
-	void contactEvent(b2Contact * contact, bool is_begin);
 };

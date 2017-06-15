@@ -10,7 +10,8 @@ Platform::Platform(int _level_width, int _level_height, b2Body * _body, Object *
 	level_height(_level_height),
 	level_width(_level_width),
 	counter_incr(1),
-	is_active(1)
+	is_active(1),
+	is_stop(0)
 {
 	body->SetTransform(b2Vec2(coord_set[0].first, coord_set[0].second), 0);
 	tmp = body->GetPosition();
@@ -33,7 +34,6 @@ void Platform::update()
 				{
 					point_iter = -1;
 					toNextPoint();
-					counter_incr = 1;
 					return;
 				}
 				else
@@ -46,7 +46,6 @@ void Platform::update()
 			{
 				incr = 1;
 				toNextPoint();
-				counter_incr = 1;
 				return;
 			}
 			toNextPoint();
@@ -61,7 +60,6 @@ void Platform::update()
 
 void Platform::reverseMoving()
 {
-	counter_incr = 1;
 	incr = -incr;
 	toNextPoint();
 }
@@ -74,6 +72,7 @@ void Platform::toNextPoint()
 		if (counter == node_number+1)
 		{
 			is_active = false;
+			is_stop = true;
 			body->SetLinearVelocity(b2Vec2(0, 0));
 			return;
 		}

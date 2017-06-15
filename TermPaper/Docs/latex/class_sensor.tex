@@ -2,79 +2,101 @@
 \label{class_sensor}\index{Sensor@{Sensor}}
 
 
-Collaboration diagram for Sensor\+:\nopagebreak
+Trigger that can activate observables \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} classes (dosen\textquotesingle{}t display at the monitor)  
+
+
+
+
+{\ttfamily \#include $<$Sensor.\+h$>$}
+
+
+
+Collaboration diagram for Sensor\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=168pt]{class_sensor__coll__graph}
+\includegraphics[width=350pt]{class_sensor__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_sensor_a7988853c8a9278171ce8956ccdde63c8}\label{class_sensor_a7988853c8a9278171ce8956ccdde63c8}} 
-{\bfseries Sensor} (std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$$>$ \+\_\+observables, bool \+\_\+repeat\+\_\+allowed, bool \+\_\+is\+\_\+keeping, b2\+Body $\ast$\+\_\+body, std\+::vector$<$ Action $>$ \+\_\+stages)
-\end{DoxyCompactItemize}
+\hyperlink{class_sensor_a7988853c8a9278171ce8956ccdde63c8}{Sensor} (std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$$>$ \+\_\+observables, bool \+\_\+repeat\+\_\+allowed, bool \+\_\+is\+\_\+keeping, b2\+Body $\ast$\+\_\+body, std\+::vector$<$ \hyperlink{_manual_switch_obj_8h_a8bb1ef53467e4f61410d12822d922498}{Action} $>$ \+\_\+stages)
+\begin{DoxyCompactList}\small\item\em Defined constructor for this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \hyperlink{class_sensor_a08bfa36c84277677f3bd5fb14127fca7}{contact\+Event} (b2\+Contact $\ast$, bool)
-\begin{DoxyCompactList}\small\item\em Define object reaction to the collision in box2d world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_sensor_a3445be09d7e8905b1d8e46f2e0306542}\label{class_sensor_a3445be09d7e8905b1d8e46f2e0306542}} 
+virtual void \hyperlink{class_sensor_a3445be09d7e8905b1d8e46f2e0306542}{contact\+Event} (b2\+Contact $\ast$contact, bool is\+\_\+begin)
+\begin{DoxyCompactList}\small\item\em inherited from \hyperlink{class_contact_object}{Contact\+Object} class \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_sensor_a3056529f52d9af83b78bc7ca7e2e7ef2}\label{class_sensor_a3056529f52d9af83b78bc7ca7e2e7ef2}} 
-std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$ $>$ {\bfseries observables}
-\item 
+std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$ $>$ \hyperlink{class_sensor_a3056529f52d9af83b78bc7ca7e2e7ef2}{observables}
+\begin{DoxyCompactList}\small\item\em list of observables objects \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_sensor_a2450a980532d0448e7ea1f9db91f79f7}\label{class_sensor_a2450a980532d0448e7ea1f9db91f79f7}} 
-std\+::vector$<$ Action $>$ {\bfseries stages}
-\item 
+std\+::vector$<$ \hyperlink{_manual_switch_obj_8h_a8bb1ef53467e4f61410d12822d922498}{Action} $>$ \hyperlink{class_sensor_a2450a980532d0448e7ea1f9db91f79f7}{stages}
+\begin{DoxyCompactList}\small\item\em vector of stages(commands) through which observables objects should pass \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_sensor_a8554cb0f6e9cfcc6f277795bdd45ce14}\label{class_sensor_a8554cb0f6e9cfcc6f277795bdd45ce14}} 
-bool {\bfseries repeat\+\_\+allowed}
-\item 
+bool \hyperlink{class_sensor_a8554cb0f6e9cfcc6f277795bdd45ce14}{repeat\+\_\+allowed}
+\begin{DoxyCompactList}\small\item\em determines whether it is possible to send next command to the observables objects when they doesn\textquotesingle{}t complete previous action\+: \textquotesingle{}true\textquotesingle{} -\/ possible; \textquotesingle{}false\textquotesingle{} -\/ impossible \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_sensor_ace9f91b1e1034b501ba8f16e46b61698}\label{class_sensor_ace9f91b1e1034b501ba8f16e46b61698}} 
-bool {\bfseries is\+\_\+keeping}
-\item 
+bool \hyperlink{class_sensor_ace9f91b1e1034b501ba8f16e46b61698}{is\+\_\+keeping}
+\begin{DoxyCompactList}\small\item\em determines will be next command send afther end of the contact(end of the hold button)\+: \textquotesingle{}true\textquotesingle{} -\/ will be; \textquotesingle{}false\textquotesingle{} -\/ won\textquotesingle{}t be \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_sensor_a40badc87a0a663f3bcbc95867b6f6296}\label{class_sensor_a40badc87a0a663f3bcbc95867b6f6296}} 
-bool {\bfseries non\+\_\+run}
-\item 
+bool \hyperlink{class_sensor_a40badc87a0a663f3bcbc95867b6f6296}{non\+\_\+run}
+\begin{DoxyCompactList}\small\item\em contain information about valid of the last contact\+: \textquotesingle{}true\textquotesingle{} -\/ sensor didn\textquotesingle{}t respond; \textquotesingle{}false\textquotesingle{} -\/ sensor responded \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_sensor_aff0be53ae0ed2e7f2a34e93bd78eed5d}\label{class_sensor_aff0be53ae0ed2e7f2a34e93bd78eed5d}} 
-int {\bfseries is\+\_\+pressed}
-\item 
+int \hyperlink{class_sensor_aff0be53ae0ed2e7f2a34e93bd78eed5d}{is\+\_\+pressed}
+\begin{DoxyCompactList}\small\item\em number of active contacts \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_sensor_aaf93d0f69a770e911edaf5f265eec623}\label{class_sensor_aaf93d0f69a770e911edaf5f265eec623}} 
-int {\bfseries stage\+\_\+iter}
-\end{DoxyCompactItemize}
+int \hyperlink{class_sensor_aaf93d0f69a770e911edaf5f265eec623}{stage\+\_\+iter}
+\begin{DoxyCompactList}\small\item\em number of current stage from stages vector \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_sensor_a08bfa36c84277677f3bd5fb14127fca7}\label{class_sensor_a08bfa36c84277677f3bd5fb14127fca7}} 
-\index{Sensor@{Sensor}!contact\+Event@{contact\+Event}}
-\index{contact\+Event@{contact\+Event}!Sensor@{Sensor}}
-\subsubsection{\texorpdfstring{contact\+Event()}{contactEvent()}}
-{\footnotesize\ttfamily void Sensor\+::contact\+Event (\begin{DoxyParamCaption}\item[{b2\+Contact $\ast$}]{contact,  }\item[{bool}]{is\+Begin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+\subsection{Detailed Description}
+Trigger that can activate observables \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} classes (dosen\textquotesingle{}t display at the monitor) 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sensor_a7988853c8a9278171ce8956ccdde63c8}\label{class_sensor_a7988853c8a9278171ce8956ccdde63c8}} 
+\index{Sensor@{Sensor}!Sensor@{Sensor}}
+\index{Sensor@{Sensor}!Sensor@{Sensor}}
+\subsubsection{\texorpdfstring{Sensor()}{Sensor()}}
+{\footnotesize\ttfamily Sensor\+::\+Sensor (\begin{DoxyParamCaption}\item[{std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$$>$}]{\+\_\+observables,  }\item[{bool}]{\+\_\+repeat\+\_\+allowed,  }\item[{bool}]{\+\_\+is\+\_\+keeping,  }\item[{b2\+Body $\ast$}]{\+\_\+body,  }\item[{std\+::vector$<$ \hyperlink{_manual_switch_obj_8h_a8bb1ef53467e4f61410d12822d922498}{Action} $>$}]{\+\_\+stages }\end{DoxyParamCaption})}
 
 
 
-Define object reaction to the collision in box2d world. 
+Defined constructor for this class. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em contact} & pointer to box2d b2\+Contact class \\
+{\em \+\_\+observables} & list of observables objects \\
 \hline
-{\em is\+Begin} & \textquotesingle{}false\textquotesingle{} -\/ end of the collision; \textquotesingle{}true\textquotesingle{} -\/ start of the collision \\
+{\em \+\_\+repeat\+\_\+allowed} & determines whether it is possible to send next command to the observables objects when they doesn\textquotesingle{}t complete previous action\+: \textquotesingle{}true\textquotesingle{} -\/ possible; \textquotesingle{}false\textquotesingle{} -\/ impossible \\
+\hline
+{\em \+\_\+is\+\_\+keeping} & determines will be next command send afther end of the contact(end of the hold button)\+: \textquotesingle{}true\textquotesingle{} -\/ will be; \textquotesingle{}false\textquotesingle{} -\/ won\textquotesingle{}t be \\
+\hline
+{\em \+\_\+body} & pointer to the box2d body assigned to this sensor \\
+\hline
+{\em \+\_\+stages} & vector of stages(commands) through which observables objects should pass \\
 \hline
 \end{DoxyParams}
 
 
-Implements \hyperlink{class_contact_object_a53d2dfc1d9c2821e9c62e80ce62a6435}{Contact\+Object}.
-
-
-
-Reimplemented in \hyperlink{class_visible_sensor_a63bcb9da7556a6356cca3b08f7808bd8}{Visible\+Sensor}.
-
-
-
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Sensor.\+h\item 
+\hyperlink{_sensor_8h}{Sensor.\+h}\item 
 Sensor.\+cpp\end{DoxyCompactItemize}

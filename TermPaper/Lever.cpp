@@ -30,7 +30,7 @@ Lever::Lever(std::list<ManualSwitchObj*> _observables, bool _repeat_allowed, b2B
 	body->SetUserData(this);
 	if (stages.empty())
 	{
-		stages.push_back(Action::Default);
+		stages.push_back(Action::DEFAULT);
 	}
 }
 

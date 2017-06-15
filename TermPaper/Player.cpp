@@ -10,11 +10,13 @@ Player::Player(int _level_width, int _level_height, b2Body* _body, Object* _obje
 	x_speed(0),
 	desired_vel(0),
 	img_row(3),
-	on_ground(0),
-	is_animated(1)
+	on_ground(1),
+	is_animated(1),
+	is_stop(0)
 {
 	health = max_health;
 	body->GetFixtureList()->SetFriction(0.3f);
+	body->ResetMassData();
 	body->SetFixedRotation(true);
 	body->SetUserData(this);
 }
@@ -87,11 +89,13 @@ void Player::moveRight()
 void Player::stopRight()
 {
 	desired_vel -= fixed_speed;
+	is_stop = true;
 }
 
 void Player::stopLeft()
 {
 	desired_vel += fixed_speed;
+	is_stop = true;
 }
 
 void Player::justStop()
@@ -197,9 +201,22 @@ void Player::update()
 		destroy();
 		return;
 	}
-	float velChange = x_speed - vel.x;
-	float impulse = body->GetMass() * velChange;
-	body->ApplyLinearImpulseToCenter(b2Vec2(impulse, 0), 1);
+	if (desired_vel!=0)
+	{
+		float velChange = x_speed - vel.x;
+		float impulse = body->GetMass() * velChange;
+		body->ApplyLinearImpulseToCenter(b2Vec2(impulse, 0), 1);
+	}
+	else
+	{
+		if (is_stop)
+		{
+			float velChange = x_speed - vel.x;
+			float impulse = body->GetMass() * velChange;
+			body->ApplyLinearImpulseToCenter(b2Vec2(impulse, 0), 1);
+			is_stop = false;
+		}
+	}
 
 	NonStaticObj::update();
 	if (on_ground && x_speed != 0 && is_animated)

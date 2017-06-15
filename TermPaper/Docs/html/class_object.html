@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Docs: Object Class Reference</title>
+<title>JUST2D Platformer: Object Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Docs
+   <div id="projectname">JUST2D Platformer
    </div>
   </td>
  </tr>
@@ -65,46 +65,68 @@ $(function() {
 <div class="title">Object Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Contains based information about entity which necessary both for <a class="el" href="class_model.html" title="Element-container in MVC structure. ">Model</a> and <a class="el" href="class_viewer.html" title="Viewer-element in MVC structure. ">Viewer</a> classes.  
+ <a href="class_object.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_level_box_8h_source.html">LevelBox.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Object:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_object__coll__graph.png" border="0" usemap="#_object_coll__map" alt="Collaboration graph"/></div>
+<map name="_object_coll__map" id="_object_coll__map">
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a90c94b63236bf5be6946381db72641dc"><td class="memItemLeft" align="right" valign="top"><a id="a90c94b63236bf5be6946381db72641dc"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>number_in_image_list</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a90c94b63236bf5be6946381db72641dc">number_in_image_list</a></td></tr>
+<tr class="memdesc:a90c94b63236bf5be6946381db72641dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of the images assigned to this entity in the list of all <a class="el" href="class_layer.html" title="Determines a certain state of the model. ">Layer</a> images <br /></td></tr>
 <tr class="separator:a90c94b63236bf5be6946381db72641dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3d50969ef24f16edb7337b76a99bb4e"><td class="memItemLeft" align="right" valign="top"><a id="ad3d50969ef24f16edb7337b76a99bb4e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>top</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#ad3d50969ef24f16edb7337b76a99bb4e">top</a></td></tr>
+<tr class="memdesc:ad3d50969ef24f16edb7337b76a99bb4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">upper coordinate of an image rectangle in whole image (in pixels) <br /></td></tr>
 <tr class="separator:ad3d50969ef24f16edb7337b76a99bb4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fc665396287cedde719083c0ec6d28f"><td class="memItemLeft" align="right" valign="top"><a id="a7fc665396287cedde719083c0ec6d28f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>left</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a7fc665396287cedde719083c0ec6d28f">left</a></td></tr>
+<tr class="memdesc:a7fc665396287cedde719083c0ec6d28f"><td class="mdescLeft">&#160;</td><td class="mdescRight">left coordinate of an image rectangle in whole image (in pixels) <br /></td></tr>
 <tr class="separator:a7fc665396287cedde719083c0ec6d28f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02010c1708632be33a760486b1f648f8"><td class="memItemLeft" align="right" valign="top"><a id="a02010c1708632be33a760486b1f648f8"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>x</b></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a02010c1708632be33a760486b1f648f8">x</a></td></tr>
+<tr class="memdesc:a02010c1708632be33a760486b1f648f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">x coordinate of an object relatively <a class="el" href="class_layer.html" title="Determines a certain state of the model. ">Layer</a> (in pixels) <br /></td></tr>
 <tr class="separator:a02010c1708632be33a760486b1f648f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a542c4d6094ace575fb4a28f46b9cc6a1"><td class="memItemLeft" align="right" valign="top"><a id="a542c4d6094ace575fb4a28f46b9cc6a1"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>y</b></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a542c4d6094ace575fb4a28f46b9cc6a1">y</a></td></tr>
+<tr class="memdesc:a542c4d6094ace575fb4a28f46b9cc6a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">y coordinate of an object relatively <a class="el" href="class_layer.html" title="Determines a certain state of the model. ">Layer</a> (in pixels) <br /></td></tr>
 <tr class="separator:a542c4d6094ace575fb4a28f46b9cc6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a811bf2cbf614c4f0a3935a83fb639ffd"><td class="memItemLeft" align="right" valign="top"><a id="a811bf2cbf614c4f0a3935a83fb639ffd"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>height</b></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a811bf2cbf614c4f0a3935a83fb639ffd">height</a></td></tr>
+<tr class="memdesc:a811bf2cbf614c4f0a3935a83fb639ffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">height of an object (in pixels) <br /></td></tr>
 <tr class="separator:a811bf2cbf614c4f0a3935a83fb639ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3afad0ab476968e517b6f48c2a32719f"><td class="memItemLeft" align="right" valign="top"><a id="a3afad0ab476968e517b6f48c2a32719f"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>width</b></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a3afad0ab476968e517b6f48c2a32719f">width</a></td></tr>
+<tr class="memdesc:a3afad0ab476968e517b6f48c2a32719f"><td class="mdescLeft">&#160;</td><td class="mdescRight">width of an object (in pixels) <br /></td></tr>
 <tr class="separator:a3afad0ab476968e517b6f48c2a32719f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb2fc6bd0f2d6e62901f6b68ac7dfbc8"><td class="memItemLeft" align="right" valign="top"><a id="afb2fc6bd0f2d6e62901f6b68ac7dfbc8"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>rotation</b></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#afb2fc6bd0f2d6e62901f6b68ac7dfbc8">rotation</a></td></tr>
+<tr class="memdesc:afb2fc6bd0f2d6e62901f6b68ac7dfbc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">rotate angle of an object (in radians) <br /></td></tr>
 <tr class="separator:afb2fc6bd0f2d6e62901f6b68ac7dfbc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0881e8e5fd72a025663b048f2444555"><td class="memItemLeft" align="right" valign="top"><a id="ae0881e8e5fd72a025663b048f2444555"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_valid</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#ae0881e8e5fd72a025663b048f2444555">is_valid</a></td></tr>
+<tr class="memdesc:ae0881e8e5fd72a025663b048f2444555"><td class="mdescLeft">&#160;</td><td class="mdescRight">state of an object: 'true' - have to be dispalyed; 'false' - doesnt't have to <br /></td></tr>
 <tr class="separator:ae0881e8e5fd72a025663b048f2444555"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff7027899040a66fc27b9c059f9c13f0"><td class="memItemLeft" align="right" valign="top"><a id="aff7027899040a66fc27b9c059f9c13f0"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>transparensy</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#aff7027899040a66fc27b9c059f9c13f0">transparensy</a></td></tr>
+<tr class="memdesc:aff7027899040a66fc27b9c059f9c13f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">degree of transparensy (0-fully transperent; 255-fully opaque) <br /></td></tr>
 <tr class="separator:aff7027899040a66fc27b9c059f9c13f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Contains based information about entity which necessary both for <a class="el" href="class_model.html" title="Element-container in MVC structure. ">Model</a> and <a class="el" href="class_viewer.html" title="Viewer-element in MVC structure. ">Viewer</a> classes. </p>
+<dl class="section author"><dt>Author</dt><dd>Vasily </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>June 2017 </dd></dl>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="_level_box_8h_source.html">LevelBox.h</a></li>
 </ul>
 </div><!-- contents -->

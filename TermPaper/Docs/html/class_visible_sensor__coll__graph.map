@@ -1,4 +1,4 @@
 <map id="VisibleSensor" name="VisibleSensor">
-<area shape="rect" id="node2" href="$class_sensor.html" title="{Sensor\n|# observables\land 6 more...\l|+ Sensor()\l# contactEvent()\l}" alt="" coords="5,5,121,112"/>
-<area shape="rect" id="node3" href="$class_object.html" title="{Object\n|+ number_in_image_list\land 9 more...\l|}" alt="" coords="146,13,306,105"/>
+<area shape="rect" id="node2" href="$class_sensor.html" title="Trigger that can activate observables ManualSwitchObj classes (dosen&#39;t display at the monitor) ..." alt="" coords="5,5,124,112"/>
+<area shape="rect" id="node3" href="$class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes..." alt="" coords="149,13,309,105"/>
 </map>

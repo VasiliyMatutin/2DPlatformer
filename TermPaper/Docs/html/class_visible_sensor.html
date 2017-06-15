@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Docs: VisibleSensor Class Reference</title>
+<title>JUST2D Platformer: VisibleSensor Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Docs
+   <div id="projectname">JUST2D Platformer
    </div>
   </td>
  </tr>
@@ -67,84 +67,124 @@ $(function() {
 <div class="title">VisibleSensor Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Visible trigger that can activate observables <a class="el" href="class_manual_switch_obj.html" title="Based entity for objects that can be activated by the sensor. ">ManualSwitchObj</a> classes.  
+ <a href="class_visible_sensor.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_visible_sensor_8h_source.html">VisibleSensor.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for VisibleSensor:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_visible_sensor__coll__graph.png" border="0" usemap="#_visible_sensor_coll__map" alt="Collaboration graph"/></div>
 <map name="_visible_sensor_coll__map" id="_visible_sensor_coll__map">
-<area shape="rect" id="node2" href="class_sensor.html" title="{Sensor\n|# observables\land 6 more...\l|+ Sensor()\l# contactEvent()\l}" alt="" coords="5,5,121,112"/>
-<area shape="rect" id="node3" href="class_object.html" title="{Object\n|+ number_in_image_list\land 9 more...\l|}" alt="" coords="146,13,306,105"/>
+<area shape="rect" id="node2" href="class_sensor.html" title="Trigger that can activate observables ManualSwitchObj classes (dosen&#39;t display at the monitor) ..." alt="" coords="5,5,124,112"/>
+<area shape="rect" id="node3" href="class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes..." alt="" coords="149,13,309,105"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a45c102db9ef942dcb5bfc5dba9030add"><td class="memItemLeft" align="right" valign="top"><a id="a45c102db9ef942dcb5bfc5dba9030add"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSensor</b> (std::list&lt; <a class="el" href="class_manual_switch_obj.html">ManualSwitchObj</a> *&gt; _observables, bool _repeat_allowed, bool is_keeping, b2Body *_body, <a class="el" href="class_object.html">Object</a> *_object, std::vector&lt; Action &gt; _stages)</td></tr>
-<tr class="separator:a45c102db9ef942dcb5bfc5dba9030add"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74f292ee517c8a41afe163cef670c707"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_visible_sensor.html#a74f292ee517c8a41afe163cef670c707">VisibleSensor</a> (std::list&lt; <a class="el" href="class_manual_switch_obj.html">ManualSwitchObj</a> *&gt; _observables, bool _repeat_allowed, bool _is_keeping, b2Body *_body, <a class="el" href="class_object.html">Object</a> *_object, std::vector&lt; <a class="el" href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498">Action</a> &gt; _stages)</td></tr>
+<tr class="memdesc:a74f292ee517c8a41afe163cef670c707"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defined constructor for this class.  <a href="#a74f292ee517c8a41afe163cef670c707">More...</a><br /></td></tr>
+<tr class="separator:a74f292ee517c8a41afe163cef670c707"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_sensor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_sensor')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_sensor.html">Sensor</a></td></tr>
-<tr class="memitem:a7988853c8a9278171ce8956ccdde63c8 inherit pub_methods_class_sensor"><td class="memItemLeft" align="right" valign="top"><a id="a7988853c8a9278171ce8956ccdde63c8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Sensor</b> (std::list&lt; <a class="el" href="class_manual_switch_obj.html">ManualSwitchObj</a> *&gt; _observables, bool _repeat_allowed, bool _is_keeping, b2Body *_body, std::vector&lt; Action &gt; _stages)</td></tr>
+<tr class="memitem:a7988853c8a9278171ce8956ccdde63c8 inherit pub_methods_class_sensor"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sensor.html#a7988853c8a9278171ce8956ccdde63c8">Sensor</a> (std::list&lt; <a class="el" href="class_manual_switch_obj.html">ManualSwitchObj</a> *&gt; _observables, bool _repeat_allowed, bool _is_keeping, b2Body *_body, std::vector&lt; <a class="el" href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498">Action</a> &gt; _stages)</td></tr>
+<tr class="memdesc:a7988853c8a9278171ce8956ccdde63c8 inherit pub_methods_class_sensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defined constructor for this class.  <a href="class_sensor.html#a7988853c8a9278171ce8956ccdde63c8">More...</a><br /></td></tr>
 <tr class="separator:a7988853c8a9278171ce8956ccdde63c8 inherit pub_methods_class_sensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a63bcb9da7556a6356cca3b08f7808bd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_visible_sensor.html#a63bcb9da7556a6356cca3b08f7808bd8">contactEvent</a> (b2Contact *, bool)</td></tr>
-<tr class="memdesc:a63bcb9da7556a6356cca3b08f7808bd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define object reaction to the collision in box2d world.  <a href="#a63bcb9da7556a6356cca3b08f7808bd8">More...</a><br /></td></tr>
-<tr class="separator:a63bcb9da7556a6356cca3b08f7808bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33adba65182352abad1f71646b9ecfa5"><td class="memItemLeft" align="right" valign="top"><a id="a33adba65182352abad1f71646b9ecfa5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_visible_sensor.html#a33adba65182352abad1f71646b9ecfa5">contactEvent</a> (b2Contact *contact, bool is_begin)</td></tr>
+<tr class="memdesc:a33adba65182352abad1f71646b9ecfa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">inherited from <a class="el" href="class_contact_object.html" title="Interface for an object which can collide with another in box2d world. ">ContactObject</a> class <br /></td></tr>
+<tr class="separator:a33adba65182352abad1f71646b9ecfa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a933e07d2186c63f9333778a213dd0cd5"><td class="memItemLeft" align="right" valign="top"><a id="a933e07d2186c63f9333778a213dd0cd5"></a>
-<a class="el" href="class_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>object</b></td></tr>
+<a class="el" href="class_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_visible_sensor.html#a933e07d2186c63f9333778a213dd0cd5">object</a></td></tr>
+<tr class="memdesc:a933e07d2186c63f9333778a213dd0cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the <a class="el" href="class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes...">Object</a> class assigned to this trigger <br /></td></tr>
 <tr class="separator:a933e07d2186c63f9333778a213dd0cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_sensor"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_sensor')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_sensor.html">Sensor</a></td></tr>
 <tr class="memitem:a3056529f52d9af83b78bc7ca7e2e7ef2 inherit pro_attribs_class_sensor"><td class="memItemLeft" align="right" valign="top"><a id="a3056529f52d9af83b78bc7ca7e2e7ef2"></a>
-std::list&lt; <a class="el" href="class_manual_switch_obj.html">ManualSwitchObj</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>observables</b></td></tr>
+std::list&lt; <a class="el" href="class_manual_switch_obj.html">ManualSwitchObj</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sensor.html#a3056529f52d9af83b78bc7ca7e2e7ef2">observables</a></td></tr>
+<tr class="memdesc:a3056529f52d9af83b78bc7ca7e2e7ef2 inherit pro_attribs_class_sensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of observables objects <br /></td></tr>
 <tr class="separator:a3056529f52d9af83b78bc7ca7e2e7ef2 inherit pro_attribs_class_sensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2450a980532d0448e7ea1f9db91f79f7 inherit pro_attribs_class_sensor"><td class="memItemLeft" align="right" valign="top"><a id="a2450a980532d0448e7ea1f9db91f79f7"></a>
-std::vector&lt; Action &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>stages</b></td></tr>
+std::vector&lt; <a class="el" href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498">Action</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sensor.html#a2450a980532d0448e7ea1f9db91f79f7">stages</a></td></tr>
+<tr class="memdesc:a2450a980532d0448e7ea1f9db91f79f7 inherit pro_attribs_class_sensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector of stages(commands) through which observables objects should pass <br /></td></tr>
 <tr class="separator:a2450a980532d0448e7ea1f9db91f79f7 inherit pro_attribs_class_sensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8554cb0f6e9cfcc6f277795bdd45ce14 inherit pro_attribs_class_sensor"><td class="memItemLeft" align="right" valign="top"><a id="a8554cb0f6e9cfcc6f277795bdd45ce14"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>repeat_allowed</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sensor.html#a8554cb0f6e9cfcc6f277795bdd45ce14">repeat_allowed</a></td></tr>
+<tr class="memdesc:a8554cb0f6e9cfcc6f277795bdd45ce14 inherit pro_attribs_class_sensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">determines whether it is possible to send next command to the observables objects when they doesn't complete previous action: 'true' - possible; 'false' - impossible <br /></td></tr>
 <tr class="separator:a8554cb0f6e9cfcc6f277795bdd45ce14 inherit pro_attribs_class_sensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace9f91b1e1034b501ba8f16e46b61698 inherit pro_attribs_class_sensor"><td class="memItemLeft" align="right" valign="top"><a id="ace9f91b1e1034b501ba8f16e46b61698"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_keeping</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sensor.html#ace9f91b1e1034b501ba8f16e46b61698">is_keeping</a></td></tr>
+<tr class="memdesc:ace9f91b1e1034b501ba8f16e46b61698 inherit pro_attribs_class_sensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">determines will be next command send afther end of the contact(end of the hold button): 'true' - will be; 'false' - won't be <br /></td></tr>
 <tr class="separator:ace9f91b1e1034b501ba8f16e46b61698 inherit pro_attribs_class_sensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40badc87a0a663f3bcbc95867b6f6296 inherit pro_attribs_class_sensor"><td class="memItemLeft" align="right" valign="top"><a id="a40badc87a0a663f3bcbc95867b6f6296"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>non_run</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sensor.html#a40badc87a0a663f3bcbc95867b6f6296">non_run</a></td></tr>
+<tr class="memdesc:a40badc87a0a663f3bcbc95867b6f6296 inherit pro_attribs_class_sensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">contain information about valid of the last contact: 'true' - sensor didn't respond; 'false' - sensor responded <br /></td></tr>
 <tr class="separator:a40badc87a0a663f3bcbc95867b6f6296 inherit pro_attribs_class_sensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff0be53ae0ed2e7f2a34e93bd78eed5d inherit pro_attribs_class_sensor"><td class="memItemLeft" align="right" valign="top"><a id="aff0be53ae0ed2e7f2a34e93bd78eed5d"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>is_pressed</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sensor.html#aff0be53ae0ed2e7f2a34e93bd78eed5d">is_pressed</a></td></tr>
+<tr class="memdesc:aff0be53ae0ed2e7f2a34e93bd78eed5d inherit pro_attribs_class_sensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of active contacts <br /></td></tr>
 <tr class="separator:aff0be53ae0ed2e7f2a34e93bd78eed5d inherit pro_attribs_class_sensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf93d0f69a770e911edaf5f265eec623 inherit pro_attribs_class_sensor"><td class="memItemLeft" align="right" valign="top"><a id="aaf93d0f69a770e911edaf5f265eec623"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>stage_iter</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sensor.html#aaf93d0f69a770e911edaf5f265eec623">stage_iter</a></td></tr>
+<tr class="memdesc:aaf93d0f69a770e911edaf5f265eec623 inherit pro_attribs_class_sensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of current stage from stages vector <br /></td></tr>
 <tr class="separator:aaf93d0f69a770e911edaf5f265eec623 inherit pro_attribs_class_sensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a63bcb9da7556a6356cca3b08f7808bd8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63bcb9da7556a6356cca3b08f7808bd8">&#9670;&nbsp;</a></span>contactEvent()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Visible trigger that can activate observables <a class="el" href="class_manual_switch_obj.html" title="Based entity for objects that can be activated by the sensor. ">ManualSwitchObj</a> classes. </p>
+<dl class="section author"><dt>Author</dt><dd>Vasily </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>June 2017 </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a74f292ee517c8a41afe163cef670c707"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74f292ee517c8a41afe163cef670c707">&#9670;&nbsp;</a></span>VisibleSensor()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void VisibleSensor::contactEvent </td>
+          <td class="memname">VisibleSensor::VisibleSensor </td>
           <td>(</td>
-          <td class="paramtype">b2Contact *&#160;</td>
-          <td class="paramname"><em>contact</em>, </td>
+          <td class="paramtype">std::list&lt; <a class="el" href="class_manual_switch_obj.html">ManualSwitchObj</a> *&gt;&#160;</td>
+          <td class="paramname"><em>_observables</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>isBegin</em>&#160;</td>
+          <td class="paramname"><em>_repeat_allowed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>_is_keeping</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">b2Body *&#160;</td>
+          <td class="paramname"><em>_body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_object.html">Object</a> *&#160;</td>
+          <td class="paramname"><em>_object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498">Action</a> &gt;&#160;</td>
+          <td class="paramname"><em>_stages</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -152,23 +192,20 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>stage_iter</b></td></t
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Define object reaction to the collision in box2d world. </p>
+<p>Defined constructor for this class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">contact</td><td>pointer to box2d b2Contact class </td></tr>
-    <tr><td class="paramname">isBegin</td><td>'false' - end of the collision; 'true' - start of the collision </td></tr>
+    <tr><td class="paramname">_observables</td><td>list of observables objects </td></tr>
+    <tr><td class="paramname">_repeat_allowed</td><td>determines whether it is possible to send next command to the observables objects when they doesn't complete previous action: 'true' - possible; 'false' - impossible </td></tr>
+    <tr><td class="paramname">_is_keeping</td><td>determines will be next command send afther end of the contact(end of the hold button): 'true' - will be; 'false' - won't be </td></tr>
+    <tr><td class="paramname">_body</td><td>pointer to the box2d body assigned to this sensor </td></tr>
+    <tr><td class="paramname">_object</td><td>pointer to the <a class="el" href="class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes...">Object</a> class assigned to this sensor </td></tr>
+    <tr><td class="paramname">_stages</td><td>vector of stages(commands) through which observables objects should pass </td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Reimplemented from <a class="el" href="class_sensor.html#a08bfa36c84277677f3bd5fb14127fca7">Sensor</a>.</p>
 
 </div>
 </div>

@@ -24,7 +24,7 @@ private:
 	std::list<NonStaticObj*> to_destroy_list;
 public:
 	/*!
-	\param return pointer to the 'to_destroy_list' 
+	\return pointer to the 'to_destroy_list' 
 	*/
 	std::list<NonStaticObj*>* getToDestroyListPtr();
 }; 

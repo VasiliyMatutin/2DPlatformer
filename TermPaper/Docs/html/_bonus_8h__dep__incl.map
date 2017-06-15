@@ -1,5 +1,4 @@
 <map id="Bonus.h" name="Bonus.h">
-<area shape="rect" id="node2" href="$_bonus_8cpp.html" title="Bonus.cpp" alt="" coords="5,80,89,107"/>
-<area shape="rect" id="node3" href="$_level_storage_8h.html" title="LevelStorage.h" alt="" coords="114,80,221,107"/>
-<area shape="rect" id="node4" href="$_player_8cpp.html" title="Player.cpp" alt="" coords="245,80,329,107"/>
+<area shape="rect" id="node2" href="$_player_8h.html" title="Player.h" alt="" coords="5,80,76,107"/>
+<area shape="rect" id="node3" href="$_level_storage_8h.html" title="LevelStorage.h" alt="" coords="101,80,207,107"/>
 </map>

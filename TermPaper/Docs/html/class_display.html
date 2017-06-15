@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Docs: Display Class Reference</title>
+<title>JUST2D Platformer: Display Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Docs
+   <div id="projectname">JUST2D Platformer
    </div>
   </td>
  </tr>
@@ -67,69 +67,224 @@ $(function() {
 <div class="title">Display Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Provides a display for <a class="el" href="class_layer.html" title="Determines a certain state of the model. ">Layer</a> information.  
+ <a href="class_display.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_display_8h_source.html">Display.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Display:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_display__coll__graph.png" border="0" usemap="#_display_coll__map" alt="Collaboration graph"/></div>
 <map name="_display_coll__map" id="_display_coll__map">
-<area shape="rect" id="node2" href="class_layer.html" title="{Layer\n|# unchangeable_objects\land 5 more...\l|+ ~Layer()\land 12 more...\l# Layer()\l}" alt="" coords="5,5,168,127"/>
+<area shape="rect" id="node2" href="class_layer.html" title="Determines a certain state of the model. " alt="" coords="5,5,112,112"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a26d0e334f62107584f42e8fa3608f546"><td class="memItemLeft" align="right" valign="top"><a id="a26d0e334f62107584f42e8fa3608f546"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Display</b> (<a class="el" href="class_layer.html">Layer</a> *_layer)</td></tr>
+<tr class="memitem:a26d0e334f62107584f42e8fa3608f546"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#a26d0e334f62107584f42e8fa3608f546">Display</a> (<a class="el" href="class_layer.html">Layer</a> *_layer)</td></tr>
+<tr class="memdesc:a26d0e334f62107584f42e8fa3608f546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defined constructor for this class.  <a href="#a26d0e334f62107584f42e8fa3608f546">More...</a><br /></td></tr>
 <tr class="separator:a26d0e334f62107584f42e8fa3608f546"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23741d950a417ff7f3a24ba0ee9582cb"><td class="memItemLeft" align="right" valign="top"><a id="a23741d950a417ff7f3a24ba0ee9582cb"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>changeScale</b> (double x, double y)</td></tr>
-<tr class="separator:a23741d950a417ff7f3a24ba0ee9582cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad46fa6155c4ffe40f11ebf2daee6d67c"><td class="memItemLeft" align="right" valign="top"><a id="ad46fa6155c4ffe40f11ebf2daee6d67c"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>handleViewerEvent</b> (ViewEvents)</td></tr>
-<tr class="separator:ad46fa6155c4ffe40f11ebf2daee6d67c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4a3db38f39ad17537c58cbd17bc0d04"><td class="memItemLeft" align="right" valign="top"><a id="ab4a3db38f39ad17537c58cbd17bc0d04"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#ab4a3db38f39ad17537c58cbd17bc0d04">changeScale</a> ()</td></tr>
+<tr class="memdesc:ab4a3db38f39ad17537c58cbd17bc0d04"><td class="mdescLeft">&#160;</td><td class="mdescRight">change scale of the screen <br /></td></tr>
+<tr class="separator:ab4a3db38f39ad17537c58cbd17bc0d04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0383047ebb0be089fe56826e84f9fcf1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#a0383047ebb0be089fe56826e84f9fcf1">handleViewerEvent</a> (<a class="el" href="_events_8h.html#a7e30376069ab6f940d101ae67eb3fb34">ViewEvents</a> event)</td></tr>
+<tr class="memdesc:a0383047ebb0be089fe56826e84f9fcf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">provide display reaction on user action and model changes (command from <a class="el" href="class_controller.html" title="Operating element in MVC structure. ">Controller</a>)  <a href="#a0383047ebb0be089fe56826e84f9fcf1">More...</a><br /></td></tr>
+<tr class="separator:a0383047ebb0be089fe56826e84f9fcf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2740b779d61e461c4dcaaf34f1fcd8f"><td class="memItemLeft" align="right" valign="top"><a id="ad2740b779d61e461c4dcaaf34f1fcd8f"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#ad2740b779d61e461c4dcaaf34f1fcd8f">update</a> ()</td></tr>
+<tr class="memdesc:ad2740b779d61e461c4dcaaf34f1fcd8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">update information on the screen <br /></td></tr>
 <tr class="separator:ad2740b779d61e461c4dcaaf34f1fcd8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:aadebd92927d32d9766bc2d7bfff272f3"><td class="memItemLeft" align="right" valign="top"><a id="aadebd92927d32d9766bc2d7bfff272f3"></a>
-sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><b>setSprite</b> (<a class="el" href="class_object.html">Object</a> it)</td></tr>
+<tr class="memitem:aadebd92927d32d9766bc2d7bfff272f3"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#aadebd92927d32d9766bc2d7bfff272f3">setSprite</a> (<a class="el" href="class_object.html">Object</a> it)</td></tr>
+<tr class="memdesc:aadebd92927d32d9766bc2d7bfff272f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">internal function which fill sfml sprite with information from <a class="el" href="class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes...">Object</a> class  <a href="#aadebd92927d32d9766bc2d7bfff272f3">More...</a><br /></td></tr>
 <tr class="separator:aadebd92927d32d9766bc2d7bfff272f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7ab55961c0e45e5f4f3caddd9359b1b"><td class="memItemLeft" align="right" valign="top"><a id="ad7ab55961c0e45e5f4f3caddd9359b1b"></a>
-sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><b>setDynamicSprite</b> (<a class="el" href="class_object.html">Object</a> it)</td></tr>
+<tr class="memitem:ad7ab55961c0e45e5f4f3caddd9359b1b"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#ad7ab55961c0e45e5f4f3caddd9359b1b">setDynamicSprite</a> (<a class="el" href="class_object.html">Object</a> it)</td></tr>
+<tr class="memdesc:ad7ab55961c0e45e5f4f3caddd9359b1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">internal function which fill sfml sprite with information from <a class="el" href="class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes...">Object</a> class  <a href="#ad7ab55961c0e45e5f4f3caddd9359b1b">More...</a><br /></td></tr>
 <tr class="separator:ad7ab55961c0e45e5f4f3caddd9359b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0ff309e86415292e5b62e28ee658407"><td class="memItemLeft" align="right" valign="top"><a id="ad0ff309e86415292e5b62e28ee658407"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>loadDisplay</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#ad0ff309e86415292e5b62e28ee658407">loadDisplay</a> ()</td></tr>
+<tr class="memdesc:ad0ff309e86415292e5b62e28ee658407"><td class="mdescLeft">&#160;</td><td class="mdescRight">prepare class for work <br /></td></tr>
 <tr class="separator:ad0ff309e86415292e5b62e28ee658407"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a316e10fdc05529ec6d73f6a82aedbf3a"><td class="memItemLeft" align="right" valign="top"><a id="a316e10fdc05529ec6d73f6a82aedbf3a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>updateWithoutText</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#a316e10fdc05529ec6d73f6a82aedbf3a">updateWithoutText</a> ()</td></tr>
+<tr class="memdesc:a316e10fdc05529ec6d73f6a82aedbf3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">special update without text information (which doesn't display) <br /></td></tr>
 <tr class="separator:a316e10fdc05529ec6d73f6a82aedbf3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a78cd676fe244dad818b5567367fdfb33"><td class="memItemLeft" align="right" valign="top"><a id="a78cd676fe244dad818b5567367fdfb33"></a>
-<a class="el" href="class_layer.html">Layer</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>layer</b></td></tr>
+<a class="el" href="class_layer.html">Layer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#a78cd676fe244dad818b5567367fdfb33">layer</a></td></tr>
+<tr class="memdesc:a78cd676fe244dad818b5567367fdfb33"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the <a class="el" href="class_layer.html" title="Determines a certain state of the model. ">Layer</a> with model information to display <br /></td></tr>
 <tr class="separator:a78cd676fe244dad818b5567367fdfb33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2bec26675f5903449716d95bb0107bd"><td class="memItemLeft" align="right" valign="top"><a id="ab2bec26675f5903449716d95bb0107bd"></a>
-sf::RenderWindow *&#160;</td><td class="memItemRight" valign="bottom"><b>window</b></td></tr>
+sf::RenderWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#ab2bec26675f5903449716d95bb0107bd">window</a></td></tr>
+<tr class="memdesc:ab2bec26675f5903449716d95bb0107bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the singletone application window <br /></td></tr>
 <tr class="separator:ab2bec26675f5903449716d95bb0107bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad84f83c5fd704ce49ac3f038f07ae6dd"><td class="memItemLeft" align="right" valign="top"><a id="ad84f83c5fd704ce49ac3f038f07ae6dd"></a>
-sf::View&#160;</td><td class="memItemRight" valign="bottom"><b>view</b></td></tr>
+sf::View&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#ad84f83c5fd704ce49ac3f038f07ae6dd">view</a></td></tr>
+<tr class="memdesc:ad84f83c5fd704ce49ac3f038f07ae6dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">base view for elements at the level <br /></td></tr>
 <tr class="separator:ad84f83c5fd704ce49ac3f038f07ae6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c39b9f00cdfb5f4114c5a40e8af076d"><td class="memItemLeft" align="right" valign="top"><a id="a2c39b9f00cdfb5f4114c5a40e8af076d"></a>
-sf::Font&#160;</td><td class="memItemRight" valign="bottom"><b>font</b></td></tr>
+sf::Font&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#a2c39b9f00cdfb5f4114c5a40e8af076d">font</a></td></tr>
+<tr class="memdesc:a2c39b9f00cdfb5f4114c5a40e8af076d"><td class="mdescLeft">&#160;</td><td class="mdescRight">text font <br /></td></tr>
 <tr class="separator:a2c39b9f00cdfb5f4114c5a40e8af076d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8369eaf8bd4706d966c7e1be78d061fe"><td class="memItemLeft" align="right" valign="top"><a id="a8369eaf8bd4706d966c7e1be78d061fe"></a>
-sf::Text&#160;</td><td class="memItemRight" valign="bottom"><b>text</b></td></tr>
+sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#a8369eaf8bd4706d966c7e1be78d061fe">text</a></td></tr>
+<tr class="memdesc:a8369eaf8bd4706d966c7e1be78d061fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">sfml text container <br /></td></tr>
 <tr class="separator:a8369eaf8bd4706d966c7e1be78d061fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a3dd88f53281f8bc2294f33862dced0"><td class="memItemLeft" align="right" valign="top"><a id="a1a3dd88f53281f8bc2294f33862dced0"></a>
-std::vector&lt; sf::Sprite &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>constant_sprite</b></td></tr>
+std::vector&lt; sf::Sprite &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#a1a3dd88f53281f8bc2294f33862dced0">constant_sprite</a></td></tr>
+<tr class="memdesc:a1a3dd88f53281f8bc2294f33862dced0"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector containing sfml sprites for non-changeable elements <br /></td></tr>
 <tr class="separator:a1a3dd88f53281f8bc2294f33862dced0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc1a00673738d4dc7451caf213982e4d"><td class="memItemLeft" align="right" valign="top"><a id="acc1a00673738d4dc7451caf213982e4d"></a>
-std::vector&lt; sf::Texture &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>texture</b></td></tr>
+std::vector&lt; sf::Texture &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#acc1a00673738d4dc7451caf213982e4d">texture</a></td></tr>
+<tr class="memdesc:acc1a00673738d4dc7451caf213982e4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector containing sfml textures for all <a class="el" href="class_layer.html" title="Determines a certain state of the model. ">Layer</a>'s images <br /></td></tr>
 <tr class="separator:acc1a00673738d4dc7451caf213982e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Provides a display for <a class="el" href="class_layer.html" title="Determines a certain state of the model. ">Layer</a> information. </p>
+<dl class="section author"><dt>Author</dt><dd>Vasily </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>June 2017 </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a26d0e334f62107584f42e8fa3608f546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26d0e334f62107584f42e8fa3608f546">&#9670;&nbsp;</a></span>Display()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Display::Display </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_layer.html">Layer</a> *&#160;</td>
+          <td class="paramname"><em>_layer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Defined constructor for this class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_layer</td><td>container which contain model information for display </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0383047ebb0be089fe56826e84f9fcf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0383047ebb0be089fe56826e84f9fcf1">&#9670;&nbsp;</a></span>handleViewerEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Display::handleViewerEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_events_8h.html#a7e30376069ab6f940d101ae67eb3fb34">ViewEvents</a>&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>provide display reaction on user action and model changes (command from <a class="el" href="class_controller.html" title="Operating element in MVC structure. ">Controller</a>) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>command from <a class="el" href="class_controller.html" title="Operating element in MVC structure. ">Controller</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="class_advanced_display.html#ae7ce015fcaf05f4a34c123bff64ebb2e">AdvancedDisplay</a>.</p>
+
+</div>
+</div>
+<a id="ad7ab55961c0e45e5f4f3caddd9359b1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7ab55961c0e45e5f4f3caddd9359b1b">&#9670;&nbsp;</a></span>setDynamicSprite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite Display::setDynamicSprite </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_object.html">Object</a>&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>internal function which fill sfml sprite with information from <a class="el" href="class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes...">Object</a> class </p>
+<p>IT'S IMPORTANT! Sprite origin is the center of an object </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td><a class="el" href="class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes...">Object</a> with information </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>created sfml sprite </dd></dl>
+
+</div>
+</div>
+<a id="aadebd92927d32d9766bc2d7bfff272f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadebd92927d32d9766bc2d7bfff272f3">&#9670;&nbsp;</a></span>setSprite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite Display::setSprite </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_object.html">Object</a>&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>internal function which fill sfml sprite with information from <a class="el" href="class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes...">Object</a> class </p>
+<p>IT'S IMPORTANT! Sprite origin is the left-top point of an object </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td><a class="el" href="class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes...">Object</a> with information </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>created sfml sprite </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_display_8h_source.html">Display.h</a></li>
 <li>Display.cpp</li>

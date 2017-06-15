@@ -1,9 +1,0 @@
-<map id="Layer" name="Layer">
-<area shape="rect" id="node2" href="$class_auxiliary_layer.html" title="{AuxiliaryLayer\n||# isContains()\l}" alt="" coords="307,204,411,281"/>
-<area shape="rect" id="node8" href="$class_level.html" title="{Level\n|&#45; level_width\land 14 more...\l|+ Level()\land 8 more...\l&#45; loadMap()\land 20 more...\l}" alt="" coords="435,175,542,311"/>
-<area shape="rect" id="node3" href="$class_end_of_the_game.html" title="{EndOfTheGame\n|&#45; quit_button\l|+ EndOfTheGame()\land 1 more...\l}" alt="" coords="5,366,140,458"/>
-<area shape="rect" id="node4" href="$class_error_window.html" title="{ErrorWindow\n|&#45; introduction\land 3 more...\l|+ ErrorWindow()\land 2 more...\l}" alt="" coords="164,359,280,465"/>
-<area shape="rect" id="node5" href="$class_game_over.html" title="{GameOver\n|&#45; restart_button\land 2 more...\l|+ GameOver()\land 1 more...\l}" alt="" coords="304,359,415,465"/>
-<area shape="rect" id="node6" href="$class_local_menu.html" title="{LocalMenu\n|&#45; restart_button\land 2 more...\l|+ LocalMenu()\land 1 more...\l}" alt="" coords="439,359,549,465"/>
-<area shape="rect" id="node7" href="$class_main_menu.html" title="{MainMenu\n|&#45; introduction\land 5 more...\l|+ MainMenu()\land 2 more...\l}" alt="" coords="573,359,676,465"/>
-</map>

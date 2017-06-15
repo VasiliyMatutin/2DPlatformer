@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Docs: Events.h File Reference</title>
+<title>JUST2D Platformer: Events.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Docs
+   <div id="projectname">JUST2D Platformer
    </div>
   </td>
  </tr>
@@ -60,7 +60,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">Events.h File Reference</div>  </div>
 </div><!--header-->
@@ -72,9 +73,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <map name="_events_8hdep" id="_events_8hdep">
 <area shape="rect" id="node2" href="_layer_8h.html" title="Layer.h" alt="" coords="5,80,71,107"/>
 <area shape="rect" id="node3" href="_player_8h.html" title="Player.h" alt="" coords="95,80,165,107"/>
-<area shape="rect" id="node4" href="_controller_8h.html" title="Controller.h" alt="" coords="195,155,283,181"/>
-<area shape="rect" id="node5" href="_model_8h.html" title="Model.h" alt="" coords="241,80,309,107"/>
-<area shape="rect" id="node6" href="_events_8cpp.html" title="Events.cpp" alt="" coords="333,80,420,107"/>
+<area shape="rect" id="node4" href="_model_8h.html" title="Model.h" alt="" coords="189,80,257,107"/>
 </map>
 </div>
 </div>
@@ -83,204 +82,88 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_mouse_click_coordinates.html">MouseClickCoordinates</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">last registered mouse click coordinates  <a href="struct_mouse_click_coordinates.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_position_relatively_screen.html">PositionRelativelyScreen</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">hero position relatively screen, not level  <a href="struct_position_relatively_screen.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:af60e00b78607064c5be6aa9397ea49c1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_events_8h.html#af60e00b78607064c5be6aa9397ea49c1">Events</a> { <br />
-&#160;&#160;<a class="el" href="_events_8h.html#af60e00b78607064c5be6aa9397ea49c1a2a81c1ce439d7652d7a61d55229c8043">Events::LeftButton</a>, 
-<a class="el" href="_events_8h.html#af60e00b78607064c5be6aa9397ea49c1ac903fabc3812576a17e92375c66afca3">Events::LeftButtonReleased</a>, 
-<a class="el" href="_events_8h.html#af60e00b78607064c5be6aa9397ea49c1a7e264b46aade8e083656f1f0897220f3">Events::RightButton</a>, 
-<a class="el" href="_events_8h.html#af60e00b78607064c5be6aa9397ea49c1a4d1555b2f6fdd2d8d7e929050ed07e6b">Events::RightButtonReleased</a>, 
+<tr class="memitem:af60e00b78607064c5be6aa9397ea49c1"><td class="memItemLeft" align="right" valign="top"><a id="af60e00b78607064c5be6aa9397ea49c1"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_events_8h.html#af60e00b78607064c5be6aa9397ea49c1">Events</a> { <br />
+&#160;&#160;<b>LEFTBUTTON</b>, 
+<b>LEFTBUTTONRELEASED</b>, 
+<b>RIGHTBUTTON</b>, 
+<b>RIGHTBUTTONRELEASED</b>, 
 <br />
-&#160;&#160;<a class="el" href="_events_8h.html#af60e00b78607064c5be6aa9397ea49c1a17863489f9b8f913fbd0b692854f1e4b">Events::UpButton</a>, 
-<a class="el" href="_events_8h.html#af60e00b78607064c5be6aa9397ea49c1ae0c8202171c115c6f8934ea5db2992b7">Events::UpButtonReleased</a>, 
-<a class="el" href="_events_8h.html#af60e00b78607064c5be6aa9397ea49c1a9aea214028b4a770eb98868f23c58326">Events::IButton</a>, 
-<a class="el" href="_events_8h.html#af60e00b78607064c5be6aa9397ea49c1a56c55ee9b3eb4bcad7349444e7e13ec8">Events::PButton</a>, 
+&#160;&#160;<b>UPBUTTON</b>, 
+<b>UPBUTTONRELEASED</b>, 
+<b>IBUTTON</b>, 
+<b>PBUTTON</b>, 
 <br />
-&#160;&#160;<a class="el" href="_events_8h.html#af60e00b78607064c5be6aa9397ea49c1ae9d492b9f3db7e092bc6e54a0c87cc13">Events::CButton</a>, 
-<a class="el" href="_events_8h.html#af60e00b78607064c5be6aa9397ea49c1a303b0e103ad7dcb2fef851555eeefb56">Events::EscButton</a>, 
-<a class="el" href="_events_8h.html#af60e00b78607064c5be6aa9397ea49c1a042aab3585a68fcbb1cc31d043758404">Events::EnterButton</a>, 
-<a class="el" href="_events_8h.html#af60e00b78607064c5be6aa9397ea49c1a9ff1a80c13bdc71db1822f608a74fdd6">Events::MouseClicked</a>
+&#160;&#160;<b>CBUTTON</b>, 
+<b>ESCBUTTON</b>, 
+<b>ENTERBUTTON</b>, 
+<b>MOUSECLICKED</b>
 <br />
- }</td></tr>
+ }<tr class="memdesc:af60e00b78607064c5be6aa9397ea49c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">sfml events trasfer into apllication command <br /></td></tr>
+</td></tr>
 <tr class="separator:af60e00b78607064c5be6aa9397ea49c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e30376069ab6f940d101ae67eb3fb34"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_events_8h.html#a7e30376069ab6f940d101ae67eb3fb34">ViewEvents</a> { <br />
-&#160;&#160;<a class="el" href="_events_8h.html#a7e30376069ab6f940d101ae67eb3fb34a99214be5f870bf07ffba86ea9d831a85">ViewEvents::ADDLAYER</a>, 
-<a class="el" href="_events_8h.html#a7e30376069ab6f940d101ae67eb3fb34a9603c2e8cf122ab3b8d5130d7c1be21f">ViewEvents::DELETELAYER</a>, 
-<a class="el" href="_events_8h.html#a7e30376069ab6f940d101ae67eb3fb34ab849de84f2f47d82abec13bbbe744712">ViewEvents::DELETEALLLAYERS</a>, 
-<a class="el" href="_events_8h.html#a7e30376069ab6f940d101ae67eb3fb34a64181bf5b65614a2308ac08d5a1b09d9">ViewEvents::BRINGZOOMCLOSER</a>, 
+<tr class="memitem:a7e30376069ab6f940d101ae67eb3fb34"><td class="memItemLeft" align="right" valign="top"><a id="a7e30376069ab6f940d101ae67eb3fb34"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_events_8h.html#a7e30376069ab6f940d101ae67eb3fb34">ViewEvents</a> { <br />
+&#160;&#160;<b>ADDLAYER</b>, 
+<b>DELETELAYER</b>, 
+<b>DELETEALLLAYERS</b>, 
+<b>BRINGZOOMCLOSER</b>, 
 <br />
-&#160;&#160;<a class="el" href="_events_8h.html#a7e30376069ab6f940d101ae67eb3fb34a10cdb6c8139003e73f4ee5fd262fccfc">ViewEvents::DISTANCEZOOM</a>, 
-<a class="el" href="_events_8h.html#a7e30376069ab6f940d101ae67eb3fb34a94c8c57d42d00cf1f4c9117d1a64787c">ViewEvents::WINRESIZE</a>
+&#160;&#160;<b>DISTANCEZOOM</b>, 
+<b>WINRESIZE</b>
 <br />
- }</td></tr>
+ }<tr class="memdesc:a7e30376069ab6f940d101ae67eb3fb34"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_controller.html" title="Operating element in MVC structure. ">Controller</a> commands to <a class="el" href="class_viewer.html" title="Viewer-element in MVC structure. ">Viewer</a>. <br /></td></tr>
+</td></tr>
 <tr class="separator:a7e30376069ab6f940d101ae67eb3fb34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51620cf702f1b8fdf47cd0a5cfa0ba4f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_events_8h.html#a51620cf702f1b8fdf47cd0a5cfa0ba4f">ReturnEvents</a> { <br />
-&#160;&#160;<a class="el" href="_events_8h.html#a51620cf702f1b8fdf47cd0a5cfa0ba4fa2e0aa69b85dcfb05e26a25430747bfd7">ReturnEvents::NEXTLEVEL</a>, 
-<a class="el" href="_events_8h.html#a51620cf702f1b8fdf47cd0a5cfa0ba4fa7286293c9125ac7d7bace94c190bc16d">ReturnEvents::CLOSE</a>, 
-<a class="el" href="_events_8h.html#a51620cf702f1b8fdf47cd0a5cfa0ba4fa1104c54a9ec6549e4ef9562b687596fb">ReturnEvents::RESTART</a>, 
-<a class="el" href="_events_8h.html#a51620cf702f1b8fdf47cd0a5cfa0ba4fa5ec7230608d2c1c4505d756b77e0c76a">ReturnEvents::GAMEOVER</a>, 
+<tr class="memitem:a51620cf702f1b8fdf47cd0a5cfa0ba4f"><td class="memItemLeft" align="right" valign="top"><a id="a51620cf702f1b8fdf47cd0a5cfa0ba4f"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_events_8h.html#a51620cf702f1b8fdf47cd0a5cfa0ba4f">ReturnEvents</a> { <br />
+&#160;&#160;<b>NEXTLEVEL</b>, 
+<b>CLOSE</b>, 
+<b>RESTART</b>, 
+<b>GAMEOVER</b>, 
 <br />
-&#160;&#160;<a class="el" href="_events_8h.html#a51620cf702f1b8fdf47cd0a5cfa0ba4fa92e56d8195a9dd45a9b90aacf82886b1">ReturnEvents::WIN</a>, 
-<a class="el" href="_events_8h.html#a51620cf702f1b8fdf47cd0a5cfa0ba4fa67e774bf786d5324a0f82892c22b10ba">ReturnEvents::OPENMENU</a>, 
-<a class="el" href="_events_8h.html#a51620cf702f1b8fdf47cd0a5cfa0ba4fafa8c23c80de39d6ca43b912dbb5240de">ReturnEvents::OPENLOCALMENU</a>, 
-<a class="el" href="_events_8h.html#a51620cf702f1b8fdf47cd0a5cfa0ba4fadc7d9845d478ab6cf1795ad861ce37c6">ReturnEvents::CLOSELOCALMENU</a>, 
+&#160;&#160;<b>WIN</b>, 
+<b>OPENMENU</b>, 
+<b>OPENLOCALMENU</b>, 
+<b>CLOSELOCALMENU</b>, 
 <br />
-&#160;&#160;<a class="el" href="_events_8h.html#a51620cf702f1b8fdf47cd0a5cfa0ba4fa5b39c8b553c821e7cddc6da64b5bd2ee">ReturnEvents::DEFAULT</a>, 
-<a class="el" href="_events_8h.html#a51620cf702f1b8fdf47cd0a5cfa0ba4fab89c3d897b196ffff1537331bc659a97">ReturnEvents::FULLSCREEN</a>, 
-<a class="el" href="_events_8h.html#a51620cf702f1b8fdf47cd0a5cfa0ba4fadaa43822b2c6abbb5d4eaf867ff6e4a4">ReturnEvents::WINDOWED</a>
+&#160;&#160;<b>DEFAULT</b>, 
+<b>FULLSCREEN</b>, 
+<b>WINDOWED</b>
 <br />
- }</td></tr>
+ }<tr class="memdesc:a51620cf702f1b8fdf47cd0a5cfa0ba4f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_layer.html" title="Determines a certain state of the model. ">Layer</a> events. <br /></td></tr>
+</td></tr>
 <tr class="separator:a51620cf702f1b8fdf47cd0a5cfa0ba4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a387f1fc6b8a0efa93d5fed71c3d9c0bc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_events_8h.html#a387f1fc6b8a0efa93d5fed71c3d9c0bc">ModelReaction</a> { <br />
-&#160;&#160;<a class="el" href="_events_8h.html#a387f1fc6b8a0efa93d5fed71c3d9c0bca9eeb52badb613229884838847294b90d">ModelReaction::ADD</a>, 
-<a class="el" href="_events_8h.html#a387f1fc6b8a0efa93d5fed71c3d9c0bca32f68a60cef40faedbc6af20298c1a1e">ModelReaction::DELETE</a>, 
-<a class="el" href="_events_8h.html#a387f1fc6b8a0efa93d5fed71c3d9c0bcad76cbd61e2b8920c4fe869837cfa8054">ModelReaction::CLEARALLANDADD</a>, 
-<a class="el" href="_events_8h.html#a387f1fc6b8a0efa93d5fed71c3d9c0bca7286293c9125ac7d7bace94c190bc16d">ModelReaction::CLOSE</a>, 
+<tr class="memitem:a387f1fc6b8a0efa93d5fed71c3d9c0bc"><td class="memItemLeft" align="right" valign="top"><a id="a387f1fc6b8a0efa93d5fed71c3d9c0bc"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_events_8h.html#a387f1fc6b8a0efa93d5fed71c3d9c0bc">ModelReaction</a> { <br />
+&#160;&#160;<b>ADD</b>, 
+<b>REMOVE</b>, 
+<b>CLEARALLANDADD</b>, 
+<b>CLOSE</b>, 
 <br />
-&#160;&#160;<a class="el" href="_events_8h.html#a387f1fc6b8a0efa93d5fed71c3d9c0bca8697250efc73639dd2a6e7da243ac68b">ModelReaction::NOTHING</a>, 
-<a class="el" href="_events_8h.html#a387f1fc6b8a0efa93d5fed71c3d9c0bcab89c3d897b196ffff1537331bc659a97">ModelReaction::FULLSCREEN</a>, 
-<a class="el" href="_events_8h.html#a387f1fc6b8a0efa93d5fed71c3d9c0bcadaa43822b2c6abbb5d4eaf867ff6e4a4">ModelReaction::WINDOWED</a>
+&#160;&#160;<b>NOTHING</b>, 
+<b>FULLSCREEN</b>, 
+<b>WINDOWED</b>
 <br />
- }</td></tr>
+ }<tr class="memdesc:a387f1fc6b8a0efa93d5fed71c3d9c0bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">information about last state that <a class="el" href="class_model.html" title="Element-container in MVC structure. ">Model</a> return to <a class="el" href="class_controller.html" title="Operating element in MVC structure. ">Controller</a> <br /></td></tr>
+</td></tr>
 <tr class="separator:a387f1fc6b8a0efa93d5fed71c3d9c0bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a50fe5f2f80834e0c2f4417bd06695f4c"><td class="memItemLeft" align="right" valign="top"><a id="a50fe5f2f80834e0c2f4417bd06695f4c"></a>
+static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_events_8h.html#a50fe5f2f80834e0c2f4417bd06695f4c">X_WIN_SIZE</a> = 800</td></tr>
+<tr class="memdesc:a50fe5f2f80834e0c2f4417bd06695f4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">default windows size on x coordinate <br /></td></tr>
+<tr class="separator:a50fe5f2f80834e0c2f4417bd06695f4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9078f21d82e8c5e33a3db8e97a0c56c0"><td class="memItemLeft" align="right" valign="top"><a id="a9078f21d82e8c5e33a3db8e97a0c56c0"></a>
+static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_events_8h.html#a9078f21d82e8c5e33a3db8e97a0c56c0">Y_WIN_SIZE</a> = 600</td></tr>
+<tr class="memdesc:a9078f21d82e8c5e33a3db8e97a0c56c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">default windows size on y coordinate <br /></td></tr>
+<tr class="separator:a9078f21d82e8c5e33a3db8e97a0c56c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="af60e00b78607064c5be6aa9397ea49c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af60e00b78607064c5be6aa9397ea49c1">&#9670;&nbsp;</a></span>Events</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_events_8h.html#af60e00b78607064c5be6aa9397ea49c1">Events</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af60e00b78607064c5be6aa9397ea49c1a2a81c1ce439d7652d7a61d55229c8043"></a>LeftButton&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af60e00b78607064c5be6aa9397ea49c1ac903fabc3812576a17e92375c66afca3"></a>LeftButtonReleased&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af60e00b78607064c5be6aa9397ea49c1a7e264b46aade8e083656f1f0897220f3"></a>RightButton&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af60e00b78607064c5be6aa9397ea49c1a4d1555b2f6fdd2d8d7e929050ed07e6b"></a>RightButtonReleased&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af60e00b78607064c5be6aa9397ea49c1a17863489f9b8f913fbd0b692854f1e4b"></a>UpButton&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af60e00b78607064c5be6aa9397ea49c1ae0c8202171c115c6f8934ea5db2992b7"></a>UpButtonReleased&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af60e00b78607064c5be6aa9397ea49c1a9aea214028b4a770eb98868f23c58326"></a>IButton&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af60e00b78607064c5be6aa9397ea49c1a56c55ee9b3eb4bcad7349444e7e13ec8"></a>PButton&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af60e00b78607064c5be6aa9397ea49c1ae9d492b9f3db7e092bc6e54a0c87cc13"></a>CButton&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af60e00b78607064c5be6aa9397ea49c1a303b0e103ad7dcb2fef851555eeefb56"></a>EscButton&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af60e00b78607064c5be6aa9397ea49c1a042aab3585a68fcbb1cc31d043758404"></a>EnterButton&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af60e00b78607064c5be6aa9397ea49c1a9ff1a80c13bdc71db1822f608a74fdd6"></a>MouseClicked&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a id="a387f1fc6b8a0efa93d5fed71c3d9c0bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a387f1fc6b8a0efa93d5fed71c3d9c0bc">&#9670;&nbsp;</a></span>ModelReaction</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_events_8h.html#a387f1fc6b8a0efa93d5fed71c3d9c0bc">ModelReaction</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a387f1fc6b8a0efa93d5fed71c3d9c0bca9eeb52badb613229884838847294b90d"></a>ADD&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a387f1fc6b8a0efa93d5fed71c3d9c0bca32f68a60cef40faedbc6af20298c1a1e"></a>DELETE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a387f1fc6b8a0efa93d5fed71c3d9c0bcad76cbd61e2b8920c4fe869837cfa8054"></a>CLEARALLANDADD&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a387f1fc6b8a0efa93d5fed71c3d9c0bca7286293c9125ac7d7bace94c190bc16d"></a>CLOSE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a387f1fc6b8a0efa93d5fed71c3d9c0bca8697250efc73639dd2a6e7da243ac68b"></a>NOTHING&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a387f1fc6b8a0efa93d5fed71c3d9c0bcab89c3d897b196ffff1537331bc659a97"></a>FULLSCREEN&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a387f1fc6b8a0efa93d5fed71c3d9c0bcadaa43822b2c6abbb5d4eaf867ff6e4a4"></a>WINDOWED&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a id="a51620cf702f1b8fdf47cd0a5cfa0ba4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51620cf702f1b8fdf47cd0a5cfa0ba4f">&#9670;&nbsp;</a></span>ReturnEvents</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_events_8h.html#a51620cf702f1b8fdf47cd0a5cfa0ba4f">ReturnEvents</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a51620cf702f1b8fdf47cd0a5cfa0ba4fa2e0aa69b85dcfb05e26a25430747bfd7"></a>NEXTLEVEL&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a51620cf702f1b8fdf47cd0a5cfa0ba4fa7286293c9125ac7d7bace94c190bc16d"></a>CLOSE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a51620cf702f1b8fdf47cd0a5cfa0ba4fa1104c54a9ec6549e4ef9562b687596fb"></a>RESTART&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a51620cf702f1b8fdf47cd0a5cfa0ba4fa5ec7230608d2c1c4505d756b77e0c76a"></a>GAMEOVER&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a51620cf702f1b8fdf47cd0a5cfa0ba4fa92e56d8195a9dd45a9b90aacf82886b1"></a>WIN&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a51620cf702f1b8fdf47cd0a5cfa0ba4fa67e774bf786d5324a0f82892c22b10ba"></a>OPENMENU&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a51620cf702f1b8fdf47cd0a5cfa0ba4fafa8c23c80de39d6ca43b912dbb5240de"></a>OPENLOCALMENU&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a51620cf702f1b8fdf47cd0a5cfa0ba4fadc7d9845d478ab6cf1795ad861ce37c6"></a>CLOSELOCALMENU&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a51620cf702f1b8fdf47cd0a5cfa0ba4fa5b39c8b553c821e7cddc6da64b5bd2ee"></a>DEFAULT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a51620cf702f1b8fdf47cd0a5cfa0ba4fab89c3d897b196ffff1537331bc659a97"></a>FULLSCREEN&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a51620cf702f1b8fdf47cd0a5cfa0ba4fadaa43822b2c6abbb5d4eaf867ff6e4a4"></a>WINDOWED&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a id="a7e30376069ab6f940d101ae67eb3fb34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e30376069ab6f940d101ae67eb3fb34">&#9670;&nbsp;</a></span>ViewEvents</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_events_8h.html#a7e30376069ab6f940d101ae67eb3fb34">ViewEvents</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7e30376069ab6f940d101ae67eb3fb34a99214be5f870bf07ffba86ea9d831a85"></a>ADDLAYER&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7e30376069ab6f940d101ae67eb3fb34a9603c2e8cf122ab3b8d5130d7c1be21f"></a>DELETELAYER&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7e30376069ab6f940d101ae67eb3fb34ab849de84f2f47d82abec13bbbe744712"></a>DELETEALLLAYERS&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7e30376069ab6f940d101ae67eb3fb34a64181bf5b65614a2308ac08d5a1b09d9"></a>BRINGZOOMCLOSER&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7e30376069ab6f940d101ae67eb3fb34a10cdb6c8139003e73f4ee5fd262fccfc"></a>DISTANCEZOOM&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7e30376069ab6f940d101ae67eb3fb34a94c8c57d42d00cf1f4c9117d1a64787c"></a>WINRESIZE&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -8,7 +8,7 @@ MainMenu::MainMenu():
 	Object font{ images.size() - 1, 0, 0, 0, 0, 0, 0, 0, true, 255 };
 	unchangeable_objects.push_back(font);
 
-	introduction.text = "JUST 2D Platformer";
+	introduction.text = "JUST2D Platformer";
 	introduction.text_size = 60;
 	introduction.x = 510;
 	introduction.y = 80;

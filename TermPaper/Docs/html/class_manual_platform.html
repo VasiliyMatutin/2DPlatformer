@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Docs: ManualPlatform Class Reference</title>
+<title>JUST2D Platformer: ManualPlatform Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Docs
+   <div id="projectname">JUST2D Platformer
    </div>
   </td>
  </tr>
@@ -77,56 +77,49 @@ Collaboration diagram for ManualPlatform:</div>
 <div class="center"><img src="class_manual_platform__coll__graph.png" border="0" usemap="#_manual_platform_coll__map" alt="Collaboration graph"/></div>
 <map name="_manual_platform_coll__map" id="_manual_platform_coll__map">
 <area shape="rect" id="node2" href="class_platform.html" title="Kinematic object moving along the trajectory. " alt="" coords="5,5,128,141"/>
-<area shape="rect" id="node3" href="class_manual_switch_obj.html" title="{ManualSwitchObj\n|# is_active\l|+ makeAction()\land 2 more...\l}" alt="" coords="152,27,275,119"/>
+<area shape="rect" id="node3" href="class_manual_switch_obj.html" title="Based entity for objects that can be activated by the sensor. " alt="" coords="152,27,275,119"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0192ef683b0f19b93bd238af98f8ce51"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manual_platform.html#a0192ef683b0f19b93bd238af98f8ce51">ManualPlatform</a> (int _level_width, int _level_height, b2Body *_body, <a class="el" href="class_object.html">Object</a> *_object, std::vector&lt; std::pair&lt; double, double &gt;&gt; traj_coord, int _fixed_speed, bool _is_rounded, int _node_number)</td></tr>
-<tr class="memdesc:a0192ef683b0f19b93bd238af98f8ce51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defined constructor for this class.  <a href="#a0192ef683b0f19b93bd238af98f8ce51">More...</a><br /></td></tr>
-<tr class="separator:a0192ef683b0f19b93bd238af98f8ce51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72aef4e3ecab2a802e09dfcc89e1f8e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manual_platform.html#a72aef4e3ecab2a802e09dfcc89e1f8e4">ManualPlatform</a> (int _level_width, int _level_height, b2Body *_body, <a class="el" href="class_object.html">Object</a> *_object, std::vector&lt; std::pair&lt; double, double &gt;&gt; _traj_coord, int _fixed_speed, bool _is_rounded, int _node_number)</td></tr>
+<tr class="memdesc:a72aef4e3ecab2a802e09dfcc89e1f8e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defined constructor for this class.  <a href="#a72aef4e3ecab2a802e09dfcc89e1f8e4">More...</a><br /></td></tr>
+<tr class="separator:a72aef4e3ecab2a802e09dfcc89e1f8e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae77ccd8210c4ee32606b3475154325d4"><td class="memItemLeft" align="right" valign="top"><a id="ae77ccd8210c4ee32606b3475154325d4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manual_platform.html#ae77ccd8210c4ee32606b3475154325d4">update</a> ()</td></tr>
 <tr class="memdesc:ae77ccd8210c4ee32606b3475154325d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">inherited from <a class="el" href="class_platform.html" title="Kinematic object moving along the trajectory. ">Platform</a> class <br /></td></tr>
 <tr class="separator:ae77ccd8210c4ee32606b3475154325d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7ae2aac108330a84246e3337fb5af81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manual_platform.html#ad7ae2aac108330a84246e3337fb5af81">makeAction</a> (Action)</td></tr>
-<tr class="memdesc:ad7ae2aac108330a84246e3337fb5af81"><td class="mdescLeft">&#160;</td><td class="mdescRight">causes the bridge to make some action  <a href="#ad7ae2aac108330a84246e3337fb5af81">More...</a><br /></td></tr>
+<tr class="memitem:ad7ae2aac108330a84246e3337fb5af81"><td class="memItemLeft" align="right" valign="top"><a id="ad7ae2aac108330a84246e3337fb5af81"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manual_platform.html#ad7ae2aac108330a84246e3337fb5af81">makeAction</a> (<a class="el" href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498">Action</a>)</td></tr>
+<tr class="memdesc:ad7ae2aac108330a84246e3337fb5af81"><td class="mdescLeft">&#160;</td><td class="mdescRight">inherited from <a class="el" href="class_manual_switch_obj.html" title="Based entity for objects that can be activated by the sensor. ">ManualSwitchObj</a> class <br /></td></tr>
 <tr class="separator:ad7ae2aac108330a84246e3337fb5af81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8afd5278a85a63f1b597a3851bfc65d"><td class="memItemLeft" align="right" valign="top">b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manual_platform.html#ad8afd5278a85a63f1b597a3851bfc65d">getBody</a> ()</td></tr>
-<tr class="separator:ad8afd5278a85a63f1b597a3851bfc65d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7deba6261f272ed530786e0f742b2f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manual_platform.html#ad7deba6261f272ed530786e0f742b2f5">getObject</a> ()</td></tr>
-<tr class="separator:ad7deba6261f272ed530786e0f742b2f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_platform"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_platform')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_platform.html">Platform</a></td></tr>
-<tr class="memitem:a39509ca7de720cf50d0b0ea71e29bfaf inherit pub_methods_class_platform"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#a39509ca7de720cf50d0b0ea71e29bfaf">Platform</a> (int _level_width, int _level_height, b2Body *_body, <a class="el" href="class_object.html">Object</a> *_object, std::vector&lt; std::pair&lt; double, double &gt;&gt; traj_coord, int _fixed_speed, bool _is_rounded, int _node_number)</td></tr>
-<tr class="memdesc:a39509ca7de720cf50d0b0ea71e29bfaf inherit pub_methods_class_platform"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defined constructor for this class.  <a href="class_platform.html#a39509ca7de720cf50d0b0ea71e29bfaf">More...</a><br /></td></tr>
-<tr class="separator:a39509ca7de720cf50d0b0ea71e29bfaf inherit pub_methods_class_platform"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c8e5045e5df1165c1154605e1a05339 inherit pub_methods_class_platform"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#a7c8e5045e5df1165c1154605e1a05339">Platform</a> (int _level_width, int _level_height, b2Body *_body, <a class="el" href="class_object.html">Object</a> *_object, std::vector&lt; std::pair&lt; double, double &gt;&gt; _traj_coord, int _fixed_speed, bool _is_rounded, int _node_number)</td></tr>
+<tr class="memdesc:a7c8e5045e5df1165c1154605e1a05339 inherit pub_methods_class_platform"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defined constructor for this class.  <a href="class_platform.html#a7c8e5045e5df1165c1154605e1a05339">More...</a><br /></td></tr>
+<tr class="separator:a7c8e5045e5df1165c1154605e1a05339 inherit pub_methods_class_platform"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa601f00a3625669bb39252cfc932efa0 inherit pub_methods_class_platform"><td class="memItemLeft" align="right" valign="top"><a id="aa601f00a3625669bb39252cfc932efa0"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#aa601f00a3625669bb39252cfc932efa0">update</a> ()</td></tr>
-<tr class="memdesc:aa601f00a3625669bb39252cfc932efa0 inherit pub_methods_class_platform"><td class="mdescLeft">&#160;</td><td class="mdescRight">inherited from <a class="el" href="class_non_static_obj.html">NonStaticObj</a> class <br /></td></tr>
+<tr class="memdesc:aa601f00a3625669bb39252cfc932efa0 inherit pub_methods_class_platform"><td class="mdescLeft">&#160;</td><td class="mdescRight">inherited from <a class="el" href="class_non_static_obj.html" title="Typical object (an entity) that participates in physics simulation. ">NonStaticObj</a> class <br /></td></tr>
 <tr class="separator:aa601f00a3625669bb39252cfc932efa0 inherit pub_methods_class_platform"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_non_static_obj"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_non_static_obj')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_non_static_obj.html">NonStaticObj</a></td></tr>
-<tr class="memitem:a0295a381b988a0d0ab17eb3dcc229704 inherit pub_methods_class_non_static_obj"><td class="memItemLeft" align="right" valign="top"><a id="a0295a381b988a0d0ab17eb3dcc229704"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>NonStaticObj</b> (b2Body *_body, <a class="el" href="class_object.html">Object</a> *_object, ObjectType type)</td></tr>
+<tr class="memitem:a0295a381b988a0d0ab17eb3dcc229704 inherit pub_methods_class_non_static_obj"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_non_static_obj.html#a0295a381b988a0d0ab17eb3dcc229704">NonStaticObj</a> (b2Body *_body, <a class="el" href="class_object.html">Object</a> *_object, <a class="el" href="_non_static_obj_8h.html#a842c5e2e69277690b064bf363c017980">ObjectType</a> type)</td></tr>
+<tr class="memdesc:a0295a381b988a0d0ab17eb3dcc229704 inherit pub_methods_class_non_static_obj"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defined constructor for this class.  <a href="class_non_static_obj.html#a0295a381b988a0d0ab17eb3dcc229704">More...</a><br /></td></tr>
 <tr class="separator:a0295a381b988a0d0ab17eb3dcc229704 inherit pub_methods_class_non_static_obj"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae129119384cf9df2b7b1a7849b6112de inherit pub_methods_class_non_static_obj"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_non_static_obj.html#ae129119384cf9df2b7b1a7849b6112de">contactEvent</a> (b2Contact *, bool)</td></tr>
-<tr class="memdesc:ae129119384cf9df2b7b1a7849b6112de inherit pub_methods_class_non_static_obj"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define object reaction to the collision in box2d world.  <a href="class_non_static_obj.html#ae129119384cf9df2b7b1a7849b6112de">More...</a><br /></td></tr>
-<tr class="separator:ae129119384cf9df2b7b1a7849b6112de inherit pub_methods_class_non_static_obj"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01e6db05d41ec62cb5c258b5069b083e inherit pub_methods_class_non_static_obj"><td class="memItemLeft" align="right" valign="top"><a id="a01e6db05d41ec62cb5c258b5069b083e"></a>
-ObjectType&#160;</td><td class="memItemRight" valign="bottom"><b>whoAmI</b> ()</td></tr>
+<tr class="memitem:a01e6db05d41ec62cb5c258b5069b083e inherit pub_methods_class_non_static_obj"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_non_static_obj_8h.html#a842c5e2e69277690b064bf363c017980">ObjectType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_non_static_obj.html#a01e6db05d41ec62cb5c258b5069b083e">whoAmI</a> ()</td></tr>
+<tr class="memdesc:a01e6db05d41ec62cb5c258b5069b083e inherit pub_methods_class_non_static_obj"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow to define type of an assigned dynamic object.  <a href="class_non_static_obj.html#a01e6db05d41ec62cb5c258b5069b083e">More...</a><br /></td></tr>
 <tr class="separator:a01e6db05d41ec62cb5c258b5069b083e inherit pub_methods_class_non_static_obj"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55713a3f848d7629176398333e84a015 inherit pub_methods_class_non_static_obj"><td class="memItemLeft" align="right" valign="top"><a id="a55713a3f848d7629176398333e84a015"></a>
-b2Body *&#160;</td><td class="memItemRight" valign="bottom"><b>getBody</b> ()</td></tr>
+<tr class="memitem:a55713a3f848d7629176398333e84a015 inherit pub_methods_class_non_static_obj"><td class="memItemLeft" align="right" valign="top">b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_non_static_obj.html#a55713a3f848d7629176398333e84a015">getBody</a> ()</td></tr>
 <tr class="separator:a55713a3f848d7629176398333e84a015 inherit pub_methods_class_non_static_obj"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdf0a375a987d99795bd298a1c84940c inherit pub_methods_class_non_static_obj"><td class="memItemLeft" align="right" valign="top"><a id="abdf0a375a987d99795bd298a1c84940c"></a>
-<a class="el" href="class_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getObject</b> ()</td></tr>
+<tr class="memitem:abdf0a375a987d99795bd298a1c84940c inherit pub_methods_class_non_static_obj"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_non_static_obj.html#abdf0a375a987d99795bd298a1c84940c">getObject</a> ()</td></tr>
 <tr class="separator:abdf0a375a987d99795bd298a1c84940c inherit pub_methods_class_non_static_obj"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a197ed3470e1a7b4f10b1e5567fdc5253 inherit pub_methods_class_non_static_obj"><td class="memItemLeft" align="right" valign="top"><a id="a197ed3470e1a7b4f10b1e5567fdc5253"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>destroy</b> ()</td></tr>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_non_static_obj.html#a197ed3470e1a7b4f10b1e5567fdc5253">destroy</a> ()</td></tr>
+<tr class="memdesc:a197ed3470e1a7b4f10b1e5567fdc5253 inherit pub_methods_class_non_static_obj"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroy the entity <br /></td></tr>
 <tr class="separator:a197ed3470e1a7b4f10b1e5567fdc5253 inherit pub_methods_class_non_static_obj"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_manual_switch_obj"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_manual_switch_obj')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_manual_switch_obj.html">ManualSwitchObj</a></td></tr>
-<tr class="memitem:a4d6cc0a3de424ab6bf4665eeb0f639af inherit pub_methods_class_manual_switch_obj"><td class="memItemLeft" align="right" valign="top"><a id="a4d6cc0a3de424ab6bf4665eeb0f639af"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>isActive</b> ()</td></tr>
+<tr class="memitem:a4d6cc0a3de424ab6bf4665eeb0f639af inherit pub_methods_class_manual_switch_obj"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manual_switch_obj.html#a4d6cc0a3de424ab6bf4665eeb0f639af">isActive</a> ()</td></tr>
+<tr class="memdesc:a4d6cc0a3de424ab6bf4665eeb0f639af inherit pub_methods_class_manual_switch_obj"><td class="mdescLeft">&#160;</td><td class="mdescRight">defines the state of the object  <a href="class_manual_switch_obj.html#a4d6cc0a3de424ab6bf4665eeb0f639af">More...</a><br /></td></tr>
 <tr class="separator:a4d6cc0a3de424ab6bf4665eeb0f639af inherit pub_methods_class_manual_switch_obj"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -147,6 +140,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#a5462c5ec9fc865988ffccd2e0d67b2a9">toNextPoint</a> ()</td></tr>
 <tr class="memdesc:a5462c5ec9fc865988ffccd2e0d67b2a9 inherit pro_methods_class_platform"><td class="mdescLeft">&#160;</td><td class="mdescRight">causes platform to begin moving to the next point <br /></td></tr>
 <tr class="separator:a5462c5ec9fc865988ffccd2e0d67b2a9 inherit pro_methods_class_platform"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_non_static_obj"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_non_static_obj')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_non_static_obj.html">NonStaticObj</a></td></tr>
+<tr class="memitem:af2a40f79983a88c185c0bf9977e2d50d inherit pro_methods_class_non_static_obj"><td class="memItemLeft" align="right" valign="top"><a id="af2a40f79983a88c185c0bf9977e2d50d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_non_static_obj.html#af2a40f79983a88c185c0bf9977e2d50d">contactEvent</a> (b2Contact *contact, bool is_begin)</td></tr>
+<tr class="memdesc:af2a40f79983a88c185c0bf9977e2d50d inherit pro_methods_class_non_static_obj"><td class="mdescLeft">&#160;</td><td class="mdescRight">inherited from <a class="el" href="class_contact_object.html" title="Interface for an object which can collide with another in box2d world. ">ContactObject</a> class <br /></td></tr>
+<tr class="separator:af2a40f79983a88c185c0bf9977e2d50d inherit pro_methods_class_non_static_obj"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_platform"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_platform')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_platform.html">Platform</a></td></tr>
 <tr class="memitem:a17b9655a30c0c75e237cb54ce5939901 inherit pro_attribs_class_platform"><td class="memItemLeft" align="right" valign="top"><a id="a17b9655a30c0c75e237cb54ce5939901"></a>
 std::vector&lt; std::pair&lt; double, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#a17b9655a30c0c75e237cb54ce5939901">coord_set</a></td></tr>
@@ -198,20 +196,25 @@ b2Vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="separator:a2f120cbb66ac4972fdd05ba816484dc0 inherit pro_attribs_class_platform"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_non_static_obj"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_non_static_obj')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_non_static_obj.html">NonStaticObj</a></td></tr>
 <tr class="memitem:a42cf308f091557d0d8a8e6ae8ee0fcf1 inherit pro_attribs_class_non_static_obj"><td class="memItemLeft" align="right" valign="top"><a id="a42cf308f091557d0d8a8e6ae8ee0fcf1"></a>
-b2Body *&#160;</td><td class="memItemRight" valign="bottom"><b>body</b></td></tr>
+b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_non_static_obj.html#a42cf308f091557d0d8a8e6ae8ee0fcf1">body</a></td></tr>
+<tr class="memdesc:a42cf308f091557d0d8a8e6ae8ee0fcf1 inherit pro_attribs_class_non_static_obj"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the box2d body assigned to this entity <br /></td></tr>
 <tr class="separator:a42cf308f091557d0d8a8e6ae8ee0fcf1 inherit pro_attribs_class_non_static_obj"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61a8004d502132c7a13258e945300a5e inherit pro_attribs_class_non_static_obj"><td class="memItemLeft" align="right" valign="top"><a id="a61a8004d502132c7a13258e945300a5e"></a>
-<a class="el" href="class_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>object</b></td></tr>
+<a class="el" href="class_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_non_static_obj.html#a61a8004d502132c7a13258e945300a5e">object</a></td></tr>
+<tr class="memdesc:a61a8004d502132c7a13258e945300a5e inherit pro_attribs_class_non_static_obj"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the <a class="el" href="class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes...">Object</a> class assigned to this entity <br /></td></tr>
 <tr class="separator:a61a8004d502132c7a13258e945300a5e inherit pro_attribs_class_non_static_obj"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41c92f702f36f05877e74fef1fcb3a71 inherit pro_attribs_class_non_static_obj"><td class="memItemLeft" align="right" valign="top"><a id="a41c92f702f36f05877e74fef1fcb3a71"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_valid</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_non_static_obj.html#a41c92f702f36f05877e74fef1fcb3a71">is_valid</a></td></tr>
+<tr class="memdesc:a41c92f702f36f05877e74fef1fcb3a71 inherit pro_attribs_class_non_static_obj"><td class="mdescLeft">&#160;</td><td class="mdescRight">defines the state of the entity 'true' - participate in physics simulation 'false' - doesn't paticipate <br /></td></tr>
 <tr class="separator:a41c92f702f36f05877e74fef1fcb3a71 inherit pro_attribs_class_non_static_obj"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4328e86d88a94270b88acb0d3965112b inherit pro_attribs_class_non_static_obj"><td class="memItemLeft" align="right" valign="top"><a id="a4328e86d88a94270b88acb0d3965112b"></a>
-ObjectType&#160;</td><td class="memItemRight" valign="bottom"><b>my_type</b></td></tr>
+<a class="el" href="_non_static_obj_8h.html#a842c5e2e69277690b064bf363c017980">ObjectType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_non_static_obj.html#a4328e86d88a94270b88acb0d3965112b">my_type</a></td></tr>
+<tr class="memdesc:a4328e86d88a94270b88acb0d3965112b inherit pro_attribs_class_non_static_obj"><td class="mdescLeft">&#160;</td><td class="mdescRight">define type of an dynamic object assigned to this entity <br /></td></tr>
 <tr class="separator:a4328e86d88a94270b88acb0d3965112b inherit pro_attribs_class_non_static_obj"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_manual_switch_obj"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_manual_switch_obj')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_manual_switch_obj.html">ManualSwitchObj</a></td></tr>
 <tr class="memitem:aa1d16c8a1740f4dc3152470088154f97 inherit pro_attribs_class_manual_switch_obj"><td class="memItemLeft" align="right" valign="top"><a id="aa1d16c8a1740f4dc3152470088154f97"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_active</b> = false</td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manual_switch_obj.html#aa1d16c8a1740f4dc3152470088154f97">is_active</a> = false</td></tr>
+<tr class="memdesc:aa1d16c8a1740f4dc3152470088154f97 inherit pro_attribs_class_manual_switch_obj"><td class="mdescLeft">&#160;</td><td class="mdescRight">defines the state of the object 'true' - moves 'false' - doesn't move <br /></td></tr>
 <tr class="separator:aa1d16c8a1740f4dc3152470088154f97 inherit pro_attribs_class_manual_switch_obj"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -220,8 +223,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_active</b> = false
 <dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>June 2017 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a0192ef683b0f19b93bd238af98f8ce51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0192ef683b0f19b93bd238af98f8ce51">&#9670;&nbsp;</a></span>ManualPlatform()</h2>
+<a id="a72aef4e3ecab2a802e09dfcc89e1f8e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72aef4e3ecab2a802e09dfcc89e1f8e4">&#9670;&nbsp;</a></span>ManualPlatform()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -254,7 +257,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_active</b> = false
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::vector&lt; std::pair&lt; double, double &gt;&gt;&#160;</td>
-          <td class="paramname"><em>traj_coord</em>, </td>
+          <td class="paramname"><em>_traj_coord</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -288,7 +291,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_active</b> = false
     <tr><td class="paramname">_level_width</td><td>the width in pixels of this level </td></tr>
     <tr><td class="paramname">_level_height</td><td>the height in pixels of this level </td></tr>
     <tr><td class="paramname">_body</td><td>pointer to the box2d body assigned to this platform </td></tr>
-    <tr><td class="paramname">_object</td><td>pointer to the <a class="el" href="class_object.html">Object</a> class assigned to this platform </td></tr>
+    <tr><td class="paramname">_object</td><td>pointer to the <a class="el" href="class_object.html" title="Contains based information about entity which necessary both for Model and Viewer classes...">Object</a> class assigned to this platform </td></tr>
     <tr><td class="paramname">_traj_coord</td><td>set of the trajectory coordinates for this platform </td></tr>
     <tr><td class="paramname">_fixed_speed</td><td>speed of the platform </td></tr>
     <tr><td class="paramname">_is_rounded</td><td>defines the shape of trajectory 'true' - closed 'false' - torn </td></tr>
@@ -296,79 +299,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_active</b> = false
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad8afd5278a85a63f1b597a3851bfc65d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8afd5278a85a63f1b597a3851bfc65d">&#9670;&nbsp;</a></span>getBody()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">b2Body * ManualPlatform::getBody </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>pointer to the box2d body assigned to this platform </dd></dl>
-
-</div>
-</div>
-<a id="ad7deba6261f272ed530786e0f742b2f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7deba6261f272ed530786e0f742b2f5">&#9670;&nbsp;</a></span>getObject()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_object.html">Object</a> * ManualPlatform::getObject </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>pointer to the <a class="el" href="class_object.html">Object</a> class assigned to this platform </dd></dl>
-
-</div>
-</div>
-<a id="ad7ae2aac108330a84246e3337fb5af81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7ae2aac108330a84246e3337fb5af81">&#9670;&nbsp;</a></span>makeAction()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ManualPlatform::makeAction </td>
-          <td>(</td>
-          <td class="paramtype">Action&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>causes the bridge to make some action </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">action</td><td>what necessary to make (doesn't matter; always Action::default is expected) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented from <a class="el" href="class_manual_switch_obj.html">ManualSwitchObj</a>.</p>
 
 </div>
 </div>

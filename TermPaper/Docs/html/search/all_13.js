@@ -1,5 +1,26 @@
 var searchData=
 [
-  ['update',['update',['../class_manual_platform.html#ae77ccd8210c4ee32606b3475154325d4',1,'ManualPlatform::update()'],['../class_platform.html#aa601f00a3625669bb39252cfc932efa0',1,'Platform::update()'],['../class_player.html#a82c3476f3e65a4e2ac6bcd040771bdd4',1,'Player::update()'],['../class_revolute_bridge.html#ac462a7308f806d30c53e35b2b8a57e5d',1,'RevoluteBridge::update()'],['../class_strong_player.html#a2e9ec64367e36c1bef0e30293706c1ab',1,'StrongPlayer::update()']]],
-  ['updateui',['updateUI',['../class_player.html#add3d6c730bb80c4d3a125e41d5586007',1,'Player']]]
+  ['text',['text',['../class_display.html#a8369eaf8bd4706d966c7e1be78d061fe',1,'Display::text()'],['../class_text_object.html#a89e65c86a7c0bd9dfbcf759e49c7660e',1,'TextObject::text()']]],
+  ['text_5fobjects',['text_objects',['../class_layer.html#a46c6bac93a96f1afc853aca03a42351a',1,'Layer']]],
+  ['text_5fsize',['text_size',['../class_text_object.html#a3a2dc3c26c74c36885808dea05813a47',1,'TextObject']]],
+  ['textobject',['TextObject',['../class_text_object.html',1,'']]],
+  ['texture',['texture',['../class_display.html#acc1a00673738d4dc7451caf213982e4d',1,'Display']]],
+  ['throwbox',['throwBox',['../class_level.html#a911bba94df90e7adabac1a5a0519ea47',1,'Level::throwBox()'],['../class_strong_player.html#afb33164ecdb89f91cb32c9b59c6805d1',1,'StrongPlayer::throwBox()']]],
+  ['tile_5fheight',['tile_height',['../class_level.html#a75ae0539332f57c52edac380fa0fc0c3',1,'Level']]],
+  ['tile_5fwidth',['tile_width',['../class_level.html#ac846cb2f8b1bd0f92a60a484ce1e50ef',1,'Level']]],
+  ['tilesetimg',['TilesetImg',['../struct_tileset_img.html',1,'']]],
+  ['time',['time',['../class_bonus.html#a7af3e40f87206d34e4689f53e37733b3',1,'Bonus::time()'],['../class_danger_object.html#a47bc7031c9d5afd3dffc902e464e6911',1,'DangerObject::time()'],['../class_timer.html#aa410e9f94d1cdb79090fcf159f8f4d8c',1,'Timer::time()']]],
+  ['time_5finterval',['time_interval',['../class_bonus.html#a4a5cd25b27a40406d018e1e3e651d21f',1,'Bonus::time_interval()'],['../class_danger_object.html#a1a5e8ba303583a6a1dae79b218e07f6f',1,'DangerObject::time_interval()']]],
+  ['timer',['Timer',['../class_timer.html',1,'Timer'],['../class_timer.html#a18ad778fac9c2ccf488d4fa2e64b5d75',1,'Timer::Timer()']]],
+  ['timer_2eh',['Timer.h',['../_timer_8h.html',1,'']]],
+  ['timer_5flist',['timer_list',['../class_storage.html#a9d200f7ba37543482bd1a50a54063ace',1,'Storage']]],
+  ['tmp',['tmp',['../class_platform.html#a2f120cbb66ac4972fdd05ba816484dc0',1,'Platform']]],
+  ['to_5fdestroy_5flist',['to_destroy_list',['../class_my_contact_listener.html#a41da507e8c150d1898d73172e4e3f916',1,'MyContactListener::to_destroy_list()'],['../class_storage.html#ad96cf086d9e0eb5b811504d26737f351',1,'Storage::to_destroy_list()']]],
+  ['tofullscreen',['toFullScreen',['../class_win_singleton.html#a58684b65df9dadcdc798faba86aeb0b6',1,'WinSingleton']]],
+  ['tonextpoint',['toNextPoint',['../class_platform.html#a5462c5ec9fc865988ffccd2e0d67b2a9',1,'Platform']]],
+  ['top',['top',['../class_object.html#ad3d50969ef24f16edb7337b76a99bb4e',1,'Object']]],
+  ['towindow',['toWindow',['../class_win_singleton.html#abba34d9cbdf6a9ff14da654b2b88aba3',1,'WinSingleton']]],
+  ['transparensy',['transparensy',['../class_object.html#aff7027899040a66fc27b9c059f9c13f0',1,'Object']]],
+  ['trytopickupbox',['tryToPickupBox',['../class_strong_player.html#acdae803bf66f620bc73b105ca06c46ab',1,'StrongPlayer']]],
+  ['trytoswitchlever',['tryToSwitchLever',['../class_level.html#ab82d5f8bcf7c4e630d7e166b2a78e3aa',1,'Level']]]
 ];

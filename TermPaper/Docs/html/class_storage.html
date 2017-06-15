@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Docs: Storage Class Reference</title>
+<title>JUST2D Platformer: Storage Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Docs
+   <div id="projectname">JUST2D Platformer
    </div>
   </td>
  </tr>
@@ -65,46 +65,65 @@ $(function() {
 <div class="title">Storage Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class-container which contains information about objects on the <a class="el" href="class_level.html" title="Contains all information about game level. ">Level</a>.  
+ <a href="class_storage.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_level_storage_8h_source.html">LevelStorage.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Storage:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_storage__coll__graph.png" border="0" usemap="#_storage_coll__map" alt="Collaboration graph"/></div>
 <map name="_storage_coll__map" id="_storage_coll__map">
-<area shape="rect" id="node2" href="class_final.html" title="{Final\n|&#45; is_contact\land 1 more...\l|+ Final()\land 1 more...\l&#45; contactEvent()\l}" alt="" coords="5,5,119,127"/>
+<area shape="rect" id="node2" href="class_final.html" title="Special sensor which define end of the level (win position) " alt="" coords="5,5,119,127"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a183e52c6e96e3174e51b6ae47579ed55"><td class="memItemLeft" align="right" valign="top"><a id="a183e52c6e96e3174e51b6ae47579ed55"></a>
-std::list&lt; <a class="el" href="class_lever.html">Lever</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>lever_list</b></td></tr>
+std::list&lt; <a class="el" href="class_lever.html">Lever</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_storage.html#a183e52c6e96e3174e51b6ae47579ed55">lever_list</a></td></tr>
+<tr class="memdesc:a183e52c6e96e3174e51b6ae47579ed55"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of pointers to <a class="el" href="class_lever.html" title="Special sensor that can be activated only by hero. ">Lever</a> entity <br /></td></tr>
 <tr class="separator:a183e52c6e96e3174e51b6ae47579ed55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d200f7ba37543482bd1a50a54063ace"><td class="memItemLeft" align="right" valign="top"><a id="a9d200f7ba37543482bd1a50a54063ace"></a>
-std::list&lt; <a class="el" href="class_timer.html">Timer</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>timer_list</b></td></tr>
+std::list&lt; <a class="el" href="class_timer.html">Timer</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_storage.html#a9d200f7ba37543482bd1a50a54063ace">timer_list</a></td></tr>
+<tr class="memdesc:a9d200f7ba37543482bd1a50a54063ace"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of pointers to <a class="el" href="class_timer.html" title="An entity that can activate observables ManualSwitchObj classes at a certain moment (dosen&#39;t display ...">Timer</a> entity <br /></td></tr>
 <tr class="separator:a9d200f7ba37543482bd1a50a54063ace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0e098198f6896d667ce135b5d81b7c1"><td class="memItemLeft" align="right" valign="top"><a id="af0e098198f6896d667ce135b5d81b7c1"></a>
-std::list&lt; <a class="el" href="class_non_static_obj.html">NonStaticObj</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>non_static_objects</b></td></tr>
+std::list&lt; <a class="el" href="class_non_static_obj.html">NonStaticObj</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_storage.html#af0e098198f6896d667ce135b5d81b7c1">non_static_objects</a></td></tr>
+<tr class="memdesc:af0e098198f6896d667ce135b5d81b7c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of all pointers to <a class="el" href="class_non_static_obj.html" title="Typical object (an entity) that participates in physics simulation. ">NonStaticObj</a> entities <br /></td></tr>
 <tr class="separator:af0e098198f6896d667ce135b5d81b7c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9003cf58d8b5c48ca1ac7d0ce7323238"><td class="memItemLeft" align="right" valign="top"><a id="a9003cf58d8b5c48ca1ac7d0ce7323238"></a>
-std::list&lt; <a class="el" href="class_player_sensor.html">PlayerSensor</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>players_sensors_list</b></td></tr>
+std::list&lt; <a class="el" href="class_player_sensor.html">PlayerSensor</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_storage.html#a9003cf58d8b5c48ca1ac7d0ce7323238">players_sensors_list</a></td></tr>
+<tr class="memdesc:a9003cf58d8b5c48ca1ac7d0ce7323238"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of pointers to sensors which attached to players <br /></td></tr>
 <tr class="separator:a9003cf58d8b5c48ca1ac7d0ce7323238"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad96cf086d9e0eb5b811504d26737f351"><td class="memItemLeft" align="right" valign="top"><a id="ad96cf086d9e0eb5b811504d26737f351"></a>
-std::list&lt; <a class="el" href="class_non_static_obj.html">NonStaticObj</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>to_destroy_list</b></td></tr>
+std::list&lt; <a class="el" href="class_non_static_obj.html">NonStaticObj</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_storage.html#ad96cf086d9e0eb5b811504d26737f351">to_destroy_list</a></td></tr>
+<tr class="memdesc:ad96cf086d9e0eb5b811504d26737f351"><td class="mdescLeft">&#160;</td><td class="mdescRight">list containing pointers to objects that will be destroyed at the next level update iteration <br /></td></tr>
 <tr class="separator:ad96cf086d9e0eb5b811504d26737f351"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cb1b8c7f32484e515530c7eb54ed08f"><td class="memItemLeft" align="right" valign="top"><a id="a6cb1b8c7f32484e515530c7eb54ed08f"></a>
-std::list&lt; <a class="el" href="class_danger_object.html">DangerObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>danger_list</b></td></tr>
+std::list&lt; <a class="el" href="class_danger_object.html">DangerObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_storage.html#a6cb1b8c7f32484e515530c7eb54ed08f">danger_list</a></td></tr>
+<tr class="memdesc:a6cb1b8c7f32484e515530c7eb54ed08f"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of all pointers to <a class="el" href="class_danger_object.html" title="Danger entity that can be assigned to the platform. ">DangerObject</a> entities <br /></td></tr>
 <tr class="separator:a6cb1b8c7f32484e515530c7eb54ed08f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca489d11da5a79c4ada94fb89aebab69"><td class="memItemLeft" align="right" valign="top"><a id="aca489d11da5a79c4ada94fb89aebab69"></a>
-<a class="el" href="class_final.html">Final</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>final_list</b> [2]</td></tr>
+<a class="el" href="class_final.html">Final</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_storage.html#aca489d11da5a79c4ada94fb89aebab69">final_list</a> [2]</td></tr>
+<tr class="memdesc:aca489d11da5a79c4ada94fb89aebab69"><td class="mdescLeft">&#160;</td><td class="mdescRight">contains pointers to final sensor (for both players) <br /></td></tr>
 <tr class="separator:aca489d11da5a79c4ada94fb89aebab69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16492ba80ed615d1b917a12d8a959fed"><td class="memItemLeft" align="right" valign="top"><a id="a16492ba80ed615d1b917a12d8a959fed"></a>
-std::list&lt; <a class="el" href="class_bonus.html">Bonus</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>bonus_list</b></td></tr>
+std::list&lt; <a class="el" href="class_bonus.html">Bonus</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_storage.html#a16492ba80ed615d1b917a12d8a959fed">bonus_list</a></td></tr>
+<tr class="memdesc:a16492ba80ed615d1b917a12d8a959fed"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of all pointers to <a class="el" href="class_bonus.html" title="Some serum that have an impact to the hero. ">Bonus</a> entities <br /></td></tr>
 <tr class="separator:a16492ba80ed615d1b917a12d8a959fed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ec3b712f9c20c9c2e82cc07f77ad692"><td class="memItemLeft" align="right" valign="top"><a id="a9ec3b712f9c20c9c2e82cc07f77ad692"></a>
-std::map&lt; std::string, <a class="el" href="class_manual_switch_obj.html">ManualSwitchObj</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>future_observables</b></td></tr>
+std::map&lt; std::string, <a class="el" href="class_manual_switch_obj.html">ManualSwitchObj</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_storage.html#a9ec3b712f9c20c9c2e82cc07f77ad692">future_observables</a></td></tr>
+<tr class="memdesc:a9ec3b712f9c20c9c2e82cc07f77ad692"><td class="mdescLeft">&#160;</td><td class="mdescRight">internal map which help to parse information about observables objects and pin them to the observer <br /></td></tr>
 <tr class="separator:a9ec3b712f9c20c9c2e82cc07f77ad692"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class-container which contains information about objects on the <a class="el" href="class_level.html" title="Contains all information about game level. ">Level</a>. </p>
+<dl class="section author"><dt>Author</dt><dd>Vasily </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>June 2017 </dd></dl>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="_level_storage_8h_source.html">LevelStorage.h</a></li>
 </ul>
 </div><!-- contents -->

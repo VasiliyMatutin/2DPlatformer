@@ -2,7 +2,17 @@
 \label{class_lever}\index{Lever@{Lever}}
 
 
-Collaboration diagram for Lever\+:\nopagebreak
+Special sensor that can be activated only by hero.  
+
+
+
+
+{\ttfamily \#include $<$Lever.\+h$>$}
+
+
+
+Collaboration diagram for Lever\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,68 +22,86 @@ Collaboration diagram for Lever\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_lever_a2b4dd6cea65837c09711dda3d02d7cae}\label{class_lever_a2b4dd6cea65837c09711dda3d02d7cae}} 
-{\bfseries Lever} (std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$$>$ \+\_\+observables, bool \+\_\+repeat\+\_\+allowed, b2\+Body $\ast$\+\_\+body, \hyperlink{class_object}{Object} $\ast$\+\_\+object, \hyperlink{class_player}{Player} $\ast$$\ast$\+\_\+current\+\_\+player, std\+::vector$<$ Action $>$ \+\_\+stages)
-\item 
+\hyperlink{class_lever_a2b4dd6cea65837c09711dda3d02d7cae}{Lever} (std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$$>$ \+\_\+observables, bool \+\_\+repeat\+\_\+allowed, b2\+Body $\ast$\+\_\+body, \hyperlink{class_object}{Object} $\ast$\+\_\+object, \hyperlink{class_player}{Player} $\ast$$\ast$\+\_\+current\+\_\+player, std\+::vector$<$ \hyperlink{_manual_switch_obj_8h_a8bb1ef53467e4f61410d12822d922498}{Action} $>$ \+\_\+stages)
+\begin{DoxyCompactList}\small\item\em Defined constructor for this class. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_lever_a0aafb7fa0e219a59362cfdbdc30f6203}\label{class_lever_a0aafb7fa0e219a59362cfdbdc30f6203}} 
-void {\bfseries activate} ()
-\end{DoxyCompactItemize}
+void \hyperlink{class_lever_a0aafb7fa0e219a59362cfdbdc30f6203}{activate} ()
+\begin{DoxyCompactList}\small\item\em causes the lever try to send next command to observables objects \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_lever_a9ec153b4c960d0a187539cc8f07e5bd9}{contact\+Event} (b2\+Contact $\ast$, bool)
-\begin{DoxyCompactList}\small\item\em Define object reaction to the collision in box2d world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_lever_a08d617d4aad99c811df6013648843d8b}\label{class_lever_a08d617d4aad99c811df6013648843d8b}} 
+void \hyperlink{class_lever_a08d617d4aad99c811df6013648843d8b}{contact\+Event} (b2\+Contact $\ast$contact, bool is\+\_\+begin)
+\begin{DoxyCompactList}\small\item\em inherited from \hyperlink{class_contact_object}{Contact\+Object} class \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_lever_aa063d5dab7eefeee48b93c0ea694bb42}\label{class_lever_aa063d5dab7eefeee48b93c0ea694bb42}} 
-b2\+Body $\ast$ {\bfseries body}
-\item 
+b2\+Body $\ast$ \hyperlink{class_lever_aa063d5dab7eefeee48b93c0ea694bb42}{body}
+\begin{DoxyCompactList}\small\item\em pointer to the box2d body assigned to this lever \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_lever_aee2d6a9e2fc7ff31a9d8eea2f98b7e32}\label{class_lever_aee2d6a9e2fc7ff31a9d8eea2f98b7e32}} 
-\hyperlink{class_object}{Object} $\ast$ {\bfseries object}
-\item 
+\hyperlink{class_object}{Object} $\ast$ \hyperlink{class_lever_aee2d6a9e2fc7ff31a9d8eea2f98b7e32}{object}
+\begin{DoxyCompactList}\small\item\em pointer to the \hyperlink{class_object}{Object} class assigned to this lever \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_lever_ac710b732ab842d55f84488f9d88e325b}\label{class_lever_ac710b732ab842d55f84488f9d88e325b}} 
-\hyperlink{class_player}{Player} $\ast$$\ast$ {\bfseries current\+\_\+player}
-\item 
+\hyperlink{class_player}{Player} $\ast$$\ast$ \hyperlink{class_lever_ac710b732ab842d55f84488f9d88e325b}{current\+\_\+player}
+\begin{DoxyCompactList}\small\item\em pointer to the pointer containing infofmation about current active hero \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_lever_a8352c41d4452bf72a3f7d4dded03598c}\label{class_lever_a8352c41d4452bf72a3f7d4dded03598c}} 
-std\+::vector$<$ Action $>$ {\bfseries stages}
-\item 
+std\+::vector$<$ \hyperlink{_manual_switch_obj_8h_a8bb1ef53467e4f61410d12822d922498}{Action} $>$ \hyperlink{class_lever_a8352c41d4452bf72a3f7d4dded03598c}{stages}
+\begin{DoxyCompactList}\small\item\em vector of stages(commands) through which observables objects should pass \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_lever_ae7161c7fb8bc611f7d4cc3525d406e81}\label{class_lever_ae7161c7fb8bc611f7d4cc3525d406e81}} 
-std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$ $>$ {\bfseries observables}
-\item 
+std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$ $>$ \hyperlink{class_lever_ae7161c7fb8bc611f7d4cc3525d406e81}{observables}
+\begin{DoxyCompactList}\small\item\em list of observables objects \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_lever_a0a44f2d62a5ebc3bb5ae4aaed55076fb}\label{class_lever_a0a44f2d62a5ebc3bb5ae4aaed55076fb}} 
-int {\bfseries stage\+\_\+iter}
-\item 
+int \hyperlink{class_lever_a0a44f2d62a5ebc3bb5ae4aaed55076fb}{stage\+\_\+iter}
+\begin{DoxyCompactList}\small\item\em number current stage from stages vector \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_lever_a8c464b1b28d5978e48bc3bc85a8cb67d}\label{class_lever_a8c464b1b28d5978e48bc3bc85a8cb67d}} 
-bool {\bfseries repeat\+\_\+allowed}
-\end{DoxyCompactItemize}
+bool \hyperlink{class_lever_a8c464b1b28d5978e48bc3bc85a8cb67d}{repeat\+\_\+allowed}
+\begin{DoxyCompactList}\small\item\em determines whether it is possible to send next command to the observables objects when they doesn\textquotesingle{}t complete previous action\+: \textquotesingle{}true\textquotesingle{} -\/ possible; \textquotesingle{}false\textquotesingle{} -\/ impossible \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_lever_a9ec153b4c960d0a187539cc8f07e5bd9}\label{class_lever_a9ec153b4c960d0a187539cc8f07e5bd9}} 
-\index{Lever@{Lever}!contact\+Event@{contact\+Event}}
-\index{contact\+Event@{contact\+Event}!Lever@{Lever}}
-\subsubsection{\texorpdfstring{contact\+Event()}{contactEvent()}}
-{\footnotesize\ttfamily void Lever\+::contact\+Event (\begin{DoxyParamCaption}\item[{b2\+Contact $\ast$}]{contact,  }\item[{bool}]{is\+Begin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+\subsection{Detailed Description}
+Special sensor that can be activated only by hero. 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_lever_a2b4dd6cea65837c09711dda3d02d7cae}\label{class_lever_a2b4dd6cea65837c09711dda3d02d7cae}} 
+\index{Lever@{Lever}!Lever@{Lever}}
+\index{Lever@{Lever}!Lever@{Lever}}
+\subsubsection{\texorpdfstring{Lever()}{Lever()}}
+{\footnotesize\ttfamily Lever\+::\+Lever (\begin{DoxyParamCaption}\item[{std\+::list$<$ \hyperlink{class_manual_switch_obj}{Manual\+Switch\+Obj} $\ast$$>$}]{\+\_\+observables,  }\item[{bool}]{\+\_\+repeat\+\_\+allowed,  }\item[{b2\+Body $\ast$}]{\+\_\+body,  }\item[{\hyperlink{class_object}{Object} $\ast$}]{\+\_\+object,  }\item[{\hyperlink{class_player}{Player} $\ast$$\ast$}]{\+\_\+current\+\_\+player,  }\item[{std\+::vector$<$ \hyperlink{_manual_switch_obj_8h_a8bb1ef53467e4f61410d12822d922498}{Action} $>$}]{\+\_\+stages }\end{DoxyParamCaption})}
 
 
 
-Define object reaction to the collision in box2d world. 
+Defined constructor for this class. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em contact} & pointer to box2d b2\+Contact class \\
+{\em \+\_\+observables} & list of observables objects \\
 \hline
-{\em is\+Begin} & \textquotesingle{}false\textquotesingle{} -\/ end of the collision; \textquotesingle{}true\textquotesingle{} -\/ start of the collision \\
+{\em \+\_\+repeat\+\_\+allowed} & determines whether it is possible to send next command to the observables objects when they doesn\textquotesingle{}t complete previous action\+: \textquotesingle{}true\textquotesingle{} -\/ possible; \textquotesingle{}false\textquotesingle{} -\/ impossible \\
+\hline
+{\em \+\_\+body} & pointer to the box2d body assigned to this entity \\
+\hline
+{\em \+\_\+object} & pointer to the \hyperlink{class_object}{Object} class assigned to this entity \\
+\hline
+{\em \+\_\+current\+\_\+player} & pointer to the pointer containing infofmation about current active hero \\
+\hline
+{\em \+\_\+stages} & vector of stages(commands) through which observables objects should pass \\
 \hline
 \end{DoxyParams}
 
 
-Implements \hyperlink{class_contact_object_a53d2dfc1d9c2821e9c62e80ce62a6435}{Contact\+Object}.
-
-
-
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Lever.\+h\item 
+\hyperlink{_lever_8h}{Lever.\+h}\item 
 Lever.\+cpp\end{DoxyCompactItemize}

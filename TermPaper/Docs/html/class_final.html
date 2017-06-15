@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Docs: Final Class Reference</title>
+<title>JUST2D Platformer: Final Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Docs
+   <div id="projectname">JUST2D Platformer
    </div>
   </td>
  </tr>
@@ -67,6 +67,11 @@ $(function() {
 <div class="title">Final Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Special sensor which define end of the level (win position)  
+ <a href="class_final.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_final_8h_source.html">Final.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Final:</div>
 <div class="dyncontent">
@@ -79,52 +84,58 @@ Collaboration diagram for Final:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad8e4afdefd9ea952bfbb7123af09c710"><td class="memItemLeft" align="right" valign="top"><a id="ad8e4afdefd9ea952bfbb7123af09c710"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Final</b> (b2Body *body, bool is_strong)</td></tr>
+<tr class="memitem:ad8e4afdefd9ea952bfbb7123af09c710"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_final.html#ad8e4afdefd9ea952bfbb7123af09c710">Final</a> (b2Body *body, bool <a class="el" href="class_final.html#a4beb08f8f72e6339e8544ae121fb717d">is_strong</a>)</td></tr>
+<tr class="memdesc:ad8e4afdefd9ea952bfbb7123af09c710"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defined constructor for this class.  <a href="#ad8e4afdefd9ea952bfbb7123af09c710">More...</a><br /></td></tr>
 <tr class="separator:ad8e4afdefd9ea952bfbb7123af09c710"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7a2beabd2de1cc0fcbe017f2012e41c"><td class="memItemLeft" align="right" valign="top"><a id="af7a2beabd2de1cc0fcbe017f2012e41c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isReach</b> ()</td></tr>
+<tr class="memitem:af7a2beabd2de1cc0fcbe017f2012e41c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_final.html#af7a2beabd2de1cc0fcbe017f2012e41c">isReach</a> ()</td></tr>
+<tr class="memdesc:af7a2beabd2de1cc0fcbe017f2012e41c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define achive the player, who intended to gain this point, its goal or not.  <a href="#af7a2beabd2de1cc0fcbe017f2012e41c">More...</a><br /></td></tr>
 <tr class="separator:af7a2beabd2de1cc0fcbe017f2012e41c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a9ebc21296dd28e993f2ee8cbb47a3b37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_final.html#a9ebc21296dd28e993f2ee8cbb47a3b37">contactEvent</a> (b2Contact *, bool)</td></tr>
-<tr class="memdesc:a9ebc21296dd28e993f2ee8cbb47a3b37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define object reaction to the collision in box2d world.  <a href="#a9ebc21296dd28e993f2ee8cbb47a3b37">More...</a><br /></td></tr>
-<tr class="separator:a9ebc21296dd28e993f2ee8cbb47a3b37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb9a6e24a09308aed3dfd510074b1201"><td class="memItemLeft" align="right" valign="top"><a id="abb9a6e24a09308aed3dfd510074b1201"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_final.html#abb9a6e24a09308aed3dfd510074b1201">contactEvent</a> (b2Contact *contact, bool is_begin)</td></tr>
+<tr class="memdesc:abb9a6e24a09308aed3dfd510074b1201"><td class="mdescLeft">&#160;</td><td class="mdescRight">inherited from <a class="el" href="class_contact_object.html" title="Interface for an object which can collide with another in box2d world. ">ContactObject</a> class <br /></td></tr>
+<tr class="separator:abb9a6e24a09308aed3dfd510074b1201"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ac09c1e5af1c2317a59fd2bdac39aac9f"><td class="memItemLeft" align="right" valign="top"><a id="ac09c1e5af1c2317a59fd2bdac39aac9f"></a>
-<a class="el" href="class_player.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>my_player</b></td></tr>
+<a class="el" href="class_player.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_final.html#ac09c1e5af1c2317a59fd2bdac39aac9f">my_player</a></td></tr>
+<tr class="memdesc:ac09c1e5af1c2317a59fd2bdac39aac9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the player which have to gain this point <br /></td></tr>
 <tr class="separator:ac09c1e5af1c2317a59fd2bdac39aac9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a637485b836c9226c062c92a34e0a679d"><td class="memItemLeft" align="right" valign="top"><a id="a637485b836c9226c062c92a34e0a679d"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_contact</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_final.html#a637485b836c9226c062c92a34e0a679d">is_contact</a></td></tr>
+<tr class="memdesc:a637485b836c9226c062c92a34e0a679d"><td class="mdescLeft">&#160;</td><td class="mdescRight">define achive the player, who intended to gain this point, its goal or not: 'true' - achive; 'false' - doesn't achive <br /></td></tr>
 <tr class="separator:a637485b836c9226c062c92a34e0a679d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4beb08f8f72e6339e8544ae121fb717d"><td class="memItemLeft" align="right" valign="top"><a id="a4beb08f8f72e6339e8544ae121fb717d"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_strong</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_final.html#a4beb08f8f72e6339e8544ae121fb717d">is_strong</a></td></tr>
+<tr class="memdesc:a4beb08f8f72e6339e8544ae121fb717d"><td class="mdescLeft">&#160;</td><td class="mdescRight">define type of the player intended to gain this point: 'true' - strong player; 'false' - dexterous player <br /></td></tr>
 <tr class="separator:a4beb08f8f72e6339e8544ae121fb717d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9ebc21296dd28e993f2ee8cbb47a3b37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ebc21296dd28e993f2ee8cbb47a3b37">&#9670;&nbsp;</a></span>contactEvent()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Special sensor which define end of the level (win position) </p>
+<dl class="section author"><dt>Author</dt><dd>Vasily </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>June 2017 </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad8e4afdefd9ea952bfbb7123af09c710"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8e4afdefd9ea952bfbb7123af09c710">&#9670;&nbsp;</a></span>Final()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Final::contactEvent </td>
+          <td class="memname">Final::Final </td>
           <td>(</td>
-          <td class="paramtype">b2Contact *&#160;</td>
-          <td class="paramname"><em>contact</em>, </td>
+          <td class="paramtype">b2Body *&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>isBegin</em>&#160;</td>
+          <td class="paramname"><em>is_strong</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -132,23 +143,37 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_strong</b></td></t
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Define object reaction to the collision in box2d world. </p>
+<p>Defined constructor for this class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">contact</td><td>pointer to box2d b2Contact class </td></tr>
-    <tr><td class="paramname">isBegin</td><td>'false' - end of the collision; 'true' - start of the collision </td></tr>
+    <tr><td class="paramname">is_strong</td><td>define type of the player intended to gain this point: 'true' - strong player; 'false' - dexterous player </td></tr>
+    <tr><td class="paramname">body</td><td>pointer to the box2d body assigned to this final point </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="class_contact_object.html#a53d2dfc1d9c2821e9c62e80ce62a6435">ContactObject</a>.</p>
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="af7a2beabd2de1cc0fcbe017f2012e41c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7a2beabd2de1cc0fcbe017f2012e41c">&#9670;&nbsp;</a></span>isReach()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Final::isReach </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define achive the player, who intended to gain this point, its goal or not. </p>
+<dl class="section return"><dt>Returns</dt><dd>'true' - achive; 'false' - doesn't achive </dd></dl>
 
 </div>
 </div>

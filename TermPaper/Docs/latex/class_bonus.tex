@@ -2,7 +2,17 @@
 \label{class_bonus}\index{Bonus@{Bonus}}
 
 
-Collaboration diagram for Bonus\+:\nopagebreak
+Some serum that have an impact to the hero.  
+
+
+
+
+{\ttfamily \#include $<$Bonus.\+h$>$}
+
+
+
+Collaboration diagram for Bonus\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,86 +22,143 @@ Collaboration diagram for Bonus\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_bonus_ac8581e33c82c8d6515b78ccffcf6f11b}\label{class_bonus_ac8581e33c82c8d6515b78ccffcf6f11b}} 
-{\bfseries Bonus} (double modificator, double time, Bonus\+Type bonus\+\_\+type, \hyperlink{class_player}{Player} $\ast$$\ast$\+\_\+current\+\_\+player, b2\+Body $\ast$\+\_\+body, \hyperlink{class_object}{Object} $\ast$\+\_\+object, std\+::chrono\+::duration$<$ double $>$ $\ast$duration)
+\hyperlink{class_bonus_ac8581e33c82c8d6515b78ccffcf6f11b}{Bonus} (double modificator, double \hyperlink{class_bonus_a7af3e40f87206d34e4689f53e37733b3}{time}, \hyperlink{_bonus_8h_ad6d58ebabfbf9aa4181bfe97a5d8d984}{Bonus\+Type} \hyperlink{class_bonus_a3e8678940c7ea4679428e78874d92117}{bonus\+\_\+type}, \hyperlink{class_player}{Player} $\ast$$\ast$\+\_\+current\+\_\+player, b2\+Body $\ast$\+\_\+body, \hyperlink{class_object}{Object} $\ast$\+\_\+object, std\+::chrono\+::duration$<$ double $>$ $\ast$\hyperlink{class_bonus_a98befe64efce3a1c5c93f2d694ea1abc}{duration})
+\begin{DoxyCompactList}\small\item\em Defined constructor for this class. \end{DoxyCompactList}\item 
+\hyperlink{class_object}{Object} $\ast$ \hyperlink{class_bonus_a5964466dfbb4b4e3e7d3eafcb9dae7db}{get\+Object} ()
 \item 
-void \hyperlink{class_bonus_a903865168ff7fd91e0e2de23f849c553}{contact\+Event} (b2\+Contact $\ast$, bool)
-\begin{DoxyCompactList}\small\item\em Define object reaction to the collision in box2d world. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_bonus_a5964466dfbb4b4e3e7d3eafcb9dae7db}\label{class_bonus_a5964466dfbb4b4e3e7d3eafcb9dae7db}} 
-\hyperlink{class_object}{Object} $\ast$ {\bfseries get\+Object} ()
-\item 
-\mbox{\Hypertarget{class_bonus_a78f64b402daa7593afb28b78baf6d15e}\label{class_bonus_a78f64b402daa7593afb28b78baf6d15e}} 
-bool {\bfseries activate} (\hyperlink{class_object}{Object} $\ast$\+\_\+object)
-\item 
-\mbox{\Hypertarget{class_bonus_a52875b799a9937f5c398f8f95d9ead98}\label{class_bonus_a52875b799a9937f5c398f8f95d9ead98}} 
-void {\bfseries deactivate} ()
-\item 
+bool \hyperlink{class_bonus_a78f64b402daa7593afb28b78baf6d15e}{activate} (\hyperlink{class_object}{Object} $\ast$\+\_\+object)
+\begin{DoxyCompactList}\small\item\em Apllies the bonus effect. \end{DoxyCompactList}\item 
+void \hyperlink{class_bonus_a52875b799a9937f5c398f8f95d9ead98}{deactivate} ()
+\begin{DoxyCompactList}\small\item\em Terminates the action of the bonus effect. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_bonus_a40703fa50a436a844f0638557a175be0}\label{class_bonus_a40703fa50a436a844f0638557a175be0}} 
-void {\bfseries update} ()
-\end{DoxyCompactItemize}
+void \hyperlink{class_bonus_a40703fa50a436a844f0638557a175be0}{update} ()
+\begin{DoxyCompactList}\small\item\em update bonus state (remaining time of impact) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_bonus_abc52e8c896f8ec6631ac5dcd7e4daf12}\label{class_bonus_abc52e8c896f8ec6631ac5dcd7e4daf12}} 
+void \hyperlink{class_bonus_abc52e8c896f8ec6631ac5dcd7e4daf12}{contact\+Event} (b2\+Contact $\ast$contact, bool is\+\_\+begin)
+\begin{DoxyCompactList}\small\item\em inherited from \hyperlink{class_contact_object}{Contact\+Object} class \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_bonus_a0c3f3fe18e7d7df28ab12fe2c023d3ff}\label{class_bonus_a0c3f3fe18e7d7df28ab12fe2c023d3ff}} 
-b2\+Body $\ast$ {\bfseries body}
-\item 
+b2\+Body $\ast$ \hyperlink{class_bonus_a0c3f3fe18e7d7df28ab12fe2c023d3ff}{body}
+\begin{DoxyCompactList}\small\item\em pointer to the box2d body assigned to this bonus \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_bonus_a7493d5e3afda12e197c5505a66a1c7a1}\label{class_bonus_a7493d5e3afda12e197c5505a66a1c7a1}} 
-\hyperlink{class_object}{Object} $\ast$ {\bfseries object}
-\item 
+\hyperlink{class_object}{Object} $\ast$ \hyperlink{class_bonus_a7493d5e3afda12e197c5505a66a1c7a1}{object}
+\begin{DoxyCompactList}\small\item\em pointer to the \hyperlink{class_object}{Object} class assigned to this bonus \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_bonus_a5c03f6529a87fd393efaedb0db7e8b49}\label{class_bonus_a5c03f6529a87fd393efaedb0db7e8b49}} 
-\hyperlink{class_player}{Player} $\ast$ {\bfseries iam\+\_\+activate\+\_\+this\+\_\+player}
-\item 
+\hyperlink{class_player}{Player} $\ast$ \hyperlink{class_bonus_a5c03f6529a87fd393efaedb0db7e8b49}{iam\+\_\+activate\+\_\+this\+\_\+player}
+\begin{DoxyCompactList}\small\item\em pointer to the \hyperlink{class_player}{Player} class to which bonus has been applied \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_bonus_ad5b0534727679d924f60eeaef2ac988d}\label{class_bonus_ad5b0534727679d924f60eeaef2ac988d}} 
-\hyperlink{class_player}{Player} $\ast$$\ast$ {\bfseries current\+\_\+player}
-\item 
+\hyperlink{class_player}{Player} $\ast$$\ast$ \hyperlink{class_bonus_ad5b0534727679d924f60eeaef2ac988d}{current\+\_\+player}
+\begin{DoxyCompactList}\small\item\em pointer to the pointer containing infofmation about current active hero \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_bonus_a4a5cd25b27a40406d018e1e3e651d21f}\label{class_bonus_a4a5cd25b27a40406d018e1e3e651d21f}} 
-double {\bfseries time\+\_\+interval}
-\item 
+double \hyperlink{class_bonus_a4a5cd25b27a40406d018e1e3e651d21f}{time\+\_\+interval}
+\begin{DoxyCompactList}\small\item\em duration of the impact \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_bonus_a7af3e40f87206d34e4689f53e37733b3}\label{class_bonus_a7af3e40f87206d34e4689f53e37733b3}} 
-double {\bfseries time}
-\item 
+double \hyperlink{class_bonus_a7af3e40f87206d34e4689f53e37733b3}{time}
+\begin{DoxyCompactList}\small\item\em current time that has passed from the begin of the bonus application \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_bonus_a55548c98a8969d5994fbbcbdd6f35752}\label{class_bonus_a55548c98a8969d5994fbbcbdd6f35752}} 
-double {\bfseries bonus\+\_\+modificator}
-\item 
+double \hyperlink{class_bonus_a55548c98a8969d5994fbbcbdd6f35752}{bonus\+\_\+modificator}
+\begin{DoxyCompactList}\small\item\em power of the impact \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_bonus_a3e8678940c7ea4679428e78874d92117}\label{class_bonus_a3e8678940c7ea4679428e78874d92117}} 
-Bonus\+Type {\bfseries bonus\+\_\+type}
-\item 
+\hyperlink{_bonus_8h_ad6d58ebabfbf9aa4181bfe97a5d8d984}{Bonus\+Type} \hyperlink{class_bonus_a3e8678940c7ea4679428e78874d92117}{bonus\+\_\+type}
+\begin{DoxyCompactList}\small\item\em bonuse type (see enum Bonus\+Type) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_bonus_a07620733fe137be73855a2ac4353771c}\label{class_bonus_a07620733fe137be73855a2ac4353771c}} 
-std\+::chrono\+::seconds {\bfseries dts}
-\item 
+std\+::chrono\+::seconds \hyperlink{class_bonus_a07620733fe137be73855a2ac4353771c}{dts}
+\begin{DoxyCompactList}\small\item\em chrono service information \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_bonus_a98befe64efce3a1c5c93f2d694ea1abc}\label{class_bonus_a98befe64efce3a1c5c93f2d694ea1abc}} 
-std\+::chrono\+::duration$<$ double $>$ $\ast$ {\bfseries duration}
-\item 
+std\+::chrono\+::duration$<$ double $>$ $\ast$ \hyperlink{class_bonus_a98befe64efce3a1c5c93f2d694ea1abc}{duration}
+\begin{DoxyCompactList}\small\item\em pointer to the variable containing information about level time \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_bonus_a288adde51bbfb1c9a22fc0cad3e5e8b0}\label{class_bonus_a288adde51bbfb1c9a22fc0cad3e5e8b0}} 
-std\+::chrono\+::duration$<$ double $>$ {\bfseries start}
-\end{DoxyCompactItemize}
+std\+::chrono\+::duration$<$ double $>$ \hyperlink{class_bonus_a288adde51bbfb1c9a22fc0cad3e5e8b0}{start}
+\begin{DoxyCompactList}\small\item\em chrono start of impact \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_bonus_a903865168ff7fd91e0e2de23f849c553}\label{class_bonus_a903865168ff7fd91e0e2de23f849c553}} 
-\index{Bonus@{Bonus}!contact\+Event@{contact\+Event}}
-\index{contact\+Event@{contact\+Event}!Bonus@{Bonus}}
-\subsubsection{\texorpdfstring{contact\+Event()}{contactEvent()}}
-{\footnotesize\ttfamily void Bonus\+::contact\+Event (\begin{DoxyParamCaption}\item[{b2\+Contact $\ast$}]{contact,  }\item[{bool}]{is\+Begin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\subsection{Detailed Description}
+Some serum that have an impact to the hero. 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_bonus_ac8581e33c82c8d6515b78ccffcf6f11b}\label{class_bonus_ac8581e33c82c8d6515b78ccffcf6f11b}} 
+\index{Bonus@{Bonus}!Bonus@{Bonus}}
+\index{Bonus@{Bonus}!Bonus@{Bonus}}
+\subsubsection{\texorpdfstring{Bonus()}{Bonus()}}
+{\footnotesize\ttfamily Bonus\+::\+Bonus (\begin{DoxyParamCaption}\item[{double}]{modificator,  }\item[{double}]{time,  }\item[{\hyperlink{_bonus_8h_ad6d58ebabfbf9aa4181bfe97a5d8d984}{Bonus\+Type}}]{bonus\+\_\+type,  }\item[{\hyperlink{class_player}{Player} $\ast$$\ast$}]{\+\_\+current\+\_\+player,  }\item[{b2\+Body $\ast$}]{\+\_\+body,  }\item[{\hyperlink{class_object}{Object} $\ast$}]{\+\_\+object,  }\item[{std\+::chrono\+::duration$<$ double $>$ $\ast$}]{duration }\end{DoxyParamCaption})}
 
 
 
-Define object reaction to the collision in box2d world. 
+Defined constructor for this class. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em contact} & pointer to box2d b2\+Contact class \\
+{\em modificator} & power of the impact \\
 \hline
-{\em is\+Begin} & \textquotesingle{}false\textquotesingle{} -\/ end of the collision; \textquotesingle{}true\textquotesingle{} -\/ start of the collision \\
+{\em time} & duration of the impact \\
+\hline
+{\em bonus\+\_\+type} & bonuse type (see enum Bonus\+Type) \\
+\hline
+{\em \+\_\+current\+\_\+player} & pointer to the pointer containing infofmation about current active hero \\
+\hline
+{\em \+\_\+body} & pointer to the box2d body assigned to this bonus \\
+\hline
+{\em \+\_\+object} & pointer to the \hyperlink{class_object}{Object} class assigned to this bonus \\
+\hline
+{\em duration} & pointer to the variable containing information about level time \\
 \hline
 \end{DoxyParams}
 
 
-Implements \hyperlink{class_contact_object_a53d2dfc1d9c2821e9c62e80ce62a6435}{Contact\+Object}.
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_bonus_a78f64b402daa7593afb28b78baf6d15e}\label{class_bonus_a78f64b402daa7593afb28b78baf6d15e}} 
+\index{Bonus@{Bonus}!activate@{activate}}
+\index{activate@{activate}!Bonus@{Bonus}}
+\subsubsection{\texorpdfstring{activate()}{activate()}}
+{\footnotesize\ttfamily bool Bonus\+::activate (\begin{DoxyParamCaption}\item[{\hyperlink{class_object}{Object} $\ast$}]{\+\_\+object }\end{DoxyParamCaption})}
 
+
+
+Apllies the bonus effect. 
+
+Delete the image of bonus from the screen and move it to hero ui bonus-\/cell 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+object} & pointer to \hyperlink{class_object}{Object} class which define ui bonus-\/cell \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_bonus_a52875b799a9937f5c398f8f95d9ead98}\label{class_bonus_a52875b799a9937f5c398f8f95d9ead98}} 
+\index{Bonus@{Bonus}!deactivate@{deactivate}}
+\index{deactivate@{deactivate}!Bonus@{Bonus}}
+\subsubsection{\texorpdfstring{deactivate()}{deactivate()}}
+{\footnotesize\ttfamily void Bonus\+::deactivate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Terminates the action of the bonus effect. 
+
+Delete the image of bonus from the hero ui bonus-\/cell \mbox{\Hypertarget{class_bonus_a5964466dfbb4b4e3e7d3eafcb9dae7db}\label{class_bonus_a5964466dfbb4b4e3e7d3eafcb9dae7db}} 
+\index{Bonus@{Bonus}!get\+Object@{get\+Object}}
+\index{get\+Object@{get\+Object}!Bonus@{Bonus}}
+\subsubsection{\texorpdfstring{get\+Object()}{getObject()}}
+{\footnotesize\ttfamily \hyperlink{class_object}{Object} $\ast$ Bonus\+::get\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+pointer to the \hyperlink{class_object}{Object} class assigned to this bonus or bonus-\/cell 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Bonus.\+h\item 
+\hyperlink{_bonus_8h}{Bonus.\+h}\item 
 Bonus.\+cpp\end{DoxyCompactItemize}

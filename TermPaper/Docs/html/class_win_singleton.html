@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Docs: WinSingleton Class Reference</title>
+<title>JUST2D Platformer: WinSingleton Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Docs
+   <div id="projectname">JUST2D Platformer
    </div>
   </td>
  </tr>
@@ -67,22 +67,31 @@ $(function() {
 <div class="title">WinSingleton Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Application window.  
+ <a href="class_win_singleton.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_win_singleton_8h_source.html">WinSingleton.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for WinSingleton:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_win_singleton__coll__graph.png" border="0" usemap="#_win_singleton_coll__map" alt="Collaboration graph"/></div>
+<map name="_win_singleton_coll__map" id="_win_singleton_coll__map">
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a82935bb60c8e4bb14350ac45813b33ca"><td class="memItemLeft" align="right" valign="top"><a id="a82935bb60c8e4bb14350ac45813b33ca"></a>
-static sf::RenderWindow *&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b> ()</td></tr>
+<tr class="memitem:a82935bb60c8e4bb14350ac45813b33ca"><td class="memItemLeft" align="right" valign="top">static sf::RenderWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_win_singleton.html#a82935bb60c8e4bb14350ac45813b33ca">getInstance</a> ()</td></tr>
+<tr class="memdesc:a82935bb60c8e4bb14350ac45813b33ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">create new or return unique application window  <a href="#a82935bb60c8e4bb14350ac45813b33ca">More...</a><br /></td></tr>
 <tr class="separator:a82935bb60c8e4bb14350ac45813b33ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58684b65df9dadcdc798faba86aeb0b6"><td class="memItemLeft" align="right" valign="top"><a id="a58684b65df9dadcdc798faba86aeb0b6"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>toFullScreen</b> ()</td></tr>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_win_singleton.html#a58684b65df9dadcdc798faba86aeb0b6">toFullScreen</a> ()</td></tr>
+<tr class="memdesc:a58684b65df9dadcdc798faba86aeb0b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">change window mode to fullscreen <br /></td></tr>
 <tr class="separator:a58684b65df9dadcdc798faba86aeb0b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abba34d9cbdf6a9ff14da654b2b88aba3"><td class="memItemLeft" align="right" valign="top"><a id="abba34d9cbdf6a9ff14da654b2b88aba3"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>toWindow</b> ()</td></tr>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_win_singleton.html#abba34d9cbdf6a9ff14da654b2b88aba3">toWindow</a> ()</td></tr>
+<tr class="memdesc:abba34d9cbdf6a9ff14da654b2b88aba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">change window mode to 800*600 <br /></td></tr>
 <tr class="separator:abba34d9cbdf6a9ff14da654b2b88aba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
@@ -97,9 +106,44 @@ Private Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:ad2469dc3ef435d5739cda832be2b556f"><td class="memItemLeft" align="right" valign="top"><a id="ad2469dc3ef435d5739cda832be2b556f"></a>
-static sf::RenderWindow *&#160;</td><td class="memItemRight" valign="bottom"><b>win</b> = nullptr</td></tr>
+static sf::RenderWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_win_singleton.html#ad2469dc3ef435d5739cda832be2b556f">win</a> = nullptr</td></tr>
+<tr class="memdesc:ad2469dc3ef435d5739cda832be2b556f"><td class="mdescLeft">&#160;</td><td class="mdescRight">sfml window <br /></td></tr>
 <tr class="separator:ad2469dc3ef435d5739cda832be2b556f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Application window. </p>
+<dl class="section author"><dt>Author</dt><dd>Vasily </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>June 2017 </dd></dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a82935bb60c8e4bb14350ac45813b33ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82935bb60c8e4bb14350ac45813b33ca">&#9670;&nbsp;</a></span>getInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static sf::RenderWindow* WinSingleton::getInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>create new or return unique application window </p>
+<dl class="section return"><dt>Returns</dt><dd>application window </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_win_singleton_8h_source.html">WinSingleton.h</a></li>
 <li>WinSingleton.cpp</li>

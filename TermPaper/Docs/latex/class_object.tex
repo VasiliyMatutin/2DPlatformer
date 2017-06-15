@@ -2,7 +2,17 @@
 \label{class_object}\index{Object@{Object}}
 
 
-Collaboration diagram for Object\+:\nopagebreak
+Contains based information about entity which necessary both for \hyperlink{class_model}{Model} and \hyperlink{class_viewer}{Viewer} classes.  
+
+
+
+
+{\ttfamily \#include $<$Level\+Box.\+h$>$}
+
+
+
+Collaboration diagram for Object\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,37 +23,51 @@ Collaboration diagram for Object\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_object_a90c94b63236bf5be6946381db72641dc}\label{class_object_a90c94b63236bf5be6946381db72641dc}} 
-int {\bfseries number\+\_\+in\+\_\+image\+\_\+list}
-\item 
+int \hyperlink{class_object_a90c94b63236bf5be6946381db72641dc}{number\+\_\+in\+\_\+image\+\_\+list}
+\begin{DoxyCompactList}\small\item\em number of the images assigned to this entity in the list of all \hyperlink{class_layer}{Layer} images \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_object_ad3d50969ef24f16edb7337b76a99bb4e}\label{class_object_ad3d50969ef24f16edb7337b76a99bb4e}} 
-int {\bfseries top}
-\item 
+int \hyperlink{class_object_ad3d50969ef24f16edb7337b76a99bb4e}{top}
+\begin{DoxyCompactList}\small\item\em upper coordinate of an image rectangle in whole image (in pixels) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_object_a7fc665396287cedde719083c0ec6d28f}\label{class_object_a7fc665396287cedde719083c0ec6d28f}} 
-int {\bfseries left}
-\item 
+int \hyperlink{class_object_a7fc665396287cedde719083c0ec6d28f}{left}
+\begin{DoxyCompactList}\small\item\em left coordinate of an image rectangle in whole image (in pixels) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_object_a02010c1708632be33a760486b1f648f8}\label{class_object_a02010c1708632be33a760486b1f648f8}} 
-double {\bfseries x}
-\item 
+double \hyperlink{class_object_a02010c1708632be33a760486b1f648f8}{x}
+\begin{DoxyCompactList}\small\item\em x coordinate of an object relatively \hyperlink{class_layer}{Layer} (in pixels) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_object_a542c4d6094ace575fb4a28f46b9cc6a1}\label{class_object_a542c4d6094ace575fb4a28f46b9cc6a1}} 
-double {\bfseries y}
-\item 
+double \hyperlink{class_object_a542c4d6094ace575fb4a28f46b9cc6a1}{y}
+\begin{DoxyCompactList}\small\item\em y coordinate of an object relatively \hyperlink{class_layer}{Layer} (in pixels) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_object_a811bf2cbf614c4f0a3935a83fb639ffd}\label{class_object_a811bf2cbf614c4f0a3935a83fb639ffd}} 
-double {\bfseries height}
-\item 
+double \hyperlink{class_object_a811bf2cbf614c4f0a3935a83fb639ffd}{height}
+\begin{DoxyCompactList}\small\item\em height of an object (in pixels) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_object_a3afad0ab476968e517b6f48c2a32719f}\label{class_object_a3afad0ab476968e517b6f48c2a32719f}} 
-double {\bfseries width}
-\item 
+double \hyperlink{class_object_a3afad0ab476968e517b6f48c2a32719f}{width}
+\begin{DoxyCompactList}\small\item\em width of an object (in pixels) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_object_afb2fc6bd0f2d6e62901f6b68ac7dfbc8}\label{class_object_afb2fc6bd0f2d6e62901f6b68ac7dfbc8}} 
-double {\bfseries rotation}
-\item 
+double \hyperlink{class_object_afb2fc6bd0f2d6e62901f6b68ac7dfbc8}{rotation}
+\begin{DoxyCompactList}\small\item\em rotate angle of an object (in radians) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_object_ae0881e8e5fd72a025663b048f2444555}\label{class_object_ae0881e8e5fd72a025663b048f2444555}} 
-bool {\bfseries is\+\_\+valid}
-\item 
+bool \hyperlink{class_object_ae0881e8e5fd72a025663b048f2444555}{is\+\_\+valid}
+\begin{DoxyCompactList}\small\item\em state of an object\+: \textquotesingle{}true\textquotesingle{} -\/ have to be dispalyed; \textquotesingle{}false\textquotesingle{} -\/ doesnt\textquotesingle{}t have to \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_object_aff7027899040a66fc27b9c059f9c13f0}\label{class_object_aff7027899040a66fc27b9c059f9c13f0}} 
-int {\bfseries transparensy}
-\end{DoxyCompactItemize}
+int \hyperlink{class_object_aff7027899040a66fc27b9c059f9c13f0}{transparensy}
+\begin{DoxyCompactList}\small\item\em degree of transparensy (0-\/fully transperent; 255-\/fully opaque) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains based information about entity which necessary both for \hyperlink{class_model}{Model} and \hyperlink{class_viewer}{Viewer} classes. 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017 
+\end{DoxyDate}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Level\+Box.\+h\end{DoxyCompactItemize}
+\hyperlink{_level_box_8h}{Level\+Box.\+h}\end{DoxyCompactItemize}

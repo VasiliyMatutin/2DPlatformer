@@ -28,7 +28,6 @@ Model::Model() :
 		}
 	}
 	layers_list.push(&main_menu);
-	re = layers_list.top()->getRetEvent();
 }
 
 Model::~Model()

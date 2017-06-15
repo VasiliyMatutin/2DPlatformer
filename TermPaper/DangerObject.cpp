@@ -4,12 +4,11 @@ void DangerObject::contactEvent(b2Contact * contact, bool is_begin)
 {
 	if (is_begin)
 	{
-		list_of_contact.push_back(static_cast<Player*>(contact->GetFixtureA()->GetBody()->GetUserData()));
-		if (!is_contact)
+		if (list_of_contact.empty())
 		{
 			start = *duration;
 		}
-		is_contact++;
+		list_of_contact.push_back(static_cast<Player*>(contact->GetFixtureA()->GetBody()->GetUserData()));
 	}
 	else
 	{
@@ -18,7 +17,6 @@ void DangerObject::contactEvent(b2Contact * contact, bool is_begin)
 			if (list_of_contact[i] == contact->GetFixtureA()->GetBody()->GetUserData())
 			{
 				list_of_contact.erase(list_of_contact.begin()+i);
-				is_contact--;
 				break;
 			}
 		}
@@ -26,7 +24,6 @@ void DangerObject::contactEvent(b2Contact * contact, bool is_begin)
 }
 
 DangerObject::DangerObject(std::list<b2Body*> _boundaries, double _damage, b2Body* body, std::chrono::duration<double>* _duration):
-	is_contact(0),
 	damage(_damage),
 	duration(_duration)
 {
@@ -44,7 +41,7 @@ DangerObject::DangerObject(std::list<b2Body*> _boundaries, double _damage, b2Bod
 
 void DangerObject::update()
 {
-	if (is_contact)
+	if (!list_of_contact.empty())
 	{
 		dts = std::chrono::duration_cast<std::chrono::milliseconds>(*duration-start);
 		time = dts.count();

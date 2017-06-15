@@ -1,5 +1,0 @@
-<map id="DexterousPlayer" name="DexterousPlayer">
-<area shape="rect" id="node2" href="$class_player.html" title="{Player\n|# img_row\land 20 more...\l|+ activate_bonus()\land 16 more...\l# Player()\land 1 more...\l}" alt="" coords="11,300,139,436"/>
-<area shape="rect" id="node3" href="$class_non_static_obj.html" title="{NonStaticObj\n|# body\land 3 more...\l|+ NonStaticObj()\land 7 more...\l}" alt="" coords="15,145,134,252"/>
-<area shape="rect" id="node4" href="$class_contact_object.html" title="{ContactObject\n||+ contactEvent()\land 1 more...\l}" alt="" coords="16,5,133,97"/>
-</map>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Docs: LevelBox.h File Reference</title>
+<title>JUST2D Platformer: LevelBox.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Docs
+   <div id="projectname">JUST2D Platformer
    </div>
   </td>
  </tr>
@@ -59,7 +59,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">LevelBox.h File Reference</div>  </div>
 </div><!--header-->
@@ -78,9 +79,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="center"><img src="_level_box_8h__dep__incl.png" border="0" usemap="#_level_box_8hdep" alt=""/></div>
 <map name="_level_box_8hdep" id="_level_box_8hdep">
 <area shape="rect" id="node2" href="_layer_8h.html" title="Layer.h" alt="" coords="5,80,71,107"/>
-<area shape="rect" id="node3" href="_non_static_obj_8h.html" title="NonStaticObj.h" alt="" coords="95,80,205,107"/>
-<area shape="rect" id="node4" href="_player_u_i_8h.html" title="PlayerUI.h" alt="" coords="230,80,313,107"/>
-<area shape="rect" id="node5" href="_sensor_8h.html" title="Sensor.h" alt="" coords="337,80,411,107"/>
+<area shape="rect" id="node3" href="_bonus_8h.html" title="Bonus.h" alt="" coords="95,80,165,107"/>
+<area shape="rect" id="node4" href="_non_static_obj_8h.html" title="NonStaticObj.h" alt="" coords="189,80,300,107"/>
+<area shape="rect" id="node5" href="_player_u_i_8h.html" title="PlayerUI.h" alt="" coords="325,80,407,107"/>
+<area shape="rect" id="node6" href="_sensor_8h.html" title="Sensor.h" alt="" coords="431,80,506,107"/>
 </map>
 </div>
 </div>
@@ -89,11 +91,29 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_tileset_img.html">TilesetImg</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains information about tileset images.  <a href="struct_tileset_img.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html">Object</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains based information about entity which necessary both for <a class="el" href="class_model.html" title="Element-container in MVC structure. ">Model</a> and <a class="el" href="class_viewer.html" title="Viewer-element in MVC structure. ">Viewer</a> classes.  <a href="class_object.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text_object.html">TextObject</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains based information about text entity which necessary both for <a class="el" href="class_model.html" title="Element-container in MVC structure. ">Model</a> and <a class="el" href="class_viewer.html" title="Viewer-element in MVC structure. ">Viewer</a> classes.  <a href="class_text_object.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:af8e32eb3a8f70e4471600c63c442a7a0"><td class="memItemLeft" align="right" valign="top"><a id="af8e32eb3a8f70e4471600c63c442a7a0"></a>
+static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_level_box_8h.html#af8e32eb3a8f70e4471600c63c442a7a0">PIXEL_PER_METER</a> = 32</td></tr>
+<tr class="memdesc:af8e32eb3a8f70e4471600c63c442a7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">coordinates conversion rate from pixels to box2d metrics (meters) <br /></td></tr>
+<tr class="separator:af8e32eb3a8f70e4471600c63c442a7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a532127a5624454d5153e37a05709022a"><td class="memItemLeft" align="right" valign="top"><a id="a532127a5624454d5153e37a05709022a"></a>
+static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_level_box_8h.html#a532127a5624454d5153e37a05709022a">GRADTORAD</a> = 3.14159265358979323846 / 180</td></tr>
+<tr class="memdesc:a532127a5624454d5153e37a05709022a"><td class="mdescLeft">&#160;</td><td class="mdescRight">conversion rate from degrees to radians <br /></td></tr>
+<tr class="separator:a532127a5624454d5153e37a05709022a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa1374875831dcb948095da58835e34c"><td class="memItemLeft" align="right" valign="top"><a id="aaa1374875831dcb948095da58835e34c"></a>
+static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_level_box_8h.html#aaa1374875831dcb948095da58835e34c">RADTOGRAD</a> = 1 / <a class="el" href="_level_box_8h.html#a532127a5624454d5153e37a05709022a">GRADTORAD</a></td></tr>
+<tr class="memdesc:aaa1374875831dcb948095da58835e34c"><td class="mdescLeft">&#160;</td><td class="mdescRight">conversion rate from radians to degrees <br /></td></tr>
+<tr class="separator:aaa1374875831dcb948095da58835e34c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

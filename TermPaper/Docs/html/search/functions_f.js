@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['update',['update',['../class_manual_platform.html#ae77ccd8210c4ee32606b3475154325d4',1,'ManualPlatform::update()'],['../class_platform.html#aa601f00a3625669bb39252cfc932efa0',1,'Platform::update()'],['../class_player.html#a82c3476f3e65a4e2ac6bcd040771bdd4',1,'Player::update()'],['../class_revolute_bridge.html#ac462a7308f806d30c53e35b2b8a57e5d',1,'RevoluteBridge::update()'],['../class_strong_player.html#a2e9ec64367e36c1bef0e30293706c1ab',1,'StrongPlayer::update()']]],
-  ['updateui',['updateUI',['../class_player.html#add3d6c730bb80c4d3a125e41d5586007',1,'Player']]]
+  ['repause',['repause',['../class_layer.html#a9e197da9a85a455af77c83301ebb4d1d',1,'Layer::repause()'],['../class_level.html#ab0ac8520d565a0ff6ae912baff7f1895',1,'Level::repause()']]],
+  ['returncoordinates',['returnCoordinates',['../class_player.html#ab3d8dc6872a9903ea2717b57d77790a3',1,'Player']]],
+  ['returnui',['returnUI',['../class_player.html#aefa23e8642f25b0f7e72543599d567f6',1,'Player']]],
+  ['returnupperlayer',['returnUpperLayer',['../class_model.html#acdaa9cd882c6f43d0ea60bc7010acfa2',1,'Model']]],
+  ['reversemoving',['reverseMoving',['../class_platform.html#aae68e047eaa1046773ad62654c99421a',1,'Platform']]],
+  ['revolutebridge',['RevoluteBridge',['../class_revolute_bridge.html#a2b0f68222d155f93018b85bd5629c4b4',1,'RevoluteBridge']]]
 ];

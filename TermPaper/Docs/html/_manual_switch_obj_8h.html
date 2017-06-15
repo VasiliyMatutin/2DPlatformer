@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Docs: ManualSwitchObj.h File Reference</title>
+<title>JUST2D Platformer: ManualSwitchObj.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Docs
+   <div id="projectname">JUST2D Platformer
    </div>
   </td>
  </tr>
@@ -74,7 +74,6 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" id="node3" href="_timer_8h.html" title="Timer.h" alt="" coords="105,80,170,107"/>
 <area shape="rect" id="node4" href="_revolute_bridge_8h.html" title="RevoluteBridge.h" alt="" coords="194,80,313,107"/>
 <area shape="rect" id="node5" href="_manual_platform_8h.html" title="ManualPlatform.h" alt="" coords="337,80,460,107"/>
-<area shape="rect" id="node6" href="_manual_switch_obj_8cpp.html" title="ManualSwitchObj.cpp" alt="" coords="485,80,633,107"/>
 </map>
 </div>
 </div>
@@ -83,15 +82,17 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manual_switch_obj.html">ManualSwitchObj</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Based entity for objects that can be activated by the sensor.  <a href="class_manual_switch_obj.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a8bb1ef53467e4f61410d12822d922498"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498">Action</a> { <a class="el" href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498a7a1920d61156abc05a60135aefe8bc67">Action::Default</a>, 
-<a class="el" href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498a258f49887ef8d14ac268c92b02503aaa">Action::Up</a>, 
-<a class="el" href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498a08a38277b0309070706f6652eeae9a53">Action::Down</a>, 
-<a class="el" href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498ad15305d7a4e34e02489c74a5ef542f36">Action::Off</a>
- }</td></tr>
+<tr class="memitem:a8bb1ef53467e4f61410d12822d922498"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498">Action</a> { <a class="el" href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498a5b39c8b553c821e7cddc6da64b5bd2ee">Action::DEFAULT</a>, 
+<a class="el" href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498afbaedde498cdead4f2780217646e9ba1">Action::UP</a>, 
+<a class="el" href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498ac4e0e4e3118472beeb2ae75827450f1f">Action::DOWN</a>, 
+<a class="el" href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498a88559a0cfd8250c9d65970cc145c92d4">Action::OFF</a>
+ }<tr class="memdesc:a8bb1ef53467e4f61410d12822d922498"><td class="mdescLeft">&#160;</td><td class="mdescRight">type of action that observables entity have to make  <a href="_manual_switch_obj_8h.html#a8bb1ef53467e4f61410d12822d922498">More...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:a8bb1ef53467e4f61410d12822d922498"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
@@ -114,11 +115,17 @@ Enumerations</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>type of action that observables entity have to make </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a8bb1ef53467e4f61410d12822d922498a7a1920d61156abc05a60135aefe8bc67"></a>Default&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a8bb1ef53467e4f61410d12822d922498a258f49887ef8d14ac268c92b02503aaa"></a>Up&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a8bb1ef53467e4f61410d12822d922498a08a38277b0309070706f6652eeae9a53"></a>Down&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a8bb1ef53467e4f61410d12822d922498ad15305d7a4e34e02489c74a5ef542f36"></a>Off&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a8bb1ef53467e4f61410d12822d922498a5b39c8b553c821e7cddc6da64b5bd2ee"></a>DEFAULT&#160;</td><td class="fielddoc"><p>action at discretio of the observable entity </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a8bb1ef53467e4f61410d12822d922498afbaedde498cdead4f2780217646e9ba1"></a>UP&#160;</td><td class="fielddoc"><p>move up </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a8bb1ef53467e4f61410d12822d922498ac4e0e4e3118472beeb2ae75827450f1f"></a>DOWN&#160;</td><td class="fielddoc"><p>move down </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a8bb1ef53467e4f61410d12822d922498a88559a0cfd8250c9d65970cc145c92d4"></a>OFF&#160;</td><td class="fielddoc"><p>terminate moving </p>
+</td></tr>
 </table>
 
 </div>

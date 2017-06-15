@@ -1,5 +1,20 @@
 var searchData=
 [
-  ['joint',['joint',['../class_revolute_bridge.html#a2a2330cd9538b2d2f049710494648de9',1,'RevoluteBridge::joint()'],['../class_strong_player.html#a4fc2a7b6a98d9f4d9bf7fc5d0d207ba8',1,'StrongPlayer::joint()']]],
-  ['jump_5fstrenght',['jump_strenght',['../class_player.html#aadeca24363f2fb5d9206a2cf9c552c20',1,'Player']]]
+  ['iam_5factivate_5fthis_5fplayer',['iam_activate_this_player',['../class_bonus.html#a5c03f6529a87fd393efaedb0db7e8b49',1,'Bonus']]],
+  ['images',['images',['../class_layer.html#a0bfe2f79d24415f8619a4a7491bf1fd8',1,'Layer']]],
+  ['img_5frow',['img_row',['../class_player.html#a07824bd51e3fb726f481c1e5f3e695a6',1,'Player']]],
+  ['incr',['incr',['../class_platform.html#a6a72a0e87078f6ec39d2638b0826c3f9',1,'Platform']]],
+  ['introduction',['introduction',['../class_error_window.html#af19cefec0afdefc61a143fbba66a293b',1,'ErrorWindow::introduction()'],['../class_main_menu.html#a2202aa0a009aaa8593766768934f2ed2',1,'MainMenu::introduction()']]],
+  ['is_5factive',['is_active',['../class_manual_switch_obj.html#aa1d16c8a1740f4dc3152470088154f97',1,'ManualSwitchObj::is_active()'],['../class_platform.html#a3a9d45f38361924cb60ef5b17bef0cac',1,'Platform::is_active()'],['../class_timer.html#a6f1066d49764f5fc746f5fd669d95a9f',1,'Timer::is_active()']]],
+  ['is_5fanimated',['is_animated',['../class_player.html#a9f581a28a4ffac4120411abb6d8ffb34',1,'Player']]],
+  ['is_5fbad',['is_bad',['../class_game_over.html#a4a7103cf4db129cad83b0c001c32d116',1,'GameOver']]],
+  ['is_5fcontact',['is_contact',['../class_final.html#a637485b836c9226c062c92a34e0a679d',1,'Final']]],
+  ['is_5fjoint_5fexist',['is_joint_exist',['../class_revolute_bridge.html#a2acc242725606650e33a98f3d8f0b382',1,'RevoluteBridge']]],
+  ['is_5fjoint_5fset',['is_joint_set',['../class_strong_player.html#a2556cd73a7a49ffe0aa24f300a9faeef',1,'StrongPlayer']]],
+  ['is_5fkeeping',['is_keeping',['../class_sensor.html#ace9f91b1e1034b501ba8f16e46b61698',1,'Sensor']]],
+  ['is_5fpressed',['is_pressed',['../class_sensor.html#aff0be53ae0ed2e7f2a34e93bd78eed5d',1,'Sensor']]],
+  ['is_5frouded',['is_rouded',['../class_platform.html#ab3e380bb3ba10bb3ab5c58e0d37f9095',1,'Platform']]],
+  ['is_5frounded',['is_rounded',['../class_timer.html#ac397f8917b155e12401dd9ab793c91d9',1,'Timer']]],
+  ['is_5fstrong',['is_strong',['../class_final.html#a4beb08f8f72e6339e8544ae121fb717d',1,'Final']]],
+  ['is_5fvalid',['is_valid',['../class_object.html#ae0881e8e5fd72a025663b048f2444555',1,'Object::is_valid()'],['../class_non_static_obj.html#a41c92f702f36f05877e74fef1fcb3a71',1,'NonStaticObj::is_valid()']]]
 ];

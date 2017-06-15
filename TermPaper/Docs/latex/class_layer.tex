@@ -2,76 +2,225 @@
 \label{class_layer}\index{Layer@{Layer}}
 
 
-Collaboration diagram for Layer\+:\nopagebreak
+Determines a certain state of the model.  
+
+
+
+
+{\ttfamily \#include $<$Layer.\+h$>$}
+
+
+
+Collaboration diagram for Layer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=202pt]{class_layer__coll__graph}
+\includegraphics[width=350pt]{class_layer__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_layer_a88251ea7cc836a16dbca1e134c5a5ee5}\label{class_layer_a88251ea7cc836a16dbca1e134c5a5ee5}} 
-std\+::list$<$ \hyperlink{class_object}{Object} $>$ {\bfseries get\+Unchangeable\+Objects} ()
+std\+::list$<$ \hyperlink{class_object}{Object} $>$ \hyperlink{class_layer_a88251ea7cc836a16dbca1e134c5a5ee5}{get\+Unchangeable\+Objects} ()
 \item 
-\mbox{\Hypertarget{class_layer_af1303bfbd28803f32708729f54ca13ec}\label{class_layer_af1303bfbd28803f32708729f54ca13ec}} 
-std\+::list$<$ \hyperlink{class_object}{Object} $>$ {\bfseries get\+Changeable\+Objects} ()
+std\+::list$<$ \hyperlink{class_object}{Object} $>$ \hyperlink{class_layer_af1303bfbd28803f32708729f54ca13ec}{get\+Changeable\+Objects} ()
 \item 
-\mbox{\Hypertarget{class_layer_a2aebff84a5f25f25d56d3886c8c3a4b1}\label{class_layer_a2aebff84a5f25f25d56d3886c8c3a4b1}} 
-std\+::list$<$ \hyperlink{class_object}{Object} $\ast$ $>$ {\bfseries get\+U\+I\+Objects} ()
+std\+::list$<$ \hyperlink{class_object}{Object} $\ast$ $>$ \hyperlink{class_layer_a2aebff84a5f25f25d56d3886c8c3a4b1}{get\+U\+I\+Objects} ()
 \item 
-\mbox{\Hypertarget{class_layer_abd1a2a8242a5d43b389e896a3d3de800}\label{class_layer_abd1a2a8242a5d43b389e896a3d3de800}} 
-std\+::list$<$ \hyperlink{class_text_object}{Text\+Object} $\ast$ $>$ {\bfseries get\+Text\+Objects} ()
+std\+::list$<$ \hyperlink{class_text_object}{Text\+Object} $\ast$ $>$ \hyperlink{class_layer_abd1a2a8242a5d43b389e896a3d3de800}{get\+Text\+Objects} ()
 \item 
-\mbox{\Hypertarget{class_layer_a62b75693308f561bd8454a32dab9e10f}\label{class_layer_a62b75693308f561bd8454a32dab9e10f}} 
-virtual void {\bfseries get\+Layer\+Size} (double $\ast$width, double $\ast$height)
-\item 
-\mbox{\Hypertarget{class_layer_af2778374314bfe517007c0b0ac3fc896}\label{class_layer_af2778374314bfe517007c0b0ac3fc896}} 
-virtual void {\bfseries get\+Layer\+Center} (double $\ast$x, double $\ast$y)
-\item 
-\mbox{\Hypertarget{class_layer_a952ad194d28fe6999b85bd3d9d28ee31}\label{class_layer_a952ad194d28fe6999b85bd3d9d28ee31}} 
-virtual bool {\bfseries is\+Double\+View} ()
-\item 
-\mbox{\Hypertarget{class_layer_a41318993a0f6c7ba3bc6d964f7802c10}\label{class_layer_a41318993a0f6c7ba3bc6d964f7802c10}} 
-virtual void {\bfseries smth\+Happend} (Events what\+\_\+happened)=0
-\item 
+virtual void \hyperlink{class_layer_a62b75693308f561bd8454a32dab9e10f}{get\+Layer\+Size} (double $\ast$width, double $\ast$height)
+\begin{DoxyCompactList}\small\item\em provides opportunity to get layer width and height \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_layer_af2778374314bfe517007c0b0ac3fc896}{get\+Layer\+Center} (double $\ast$x, double $\ast$y)
+\begin{DoxyCompactList}\small\item\em provides opportunity to get layer center \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_layer_a952ad194d28fe6999b85bd3d9d28ee31}{is\+Double\+View} ()
+\begin{DoxyCompactList}\small\item\em return the number of view entity on the level \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_layer_a41318993a0f6c7ba3bc6d964f7802c10}{smth\+Happend} (\hyperlink{_events_8h_af60e00b78607064c5be6aa9397ea49c1}{Events} what\+\_\+happened)=0
+\begin{DoxyCompactList}\small\item\em Listener of player action. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_layer_a9e197da9a85a455af77c83301ebb4d1d}\label{class_layer_a9e197da9a85a455af77c83301ebb4d1d}} 
-virtual void {\bfseries repause} ()
-\item 
+virtual void \hyperlink{class_layer_a9e197da9a85a455af77c83301ebb4d1d}{repause} ()
+\begin{DoxyCompactList}\small\item\em informs that level again active \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_layer_a4243d1a4b059eb7433cbfe7cdfc2c191}\label{class_layer_a4243d1a4b059eb7433cbfe7cdfc2c191}} 
-virtual void {\bfseries update} ()
+virtual void \hyperlink{class_layer_a4243d1a4b059eb7433cbfe7cdfc2c191}{update} ()
+\begin{DoxyCompactList}\small\item\em update layer state \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::string $>$ \& \hyperlink{class_layer_a9acbfda611b85762f4a39ece4ea4df33}{get\+Images\+List} ()
 \item 
-\mbox{\Hypertarget{class_layer_a9acbfda611b85762f4a39ece4ea4df33}\label{class_layer_a9acbfda611b85762f4a39ece4ea4df33}} 
-virtual std\+::vector$<$ std\+::string $>$ \& {\bfseries get\+Images\+List} ()
-\item 
-\mbox{\Hypertarget{class_layer_ac57343394c8dba2a180a7762cd3a20b6}\label{class_layer_ac57343394c8dba2a180a7762cd3a20b6}} 
-virtual Return\+Events $\ast$ {\bfseries get\+Ret\+Event} ()
+virtual \hyperlink{_events_8h_a51620cf702f1b8fdf47cd0a5cfa0ba4f}{Return\+Events} $\ast$ \hyperlink{class_layer_ac57343394c8dba2a180a7762cd3a20b6}{get\+Ret\+Event} ()
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_layer_ada06fdf26fe10efb2bb66ada8d10d3e0}\label{class_layer_ada06fdf26fe10efb2bb66ada8d10d3e0}} 
-std\+::list$<$ \hyperlink{class_object}{Object} $>$ {\bfseries unchangeable\+\_\+objects}
-\item 
+std\+::list$<$ \hyperlink{class_object}{Object} $>$ \hyperlink{class_layer_ada06fdf26fe10efb2bb66ada8d10d3e0}{unchangeable\+\_\+objects}
+\begin{DoxyCompactList}\small\item\em list of an layers objects which can\textquotesingle{}t change during simulation process \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_layer_a6e160468d3c84bba8324a11b05be6b6e}\label{class_layer_a6e160468d3c84bba8324a11b05be6b6e}} 
-std\+::list$<$ \hyperlink{class_object}{Object} $>$ {\bfseries changeable\+\_\+objects}
-\item 
+std\+::list$<$ \hyperlink{class_object}{Object} $>$ \hyperlink{class_layer_a6e160468d3c84bba8324a11b05be6b6e}{changeable\+\_\+objects}
+\begin{DoxyCompactList}\small\item\em list of an layers objects which can change during simulation process \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_layer_a98666cc5fd94f591c3e9ffccc02ee45c}\label{class_layer_a98666cc5fd94f591c3e9ffccc02ee45c}} 
-std\+::list$<$ \hyperlink{class_object}{Object} $\ast$ $>$ {\bfseries U\+I\+\_\+objects}
-\item 
+std\+::list$<$ \hyperlink{class_object}{Object} $\ast$ $>$ \hyperlink{class_layer_a98666cc5fd94f591c3e9ffccc02ee45c}{U\+I\+\_\+objects}
+\begin{DoxyCompactList}\small\item\em list of an layers objects which represent layer UI \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_layer_a46c6bac93a96f1afc853aca03a42351a}\label{class_layer_a46c6bac93a96f1afc853aca03a42351a}} 
-std\+::list$<$ \hyperlink{class_text_object}{Text\+Object} $\ast$ $>$ {\bfseries text\+\_\+objects}
-\item 
+std\+::list$<$ \hyperlink{class_text_object}{Text\+Object} $\ast$ $>$ \hyperlink{class_layer_a46c6bac93a96f1afc853aca03a42351a}{text\+\_\+objects}
+\begin{DoxyCompactList}\small\item\em list of an layers text objects \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_layer_a0bfe2f79d24415f8619a4a7491bf1fd8}\label{class_layer_a0bfe2f79d24415f8619a4a7491bf1fd8}} 
-std\+::vector$<$ std\+::string $>$ {\bfseries images}
-\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_layer_a0bfe2f79d24415f8619a4a7491bf1fd8}{images}
+\begin{DoxyCompactList}\small\item\em list of string names for all images dispalyes at this layer \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_layer_a157765c60d80f37a81c5f317da6495fe}\label{class_layer_a157765c60d80f37a81c5f317da6495fe}} 
-Return\+Events {\bfseries re}
-\end{DoxyCompactItemize}
+\hyperlink{_events_8h_a51620cf702f1b8fdf47cd0a5cfa0ba4f}{Return\+Events} \hyperlink{class_layer_a157765c60d80f37a81c5f317da6495fe}{re}
+\begin{DoxyCompactList}\small\item\em last event that happens at this layer \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Determines a certain state of the model. 
+
+\begin{DoxyAuthor}{Author}
+Vasily 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2017
+\end{DoxyDate}
+Class-\/layer with which works \hyperlink{class_model}{Model} class 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_layer_af1303bfbd28803f32708729f54ca13ec}\label{class_layer_af1303bfbd28803f32708729f54ca13ec}} 
+\index{Layer@{Layer}!get\+Changeable\+Objects@{get\+Changeable\+Objects}}
+\index{get\+Changeable\+Objects@{get\+Changeable\+Objects}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{get\+Changeable\+Objects()}{getChangeableObjects()}}
+{\footnotesize\ttfamily std\+::list$<$ \hyperlink{class_object}{Object} $>$ Layer\+::get\+Changeable\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+list of an layers objects which can change during simulation process 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_layer_a9acbfda611b85762f4a39ece4ea4df33}\label{class_layer_a9acbfda611b85762f4a39ece4ea4df33}} 
+\index{Layer@{Layer}!get\+Images\+List@{get\+Images\+List}}
+\index{get\+Images\+List@{get\+Images\+List}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{get\+Images\+List()}{getImagesList()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ \& Layer\+::get\+Images\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+list of string names for all images dispalyes at this layer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_layer_af2778374314bfe517007c0b0ac3fc896}\label{class_layer_af2778374314bfe517007c0b0ac3fc896}} 
+\index{Layer@{Layer}!get\+Layer\+Center@{get\+Layer\+Center}}
+\index{get\+Layer\+Center@{get\+Layer\+Center}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{get\+Layer\+Center()}{getLayerCenter()}}
+{\footnotesize\ttfamily void Layer\+::get\+Layer\+Center (\begin{DoxyParamCaption}\item[{double $\ast$}]{x,  }\item[{double $\ast$}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+provides opportunity to get layer center 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & pointer to the variable where x coordinate will be written \\
+\hline
+{\em y} & pointer to the variable where y coordinate will be written \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_level_a4c49b93b4c3060fd650890790fc677e9}{Level}.
+
+\mbox{\Hypertarget{class_layer_a62b75693308f561bd8454a32dab9e10f}\label{class_layer_a62b75693308f561bd8454a32dab9e10f}} 
+\index{Layer@{Layer}!get\+Layer\+Size@{get\+Layer\+Size}}
+\index{get\+Layer\+Size@{get\+Layer\+Size}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{get\+Layer\+Size()}{getLayerSize()}}
+{\footnotesize\ttfamily void Layer\+::get\+Layer\+Size (\begin{DoxyParamCaption}\item[{double $\ast$}]{width,  }\item[{double $\ast$}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+provides opportunity to get layer width and height 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & pointer to the variable where width will be written \\
+\hline
+{\em height} & pointer to the variable where height will be written \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_level_a7909f2ebe4d0f676adf9c84db2c1abc8}{Level}.
+
+\mbox{\Hypertarget{class_layer_ac57343394c8dba2a180a7762cd3a20b6}\label{class_layer_ac57343394c8dba2a180a7762cd3a20b6}} 
+\index{Layer@{Layer}!get\+Ret\+Event@{get\+Ret\+Event}}
+\index{get\+Ret\+Event@{get\+Ret\+Event}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{get\+Ret\+Event()}{getRetEvent()}}
+{\footnotesize\ttfamily \hyperlink{_events_8h_a51620cf702f1b8fdf47cd0a5cfa0ba4f}{Return\+Events} $\ast$ Layer\+::get\+Ret\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+pointer to the last event that happens at this layer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_layer_abd1a2a8242a5d43b389e896a3d3de800}\label{class_layer_abd1a2a8242a5d43b389e896a3d3de800}} 
+\index{Layer@{Layer}!get\+Text\+Objects@{get\+Text\+Objects}}
+\index{get\+Text\+Objects@{get\+Text\+Objects}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{get\+Text\+Objects()}{getTextObjects()}}
+{\footnotesize\ttfamily std\+::list$<$ \hyperlink{class_text_object}{Text\+Object} $\ast$ $>$ Layer\+::get\+Text\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+list of an layers text objects 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_layer_a2aebff84a5f25f25d56d3886c8c3a4b1}\label{class_layer_a2aebff84a5f25f25d56d3886c8c3a4b1}} 
+\index{Layer@{Layer}!get\+U\+I\+Objects@{get\+U\+I\+Objects}}
+\index{get\+U\+I\+Objects@{get\+U\+I\+Objects}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{get\+U\+I\+Objects()}{getUIObjects()}}
+{\footnotesize\ttfamily std\+::list$<$ \hyperlink{class_object}{Object} $\ast$ $>$ Layer\+::get\+U\+I\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+list of an layers objects which represent layer UI 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_layer_a88251ea7cc836a16dbca1e134c5a5ee5}\label{class_layer_a88251ea7cc836a16dbca1e134c5a5ee5}} 
+\index{Layer@{Layer}!get\+Unchangeable\+Objects@{get\+Unchangeable\+Objects}}
+\index{get\+Unchangeable\+Objects@{get\+Unchangeable\+Objects}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{get\+Unchangeable\+Objects()}{getUnchangeableObjects()}}
+{\footnotesize\ttfamily std\+::list$<$ \hyperlink{class_object}{Object} $>$ Layer\+::get\+Unchangeable\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+list of an layers objects which can\textquotesingle{}t change during simulation process 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_layer_a952ad194d28fe6999b85bd3d9d28ee31}\label{class_layer_a952ad194d28fe6999b85bd3d9d28ee31}} 
+\index{Layer@{Layer}!is\+Double\+View@{is\+Double\+View}}
+\index{is\+Double\+View@{is\+Double\+View}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{is\+Double\+View()}{isDoubleView()}}
+{\footnotesize\ttfamily bool Layer\+::is\+Double\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+return the number of view entity on the level 
+
+\begin{DoxyReturn}{Returns}
+\textquotesingle{}true\textquotesingle{} -\/ two entities; \textquotesingle{}false\textquotesingle{} -\/ one entity 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_level_ae3584a92caee4cf544abd2c4f946cb18}{Level}.
+
+\mbox{\Hypertarget{class_layer_a41318993a0f6c7ba3bc6d964f7802c10}\label{class_layer_a41318993a0f6c7ba3bc6d964f7802c10}} 
+\index{Layer@{Layer}!smth\+Happend@{smth\+Happend}}
+\index{smth\+Happend@{smth\+Happend}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{smth\+Happend()}{smthHappend()}}
+{\footnotesize\ttfamily virtual void Layer\+::smth\+Happend (\begin{DoxyParamCaption}\item[{\hyperlink{_events_8h_af60e00b78607064c5be6aa9397ea49c1}{Events}}]{what\+\_\+happened }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Listener of player action. 
+
+Allow react to user action 
+\begin{DoxyParams}{Parameters}
+{\em what\+\_\+happened} & enum describing player action \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_level_a4e898cb21d15947077dbedfb979c63be}{Level}, \hyperlink{class_main_menu_aa4272e1cb2c70c23c869d301f2dd2110}{Main\+Menu}, \hyperlink{class_error_window_af9096dfdd53c4e788e62ce543f939f01}{Error\+Window}, \hyperlink{class_game_over_a919e7ac37c476bf288f732f9a8106016}{Game\+Over}, \hyperlink{class_local_menu_ad6db1f0ae5757a4e25269d40f6e369af}{Local\+Menu}, and \hyperlink{class_end_of_the_game_a88ac00a6aaa5193c7642d9ea2c6be688}{End\+Of\+The\+Game}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Layer.\+h\item 
+\hyperlink{_layer_8h}{Layer.\+h}\item 
 Layer.\+cpp\end{DoxyCompactItemize}

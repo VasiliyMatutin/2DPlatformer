@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Docs: Level.h File Reference</title>
+<title>JUST2D Platformer: Level.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Docs
+   <div id="projectname">JUST2D Platformer
    </div>
   </td>
  </tr>
@@ -89,7 +89,6 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="center"><img src="_level_8h__dep__incl.png" border="0" usemap="#_level_8hdep" alt=""/></div>
 <map name="_level_8hdep" id="_level_8hdep">
 <area shape="rect" id="node2" href="_model_8h.html" title="Model.h" alt="" coords="5,80,73,107"/>
-<area shape="rect" id="node3" href="_level_8cpp.html" title="Level.cpp" alt="" coords="97,80,173,107"/>
 </map>
 </div>
 </div>
@@ -98,6 +97,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_level.html">Level</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains all information about game level.  <a href="class_level.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -110,13 +110,15 @@ Enumerations</h2></td></tr>
 <br />
 &#160;&#160;<a class="el" href="_level_8h.html#acf0ce63e34327e5bc336f9fe3d2d47a2a707e893c1db5175432f341eb5d6d1ca7">BodyType::DANGER</a>
 <br />
- }</td></tr>
+ }<tr class="memdesc:acf0ce63e34327e5bc336f9fe3d2d47a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of the *.tmx object group.  <a href="_level_8h.html#acf0ce63e34327e5bc336f9fe3d2d47a2">More...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:acf0ce63e34327e5bc336f9fe3d2d47a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8656d997df416abfebfcf4b3041f01c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_level_8h.html#aa8656d997df416abfebfcf4b3041f01c">Sides</a> { <a class="el" href="_level_8h.html#aa8656d997df416abfebfcf4b3041f01cafbaedde498cdead4f2780217646e9ba1">Sides::UP</a>, 
-<a class="el" href="_level_8h.html#aa8656d997df416abfebfcf4b3041f01cac4e0e4e3118472beeb2ae75827450f1f">Sides::DOWN</a>, 
-<a class="el" href="_level_8h.html#aa8656d997df416abfebfcf4b3041f01ca21507b40c80068eda19865706fdc2403">Sides::RIGHT</a>, 
-<a class="el" href="_level_8h.html#aa8656d997df416abfebfcf4b3041f01ca684d325a7303f52e64011467ff5c5758">Sides::LEFT</a>
- }</td></tr>
+<tr class="memitem:aa8656d997df416abfebfcf4b3041f01c"><td class="memItemLeft" align="right" valign="top"><a id="aa8656d997df416abfebfcf4b3041f01c"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_level_8h.html#aa8656d997df416abfebfcf4b3041f01c">Sides</a> { <b>UP</b>, 
+<b>DOWN</b>, 
+<b>RIGHT</b>, 
+<b>LEFT</b>
+ }<tr class="memdesc:aa8656d997df416abfebfcf4b3041f01c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Side of player sensor. <br /></td></tr>
+</td></tr>
 <tr class="separator:aa8656d997df416abfebfcf4b3041f01c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
@@ -139,40 +141,19 @@ Enumerations</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="acf0ce63e34327e5bc336f9fe3d2d47a2afe6f99ef1ec99efbdc19a9786cf1facc"></a>STATIC&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf0ce63e34327e5bc336f9fe3d2d47a2a019b36cb8fbb31ba1f7c7b7595eb964d"></a>KINEMATIC&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf0ce63e34327e5bc336f9fe3d2d47a2a0fcc90da4811c877ba9f9c12f7d60bc9"></a>DYNAMIC&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf0ce63e34327e5bc336f9fe3d2d47a2a72700b6ac14b90435377dcbaeb77e908"></a>SENSOR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf0ce63e34327e5bc336f9fe3d2d47a2a707e893c1db5175432f341eb5d6d1ca7"></a>DANGER&#160;</td><td class="fielddoc"></td></tr>
-</table>
 
-</div>
-</div>
-<a id="aa8656d997df416abfebfcf4b3041f01c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8656d997df416abfebfcf4b3041f01c">&#9670;&nbsp;</a></span>Sides</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_level_8h.html#aa8656d997df416abfebfcf4b3041f01c">Sides</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Type of the *.tmx object group. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa8656d997df416abfebfcf4b3041f01cafbaedde498cdead4f2780217646e9ba1"></a>UP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aa8656d997df416abfebfcf4b3041f01cac4e0e4e3118472beeb2ae75827450f1f"></a>DOWN&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aa8656d997df416abfebfcf4b3041f01ca21507b40c80068eda19865706fdc2403"></a>RIGHT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aa8656d997df416abfebfcf4b3041f01ca684d325a7303f52e64011467ff5c5758"></a>LEFT&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="acf0ce63e34327e5bc336f9fe3d2d47a2afe6f99ef1ec99efbdc19a9786cf1facc"></a>STATIC&#160;</td><td class="fielddoc"><p>simple static bodies </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acf0ce63e34327e5bc336f9fe3d2d47a2a019b36cb8fbb31ba1f7c7b7595eb964d"></a>KINEMATIC&#160;</td><td class="fielddoc"><p>force movable kinematic bodies </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acf0ce63e34327e5bc336f9fe3d2d47a2a0fcc90da4811c877ba9f9c12f7d60bc9"></a>DYNAMIC&#160;</td><td class="fielddoc"><p>common dynamic bodies </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acf0ce63e34327e5bc336f9fe3d2d47a2a72700b6ac14b90435377dcbaeb77e908"></a>SENSOR&#160;</td><td class="fielddoc"><p>see <a class="el" href="class_sensor.html" title="Trigger that can activate observables ManualSwitchObj classes (dosen&#39;t display at the monitor) ...">Sensor</a> and similar </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acf0ce63e34327e5bc336f9fe3d2d47a2a707e893c1db5175432f341eb5d6d1ca7"></a>DANGER&#160;</td><td class="fielddoc"><p>see <a class="el" href="class_danger_object.html" title="Danger entity that can be assigned to the platform. ">DangerObject</a> </p>
+</td></tr>
 </table>
 
 </div>

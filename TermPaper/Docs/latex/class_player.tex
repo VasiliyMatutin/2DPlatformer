@@ -11,7 +11,8 @@ Parent class for \hyperlink{class_dexterous_player}{Dexterous\+Player} and \hype
 
 
 
-Collaboration diagram for Player\+:\nopagebreak
+Collaboration diagram for Player\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,9 +22,9 @@ Collaboration diagram for Player\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_player_a18c12a3d320a15d87539cd6de2acca66}{activate\+\_\+bonus} (double modificator, Bonus\+Type bonus\+\_\+type)
+void \hyperlink{class_player_a18c12a3d320a15d87539cd6de2acca66}{activate\+\_\+bonus} (double modificator, \hyperlink{_bonus_8h_ad6d58ebabfbf9aa4181bfe97a5d8d984}{Bonus\+Type} bonus\+\_\+type)
 \begin{DoxyCompactList}\small\item\em Apllies the bonus effect to the hero. \end{DoxyCompactList}\item 
-void \hyperlink{class_player_a984c3a87de751efe818203bb01e8d5e9}{deactivate\+\_\+bonus} (double modificator, Bonus\+Type bonus\+\_\+type)
+void \hyperlink{class_player_a984c3a87de751efe818203bb01e8d5e9}{deactivate\+\_\+bonus} (double modificator, \hyperlink{_bonus_8h_ad6d58ebabfbf9aa4181bfe97a5d8d984}{Bonus\+Type} bonus\+\_\+type)
 \begin{DoxyCompactList}\small\item\em Terminates the action of the bonus effect to the hero. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_player_a70e21ca98281b7d72f105f2693113d7e}\label{class_player_a70e21ca98281b7d72f105f2693113d7e}} 
 void \hyperlink{class_player_a70e21ca98281b7d72f105f2693113d7e}{jump} ()
@@ -61,14 +62,14 @@ void \hyperlink{class_player_ab3d8dc6872a9903ea2717b57d77790a3}{return\+Coordina
 \item 
 \mbox{\Hypertarget{class_player_ad4d4b9138657ce9cde8433a44b1c4225}\label{class_player_ad4d4b9138657ce9cde8433a44b1c4225}} 
 bool \hyperlink{class_player_ad4d4b9138657ce9cde8433a44b1c4225}{destroy} ()
-\begin{DoxyCompactList}\small\item\em destroy the hero \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em inhereted from \hyperlink{class_non_static_obj}{Non\+Static\+Obj} class \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_player_a82c3476f3e65a4e2ac6bcd040771bdd4}\label{class_player_a82c3476f3e65a4e2ac6bcd040771bdd4}} 
 void \hyperlink{class_player_a82c3476f3e65a4e2ac6bcd040771bdd4}{update} ()
 \begin{DoxyCompactList}\small\item\em inherited from \hyperlink{class_non_static_obj}{Non\+Static\+Obj} class \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_player_abf1330c477ecd5d2c0154a4876cf4154}{Player} (int \+\_\+level\+\_\+width, int \+\_\+level\+\_\+height, b2\+Body $\ast$\+\_\+body, \hyperlink{class_object}{Object} $\ast$\+\_\+object, int \+\_\+health, Return\+Events $\ast$\+\_\+re)
+\hyperlink{class_player_abf1330c477ecd5d2c0154a4876cf4154}{Player} (int \+\_\+level\+\_\+width, int \+\_\+level\+\_\+height, b2\+Body $\ast$\+\_\+body, \hyperlink{class_object}{Object} $\ast$\+\_\+object, int \+\_\+health, \hyperlink{_events_8h_a51620cf702f1b8fdf47cd0a5cfa0ba4f}{Return\+Events} $\ast$\+\_\+re)
 \begin{DoxyCompactList}\small\item\em Defined constructor for this class. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_player_add3d6c730bb80c4d3a125e41d5586007}\label{class_player_add3d6c730bb80c4d3a125e41d5586007}} 
 void \hyperlink{class_player_add3d6c730bb80c4d3a125e41d5586007}{update\+UI} ()
@@ -125,7 +126,7 @@ double \hyperlink{class_player_a7798d4f62911339f255225b9f59ae497}{desired\+\_\+v
 double \hyperlink{class_player_aadeca24363f2fb5d9206a2cf9c552c20}{jump\+\_\+strenght}
 \begin{DoxyCompactList}\small\item\em strenght of the heros jump \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_player_a652a51b511e40c14cd43c906693670f6}\label{class_player_a652a51b511e40c14cd43c906693670f6}} 
-Return\+Events $\ast$ \hyperlink{class_player_a652a51b511e40c14cd43c906693670f6}{re}
+\hyperlink{_events_8h_a51620cf702f1b8fdf47cd0a5cfa0ba4f}{Return\+Events} $\ast$ \hyperlink{class_player_a652a51b511e40c14cd43c906693670f6}{re}
 \begin{DoxyCompactList}\small\item\em pointer to the variable, which contains reply of the current level during last iteration (see \hyperlink{class_layer}{Layer} class) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_player_ac1b10a27f5fac807cd2a2ff00018b18d}\label{class_player_ac1b10a27f5fac807cd2a2ff00018b18d}} 
 \hyperlink{class_bonus}{Bonus} $\ast$ \hyperlink{class_player_ac1b10a27f5fac807cd2a2ff00018b18d}{activate\+\_\+this\+\_\+bonus}
@@ -134,8 +135,8 @@ Return\+Events $\ast$ \hyperlink{class_player_a652a51b511e40c14cd43c906693670f6}
 \hyperlink{class_bonus}{Bonus} $\ast$ \hyperlink{class_player_aa9320da45054e6196476c46b9b0ac794}{active\+\_\+bonus} \mbox{[}3\mbox{]}
 \begin{DoxyCompactList}\small\item\em Pointer to the array of player ui bonus cell. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_player_a31637dcf493a77b73258e87641b339d4}\label{class_player_a31637dcf493a77b73258e87641b339d4}} 
-\hyperlink{class_player_u_i}{Player\+UI} {\bfseries player\+UI}
-\end{DoxyCompactItemize}
+\hyperlink{class_player_u_i}{Player\+UI} \hyperlink{class_player_a31637dcf493a77b73258e87641b339d4}{player\+UI}
+\begin{DoxyCompactList}\small\item\em contains UI information for this player \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -157,7 +158,7 @@ Contain base information about characret besides its type
 \index{Player@{Player}!Player@{Player}}
 \index{Player@{Player}!Player@{Player}}
 \subsubsection{\texorpdfstring{Player()}{Player()}}
-{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{int}]{\+\_\+level\+\_\+width,  }\item[{int}]{\+\_\+level\+\_\+height,  }\item[{b2\+Body $\ast$}]{\+\_\+body,  }\item[{\hyperlink{class_object}{Object} $\ast$}]{\+\_\+object,  }\item[{int}]{\+\_\+health,  }\item[{Return\+Events $\ast$}]{\+\_\+re }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{int}]{\+\_\+level\+\_\+width,  }\item[{int}]{\+\_\+level\+\_\+height,  }\item[{b2\+Body $\ast$}]{\+\_\+body,  }\item[{\hyperlink{class_object}{Object} $\ast$}]{\+\_\+object,  }\item[{int}]{\+\_\+health,  }\item[{\hyperlink{_events_8h_a51620cf702f1b8fdf47cd0a5cfa0ba4f}{Return\+Events} $\ast$}]{\+\_\+re }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -185,7 +186,7 @@ Defined constructor for this class.
 \index{Player@{Player}!activate\+\_\+bonus@{activate\+\_\+bonus}}
 \index{activate\+\_\+bonus@{activate\+\_\+bonus}!Player@{Player}}
 \subsubsection{\texorpdfstring{activate\+\_\+bonus()}{activate\_bonus()}}
-{\footnotesize\ttfamily void Player\+::activate\+\_\+bonus (\begin{DoxyParamCaption}\item[{double}]{modificator,  }\item[{Bonus\+Type}]{bonus\+\_\+type }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Player\+::activate\+\_\+bonus (\begin{DoxyParamCaption}\item[{double}]{modificator,  }\item[{\hyperlink{_bonus_8h_ad6d58ebabfbf9aa4181bfe97a5d8d984}{Bonus\+Type}}]{bonus\+\_\+type }\end{DoxyParamCaption})}
 
 
 
@@ -202,7 +203,7 @@ Apllies the bonus effect to the hero.
 \index{Player@{Player}!deactivate\+\_\+bonus@{deactivate\+\_\+bonus}}
 \index{deactivate\+\_\+bonus@{deactivate\+\_\+bonus}!Player@{Player}}
 \subsubsection{\texorpdfstring{deactivate\+\_\+bonus()}{deactivate\_bonus()}}
-{\footnotesize\ttfamily void Player\+::deactivate\+\_\+bonus (\begin{DoxyParamCaption}\item[{double}]{modificator,  }\item[{Bonus\+Type}]{bonus\+\_\+type }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Player\+::deactivate\+\_\+bonus (\begin{DoxyParamCaption}\item[{double}]{modificator,  }\item[{\hyperlink{_bonus_8h_ad6d58ebabfbf9aa4181bfe97a5d8d984}{Bonus\+Type}}]{bonus\+\_\+type }\end{DoxyParamCaption})}
 
 
 

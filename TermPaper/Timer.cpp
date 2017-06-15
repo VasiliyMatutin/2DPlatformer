@@ -1,22 +1,23 @@
 #include "Timer.h"
 
-Timer::Timer(std::list<ManualSwitchObj*> _observables, std::vector<double> _stages_duration, bool _is_rounded, std::vector<Action> _stages):
+Timer::Timer(std::list<ManualSwitchObj*> _observables, std::vector<double> _stages_duration, bool _is_rounded, std::vector<Action> _stages, std::chrono::duration<double>* _duration):
 	observables(_observables),
 	stages_duration(_stages_duration),
 	is_rounded(_is_rounded),
 	stages(_stages),
+	duration(_duration),
 	is_active(1),
 	curr_iter(0),
 	stage_iter(0)
 {
-	start = std::chrono::system_clock::now();
+	start = *duration;
 	if (stages_duration.empty())
 	{
 		is_active = false;
 	}
 	if (stages.empty())
 	{
-		stages.push_back(Action::Default);
+		stages.push_back(Action::DEFAULT);
 	}
 }
 
@@ -26,9 +27,7 @@ void Timer::update()
 	{
 		return;
 	}
-	end = std::chrono::system_clock::now();
-	duration = end - start;
-	dts = std::chrono::duration_cast<std::chrono::seconds>(duration);
+	dts = std::chrono::duration_cast<std::chrono::seconds>(*duration - start);
 	time = dts.count();
 	if (time >= stages_duration[curr_iter])
 	{
@@ -54,6 +53,6 @@ void Timer::update()
 		}
 		curr_iter++;
 		stage_iter++;
-		start = std::chrono::system_clock::now();
+		start = *duration;
 	}
 }
